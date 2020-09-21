@@ -1,0 +1,28 @@
+<p>
+    my-com works!
+  </p>
+  this is a long...
+  <span style="color:brown" *ngIf="showIf; else showIfIsFalse"> word </span>
+  <ng-template #showIfIsFalse> bool is false :(</ng-template>
+  
+  
+  <br>
+  <br> ngFor options
+  <br>
+  
+  <div *ngFor="let hero of heroes;let i = index; let f = first; let l = last; let e=even; let o=odd;"
+   [style.display]="hero.id<0" [style.color]=" f ? 'red' :'black' " [style.background-color]="e ? 'blue':'yellow'" > 
+    {{i}} {{hero.name}}  {{ hero.id}} {{ heroes[i] }}
+    <input [(ngModel)]="hero.name">
+    <label *ngIf="l">
+      <br>
+      end of list</label>
+  </div>
+  
+  <br>
+  <br>
+  ngClass
+  <br>
+  <label ngClass="myOtherClass"> label with ngClass </label>
+  <label [ngClass]="calcClasses()"> label with ngClass </label>
+  <button (click)="calc()" >calc classes </button>

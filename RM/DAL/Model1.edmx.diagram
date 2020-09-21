@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fee5a27e5aca46e68304dd0c9321a787" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="NDBModel.FutureData" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="NDBModel.KinderGarden" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="3.75" PointY="9.75" />
+        <EntityTypeShape EntityType="NDBModel.PreviousData" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NDBModel.SavedData" Width="1.5" PointX="11.125" PointY="2.625" />
+        <EntityTypeShape EntityType="NDBModel.Status" Width="1.5" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="NDBModel.Users" Width="1.5" PointX="6" PointY="5.25" />
+        <AssociationConnector Association="NDBModel.FK_Children_ToFutureData" />
+        <AssociationConnector Association="NDBModel.FK_Children_ToLiveData" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToChildren" />
+        <AssociationConnector Association="NDBModel.FK_Users_ToUsers" />
+        <AssociationConnector Association="NDBModel.FK_FutureData_ToTable" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToFutureData" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToLiveData" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToUsers" />
+        <AssociationConnector Association="NDBModel.FK_LiveData_ToTable" />
+        <AssociationConnector Association="NDBModel.FK_Permissions_ToUsers" />
+        <AssociationConnector Association="NDBModel.FK_SaveData_ToTable" />
+        <AssociationConnector Association="NDBModel.FK_PreviousData_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,22 @@
+<form #studentForm="ngForm" (ngSubmit)="AddTheStudent(studentForm)">
+  <ul>
+  name:
+   <li> <input name="name" [(ngModel)]="thisStudent.name"></li>
+    <br>
+    Id:
+    <li><input name="id" [(ngModel)]="thisStudent.id" ></li>
+    <br>
+    Phone Number:
+    <li><input name="phone" [(ngModel)]="thisStudent.phoneNumber" ></li>
+    <br>
+    classLevel:
+    <li><input name="classLevel" [(ngModel)]="thisStudent.classLevel"></li>
+    <br>
+    numGroup:
+    <li><input name="numGroup" [(ngModel)]="thisStudent.numGroup"></li>
+    <br>
+    <li><button type="submit"> add a student! </button></li>
+  </ul>
+
+</form>
+

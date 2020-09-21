@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using COMMON;
+
+namespace DAL
+{
+    public class DUsersManager
+    {
+        public static void addUser(CUsers cu)
+        {
+            Users u = Mapper.convertToUsers(cu);
+            using (NDBEntities2 db = new NDBEntities2())
+            {
+                try
+                {
+                    db.Users.Add(u);
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+        public static void removeUser(string id)
+        {
+            using (NDBEntities2 db = new NDBEntities2())
+            {
+                Users u = (from x in db.Users
+                                  where x.IdUser.Equals(id)
+                                  select x).FirstOrDefault();
+                try
+                {
+                    db.Users.Remove(u);
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw new allreadyExist();
+                }
+            }
+        }
+        public static List<CUsers> selectAllUsers()
+        {
+            List<Users> listUsers = new List<Users>();
+            using (NDBEntities2 db = new NDBEntities2())
+            {
+                listUsers = (from x in db.Users
+                                    select x).ToList();
+            }
+            List<CUsers> listCUsers = new List<CUsers>();
+            foreach (var item in listUsers)
+            {
+                listCUsers.Add(Mapper.convertToCUsers(item));
+            }
+            return listCUsers;
+        }
+        public static CUsers selectUserById(string id)
+        {
+            using (NDBEntities2 db = new NDBEntities2())
+            {
+                Users u = (from x in db.Users
+                                  where x.IdUser.Equals(id)
+                                  select x).FirstOrDefault();
+                if (u != null)
+                {
+                    return Mapper.convertToCUsers(u);
+                }
+                return null;
+            }
+        }
+        public static CUsers selectUserByIdChild(string idChild)
+        {
+            using (NDBEntities2 db = new NDBEntities2())
+            {
+                Users u = (from x in db.Users
+                           where x.IdUser.Equals(idChild)
+                           select x).FirstOrDefault();
+                if (u != null)
+                {
+                    return Mapper.convertToCUsers(u);
+                }
+                return null;
+            }
+        }
+        public static void updateUser(CUsers cu)
+        {
+            if (selectUserById(cu.Id) != null)
+            {
+                removeUser(cu.Id);
+            }
+             addUser(cu); 
+        }
+     
+    }
+}
