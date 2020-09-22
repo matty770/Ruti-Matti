@@ -7,9 +7,7 @@ import { Component, OnInit,Input} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-@Input() messegeTeacher:string;
-@Input() messegeStudent:string;
-@Input() messegeClass:number;
+
   constructor() { }
 
   ngOnInit() {
