@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { ChildrenOfParentComponent } from './children-of-parent/children-of-parent.component';
 import { ChildReportComponent } from './child-report/child-report.component';
 import { ChildUpdateInpoComponent } from './child-update-inpo/child-update-inpo.component';
-import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
+//import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'seretaryMenu',component:SecretaryMenuComponent},
@@ -24,7 +24,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'ChildrenForParent',component:ChildrenOfParentComponent},
 {path:'ChildReport',component:ChildReportComponent},
 {path:'ChildUpdateInpo',component:ChildUpdateInpoComponent},
-{path:'ChildrenOfTecher',component:ChildrenOfTecherComponent}
+//{path:'ChildrenOfTecher',component:ChildrenOfTecherComponent}
 ]
 
 @NgModule({
@@ -41,7 +41,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     ChildrenOfParentComponent,
     ChildReportComponent,
     ChildUpdateInpoComponent,
-    ChildrenOfTecherComponent,
+    //ChildrenOfTecherComponent,
   ],
   imports: [
     BrowserModule,
