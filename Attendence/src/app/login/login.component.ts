@@ -18,7 +18,14 @@ export class LoginComponent implements OnInit {
   {
      this.userService.GetUser(userId).subscribe(
       data=>{this.user = data; 
-        this.router.navigate(['/ChildrenForParent',{data}]);
+        if(data!=null)
+        {
+          this.router.navigate(['/ChildrenForParent',{data}]);
+          alert(data.PhoneNum);
+        }
+       
+        else
+        alert("hjuygu");
       }
      )
     
