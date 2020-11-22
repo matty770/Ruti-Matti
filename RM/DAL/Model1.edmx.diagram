@@ -4,28 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fee5a27e5aca46e68304dd0c9321a787" Name="Diagram1" ZoomLevel="72">
-        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="3" PointY="5" />
-        <EntityTypeShape EntityType="NDBModel.FutureData" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="NDBModel.KinderGarden" Width="1.5" PointX="0.75" PointY="5" />
-        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="8.25" PointY="5" />
-        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="3.75" PointY="9.75" />
-        <EntityTypeShape EntityType="NDBModel.PreviousData" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="NDBModel.SavedData" Width="1.5" PointX="11.125" PointY="2.625" />
-        <EntityTypeShape EntityType="NDBModel.Status" Width="1.5" PointX="3" PointY="1.75" />
-        <EntityTypeShape EntityType="NDBModel.Users" Width="1.5" PointX="6" PointY="5.25" />
-        <AssociationConnector Association="NDBModel.FK_Children_ToFutureData" />
-        <AssociationConnector Association="NDBModel.FK_Children_ToLiveData" />
-        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToChildren" />
-        <AssociationConnector Association="NDBModel.FK_Users_ToUsers" />
-        <AssociationConnector Association="NDBModel.FK_FutureData_ToTable" />
-        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToFutureData" />
-        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToLiveData" />
-        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToUsers" />
-        <AssociationConnector Association="NDBModel.FK_LiveData_ToTable" />
-        <AssociationConnector Association="NDBModel.FK_Permissions_ToUsers" />
-        <AssociationConnector Association="NDBModel.FK_SaveData_ToTable" />
-        <AssociationConnector Association="NDBModel.FK_PreviousData_ToTable" />
+      <Diagram DiagramId="c48741aff34241d09963cb399cfb1888" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="4" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.FutureData" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.KinderGarden" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="2.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="11.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.PreviousData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.SavedData" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.Users" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="NDBModel.FK_Children_ToFutureData" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_Children_ToLiveData" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToChildren" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_Users_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToFutureData" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToLiveData" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="NDBModel.FK_Permissions_ToUsers" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

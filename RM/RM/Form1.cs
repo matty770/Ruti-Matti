@@ -95,7 +95,7 @@ namespace RM
             DateTime d = new DateTime(2020, 2, 23);
             DateTime d1 = new DateTime(2020, 2, 20);
             
-            CFutureData fd = new CFutureData("888888888", 234, d, 2, d1, "222222222", time, "shalom");
+            CFutureData fd = new CFutureData("888888888", 234, d, General.Statuses.Late, d1, "222222222", time, "shalom");
             BFutureDataManager.addFutureData(fd);
         }
 

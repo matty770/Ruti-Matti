@@ -12,7 +12,7 @@ namespace DAL
         public static CLiveData addLiveData(CLiveData cl)
         {
             LiveData l = Mapper.convertToLiveData(cl);
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 db.LiveData.Add(l);
                 db.SaveChanges();
@@ -21,7 +21,7 @@ namespace DAL
         }
         public static void removeLiveData(CLiveData cl)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 LiveData l = (from x in db.LiveData
                               where x.IdChild.Equals(cl.IdChild)
@@ -42,7 +42,7 @@ namespace DAL
         public static List<CLiveData> selectAllLiveData()
         {
             List<LiveData> listLiveData = new List<LiveData>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 listLiveData = db.LiveData.ToList<LiveData>();
             }
@@ -55,7 +55,7 @@ namespace DAL
         }
         public static CLiveData selectLiveDataByIdChild(string id)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 foreach (var l in db.LiveData)
                 {
@@ -78,12 +78,12 @@ namespace DAL
         public static void CopyChildrenToLiveData()
         {
             List<CChildren> listCChildren = DChildrenManager.selectAllChildren();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 foreach (var item in listCChildren)
                 {
                     TimeSpan tt = (DKinderGardenManager.selectKinderByCode(item.KinderGardenCode).BeginingHour);
-                    CLiveData d = new CLiveData(item.Id, item.KinderGardenCode, DateTime.Now, /*Mapper.Status.nonPresent.ToString()*/1, DateTime.Today, "fffff", tt, null);
+                    CLiveData d = new CLiveData(item.Id, item.KinderGardenCode, DateTime.Now, General.Statuses.NonPresent, DateTime.Today, "fffff", tt, null);
                     db.LiveData.Add(Mapper.convertToLiveData(d));
                     db.SaveChanges();
                 }
@@ -93,7 +93,7 @@ namespace DAL
         {
             List<CFutureData> listCFuture = DFutureDataManager.selectByToday();
             List<CLiveData> listCLivaData = selectAllLiveData();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 foreach (var item in listCFuture)
                 {
@@ -115,10 +115,10 @@ namespace DAL
         {
             List<LiveData> ld = new List<LiveData>();
             List<CLiveData> cld = new List<CLiveData>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 ld = (from x in db.LiveData
-                      where x.Alarm.Hours <= DateTime.Now.Hour && x.Alarm.Minutes <= DateTime.Now.Minute &&/* x.Status.Equals(Statuses.PRESENT)*/EnumMapper.ToIntValue( x.Status)== 2
+                      where x.Alarm.Hours <= DateTime.Now.Hour && x.Alarm.Minutes <= DateTime.Now.Minute && (x.Status==4||x.Status==1)
                       select x).ToList();
             }
             foreach (var item in ld)
@@ -126,7 +126,16 @@ namespace DAL
                 cld.Add(Mapper.convertToCLiveData(item));
             }
             return cld;
+        }
 
+        public static void ChangeStatus(string idChild, General.Statuses status)
+        {
+            using (NDBEntities db=new NDBEntities())
+            {
+                db.LiveData.Find(idChild).Status = Mapper.StatusEnumToInt(status);
+
+  
+            }
         }
     }
 }

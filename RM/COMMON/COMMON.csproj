@@ -55,6 +55,7 @@
     <Compile Include="CLiveData.cs" />
     <Compile Include="CPreviousData.cs" />
     <Compile Include="CUsers.cs" />
+    <Compile Include="General.cs" />
     <Compile Include="notExistException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

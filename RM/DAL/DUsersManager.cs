@@ -12,7 +12,7 @@ namespace DAL
         public static void addUser(CUsers cu)
         {
             Users u = Mapper.convertToUsers(cu);
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 try
                 {
@@ -28,7 +28,7 @@ namespace DAL
         }
         public static void removeUser(string id)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 Users u = (from x in db.Users
                                   where x.IdUser.Equals(id)
@@ -47,7 +47,7 @@ namespace DAL
         public static List<CUsers> selectAllUsers()
         {
             List<Users> listUsers = new List<Users>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 listUsers = (from x in db.Users
                                     select x).ToList();
@@ -61,7 +61,7 @@ namespace DAL
         }
         public static CUsers selectUserById(string id)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 Users u = (from x in db.Users
                                   where x.IdUser.Equals(id)
@@ -73,12 +73,17 @@ namespace DAL
                 return null;
             }
         }
+
+        //////////////////////////////////////////////////////////////
         public static CUsers selectUserByIdChild(string idChild)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
+                Children c = (from x in db.Children
+                           where x.IdChild.Equals(idChild)
+                           select x).FirstOrDefault();
                 Users u = (from x in db.Users
-                           where x.IdUser.Equals(idChild)
+                           where x.IdUser.Equals(c.ParentCode)
                            select x).FirstOrDefault();
                 if (u != null)
                 {

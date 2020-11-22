@@ -13,7 +13,7 @@ namespace DAL
         {
             CPreviousData cp = new CPreviousData();
             List<CLiveData> listCLiveData = DLiveDataManager.selectAllLiveData();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 foreach (var item in listCLiveData)
                 {
@@ -26,7 +26,7 @@ namespace DAL
         public static CPreviousData selectPreviousByIdChild(string id)
         {
             PreviousData p = new PreviousData();
-            using (NDBEntities2 db =new NDBEntities2())
+            using (NDBEntities db =new NDBEntities())
             {
                 p = (from x in db.PreviousData
                      where x.IdChild.Equals(id)
@@ -38,7 +38,7 @@ namespace DAL
         public static void removePreviousByDate()
         {
             List<PreviousData> listP = new List<PreviousData>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 listP = (from x in db.PreviousData
                       where x.Date.Day.Equals(DateTime.Now.Day)&&x.Date.Month.Equals(DateTime.Now.Day)&&x.Date.Year.Equals(DateTime.Now.Year)

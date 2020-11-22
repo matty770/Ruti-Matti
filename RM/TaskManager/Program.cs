@@ -16,9 +16,11 @@ namespace TaskManager
             //if(DateTime.Now.Hour>=7&&DateTime.Now.Hour<=12)
             //{
                 List<CLiveData> listLiveData = new List<CLiveData>();
+                listLiveData = BLiveDataManager.LDIsNonPrestnt();
                 foreach (var item in listLiveData)
                 {
                     Function.CheckAttendance(item);
+
                 }
                 
             //}
@@ -38,10 +40,10 @@ namespace TaskManager
       
         static void Main(string[] args)
         {
-            
-            
 
-             Tasks();
+        
+           //BLL.BLiveDataManager.copyChildrenToLiveData();
+           Tasks();
         }
     }
-}
+    }

@@ -12,7 +12,7 @@ namespace DAL
         public static void addFutureData(CFutureData cf)
         {
             FutureData f = Mapper.convertToFutureData(cf);
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 try
                 {
@@ -28,7 +28,7 @@ namespace DAL
         }
         public static void removeFutureData(string id)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 FutureData f = (from x in db.FutureData
                            where x.IdChild.Equals(id)
@@ -48,7 +48,7 @@ namespace DAL
         {
 
             List<FutureData> listFutureData = new List<FutureData>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 listFutureData = (from x in db.FutureData
                                   select x).ToList();
@@ -62,7 +62,7 @@ namespace DAL
         }
         public static CFutureData selectByIdChild(string id)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 FutureData f = (from x in db.FutureData
                            where x.IdChild.Equals(id)
@@ -88,7 +88,7 @@ namespace DAL
             DateTime d = new DateTime();
             d = DateTime.Today;
             List<CFutureData> cf = new List<CFutureData>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 List<FutureData> f = (from x in db.FutureData
                                       where x.Date.Day==d.Day

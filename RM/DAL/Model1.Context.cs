@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NDBEntities2 : DbContext
+    public partial class NDBEntities : DbContext
     {
-        public NDBEntities2()
-            : base("name=NDBEntities2")
+        public NDBEntities()
+            : base("name=NDBEntities")
         {
         }
     
@@ -32,7 +32,6 @@ namespace DAL
         public virtual DbSet<Permissions> Permissions { get; set; }
         public virtual DbSet<PreviousData> PreviousData { get; set; }
         public virtual DbSet<SavedData> SavedData { get; set; }
-        public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

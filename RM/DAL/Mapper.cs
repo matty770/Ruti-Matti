@@ -6,22 +6,9 @@ using System.Threading.Tasks;
 using COMMON;
 namespace DAL
 {
-    public static class EnumMapper
-    {
-        public static DAL.Statuses ToStatusesEnum(this int val)
-        {
-            var ret = (DAL.Statuses)Enum.ToObject(typeof(DAL.Statuses),val);
-            return ret;
-        }
-        public static int ToIntValue(this DAL.Statuses obj)
-        {
-            var ret = (int)Enum.Parse(typeof(DAL.Statuses), obj.ToString());
-            return ret;
-        }
-    }
     public class Mapper
     {
-      
+        
         public static KinderGarden convertToKinderGarden(CKinderGarden ck)
         {
             KinderGarden k = new KinderGarden();
@@ -67,6 +54,7 @@ namespace DAL
             cu.PhoneNum = u.PhoneNum;
             cu.KinderGardenCode = u.KinderGardenCode;
             cu.Permission = u.Permission;
+            cu.mailAddress = u.MailAddress;
             return cu;
         }
         public static Children convertToChildren(CChildren cc)
@@ -97,7 +85,7 @@ namespace DAL
             f.IdChild = cf.IdChild;
             f.KindergardenCode = cf.KinderGardenCode;
             f.Date = cf.Date;
-            f.Status = cf.Status.ToStatusesEnum();
+            f.Status = StatusEnumToInt(cf.Status);
             f.UpdateDate = cf.UpdateDate;
             f.UpdateBy = cf.UpdateBy;
             f.Alarm = cf.Alarm;
@@ -110,7 +98,7 @@ namespace DAL
             cf.IdChild = f.IdChild;
             cf.KinderGardenCode = f.KindergardenCode;
             cf.Date = f.Date;
-            cf.Status = f.Status.ToIntValue();
+            cf.Status = StatusIntToEnum(f.Status);
             cf.UpdateDate = f.UpdateDate;
             cf.UpdateBy = f.UpdateBy;
             cf.Alarm = f.Alarm;
@@ -123,8 +111,7 @@ namespace DAL
             l.IdChild = cl.IdChild;
             l.KindergardenCode = cl.KinderGardenCode;
             l.Date = cl.Date;
-            
-            l.Status= cl.Status.ToStatusesEnum();
+            l.Status = StatusEnumToInt(cl.Status);
             l.UpdateDate = cl.UpdateDate;
             l.UpdateBy = cl.UpdateBy;
             l.Alarm = cl.Alarm;
@@ -137,7 +124,7 @@ namespace DAL
             cl.IdChild = l.IdChild;
             cl.KinderGardenCode = l.KindergardenCode;
             cl.Date = l.Date;
-            cl.Status = l.Status.ToIntValue();
+            cl.Status = StatusIntToEnum(l.Status);
             cl.UpdateDate = l.UpdateDate;
             cl.UpdateBy = l.UpdateBy;
             cl.Alarm = l.Alarm;
@@ -152,7 +139,7 @@ namespace DAL
             cp.IdChild = p.IdChild;
             cp.KinderGardenCode = p.KindergardenCode;
             cp.Date = p.Date;
-            cp.Status = p.Status.ToIntValue();
+            cp.Status = StatusIntToEnum(p.Status);
             cp.UpdateDate = p.UpdateDate;
             cp.UpdateBy = p.UpdateBy;
             cp.Alarm = p.Alarm;
@@ -160,13 +147,39 @@ namespace DAL
             return cp;
 
         }
+        public static int StatusEnumToInt(General.Statuses s)
+        {
+            switch (s)
+            {
+                case General.Statuses.Late: return 1;
+                case General.Statuses.Absent: return 2;
+                case General.Statuses.Present: return 3;
+                case General.Statuses.NonPresent: return 4;
+                case General.Statuses.Sent: return 5;
+                default:
+                    return 0;
+            }
+        }
+
+        public static General.Statuses StatusIntToEnum(int s)
+        {
+            switch (s)
+            {
+                case 1: return General.Statuses.Late;
+                case 2: return General.Statuses.Absent;
+                case 3: return General.Statuses.Present;
+                case 4: return General.Statuses.NonPresent;
+                case 5: return General.Statuses.Sent;
+                default: return 0;
+            }
+        }
         public static PreviousData converCLiveToPreviousData(CLiveData cl)
         {
             PreviousData p = new PreviousData();
             p.IdChild = cl.IdChild;
             p.KindergardenCode = cl.KinderGardenCode;
             p.Date = cl.Date;
-            p.Status = cl.Status.ToStatusesEnum();
+            p.Status = StatusEnumToInt(cl.Status);
             p.UpdateDate = cl.UpdateDate;
             p.UpdateBy = cl.UpdateBy;
             p.Alarm = cl.Alarm;

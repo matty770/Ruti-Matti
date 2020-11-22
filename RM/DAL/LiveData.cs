@@ -17,7 +17,7 @@ namespace DAL
         public string IdChild { get; set; }
         public int KindergardenCode { get; set; }
         public System.DateTime Date { get; set; }
-        public Statuses Status { get; set; }
+        public int Status { get; set; }
         public System.DateTime UpdateDate { get; set; }
         public string UpdateBy { get; set; }
         public System.TimeSpan Alarm { get; set; }
@@ -25,6 +25,5 @@ namespace DAL
     
         public virtual Children Children { get; set; }
         public virtual KinderGarden KinderGarden { get; set; }
-        public virtual Status Status1 { get; set; }
     }
 }

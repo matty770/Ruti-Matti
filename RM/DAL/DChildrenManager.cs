@@ -12,7 +12,7 @@ namespace DAL
  public static void addChildren(CChildren cc)
         {
             Children c = Mapper.convertToChildren(cc);
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 try
                 {
@@ -23,12 +23,12 @@ namespace DAL
                 {
 
                     throw;
-                }  
+                }
             }
         }
         public static void removeChildren(string idChild)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 Children c = (from x in db.Children
                               where x.IdChild.Equals(idChild)
@@ -47,7 +47,7 @@ namespace DAL
         public static List<CChildren> selectAllChildren()
         {
             List<Children> listChildren = new List<Children>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 listChildren = (from x in db.Children
                                 select x).ToList();
@@ -61,7 +61,7 @@ namespace DAL
         }
         public static CChildren selectchildrenById(string id)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 Children c = (from x in db.Children
                               where x.IdChild.Equals(id)

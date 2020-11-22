@@ -12,7 +12,7 @@ namespace DAL
         public static void addKinderGarden(CKinderGarden ck)
         {
             KinderGarden k = Mapper.convertToKinderGarden(ck);
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 try
                 {
@@ -28,7 +28,7 @@ namespace DAL
         }
             public static void removeKinderGarden(int code)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 KinderGarden k = (from x in db.KinderGarden
                                    where x.IdKinderGarden == code
@@ -47,7 +47,7 @@ namespace DAL
         public static List<CKinderGarden> selectAllKinderGarden()
         {
             List<KinderGarden> listKinderGarden = new List<KinderGarden>();
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                  listKinderGarden= (from x in db.KinderGarden
                                   select x).ToList();
@@ -62,7 +62,7 @@ namespace DAL
         }
         public static CKinderGarden selectKinderByCode(int code)
         {
-            using (NDBEntities2 db = new NDBEntities2())
+            using (NDBEntities db = new NDBEntities())
             {
                 KinderGarden k = (from x in db.KinderGarden
                                   where x.IdKinderGarden == code
@@ -94,7 +94,7 @@ namespace DAL
         //public static List<CKinderGarden> selectKinderGardenByHour()
         //{
         //    List<CKinderGarden> listCKinderGarden = new List<CKinderGarden>();
-        //    using (NDBEntities2 db = new NDBEntities2())
+        //    using (NDBEntities db = new NDBEntities())
         //    {
         //        listCKinderGarden=(from x in db.KinderGarden
         //                           where x.BeginingHour.Hours>=DateTime.Now.Hour)

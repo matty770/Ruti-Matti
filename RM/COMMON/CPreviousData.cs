@@ -10,7 +10,7 @@ namespace COMMON
     {
         public CPreviousData() { }
         public CPreviousData(string idChild, int kinderGardenCode, DateTime date,
-            int status, DateTime updateDate, string updateBy, TimeSpan alarm, string comments)
+            General.Statuses status, DateTime updateDate, string updateBy, TimeSpan alarm, string comments)
         {
             this.IdChild = idChild;
             this.KinderGardenCode = kinderGardenCode;
@@ -24,7 +24,7 @@ namespace COMMON
         public string IdChild { get; set; }
         public int KinderGardenCode { get; set; }
         public DateTime Date { get; set; }
-        public int Status { get; set; }
+        public General.Statuses Status { get; set; }
         public DateTime UpdateDate { get; set; }
         public string UpdateBy { get; set; }
         public TimeSpan Alarm { get; set; }
