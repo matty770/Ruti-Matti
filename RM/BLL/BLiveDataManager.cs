@@ -38,5 +38,10 @@ namespace BLL
         {
             DLiveDataManager.CopyFutureToLiveData();
         }
+
+        public static List<CLiveData> LDIsNonPrestnt()
+        {
+            return DLiveDataManager.selectLiveIsNonPresent();
+        }
     }
 }

@@ -21,13 +21,13 @@ namespace BLL
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("projectmmrr@gmail.com");
+                mail.From = new MailAddress("attendanceforstudent@gmail.com");
                 mail.To.Add(addressMail);
                 mail.Subject = "zehirut";
                 mail.Body = "hayeled lo bagan!!!!";
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("projectmmrr@gmail.com", "0548591609");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("attendanceforstudent@gmail.com", "0533141893");
                 SmtpServer.EnableSsl = true;
                 // SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
                 SmtpServer.Send(mail);
@@ -39,6 +39,7 @@ namespace BLL
             {
                 throw;
                 // MessageBox.Show(ex.ToString());
+                /////////////
             }
         }
         static async Task SendUsingAPIAsync(string phoneNum)
@@ -85,8 +86,8 @@ namespace BLL
         {
                 sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress);
                 //sendMessage(DUsersManager.selectUserByIdChild(item.IdChild).PhoneNum);
-               // item.Status = 4;
-           
+                //item.Status = 4;
+
 
         }
 

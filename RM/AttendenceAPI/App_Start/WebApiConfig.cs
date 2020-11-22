@@ -12,7 +12,7 @@ namespace AttendenceAPI
         {
             // Web API configuration and services
 
-            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:4300", "*", "*");
+            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
             config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();
