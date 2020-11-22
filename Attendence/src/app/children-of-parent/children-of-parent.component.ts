@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-children-of-parent',
@@ -7,6 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./children-of-parent.component.css']
 })
 export class ChildrenOfParentComponent implements OnInit {
+  subscription: Subscription;
 
   constructor(private rout:Router) { }
   goToReport()
