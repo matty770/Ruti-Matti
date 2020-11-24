@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   {
      this.userService.GetUser(userId).subscribe(
       data=>{this.user = data; 
+        alert(data.MailAddress);
         this.router.navigate(['/ChildrenForParent',{data}]);
       }
      )
