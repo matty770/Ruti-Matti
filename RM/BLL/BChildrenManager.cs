@@ -26,6 +26,10 @@ namespace BLL
         {
             return DChildrenManager.selectchildrenById(id);
         }
+        public static List<CChildren> selectChildrenByParentId(string Parentid)
+        {
+            return DChildrenManager.selectchildrenByParentId(Parentid);
+        }
         public static void updateChildren(CChildren cc)
         {
              DChildrenManager.updateChildren(cc);

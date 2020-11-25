@@ -73,6 +73,22 @@ namespace DAL
                 return null;
             }
         }
+        public static List<CChildren> selectchildrenByParentId(string idParent)
+        {
+            List<Children> lc = new List<Children>();
+            using (NDBEntities db = new NDBEntities())
+            {
+                lc = (from x in db.Children
+                              where x.ParentCode.Equals(idParent)
+                              select x).ToList();
+                List<CChildren> listCChildren = new List<CChildren>();
+                foreach (var item in lc)
+                {
+                    listCChildren.Add(Mapper.convertToCChildren(item));
+                }
+                return listCChildren;
+            }
+        }
         public static void updateChildren(CChildren cc)
         {
             if (selectchildrenById(cc.Id) != null)
