@@ -16,6 +16,7 @@ namespace AttendenceAPI.Controllers
         {
             var fd = BFutureDataManager.selectByIdChild(ChildId);
             return fd;
+
         }
     }
 }
