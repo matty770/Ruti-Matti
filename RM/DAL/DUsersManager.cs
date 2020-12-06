@@ -102,7 +102,15 @@ namespace DAL
         }
         public static int GetPermissionOfUser(string idUser)
         {
-            return 0;
+            using(NDBEntities db=new NDBEntities())
+            {
+                Users u = (from x in db.Users
+                           where x.IdUser.Equals(idUser)
+                           select x).FirstOrDefault();
+
+                return u.Permission;
+            }
+            
         }
      
     }

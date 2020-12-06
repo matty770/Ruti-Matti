@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ChildService } from 'src/app/services/Child.service';
+import { Child } from 'src/app/models/Child';
+
 
 @Component({
   selector: 'app-children-of-parent',
@@ -9,19 +12,31 @@ import { Subscription } from 'rxjs';
 })
 export class ChildrenOfParentComponent implements OnInit {
   subscription: Subscription;
+  listChildren:any[];
+  children:Child[];
 
-  constructor(private rout:Router) { }
+
+  constructor(private rout:Router,private childService:ChildService) { }
   goToReport()
   {   
     this.rout.navigate(['/ChildReport']);
   }
   goToDetails()
   {
-    this.rout.navigate(['/ChildUpdateInpo']);
+    this.rout.navigate(['/ChildUpdateInfo']);
   }
 
   ngOnInit() {
-   
+    
   }
-
+  selectChildrenByParentId(ParentId: string)
+  {
+    alert("bhbhbhb");
+    this.childService.selectChildrenByParentId(ParentId).subscribe(
+      data=>{this.children = data;
+      if(data!=null)
+      alert("bhbhbhb");
+     }
+     )
+  }
 }

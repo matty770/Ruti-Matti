@@ -2,25 +2,26 @@
   children-of-parent works!
 </p>
 <div>
+  <button (click)="selectChildrenByParentId()">click me</button>
   <table class="table">
     <thead>
       <tr>
         <th><h3>ID</h3></th>&nbsp;
         <th><h3>Name</h3></th>&nbsp;
-        <th><h3>Addres</h3></th>&nbsp;
+        <th><h3>Address</h3></th>&nbsp;
+        
         <th><h3>Phone</h3></th>&nbsp;
-        <th><h3>LastName</h3></th>&nbsp;
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let child of children">
       <tr>
-        <th></th>&nbsp;
-        <th></th>&nbsp;
-        <th></th>&nbsp;
-        <th></th>&nbsp;
-        <th></th>&nbsp;
-       <th><button type="button" (click)="goToReport()">report time</button>&nbsp;<button (click)="goToDetails()">update details</button>
+        <th>{{child.Id}}</th>&nbsp;
+        <th>{{child.ChildName}}</th>&nbsp;
+        <th>{{child.Address}}</th>&nbsp;
+        <th>{{child.Phone}}</th>&nbsp;
+       <th><button type="button" (click)="goToReport()">report time</button>&nbsp;
+      <button (click)="goToDetails()">update details</button>
       </tr>
     </tbody>
   </table>

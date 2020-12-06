@@ -15,4 +15,10 @@ export class UserService {
   GetUser(userId: string): Observable<User> {
     return this.http.Get('User?userId=' + userId);
   }
+  GetPermissionOfUser(userId :string): Observable<number>{
+    alert("ddd");
+    return this.http.Get('User?userId='+userId);
+   
+  }
+
 }
