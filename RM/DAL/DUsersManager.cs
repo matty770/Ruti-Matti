@@ -100,6 +100,10 @@ namespace DAL
             }
              addUser(cu); 
         }
+        public static int GetPermissionOfUser(string idUser)
+        {
+            return 0;
+        }
      
     }
 }

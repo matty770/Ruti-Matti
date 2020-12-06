@@ -31,5 +31,9 @@ namespace BLL
         {
              DUsersManager.updateUser(cu);
         }
+        public static int GetPermissionOfUser(string idUser)
+        {
+            return DUsersManager.GetPermissionOfUser(idUser);
+        }
     }
 }

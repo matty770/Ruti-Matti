@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c48741aff34241d09963cb399cfb1888" Name="Diagram1" ZoomLevel="47">
-        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="4" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="7ba5162cda994affa882b6586c4a83c4" Name="Diagram1">
+        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NDBModel.FutureData" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="NDBModel.KinderGarden" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="2.625" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="11.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="3.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NDBModel.PreviousData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NDBModel.SavedData" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NDBModel.Users" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
