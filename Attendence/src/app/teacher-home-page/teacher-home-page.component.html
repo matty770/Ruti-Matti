@@ -1,0 +1,29 @@
+<p>
+  teacher-home-page works!
+</p>
+<table>
+  <!--טבלה של גנים-->
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h3>ID</h3></th>&nbsp;
+          <th><h3>Name</h3></th>&nbsp;
+          <th><h3>Address</h3></th>&nbsp;
+          <th><h3>Phone</h3></th>&nbsp;
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let KG of KinderGardens">
+        <tr>
+          <th>{{KG.idKinderGarden}}</th>&nbsp;
+          <th>{{KG.name}}</th>&nbsp;
+          <th>{{KG.address}}</th>&nbsp;
+          <th>{{KG.phone}}</th>&nbsp;
+         <th><button type="button" (click)="goToAttendance(idKinderGarden)">Attendance</button>&nbsp;
+        <button (click)="goToDetails()">update details</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</table>

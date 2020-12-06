@@ -15,7 +15,10 @@ import { DirBorderDirective } from './directivs/dir-border.directive';
 import { LoginComponent } from './login/login.component';
 import { ChildrenOfParentComponent } from './children-of-parent/children-of-parent.component';
 import { ChildReportComponent } from './child-report/child-report.component';
-import { ChildUpdateInpoComponent } from './child-update-inpo/child-update-inpo.component';
+import { ChildUpdateInfoComponent } from './child-update-info/child-update-info.component';
+import { TeacherHomePageComponent } from './teacher-home-page/teacher-home-page.component';
+import { ChildrenOfTeacherComponent } from './children-of-teacher/children-of-teacher.component';
+import { AttendanceComponent } from './attendance/attendance.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
@@ -23,7 +26,11 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'myCom',component:MyComComponent},
 {path:'ChildrenForParent',component:ChildrenOfParentComponent},
 {path:'ChildReport',component:ChildReportComponent},
-{path:'ChildUpdateInpo',component:ChildUpdateInpoComponent},
+{path:'ChildUpdateInfo',component:ChildUpdateInfoComponent},
+{path:'TeacherHomePage',component:TeacherHomePageComponent},
+{path:'ChildrenOfTeacher',component:ChildrenOfTeacherComponent},
+{path:'Attendance',component:AttendanceComponent},
+
 //{path:'ChildrenOfTecher',component:ChildrenOfTecherComponent}
 ]
 
@@ -40,7 +47,10 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     LoginComponent,
     ChildrenOfParentComponent,
     ChildReportComponent,
-    ChildUpdateInpoComponent,
+    ChildUpdateInfoComponent,
+    TeacherHomePageComponent,
+    ChildrenOfTeacherComponent,
+    AttendanceComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [

@@ -18,19 +18,15 @@ export class LoginComponent implements OnInit {
   {
      this.userService.GetUser(userId).subscribe(
       data=>{this.user = data; 
-<<<<<<< HEAD
-        alert(data.MailAddress);
-        this.router.navigate(['/ChildrenForParent',{data}]);
-=======
+        
+       // this.router.navigate(['/ChildrenForParent',{data}]);
+// צריך כאן לעשות חיפוש לפי פרמישן לאיזה קומפוננטנה להפנות את המשתמש
         if(data!=null)
         {
           this.router.navigate(['/ChildrenForParent',{data}]);
           alert(data.PhoneNum);
         }
-       
-        else
-        alert("hjuygu");
->>>>>>> 74247e444ffada03dc077c7cab13dd2175d640dc
+
       }
      )
     
