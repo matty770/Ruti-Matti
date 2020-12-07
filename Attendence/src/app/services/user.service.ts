@@ -6,10 +6,10 @@ import { DataService } from 'src/app/services/data.service';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class UserService {
-
+  public user :User;
   constructor(private http: DataService
   ) { }
   GetUser(userId: string): Observable<User> {
@@ -18,7 +18,6 @@ export class UserService {
   GetPermissionOfUser(userId :string): Observable<number>{
     alert("ddd");
     return this.http.Get('User?userId='+userId);
-   
   }
-
+  
 }

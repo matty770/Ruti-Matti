@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ChildService } from 'src/app/services/Child.service';
 import { Child } from 'src/app/models/Child';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -15,8 +16,7 @@ export class ChildrenOfParentComponent implements OnInit {
   listChildren:any[];
   children:Child[];
 
-
-  constructor(private rout:Router,private childService:ChildService) { }
+  constructor(private rout:Router,private childService:ChildService,private userService:UserService) { }
   goToReport()
   {   
     this.rout.navigate(['/ChildReport']);
@@ -31,8 +31,8 @@ export class ChildrenOfParentComponent implements OnInit {
   }
   selectChildrenByParentId(ParentId: string)
   {
-    alert("bhbhbhb");
-    this.childService.selectChildrenByParentId(ParentId).subscribe(
+    
+    this.childService.selectChildrenByParentId(this.userService.user.Id).subscribe(
       data=>{this.children = data;
       if(data!=null)
       alert("bhbhbhb");
