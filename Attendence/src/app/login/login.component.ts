@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit
+ {
   user:User;
   permission: number;
   constructor(private userService: UserService,private router:Router){}
@@ -17,8 +18,29 @@ export class LoginComponent implements OnInit {
   }
   Login(userId:string)
   {
-    
- // this.userService.GetPermissionOfUser(userId).subscribe
+   this.userService.GetUser(userId).subscribe(data=>{this.user = data; 
+    if(this.user.Permission==1)
+      this.router.navigate(['/ChildrenForParent',{data}]);
+      else if(this.user.Permission==2)
+             this.router.navigate(['/TeacherHomePage',{data}]);
+   }
+)
+  }
+}
+
+      
+
+     
+// צריך כאן לעשות חיפוש לפי פרמישן לאיזה קומפוננטנה להפנות את המשתמש
+       // if(data!=null)
+      //  {
+      //    this.router.navigate(['/ChildrenForParent',{data}]);
+      //    alert(data.PhoneNum);
+      //  }     
+      //  else
+      //  alert("hjuygu");
+
+       // this.userService.GetPermissionOfUser(userId).subscribe
  //   (
   //    data=>{this.permission=data;
  //       switch(this.permission)
@@ -32,24 +54,3 @@ export class LoginComponent implements OnInit {
       //  }
     //  }
   //  )
-   this.userService.GetUser(userId).subscribe(
-    data=>{this.user = data; 
-  
-
-     this.router.navigate(['/ChildrenForParent',{data}]);
-// צריך כאן לעשות חיפוש לפי פרמישן לאיזה קומפוננטנה להפנות את המשתמש
-       // if(data!=null)
-      //  {
-      //    this.router.navigate(['/ChildrenForParent',{data}]);
-      //    alert(data.PhoneNum);
-      //  }     
-      //  else
-      //  alert("hjuygu");
-
-
- }
-  )
-    
-
-  }
-}
