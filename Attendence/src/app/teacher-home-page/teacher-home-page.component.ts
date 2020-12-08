@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { KinderGarden } from '../models/KinderGarden';
 import {KinderGardensService}from '../services/Kindergarden.service'
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-teacher-home-page',
@@ -11,7 +12,8 @@ import {KinderGardensService}from '../services/Kindergarden.service'
 export class TeacherHomePageComponent implements OnInit {
 KinderGardens:KinderGarden[];
 
-  constructor(private rout:Router,private KinderGardenService:KinderGardensService) { }
+  constructor(private rout:Router,private KinderGardenService:KinderGardensService
+    ,private userService:UserService) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,7 @@ KinderGardens:KinderGarden[];
   selectKinderGardensByTeacherId(TeacherId: string)
   {
     alert("bhbhbhb");
-    this.KinderGardenService.selectKinderGardensByTeacherId(TeacherId).subscribe(
+    this.KinderGardenService.selectKinderGardensByTeacherId(this.userService.user.Id).subscribe(
       data=>{ this.KinderGardens = data;
       if(data!=null)
       alert("bhbhbhb");

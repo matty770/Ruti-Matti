@@ -17,5 +17,12 @@ namespace AttendenceAPI.Controllers
             var kg = BKinderGardenManager.selectKinderGardenByCode(KGCode);
             return kg;
         }
+        [HttpGet]
+        public List<CKinderGarden> GetAllKinderGarden()
+        {
+            return BKinderGardenManager.selectAllKinderGarden();
+        }
+
+
     }
 }

@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit
       this.router.navigate(['/ChildrenForParent']);
       else if(this.userService.user.Permission==2)
              this.router.navigate(['/TeacherHomePage']);
+             else if(this.userService.user.Permission==3)
+                   this.router.navigate(['/ManagerHomePage']);
    }
 )
   }

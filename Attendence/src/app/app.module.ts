@@ -19,6 +19,7 @@ import { ChildUpdateInfoComponent } from './child-update-info/child-update-info.
 import { TeacherHomePageComponent } from './teacher-home-page/teacher-home-page.component';
 import { ChildrenOfTeacherComponent } from './children-of-teacher/children-of-teacher.component';
 import { AttendanceComponent } from './attendance/attendance.component';
+import { ManagerHomePageComponent } from './manager-home-page/manager-home-page.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
@@ -30,6 +31,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'TeacherHomePage',component:TeacherHomePageComponent},
 {path:'ChildrenOfTeacher',component:ChildrenOfTeacherComponent},
 {path:'Attendance',component:AttendanceComponent},
+{path:'ManagerHomePage',component:ManagerHomePageComponent}
 
 //{path:'ChildrenOfTecher',component:ChildrenOfTecherComponent}
 ]
@@ -51,6 +53,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     TeacherHomePageComponent,
     ChildrenOfTeacherComponent,
     AttendanceComponent,
+    ManagerHomePageComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [
