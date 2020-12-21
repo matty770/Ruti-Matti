@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7ba5162cda994affa882b6586c4a83c4" Name="Diagram1">
-        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.FutureData" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.KinderGarden" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="3.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.PreviousData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.SavedData" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NDBModel.Users" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+      <Diagram DiagramId="6c2c74ca4f0d4209ab59488b8397d3f1" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="NDBModel.Children" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.FutureData" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.KinderGarden" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.KinderGardenOfTeacher" Width="1.5" PointX="2.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.LiveData" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.Permissions" Width="1.5" PointX="1.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.PreviousData" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.SavedData" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NDBModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="NDBModel.FK_Children_ToFutureData" ManuallyRouted="false" />
         <AssociationConnector Association="NDBModel.FK_Children_ToLiveData" ManuallyRouted="false" />
         <AssociationConnector Association="NDBModel.FK_KinderGarden_ToChildren" ManuallyRouted="false" />
         <AssociationConnector Association="NDBModel.FK_Users_ToUsers" ManuallyRouted="false" />
         <AssociationConnector Association="NDBModel.FK_KinderGarden_ToFutureData" ManuallyRouted="false" />
         <AssociationConnector Association="NDBModel.FK_KinderGarden_ToLiveData" ManuallyRouted="false" />
-        <AssociationConnector Association="NDBModel.FK_KinderGarden_ToUsers" ManuallyRouted="false" />
         <AssociationConnector Association="NDBModel.FK_Permissions_ToUsers" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

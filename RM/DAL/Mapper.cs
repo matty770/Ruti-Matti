@@ -8,7 +8,7 @@ namespace DAL
 {
     public class Mapper
     {
-        
+
         public static KinderGarden convertToKinderGarden(CKinderGarden ck)
         {
             KinderGarden k = new KinderGarden();
@@ -41,7 +41,7 @@ namespace DAL
             u.Name = cu.Name;
             u.Address = cu.Address;
             u.PhoneNum = cu.PhoneNum;
-            u.KinderGardenCode = cu.KinderGardenCode;
+            //u.KinderGardenCode = cu.KinderGardenCode;
             u.Permission = cu.Permission;
             return u;
         }
@@ -52,7 +52,7 @@ namespace DAL
             cu.Name = u.Name;
             cu.Address = u.Address;
             cu.PhoneNum = u.PhoneNum;
-            cu.KinderGardenCode = u.KinderGardenCode;
+            //  cu.KinderGardenCode = u.KinderGardenCode;
             cu.Permission = u.Permission;
             cu.mailAddress = u.MailAddress;
             return cu;
@@ -131,7 +131,7 @@ namespace DAL
             cl.Comments = l.Comments;
             return cl;
 
-            
+
         }
         public static CPreviousData converToCPreviousData(PreviousData p)
         {

@@ -43,6 +43,14 @@
           <Property Name="BeginingHour" Type="time" Precision="7" Nullable="false" />
           <Property Name="Space" Type="time" Precision="7" Nullable="false" />
         </EntityType>
+        <EntityType Name="KinderGardenOfTeacher">
+          <Key>
+            <PropertyRef Name="IdTeacher" />
+            <PropertyRef Name="IdKinderGarden" />
+          </Key>
+          <Property Name="IdTeacher" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="IdKinderGarden" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="LiveData">
           <Key>
             <PropertyRef Name="IdChild" />
@@ -102,7 +110,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
           <Property Name="PhoneNum" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="KinderGardenCode" Type="int" Nullable="false" />
           <Property Name="Permission" Type="int" Nullable="false" />
           <Property Name="MailAddress" Type="nchar" MaxLength="30" Nullable="false" />
         </EntityType>
@@ -166,18 +173,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KinderGarden_ToUsers">
-          <End Role="KinderGarden" Type="Self.KinderGarden" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KinderGarden">
-              <PropertyRef Name="IdKinderGarden" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="KinderGardenCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Permissions_ToUsers">
           <End Role="Permissions" Type="Self.Permissions" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -206,6 +201,7 @@
           <EntitySet Name="Children" EntityType="Self.Children" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FutureData" EntityType="Self.FutureData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KinderGarden" EntityType="Self.KinderGarden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KinderGardenOfTeacher" EntityType="Self.KinderGardenOfTeacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LiveData" EntityType="Self.LiveData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PreviousData" EntityType="Self.PreviousData" Schema="dbo" store:Type="Tables" />
@@ -230,10 +226,6 @@
           <AssociationSet Name="FK_KinderGarden_ToLiveData" Association="Self.FK_KinderGarden_ToLiveData">
             <End Role="KinderGarden" EntitySet="KinderGarden" />
             <End Role="LiveData" EntitySet="LiveData" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KinderGarden_ToUsers" Association="Self.FK_KinderGarden_ToUsers">
-            <End Role="KinderGarden" EntitySet="KinderGarden" />
-            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_Permissions_ToUsers" Association="Self.FK_Permissions_ToUsers">
             <End Role="Permissions" EntitySet="Permissions" />
@@ -295,7 +287,14 @@
           <NavigationProperty Name="Children" Relationship="Self.FK_KinderGarden_ToChildren" FromRole="KinderGarden" ToRole="Children" />
           <NavigationProperty Name="FutureData" Relationship="Self.FK_KinderGarden_ToFutureData" FromRole="KinderGarden" ToRole="FutureData" />
           <NavigationProperty Name="LiveData" Relationship="Self.FK_KinderGarden_ToLiveData" FromRole="KinderGarden" ToRole="LiveData" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_KinderGarden_ToUsers" FromRole="KinderGarden" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="KinderGardenOfTeacher">
+          <Key>
+            <PropertyRef Name="IdTeacher" />
+            <PropertyRef Name="IdKinderGarden" />
+          </Key>
+          <Property Name="IdTeacher" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdKinderGarden" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="LiveData">
           <Key>
@@ -359,11 +358,9 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KinderGardenCode" Type="Int32" Nullable="false" />
           <Property Name="Permission" Type="Int32" Nullable="false" />
           <Property Name="MailAddress" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Children" Relationship="Self.FK_Users_ToUsers" FromRole="Users" ToRole="Children" />
-          <NavigationProperty Name="KinderGarden" Relationship="Self.FK_KinderGarden_ToUsers" FromRole="Users" ToRole="KinderGarden" />
           <NavigationProperty Name="Permissions" Relationship="Self.FK_Permissions_ToUsers" FromRole="Users" ToRole="Permissions" />
         </EntityType>
         <Association Name="FK_Children_ToFutureData">
@@ -438,18 +435,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KinderGarden_ToUsers">
-          <End Role="KinderGarden" Type="Self.KinderGarden" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KinderGarden">
-              <PropertyRef Name="IdKinderGarden" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="KinderGardenCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Permissions_ToUsers">
           <End Role="Permissions" Type="Self.Permissions" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -466,6 +451,7 @@
           <EntitySet Name="Children" EntityType="Self.Children" />
           <EntitySet Name="FutureData" EntityType="Self.FutureData" />
           <EntitySet Name="KinderGarden" EntityType="Self.KinderGarden" />
+          <EntitySet Name="KinderGardenOfTeacher" EntityType="Self.KinderGardenOfTeacher" />
           <EntitySet Name="LiveData" EntityType="Self.LiveData" />
           <EntitySet Name="Permissions" EntityType="Self.Permissions" />
           <EntitySet Name="PreviousData" EntityType="Self.PreviousData" />
@@ -494,10 +480,6 @@
           <AssociationSet Name="FK_KinderGarden_ToLiveData" Association="Self.FK_KinderGarden_ToLiveData">
             <End Role="KinderGarden" EntitySet="KinderGarden" />
             <End Role="LiveData" EntitySet="LiveData" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KinderGarden_ToUsers" Association="Self.FK_KinderGarden_ToUsers">
-            <End Role="KinderGarden" EntitySet="KinderGarden" />
-            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_Permissions_ToUsers" Association="Self.FK_Permissions_ToUsers">
             <End Role="Permissions" EntitySet="Permissions" />
@@ -547,6 +529,14 @@
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="BeginingHour" ColumnName="BeginingHour" />
                 <ScalarProperty Name="Space" ColumnName="Space" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KinderGardenOfTeacher">
+            <EntityTypeMapping TypeName="NDBModel.KinderGardenOfTeacher">
+              <MappingFragment StoreEntitySet="KinderGardenOfTeacher">
+                <ScalarProperty Name="IdTeacher" ColumnName="IdTeacher" />
+                <ScalarProperty Name="IdKinderGarden" ColumnName="IdKinderGarden" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -609,7 +599,6 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
-                <ScalarProperty Name="KinderGardenCode" ColumnName="KinderGardenCode" />
                 <ScalarProperty Name="Permission" ColumnName="Permission" />
                 <ScalarProperty Name="MailAddress" ColumnName="MailAddress" />
               </MappingFragment>
