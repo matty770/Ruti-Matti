@@ -29,9 +29,8 @@ export class ChildrenOfParentComponent implements OnInit {
   ngOnInit() {
     
   }
-  selectChildrenByParentId(ParentId: string)
+  selectChildrenByParentId()
   {
-    
     this.childService.selectChildrenByParentId(this.userService.user.Id).subscribe(
       data=>{this.children = data;
       if(data!=null)
