@@ -20,7 +20,6 @@ namespace DAL
             this.Children = new HashSet<Children>();
             this.FutureData = new HashSet<FutureData>();
             this.LiveData = new HashSet<LiveData>();
-            this.Users = new HashSet<Users>();
         }
     
         public int IdKinderGarden { get; set; }
@@ -37,7 +36,5 @@ namespace DAL
         public virtual ICollection<FutureData> FutureData { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LiveData> LiveData { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
     }
 }
