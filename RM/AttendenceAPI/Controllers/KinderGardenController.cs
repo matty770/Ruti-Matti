@@ -22,7 +22,11 @@ namespace AttendenceAPI.Controllers
         {
             return BKinderGardenManager.selectAllKinderGarden();
         }
-
+        [HttpGet]
+        public List<CKinderGarden> selectKinderGardensByTeacherId(string TeacherId)
+        {
+            return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
+        }
 
     }
 }

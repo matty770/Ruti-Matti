@@ -26,19 +26,19 @@ namespace DAL
 
             }
         }
-            public static void removeKinderGarden(int code)
+        public static void removeKinderGarden(int code)
         {
             using (NDBEntities db = new NDBEntities())
             {
                 KinderGarden k = (from x in db.KinderGarden
-                                   where x.IdKinderGarden == code
-                                   select x).FirstOrDefault();
+                                  where x.IdKinderGarden == code
+                                  select x).FirstOrDefault();
                 try
                 {
                     db.KinderGarden.Remove(k);
                     db.SaveChanges();
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     throw new allreadyExist();
                 }
@@ -49,9 +49,9 @@ namespace DAL
             List<KinderGarden> listKinderGarden = new List<KinderGarden>();
             using (NDBEntities db = new NDBEntities())
             {
-                 listKinderGarden= (from x in db.KinderGarden
-                                  select x).ToList();
-                
+                listKinderGarden = (from x in db.KinderGarden
+                                    select x).ToList();
+
             }
             List<CKinderGarden> lCKinderGarden = new List<CKinderGarden>();
             foreach (var item in listKinderGarden)
@@ -67,17 +67,17 @@ namespace DAL
                 KinderGarden k = (from x in db.KinderGarden
                                   where x.IdKinderGarden == code
                                   select x).FirstOrDefault();
-                if(k!=null)
+                if (k != null)
                 {
                     return Mapper.convertToCKinderGarden(k);
                 }
-               return null;
+                return null;
             }
         }
         public static void updateKinderGarden(CKinderGarden ck)
         {
-            CKinderGarden ck1= selectKinderByCode(ck.IdKinderGarden);
-            if(ck1!=null)
+            CKinderGarden ck1 = selectKinderByCode(ck.IdKinderGarden);
+            if (ck1 != null)
             {
                 ck1.Name = ck.Name;
                 ck1.Address = ck.Address;
@@ -87,8 +87,8 @@ namespace DAL
                 ck1.Space = ck.Space;
             }
             else
-            { 
-             addKinderGarden(ck);
+            {
+                addKinderGarden(ck);
             }
         }
         //public static List<CKinderGarden> selectKinderGardenByHour()
@@ -100,6 +100,31 @@ namespace DAL
         //                           where x.BeginingHour.Hours>=DateTime.Now.Hour)
         //    }
         //}
+        public static List<CKinderGarden> selectKinderGardenByIdTeacher(string id)
+        {
+            List<KinderGardenOfTeacher> KGL = new List<KinderGardenOfTeacher>();
+            List<KinderGarden> KG = new List<KinderGarden>();
+            List<CKinderGarden> CKG = new List<CKinderGarden>();
+            using (NDBEntities db = new NDBEntities())
+            {
+                KGL = (from x in db.KinderGardenOfTeacher
+                       where x.IdTeacher == id
+                       select x).ToList();
 
+                foreach (var item in KGL)
+                {
+                    KinderGarden k = (from x in db.KinderGarden
+                                      where item.IdKinderGarden == x.IdKinderGarden
+                                      select x).FirstOrDefault();
+                    KG.Add(k);
+                }
+            }
+            if (KG != null)
+                foreach (var item in KG)
+                {
+                    CKG.Add(Mapper.convertToCKinderGarden(item));
+                }
+            return CKG;
+        }
     }
 }
