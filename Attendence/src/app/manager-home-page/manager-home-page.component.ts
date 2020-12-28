@@ -10,10 +10,9 @@ import{ManagerService} from '../services/manager.service';
 })
 export class ManagerHomePageComponent implements OnInit {
   [x: string]: any;
-
   listKinderGarden:KinderGarden[];
+  kindergarden:KinderGarden = new KinderGarden(123,"rrr","1122","0545654362",2020,null,null) ;
   constructor(private managerService:ManagerService) { }
-
   ngOnInit() {
   }
 
@@ -24,8 +23,11 @@ export class ManagerHomePageComponent implements OnInit {
       data=>{this.listKinderGarden = data;})
       if(this.listKinderGarden!=null)
       alert("yes");
-      else alert("no!!");
-
-      
+      else alert("no!!");      
   }
+  addKinderGarden()
+  {
+    this.managerService.addKinderGarden(this.kindergarden);
+  }
+
 }

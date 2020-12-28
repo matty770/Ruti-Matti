@@ -22,10 +22,15 @@ namespace AttendenceAPI.Controllers
         {
             return BKinderGardenManager.selectAllKinderGarden();
         }
-        [HttpGet]
-        public List<CKinderGarden> selectKinderGardensByTeacherId(string TeacherId)
+        //[HttpGet]
+        //public List<CKinderGarden> selectKinderGardensByTeacherId(string TeacherId)
+        //{
+        //    return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
+        //}
+        [HttpPost]
+        public void addKinderGarden([FromBody]CKinderGarden kinderGarden)
         {
-            return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
+            BKinderGardenManager.addKinderGarden(kinderGarden);
         }
 
     }
