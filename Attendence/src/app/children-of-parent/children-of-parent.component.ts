@@ -25,10 +25,6 @@ export class ChildrenOfParentComponent implements OnInit {
   {
     this.rout.navigate(['/ChildUpdateInfo']);
   }
-
-  ngOnInit() {
-    
-  }
   selectChildrenByParentId()
   {
     this.childService.selectChildrenByParentId(this.userService.user.Id).subscribe(
@@ -38,4 +34,8 @@ export class ChildrenOfParentComponent implements OnInit {
      }
      )
   }
+  ngOnInit() {
+    this.selectChildrenByParentId();
+  }
+
 }

@@ -18,9 +18,5 @@ export class ManagerService {
   {
     return this.http.Get('KinderGarden');
   }
-  addKinderGarden(kinderGarden:KinderGarden)
-  {
-    this.http.post('KinderGarden',kinderGarden)
-    .subscribe(res=>{ console.log(res)});
-  }
+ 
 }

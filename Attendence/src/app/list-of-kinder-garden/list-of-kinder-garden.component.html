@@ -1,3 +1,22 @@
-<p>
-  list-of-kinder-garden works!
-</p>
+<div onload="hhhh()">
+  <button  (click)="hhhh()">aaaaa</button>
+ <table class="table">
+  <thead>
+    <tr>
+      <th><h3>ID</h3></th>&nbsp;
+      <th><h3>Name</h3></th>&nbsp;
+      <th><h3>Address</h3></th>&nbsp;
+      <th><h3>Phone</h3></th>&nbsp;
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let kinderGarden of listKinderGarden">
+    <tr>
+      <th>{{kinderGarden.idKinderGarden}}</th>&nbsp;
+      <th>{{kinderGarden.name}}</th>&nbsp;
+      <th>{{kinderGarden.addres}}</th>&nbsp;
+      <th>{{kinderGarden.phone}}</th>&nbsp;
+    </tr>
+  </tbody>
+</table>
+</div>
