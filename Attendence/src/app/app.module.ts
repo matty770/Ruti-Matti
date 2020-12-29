@@ -20,6 +20,10 @@ import { TeacherHomePageComponent } from './teacher-home-page/teacher-home-page.
 import { ChildrenOfTeacherComponent } from './children-of-teacher/children-of-teacher.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ManagerHomePageComponent } from './manager-home-page/manager-home-page.component';
+import { ListOfChildrenComponent } from './list-of-children/list-of-children.component';
+import { ListOfKinderGardenComponent } from './list-of-kinder-garden/list-of-kinder-garden.component';
+import { ListOfTeachersComponent } from './list-of-teachers/list-of-teachers.component';
+import { ListOfParentsComponent } from './list-of-parents/list-of-parents.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
@@ -54,6 +58,10 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     ChildrenOfTeacherComponent,
     AttendanceComponent,
     ManagerHomePageComponent,
+    ListOfChildrenComponent,
+    ListOfKinderGardenComponent,
+    ListOfTeachersComponent,
+    ListOfParentsComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [
