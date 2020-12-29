@@ -12,11 +12,11 @@ namespace BLL
     {
         public static void addChildren(CChildren cc)
         {
-             DChildrenManager.addChildren(cc);
+            DChildrenManager.addChildren(cc);
         }
         public static void removeChildren(string idChild)
         {
-             DChildrenManager.removeChildren(idChild);
+            DChildrenManager.removeChildren(idChild);
         }
         public static List<CChildren> selectAllChildren()
         {
@@ -32,7 +32,7 @@ namespace BLL
         }
         public static void updateChildren(CChildren cc)
         {
-             DChildrenManager.updateChildren(cc);
+            DChildrenManager.updateChildren(cc);
         }
     }
 }

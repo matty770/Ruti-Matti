@@ -9,7 +9,7 @@ namespace DAL
 {
     public class DChildrenManager
     {
- public static void addChildren(CChildren cc)
+        public static void addChildren(CChildren cc)
         {
             Children c = Mapper.convertToChildren(cc);
             using (NDBEntities db = new NDBEntities())
@@ -66,7 +66,7 @@ namespace DAL
                 Children c = (from x in db.Children
                               where x.IdChild.Equals(id)
                               select x).FirstOrDefault();
-                if(c!=null)
+                if (c != null)
                 {
                     return Mapper.convertToCChildren(c);
                 }
@@ -79,8 +79,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 lc = (from x in db.Children
-                              where x.ParentCode.Equals(idParent)
-                              select x).ToList();
+                      where x.ParentCode.Equals(idParent)
+                      select x).ToList();
                 List<CChildren> listCChildren = new List<CChildren>();
                 foreach (var item in lc)
                 {
@@ -95,8 +95,8 @@ namespace DAL
             {
                 removeChildren(cc.Id);
             }
-             addChildren(cc);
+            addChildren(cc);
         }
-      
+
     }
 }

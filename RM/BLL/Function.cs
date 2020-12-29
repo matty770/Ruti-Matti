@@ -81,12 +81,12 @@ namespace BLL
                 //  return false;
             }
         }
-        
+
         public static void CheckAttendance(CLiveData liveData)
         {
-                sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress);
-                //sendMessage(DUsersManager.selectUserByIdChild(item.IdChild).PhoneNum);
-                //item.Status = 4;
+            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress);
+            //sendMessage(DUsersManager.selectUserByIdChild(item.IdChild).PhoneNum);
+            //item.Status = 4;
 
 
         }

@@ -16,7 +16,7 @@ namespace BLL
         }
         public static void removeFutureData(CFutureData cf)
         {
-             DFutureDataManager.removeFutureData(cf.IdChild);
+            DFutureDataManager.removeFutureData(cf.IdChild);
         }
         public static List<CFutureData> readAllFutureData()
         {
@@ -28,7 +28,7 @@ namespace BLL
         }
         public static void updateFutureData(CFutureData cf)
         {
-             DFutureDataManager.updateFutureData(cf);
+            DFutureDataManager.updateFutureData(cf);
         }
     }
 }

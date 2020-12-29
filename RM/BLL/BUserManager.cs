@@ -12,12 +12,12 @@ namespace BLL
     {
         public static void addUser(CUsers cu)
         {
-             DUsersManager.addUser(cu);
+            DUsersManager.addUser(cu);
 
         }
         public static void removeUser(string id)
         {
-             DUsersManager.removeUser(id);
+            DUsersManager.removeUser(id);
         }
         public static List<CUsers> selectAllUsers()
         {
@@ -29,7 +29,7 @@ namespace BLL
         }
         public static void updateUser(CUsers cu)
         {
-             DUsersManager.updateUser(cu);
+            DUsersManager.updateUser(cu);
         }
         public static int GetPermissionOfUser(string idUser)
         {

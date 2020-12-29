@@ -13,8 +13,8 @@ namespace TaskManager
     {
         public static void Tasks()
         {
-            //if(DateTime.Now.Hour>=7&&DateTime.Now.Hour<=12)
-            //{
+            if (DateTime.Now.Hour >= 7 && DateTime.Now.Hour <= 12)
+            {
                 List<CLiveData> listLiveData = new List<CLiveData>();
                 listLiveData = BLiveDataManager.LDIsNonPrestnt();
                 foreach (var item in listLiveData)
@@ -22,19 +22,19 @@ namespace TaskManager
                     Function.CheckAttendance(item);
 
                 }
-                
-            //}
-            
-            //if(DateTime.Now.Hour==5)
-            //{
-            //    BPreviousDataManager.copyLiveToPreviousData();
-            //    BLiveDataManager.copyChildrenToLiveData();
-            //    BLiveDataManager.copyFutureToLivaData();
-            //}
-            //if(DateTime.Now.Hour==17)
-            //{
-            //    BPreviousDataManager.removePreviousByDate();
-            //}
+
+            }
+
+            if (DateTime.Now.Hour == 5)
+            {
+                BPreviousDataManager.copyLiveToPreviousData();
+                BLiveDataManager.copyChildrenToLiveData();
+                BLiveDataManager.copyFutureToLivaData();
+            }
+            if (DateTime.Now.Hour == 17)
+            {
+                BPreviousDataManager.removePreviousByDate();
+            }
 
         }
       
@@ -43,7 +43,7 @@ namespace TaskManager
 
         
            //BLL.BLiveDataManager.copyChildrenToLiveData();
-           Tasks();
+           //Tasks();
         }
 
     }

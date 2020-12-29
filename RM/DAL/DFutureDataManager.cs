@@ -31,8 +31,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 FutureData f = (from x in db.FutureData
-                           where x.IdChild.Equals(id)
-                           select x).FirstOrDefault();
+                                where x.IdChild.Equals(id)
+                                select x).FirstOrDefault();
                 try
                 {
                     db.FutureData.Remove(f);
@@ -65,8 +65,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 FutureData f = (from x in db.FutureData
-                           where x.IdChild.Equals(id)
-                           select x).FirstOrDefault();
+                                where x.IdChild.Equals(id)
+                                select x).FirstOrDefault();
                 if (f != null)
                 {
                     return Mapper.convertToCFuteureData(f);
@@ -80,7 +80,7 @@ namespace DAL
             {
                 removeFutureData(cf.IdChild);
             }
-             addFutureData(cf);
+            addFutureData(cf);
 
         }
         public static List<CFutureData> selectByToday()
@@ -91,7 +91,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 List<FutureData> f = (from x in db.FutureData
-                                      where x.Date.Day==d.Day
+                                      where x.Date.Day == d.Day
                                       select x).ToList<FutureData>();
                 foreach (var item in f)
                 {

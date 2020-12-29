@@ -87,6 +87,9 @@
     <Compile Include="KinderGarden.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="KinderGardenOfTeacher.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="LiveData.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

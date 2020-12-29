@@ -12,11 +12,11 @@ namespace BLL
     {
         public static void addLiveData(CLiveData cl)
         {
-             DLiveDataManager.addLiveData(cl);
+            DLiveDataManager.addLiveData(cl);
         }
         public static void removeLiveData(CLiveData cl)
         {
-             DLiveDataManager.removeLiveData(cl);
+            DLiveDataManager.removeLiveData(cl);
         }
         public static List<CLiveData> selectAllLiveData()
         {

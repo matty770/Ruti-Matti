@@ -15,7 +15,7 @@ namespace BLL
         }
         public static void removeKinderGarden(int code)
         {
-             DKinderGardenManager.removeKinderGarden(code);
+            DKinderGardenManager.removeKinderGarden(code);
         }
         public static List<CKinderGarden> selectAllKinderGarden()
         {
@@ -27,7 +27,12 @@ namespace BLL
         }
         public static void updateKinderGarden(CKinderGarden ck)
         {
-          DKinderGardenManager.updateKinderGarden(ck);
+            DKinderGardenManager.updateKinderGarden(ck);
+        }
+
+        public static List<CKinderGarden> selectKinderGardenByIdTeacher(string TeacherId)
+        {
+            return DKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
         }
     }
 }

@@ -31,8 +31,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 Users u = (from x in db.Users
-                                  where x.IdUser.Equals(id)
-                                  select x).FirstOrDefault();
+                           where x.IdUser.Equals(id)
+                           select x).FirstOrDefault();
                 try
                 {
                     db.Users.Remove(u);
@@ -50,7 +50,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 listUsers = (from x in db.Users
-                                    select x).ToList();
+                             select x).ToList();
             }
             List<CUsers> listCUsers = new List<CUsers>();
             foreach (var item in listUsers)
@@ -64,8 +64,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 Users u = (from x in db.Users
-                                  where x.IdUser.Equals(id)
-                                  select x).FirstOrDefault();
+                           where x.IdUser.Equals(id)
+                           select x).FirstOrDefault();
                 if (u != null)
                 {
                     return Mapper.convertToCUsers(u);
@@ -80,8 +80,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 Children c = (from x in db.Children
-                           where x.IdChild.Equals(idChild)
-                           select x).FirstOrDefault();
+                              where x.IdChild.Equals(idChild)
+                              select x).FirstOrDefault();
                 Users u = (from x in db.Users
                            where x.IdUser.Equals(c.ParentCode)
                            select x).FirstOrDefault();
@@ -98,11 +98,11 @@ namespace DAL
             {
                 removeUser(cu.Id);
             }
-             addUser(cu); 
+            addUser(cu);
         }
         public static int GetPermissionOfUser(string idUser)
         {
-            using(NDBEntities db=new NDBEntities())
+            using (NDBEntities db = new NDBEntities())
             {
                 Users u = (from x in db.Users
                            where x.IdUser.Equals(idUser)
@@ -110,8 +110,8 @@ namespace DAL
 
                 return u.Permission;
             }
-            
+
         }
-     
+
     }
 }

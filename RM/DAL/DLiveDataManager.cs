@@ -118,7 +118,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 ld = (from x in db.LiveData
-                      where x.Alarm.Hours <= DateTime.Now.Hour && x.Alarm.Minutes <= DateTime.Now.Minute && (x.Status==4||x.Status==1)
+                      where x.Alarm.Hours <= DateTime.Now.Hour && x.Alarm.Minutes <= DateTime.Now.Minute && (x.Status == 4 || x.Status == 1)
                       select x).ToList();
             }
             foreach (var item in ld)
@@ -130,11 +130,11 @@ namespace DAL
 
         public static void ChangeStatus(string idChild, General.Statuses status)
         {
-            using (NDBEntities db=new NDBEntities())
+            using (NDBEntities db = new NDBEntities())
             {
                 db.LiveData.Find(idChild).Status = Mapper.StatusEnumToInt(status);
 
-  
+
             }
         }
     }

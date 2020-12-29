@@ -16,6 +16,7 @@ KinderGardens:KinderGarden[];
     ,private userService:UserService) { }
 
   ngOnInit() {
+    this.selectKinderGardensByTeacherId(this.userService.user.Id);
   }
   goToAttendance(IDKG:string)
   {
