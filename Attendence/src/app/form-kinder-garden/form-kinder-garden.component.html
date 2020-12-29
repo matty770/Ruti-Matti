@@ -1,0 +1,13 @@
+
+
+<div>
+  <form #kinderGardenForm="ngForm" (ngSubmit)="addKinderGarden(kinderGardenForm)">
+    <input name="code" type="number" [(ngModel)]="kinderGarden.idKinderGarden">code  <br>
+    <input name="name" type="text"  [(ngModel)]="kinderGarden.name">name  <br>
+    <input name="addres" type="text" [(ngModel)]="kinderGarden.addres">addres  <br>
+    <input name="phone" type="text" [(ngModel)]="kinderGarden.phone">phone  <br>
+    <input name="year" type="number" [(ngModel)]="kinderGarden.year">year  <br>
+    <input name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">begining hour  <br>
+    <button type="submit">add</button>
+  </form>
+</div>

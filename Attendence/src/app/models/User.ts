@@ -4,7 +4,6 @@ export class User
     Name : string;
     Address : string;
     PhoneNum : string;
-    KinderGardenCode: number;
     Permission : number;
     MailAddress : string;
   
@@ -15,7 +14,6 @@ export class User
             this.Name = Name;
             this.Address = Address;
             this.PhoneNum = PhoneNum;
-            this.KinderGardenCode = KinderGardenCode;
             this.Permission = Permission;
             this.MailAddress = MailAddress;
     }

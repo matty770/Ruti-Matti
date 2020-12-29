@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { KinderGarden } from 'src/app/models/KinderGarden';
 import{ManagerService} from '../services/manager.service';
+import { KinderGardensService } from 'src/app/services/Kindergarden.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,22 +12,25 @@ import{ManagerService} from '../services/manager.service';
 })
 export class ManagerHomePageComponent implements OnInit {
   [x: string]: any;
-
-  listKinderGarden:KinderGarden[];
-  constructor(private managerService:ManagerService) { }
-
+  //listKinderGarden:KinderGarden[];
+  constructor(private managerService:ManagerService,private kinderGardenService:KinderGardensService,
+  private router:Router)
+   { }
   ngOnInit() {
   }
 
   GetAllKinderGarden()
   {
-    alert("dddd");
     this.managerService.GetAllKinderGarden().subscribe(
-      data=>{this.listKinderGarden = data;})
-      if(this.listKinderGarden!=null)
+      data=>{this.kinderGardenService.ListkinderGarden = data;})
+      if(this.kinderGardenService.ListkinderGarden!=null)
       alert("yes");
       else alert("no!!");
-
-      
+    this.router.navigate(['/ListOfKinderGarden']);   
   }
+  ToKinderGardenForm()
+  {
+    this.router.navigate(['formKinderGarden']);
+  }
+
 }

@@ -20,6 +20,11 @@ import { TeacherHomePageComponent } from './teacher-home-page/teacher-home-page.
 import { ChildrenOfTeacherComponent } from './children-of-teacher/children-of-teacher.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ManagerHomePageComponent } from './manager-home-page/manager-home-page.component';
+import { ListOfChildrenComponent } from './list-of-children/list-of-children.component';
+import { ListOfKinderGardenComponent } from './list-of-kinder-garden/list-of-kinder-garden.component';
+import { ListOfTeachersComponent } from './list-of-teachers/list-of-teachers.component';
+import { ListOfParentsComponent } from './list-of-parents/list-of-parents.component';
+import { FormKinderGardenComponent } from './form-kinder-garden/form-kinder-garden.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
@@ -31,7 +36,12 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'TeacherHomePage',component:TeacherHomePageComponent},
 {path:'ChildrenOfTeacher',component:ChildrenOfTeacherComponent},
 {path:'Attendance',component:AttendanceComponent},
-{path:'ManagerHomePage',component:ManagerHomePageComponent}
+{path:'ManagerHomePage',component:ManagerHomePageComponent},
+{path:'ListOfKinderGarden',component:ListOfKinderGardenComponent},
+{path:'ListOfChildren',component:ListOfChildrenComponent},
+{path:'ListOfParent',component:ListOfParentsComponent},
+{path:'ListOfTeachers',component:ListOfTeachersComponent},
+{path:'formKinderGarden',component:FormKinderGardenComponent}
 
 //{path:'ChildrenOfTecher',component:ChildrenOfTecherComponent}
 ]
@@ -54,6 +64,11 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     ChildrenOfTeacherComponent,
     AttendanceComponent,
     ManagerHomePageComponent,
+    ListOfChildrenComponent,
+    ListOfKinderGardenComponent,
+    ListOfTeachersComponent,
+    ListOfParentsComponent,
+    FormKinderGardenComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [
