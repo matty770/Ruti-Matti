@@ -9,10 +9,11 @@ namespace COMMON
     public class CKinderGarden
     {
         public CKinderGarden() { }
-        public CKinderGarden(int idKinderGarden, string name, string address,string phone,
+        public CKinderGarden(/*int idKinderGarden, */
+            string name, string address,string phone,
             int year, TimeSpan BeginingHour, TimeSpan Space)
         {
-            this.IdKinderGarden = idKinderGarden;
+          //  this.IdKinderGarden = idKinderGarden;
             this.Name = name;
             this.Address = address;
             this.Phone = phone;
