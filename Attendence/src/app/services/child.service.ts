@@ -7,10 +7,20 @@ import { Child } from 'src/app/models/Child';
 @Injectable({
   providedIn: 'root'
 })
-export class ChildService {
+export class ChildService
+ {
 
   constructor(private http:DataService,private userService:UserService) {}
 
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
     return this.http.Get('Children?ParentId=' + ParentId);}
+    addChildren(children:Child)
+    {
+      this.http.post('Children',children)
+      .subscribe(res=>{ alert(res) //console.log(res)//
+      });
+      
+    }
+
 }
+

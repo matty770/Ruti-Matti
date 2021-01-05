@@ -1,0 +1,15 @@
+<div>
+    <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)">
+      <input name="Id" type="text" [(ngModel)]="child.Id">id  <br>
+      <input name="ChildName" type="text"  [(ngModel)]="child.ChildName">name  <br>
+      <input name="Address" type="text" [(ngModel)]="child.Address">addres  <br>
+      <input name="Phone" type="text" [(ngModel)]="child.Phone">phone  <br>
+      <input name="ParentCode" type="text" [(ngModel)]="child.ParentCode">paren Code  <br>
+      <input name="KinderGardenCode" type="number" [(ngModel)]="child.KinderGardenCode">code of kinder garden  <br>
+      <button type="submit">add</button>
+    </form>
+  </div>
+
+
+
+  

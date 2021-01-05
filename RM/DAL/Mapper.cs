@@ -41,7 +41,7 @@ namespace DAL
             u.Name = cu.Name;
             u.Address = cu.Address;
             u.PhoneNum = cu.PhoneNum;
-            //u.KinderGardenCode = cu.KinderGardenCode;
+           // u.KinderGardenCode = cu.KinderGardenCode;
             u.Permission = cu.Permission;
             return u;
         }

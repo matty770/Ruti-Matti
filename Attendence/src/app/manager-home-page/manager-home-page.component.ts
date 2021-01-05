@@ -19,18 +19,27 @@ export class ManagerHomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  GetAllKinderGarden()
-  {
-    this.managerService.GetAllKinderGarden().subscribe(
-      data=>{this.kinderGardenService.ListkinderGarden = data;})
-      if(this.kinderGardenService.ListkinderGarden!=null)
-      alert("yes");
-      else alert("no!!");
-    this.router.navigate(['/ListOfKinderGarden']);   
-  }
+ //GetAllKinderGarden()
+ //{
+ //  this.managerService.GetAllKinderGarden().subscribe(
+ //    data=>{this.kinderGardenService.ListkinderGarden = data;})
+ //    if(this.kinderGardenService.ListkinderGarden!=null)
+ //    alert("yes");
+ //    else alert("no!!");
+ //  this.router.navigate(['/ListOfKinderGarden']);   
+ //}
   ToKinderGardenForm()
   {
     this.router.navigate(['formKinderGarden']);
   }
+  ToChildrenForm()
+  {
+    this.router.navigate(['formChildren']);
+  }
+  ToUserForm()
+  {
+    this.router.navigate(['formUser']);
+  }
+
 
 }

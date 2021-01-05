@@ -21,4 +21,8 @@ public ListkinderGarden:KinderGarden[];
       });
       
     }
+    GetAllKinderGarden(): Observable<KinderGarden[]>
+    {
+      return this.http.Get('KinderGarden');
+    }
 }

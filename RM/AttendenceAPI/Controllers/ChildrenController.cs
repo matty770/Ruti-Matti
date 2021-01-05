@@ -19,5 +19,12 @@ namespace AttendenceAPI.Controllers
             return lc;
 
         }
+        [HttpPost]
+        public void addChildren([FromBody]CChildren children)
+        {
+            BChildrenManager.addChildren(children);
+        }
+
+
     }
 }
