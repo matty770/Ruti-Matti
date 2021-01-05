@@ -16,7 +16,7 @@ export class FormKinderGardenComponent implements OnInit {
   }
   addKinderGarden(kinderGardenForm)
   {
-    alert(this.kinderGarden.idKinderGarden);
+   // alert(this.kinderGarden.idKinderGarden);
     this.kinderGardenService.addKinderGarden(this.kinderGarden);
     kinderGardenForm.reset();
   }

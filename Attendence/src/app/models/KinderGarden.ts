@@ -4,7 +4,7 @@ export class KinderGarden
 {
     idKinderGarden:number;
     name:string;
-    addres:string;
+    Address:string;
     phone:string;
     year:number;
     BeginingHour:Time;
