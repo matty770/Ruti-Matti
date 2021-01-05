@@ -13,6 +13,7 @@ public ListkinderGarden:KinderGarden[];
 
   selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> {
     return this.http.Get('KinderGarden?TeacherId=' + TeacherId);}
+    
     addKinderGarden(kinderGarden:KinderGarden)
     {
       this.http.post('KinderGarden',kinderGarden)
