@@ -1,7 +1,13 @@
 
-<button (click)="GetAllKinderGarden()">view kinderGarden</button>  &nbsp;         
-<button>view childrens</button>&nbsp;
-<button>view teachers</button>&nbsp;
-<button>view parents</button>&nbsp;
-<button (click)="ToKinderGardenForm()">addKinderGarden</button>
+<a routerLink="ListOfKinderGarden" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>ListOfKinderGarden</h3></a>
+<a routerLink="ListOfChildren" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>ListOfChildren</h3></a>
+<a routerLink="ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>ListOfParent</h3></a>
+<a routerLink="ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>ListOfTeachers</h3></a>
+<h1>What do you want to do?</h1><br><br>
+<button (click)="GetAllKinderGarden()">view kinderGarden</button>  &nbsp;
+<button (click)="ToKinderGardenForm()">addKinderGarden</button> &nbsp;
+<button (click)="ToChildrenForm()">addChildren</button> &nbsp;
+
+
+
 
