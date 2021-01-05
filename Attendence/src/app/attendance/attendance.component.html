@@ -3,9 +3,10 @@
 </p>
 <table>
   <!-- נוכחות ילדים איך עושים שהתמונות יצופו אחד ליד השני?-->
-  <tbody *ngFor="let child of children">
+  <tbody *ngFor="let LD of LiveDataList">
     <tr>
-      <th>{{child}}</th>&nbsp;
+      <th>{{LD.idChild}}</th>&nbsp;
+      <th><button >Arrived</button></th>
     </tr>
   </tbody>
 </table>

@@ -17,5 +17,12 @@ namespace AttendenceAPI.Controllers
             var ld = BLiveDataManager.selectLiveDataByIdChild(ChildId);
             return ld;
         }
+
+        [HttpGet]
+        public List<CLiveData> GetLiveDataByKinderGardenCode(int KinderGardenCode)
+        {
+            return BLiveDataManager.selectLiveDataByKinderGardenCode(KinderGardenCode);
+            
+        }
     }
 }

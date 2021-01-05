@@ -26,6 +26,10 @@ namespace BLL
         {
             return DLiveDataManager.selectLiveDataByIdChild(id);
         }
+        public static List<CLiveData> selectLiveDataByKinderGardenCode(int kinderGardenCode)
+        {
+            return DLiveDataManager.selectLiveDataByKinderGardenCode(kinderGardenCode);
+        }
         public static CLiveData updateLiveData(CLiveData cl)
         {
             return DLiveDataManager.updateLiveData(cl);

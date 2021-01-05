@@ -9,6 +9,8 @@ import { KinderGarden } from 'src/app/models/kindergarden';
 })
 export class KinderGardensService {
 public ListkinderGarden:KinderGarden[];
+public kinderGardenCode:number;
+
   constructor(private http:DataService,private userService:UserService) {}
 
   selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> {

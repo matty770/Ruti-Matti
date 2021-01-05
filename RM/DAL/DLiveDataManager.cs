@@ -67,6 +67,23 @@ namespace DAL
                 return null;
             }
         }
+
+        public static List<CLiveData> selectLiveDataByKinderGardenCode(int KinderGardenCode)
+        {
+            List<CLiveData> ld = new List<CLiveData>();
+            using (NDBEntities db = new NDBEntities())
+            {
+                foreach (var l in db.LiveData)
+                {
+                    if (l.KindergardenCode.Equals(KinderGardenCode))
+                    {
+
+                        ld.Add(Mapper.convertToCLiveData(l));
+                    }
+                }
+                return ld;
+            }
+        }
         public static CLiveData updateLiveData(CLiveData cl)
         {
             if (selectLiveDataByIdChild(cl.IdChild) != null)

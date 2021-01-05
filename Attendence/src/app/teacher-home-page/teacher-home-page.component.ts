@@ -18,9 +18,11 @@ KinderGardens:KinderGarden[];
   ngOnInit() {
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
   }
-  goToAttendance(IDKG:string)
+  goToAttendance(IDKG:number)
   {
-    this.rout.navigate(['/attendance',{IDKG}]);
+    this.KinderGardenService.kinderGardenCode=IDKG;
+    this.rout.navigate(['/attendance']);
+    
   }
   selectKinderGardensByTeacherId(TeacherId: string)
   {
