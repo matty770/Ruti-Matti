@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../services/user.service';
+import { User } from 'src/app/models/User';
+
 
 @Component({
   selector: 'app-form-user',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-user.component.css']
 })
 export class FormUserComponent implements OnInit {
-
-  constructor() { }
+user:User=new User();
+  constructor(private userService:UserService) { }
 
   ngOnInit() {
   }
 
+  addUser(UserForm)
+  {
+   
+    this.userService.addUser(this.user);
+    UserForm.reset();
+  }
 }

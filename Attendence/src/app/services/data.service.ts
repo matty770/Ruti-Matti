@@ -13,8 +13,8 @@ export class DataService {
   Get(url: string): Observable<any> {
     return this.http.get(this.baseUrl + url);
   }
-  
   post(url: string, data: any): Observable<any> {
+    alert(data);
     return this.http.post(this.baseUrl + url, data);
   }
 }
