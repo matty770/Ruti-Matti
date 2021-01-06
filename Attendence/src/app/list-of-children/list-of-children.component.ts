@@ -17,11 +17,9 @@ listChildren:Child[];
   }
 
   GetAllChildrens()
-  {
-    
+  {   
     this.childServive.getAllChildrens().subscribe(
-      data=>{this.listChildren = data;})  
-      
+      data=>{this.listChildren = data;})      
   }
   ToChildrenForm()
   {

@@ -17,11 +17,11 @@
       </thead>
       <tbody *ngFor="let KG of KinderGardens">
         <tr>
-          <th>{{KG.idKinderGarden}}</th>&nbsp;
-          <th>{{KG.name}}</th>&nbsp;
-          <th>{{KG.address}}</th>&nbsp;
-          <th>{{KG.phone}}</th>&nbsp;
-         <th><button type="button" (click)="goToAttendance(12)">Attendance</button>&nbsp;
+          <th>{{KG.IdKinderGarden}}</th>&nbsp;
+          <th>{{KG.Name}}</th>&nbsp;
+          <th>{{KG.Address}}</th>&nbsp;
+          <th>{{KG.Phone}}</th>&nbsp;
+         <th><button type="button" (click)="goToAttendance(KG.IdKinderGarden)">Attendance</button>&nbsp;
         <button (click)="goToDetails()">update details</button>
         </tr>
       </tbody>

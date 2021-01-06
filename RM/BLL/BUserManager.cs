@@ -35,5 +35,14 @@ namespace BLL
         {
             return DUsersManager.GetPermissionOfUser(idUser);
         }
+
+        public static List<CUsers> selectAllParents()
+        {
+            return DUsersManager.SelectAllParents();
+        }
+        public static List<CUsers> selectAllTeachers()
+        {
+            return DUsersManager.SelectAllTeachers();
+        }
     }
 }

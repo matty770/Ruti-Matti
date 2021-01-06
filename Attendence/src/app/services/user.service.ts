@@ -10,8 +10,16 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class UserService {
   public user :User;
-  constructor(private http: DataService
-  ) { }
+  constructor(private http: DataService) { }
+
+  GetAllParents():Observable<User[]>
+  {
+    return this.http.Get("User");
+  }
+  GetAllTeachers():Observable<User[]>
+  {
+    return this.http.Get("User?getAllTeachers");
+  }
   GetUser(userId: string): Observable<User> {
     return this.http.Get('User?userId=' + userId);
   }

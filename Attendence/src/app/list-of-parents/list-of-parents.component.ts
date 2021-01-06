@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/User';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-list-of-parents',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-of-parents.component.css']
 })
 export class ListOfParentsComponent implements OnInit {
+ParentList:User[];
 
-  constructor() { }
-
+  constructor(private UserService:UserService, private router:Router) { }
+  GetAllParents()
+  {   
+    this.UserService.GetAllParents().subscribe(
+      data=>{this.ParentList = data;})      
+  }
   ngOnInit() {
+    this.GetAllParents();
   }
 
+  GoToAddParent()
+  {
+    this.router.navigate(['formUser']);
+  }
 }

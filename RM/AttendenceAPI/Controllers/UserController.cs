@@ -25,5 +25,17 @@ namespace AttendenceAPI.Controllers
             BUserManager.addUser(user);
         }
 
+        [HttpGet]
+        public List<CUsers> getAllParents()
+        {
+            return BUserManager.selectAllParents();
+        }
+
+
+        [HttpGet]
+        public List<CUsers> getAllTeachers()
+        {
+            return BUserManager.selectAllTeachers();
+        }
     }
 }

@@ -20,7 +20,7 @@ export class AttendanceComponent implements OnInit {
     this.liveDataService.GetLiveDate(this.kinderGarden.kinderGardenCode).subscribe(
       data=>{this.LiveDataList = data;
       if(data!=null)
-      alert(this.LiveDataList);
+      alert(this.LiveDataList.length);
      }
      )
   }
@@ -29,7 +29,7 @@ export class AttendanceComponent implements OnInit {
   }
   changeStatusToArrived(idChild:string)
   {
-    this.liveDataService.ChangeStatus("79",Statuses.Present);
+    this.liveDataService.ChangeStatus(idChild,Statuses.Present);
   }
  
 

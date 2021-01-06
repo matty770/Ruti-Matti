@@ -1,3 +1,27 @@
 <p>
   list-of-teachers works!
 </p>
+<div >
+  <button (click)="GoToAddTeacher()">Add Teacher</button><br><br>
+<table class="table" >
+<thead>
+  <tr>
+    <th><h3>ID</h3></th>&nbsp;
+    <th><h3>Name</h3></th>&nbsp;
+    <th><h3>Address</h3></th>&nbsp;
+    <th><h3>Phone</h3></th>&nbsp;
+    <th><h3>EMail</h3></th>&nbsp;
+    <th></th>
+  </tr>
+</thead>
+<tbody *ngFor="let Teacher of TeacherList">
+  <tr>
+    <th>{{Teacher.Id}}</th>&nbsp;
+    <th>{{Teacher.Name}}</th>&nbsp;
+    <th>{{Teacher.Address}}</th>&nbsp;
+    <th>{{Teacher.PhoneNum}}</th>&nbsp;
+    <th>{{Teacher.mailAddress}}</th>
+  </tr>
+</tbody>
+</table>
+</div>
