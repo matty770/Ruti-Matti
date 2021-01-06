@@ -7,8 +7,8 @@ export enum Statuses
 export class LiveData
 {
     
-    idChild: string;
-    kinderGardenCode: number;
+    IdChild: string;
+    KinderGardenCode: number;
     date:Date;
     status: Statuses; 
     updateDate: Date;
@@ -16,10 +16,10 @@ export class LiveData
     alarm:Time;
     comments:string;
   
-    constructor(idChild: string, kinderGardenCode: number, date:Date, status: Statuses, updateDate: Date, updateBy:string, alarm:Time, comments:string) 
+    constructor(IdChild: string, KinderGardenCode: number, date:Date, status: Statuses, updateDate: Date, updateBy:string, alarm:Time, comments:string) 
         {
-            this.idChild = idChild;
-            this.kinderGardenCode = kinderGardenCode;
+            this.IdChild = IdChild;
+            this.KinderGardenCode = KinderGardenCode;
             this.date = date;
             this.status = status;
             this.updateDate = updateDate;

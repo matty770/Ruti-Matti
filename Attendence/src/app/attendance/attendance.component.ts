@@ -13,14 +13,14 @@ import { Statuses } from 'src/app/models/FutureData';
 export class AttendanceComponent implements OnInit {
   LiveDataList:LiveData[];
   
-  constructor(private kinderGarden:KinderGardensService, private liveDataService:LiveDateService) { }
+  constructor(private kinderGarden:KinderGardensService, private liveDataService:LiveDateService) {
+   }
 
   selectLiveDataByKinderGardenCode()
   {
     this.liveDataService.GetLiveDate(this.kinderGarden.kinderGardenCode).subscribe(
-      data=>{this.LiveDataList = data;
-      if(data!=null)
-      alert(this.LiveDataList.length);
+      data=>{
+      this.LiveDataList = data;
      }
      )
   }

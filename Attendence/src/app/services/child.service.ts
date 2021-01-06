@@ -14,9 +14,10 @@ export class ChildService
 
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
     return this.http.Get('Children?ParentId=' + ParentId);}
-    addChildren(children:Child)
+    
+    addChildren(childrenList:Child)
     {
-      this.http.post('Children',children)
+      this.http.post('Children',childrenList)
       .subscribe(res=>{ alert(res) //console.log(res)//
       });
       
