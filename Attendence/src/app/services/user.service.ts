@@ -18,7 +18,7 @@ export class UserService {
   }
   GetAllTeachers():Observable<User[]>
   {
-    return this.http.Get("User?getAllTeachers");
+    return this.http.Get("User");
   }
   GetUser(userId: string): Observable<User> {
     return this.http.Get('User?userId=' + userId);
