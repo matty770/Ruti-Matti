@@ -3,6 +3,7 @@ import { KinderGarden } from 'src/app/models/KinderGarden';
 import{ManagerService} from '../services/manager.service';
 import { KinderGardensService } from 'src/app/services/Kindergarden.service';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -11,10 +12,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./manager-home-page.component.css']
 })
 export class ManagerHomePageComponent implements OnInit {
-  [x: string]: any;
-  //listKinderGarden:KinderGarden[];
+ 
+
   constructor(private managerService:ManagerService,private kinderGardenService:KinderGardensService,
-  private router:Router)
+  private router:Router,private userService:UserService)
    { }
   ngOnInit() {
   }
@@ -36,8 +37,11 @@ export class ManagerHomePageComponent implements OnInit {
   {
     this.router.navigate(['formChildren']);
   }
-  ToUserForm()
+  ToUserForm(permission:number)
   {
+    alert(permission);
+
+   // this.userService.user.Permission=permission;
     this.router.navigate(['formUser']);
   }
 

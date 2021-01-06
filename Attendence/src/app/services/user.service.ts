@@ -20,8 +20,7 @@ export class UserService {
     return this.http.Get('User?userId='+userId);
   }
   addUser(user:User)
-  {
-    
+  { 
     this.http.post('User',user)
     .subscribe(res=>{ alert(res) //console.log(res)//
     });

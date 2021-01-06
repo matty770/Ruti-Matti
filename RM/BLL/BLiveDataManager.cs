@@ -47,5 +47,9 @@ namespace BLL
         {
             return DLiveDataManager.selectLiveIsNonPresent();
         }
+        public static void ChangeStatus(string idChild, General.Statuses status)
+        {
+            DLiveDataManager.ChangeStatus(idChild, status);
+        }
     }
 }

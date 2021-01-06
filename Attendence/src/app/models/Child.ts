@@ -1,12 +1,12 @@
 export class Child
 {
-    Id : string;
-    ChildName : string;
-    Address : string;
-    Phone : string;
-    ParentCode: string;
-    Picture: ImageData;
-    KinderGardenCode:number;
+  Id : string;
+  ChildName : string;
+  Address : string;
+  Phone : string;
+  ParentCode: string;
+  Picture: ImageData;
+  KinderGardenCode:number;
     constructor(  // Id : string, ChildName : string,Address : string, Phone : string,ParentCode: string,
        // Picture: ImageData,KinderGardenCode:number
     ) 

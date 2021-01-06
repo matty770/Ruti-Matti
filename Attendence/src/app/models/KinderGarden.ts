@@ -1,14 +1,13 @@
 import { Time } from '@angular/common';
-
 export class KinderGarden
 {
-    idKinderGarden:number;
-    name:string;
-    Address:string;
-    phone:string;
-    year:number;
-    BeginingHour:Time;
-    Space:Time;
+  IdKinderGarden:number;
+  Name:string;
+  Address:string;
+  Phone:string;
+  Year:number;
+  BeginingHour:Time;
+  Space:Time;
 
     constructor(
       //idKinderGarden:number, name:string, addres:string,phone:string, year:number, BeginingHour:Time, Space:Time

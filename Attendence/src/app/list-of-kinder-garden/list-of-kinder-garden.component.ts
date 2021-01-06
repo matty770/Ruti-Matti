@@ -18,12 +18,8 @@ listKinderGarden:KinderGarden[];
   }
   GetAllKinderGarden()
   {
-    alert("ss");
     this.kinderGardenService.GetAllKinderGarden().subscribe(
-      data=>{this.kinderGardenService.ListkinderGarden = data;})
-      if(this.kinderGardenService.ListkinderGarden!=null)
-      alert("yes");
-      else alert("no!!");   
+      data=>{this.listKinderGarden = data;})
   }
   ToKinderGardenForm()
   {

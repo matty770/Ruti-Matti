@@ -1,12 +1,21 @@
 <p>
   attendance works!
 </p>
-<table>
+<div>
+<table class="table">
+    <thead>
+        <tr>
+          <th><h3>ID</h3></th>&nbsp;
+          <th><h3>KINDER</h3></th>&nbsp;
+        </tr>
+      </thead>
   <!-- נוכחות ילדים איך עושים שהתמונות יצופו אחד ליד השני?-->
   <tbody *ngFor="let LD of LiveDataList">
     <tr>
       <th>{{LD.idChild}}</th>&nbsp;
-      <th><button >Arrived</button></th>
+      <th>{{LD.kinderGardenCode}}</th>&nbsp;
+      <th><button (click)="changeStatusToArrived(LD.idChild)" >Arrived</button></th>
     </tr>
   </tbody>
 </table>
+</div>

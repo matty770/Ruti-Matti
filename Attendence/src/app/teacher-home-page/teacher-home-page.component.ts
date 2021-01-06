@@ -21,7 +21,7 @@ KinderGardens:KinderGarden[];
   goToAttendance(IDKG:number)
   {
     this.KinderGardenService.kinderGardenCode=IDKG;
-    this.rout.navigate(['/attendance']);
+    this.rout.navigate(['/Attendance']);
     
   }
   selectKinderGardensByTeacherId(TeacherId: string)

@@ -1,3 +1,22 @@
-<p>
-  list-of-children works!
-</p>
+<div >
+    <button (click)="ToChildrenForm()">add child</button><br><br>
+ <table class="table" >
+  <thead>
+    <tr>
+      <th><h3>ID</h3></th>&nbsp;
+      <th><h3>Name</h3></th>&nbsp;
+      <th><h3>Address</h3></th>&nbsp;
+      <th><h3>Phone</h3></th>&nbsp;
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let child of listChildren">
+    <tr>
+      <th>{{child.Id}}</th>&nbsp;
+      <th>{{child.ChildName}}</th>&nbsp;
+      <th>{{child.Address}}</th>&nbsp;
+      <th>{{child.Phone}}</th>&nbsp;
+    </tr>
+  </tbody>
+</table>
+</div>

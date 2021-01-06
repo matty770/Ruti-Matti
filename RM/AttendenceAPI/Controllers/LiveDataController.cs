@@ -24,5 +24,10 @@ namespace AttendenceAPI.Controllers
             return BLiveDataManager.selectLiveDataByKinderGardenCode(KinderGardenCode);
             
         }
+        [HttpPost]
+        public  void ChangeStatus([FromBody]string idChild, General.Statuses status)
+        {
+            BLiveDataManager.ChangeStatus(idChild, status);
+        }
     }
 }

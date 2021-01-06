@@ -21,6 +21,10 @@ export class ChildService
       });
       
     }
+    getAllChildrens():Observable<Child[]>
+    {
+      return this.http.Get('Children');
+    }
 
 }
 

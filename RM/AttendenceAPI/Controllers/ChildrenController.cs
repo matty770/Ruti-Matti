@@ -24,6 +24,11 @@ namespace AttendenceAPI.Controllers
         {
             BChildrenManager.addChildren(children);
         }
+        [HttpGet]
+        public List<CChildren> getAllChildrens()
+        {
+           return BChildrenManager.selectAllChildren();
+        }
 
 
     }

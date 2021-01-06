@@ -1,11 +1,11 @@
 export class User
 {
-    Id : string;
-    Name : string;
-    Address : string;
-    PhoneNum : string;
-    Permission : number;
-    MailAddress : string;
+Id : string;
+Name : string;
+Address : string;
+PhoneNum : string;
+Permission : number;
+mailAddress : string;
   
     constructor(  // Id : string, Name : string,Address : string, PhoneNum : string, KinderGardenCode: number
        // , Permission : number,MailAddress : string

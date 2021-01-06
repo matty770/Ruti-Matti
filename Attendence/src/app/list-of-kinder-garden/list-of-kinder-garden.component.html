@@ -1,6 +1,6 @@
 <div >
     <button (click)="ToKinderGardenForm()">addKinderGarden</button><br><br>
- <table class="table">
+ <table class="table" >
   <thead>
     <tr>
       <th><h3>ID</h3></th>&nbsp;
@@ -12,10 +12,10 @@
   </thead>
   <tbody *ngFor="let kinderGarden of listKinderGarden">
     <tr>
-      <th>{{kinderGarden.idKinderGarden}}</th>&nbsp;
-      <th>{{kinderGarden.name}}</th>&nbsp;
+      <th>{{kinderGarden.IdKinderGarden}}</th>&nbsp;
+      <th>{{kinderGarden.Name}}</th>&nbsp;
       <th>{{kinderGarden.Address}}</th>&nbsp;
-      <th>{{kinderGarden.phone}}</th>&nbsp;
+      <th>{{kinderGarden.Phone}}</th>&nbsp;
     </tr>
   </tbody>
 </table>

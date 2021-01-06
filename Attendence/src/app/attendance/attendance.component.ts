@@ -4,6 +4,7 @@ import { LiveData } from '../models/LiveData';
 import { KinderGardensService } from '../services/Kindergarden.service';
 import { LiveDateService } from '../services/live-date.service';
 import { UserService } from '../services/user.service';
+import { Statuses } from 'src/app/models/FutureData';
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
@@ -19,12 +20,16 @@ export class AttendanceComponent implements OnInit {
     this.liveDataService.GetLiveDate(this.kinderGarden.kinderGardenCode).subscribe(
       data=>{this.LiveDataList = data;
       if(data!=null)
-      alert("bhbhbhb");
+      alert(this.LiveDataList);
      }
      )
   }
   ngOnInit() {
    this.selectLiveDataByKinderGardenCode();
+  }
+  changeStatusToArrived(idChild:string)
+  {
+    this.liveDataService.ChangeStatus("79",Statuses.Present);
   }
  
 
