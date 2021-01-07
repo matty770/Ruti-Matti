@@ -19,7 +19,7 @@
         <th>{{child.ChildName}}</th>&nbsp;
         <th>{{child.Address}}</th>&nbsp;
         <th>{{child.Phone}}</th>&nbsp;
-       <th><button type="button" (click)="goToReport()">report time</button>&nbsp;
+       <th><button type="button" (click)="goToReport(child.Id)">report time</button>&nbsp;
       <button (click)="goToDetails()">update details</button>
       </tr>
     </tbody>

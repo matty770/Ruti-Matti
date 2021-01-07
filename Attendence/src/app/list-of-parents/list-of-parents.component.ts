@@ -13,10 +13,12 @@ ParentList:User[];
 
   constructor(private UserService:UserService, private router:Router) { }
   GetAllParents()
-  {   
-    this.UserService.GetAllParents().subscribe(
-      data=>{this.ParentList = data;})      
+  { 
+      
+    this.UserService.SelectParentOrTechers(1).subscribe(
+      data=>{this.ParentList = data;})     
   }
+  
   ngOnInit() {
     this.GetAllParents();
   }

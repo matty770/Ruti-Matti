@@ -17,8 +17,8 @@ user:User=new User();
 
   addUser(UserForm)
   {
-    
-   //this.user.Permission=this.userService.user.Permission;
+    alert(this.user.Id);
+   this.user.Permission=this.userService.user.Permission;
     this.userService.addUser(this.user);
     UserForm.reset();
   }

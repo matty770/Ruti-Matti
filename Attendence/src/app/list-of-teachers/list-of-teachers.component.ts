@@ -12,7 +12,7 @@ export class ListOfTeachersComponent implements OnInit {
   constructor(private UserService:UserService, private router:Router) { }
   GetAllParents()
   {   
-    this.UserService.GetAllTeachers().subscribe(
+    this.UserService.SelectParentOrTechers(2).subscribe(
       data=>{this.TeacherList = data;})      
   }
   ngOnInit() {

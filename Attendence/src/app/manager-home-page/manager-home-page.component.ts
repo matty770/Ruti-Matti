@@ -40,8 +40,7 @@ export class ManagerHomePageComponent implements OnInit {
   ToUserForm(permission:number)
   {
     alert(permission);
-
-   // this.userService.user.Permission=permission;
+    this.userService.user.Permission=permission;
     this.router.navigate(['formUser']);
   }
 

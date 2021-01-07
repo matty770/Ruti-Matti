@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ChildService } from 'src/app/services/Child.service';
 import { Child } from 'src/app/models/Child';
 import { UserService } from 'src/app/services/user.service';
+import { FutureDataService } from 'src/app/services/future-data.service';
 
 
 @Component({
@@ -16,9 +17,13 @@ export class ChildrenOfParentComponent implements OnInit {
   listChildren:any[];
   children:Child[];
 
-  constructor(private rout:Router,private childService:ChildService,private userService:UserService) { }
-  goToReport()
-  {   
+  constructor(private rout:Router,private childService:ChildService,private userService:UserService
+    ,private futureDataService:FutureDataService) { }
+  goToReport(childId:string)
+  { 
+    
+    this.futureDataService.futureData.IdChild=childId; 
+    alert(this.futureDataService.futureData.IdChild); 
     this.rout.navigate(['/ChildReport']);
   }
   goToDetails()

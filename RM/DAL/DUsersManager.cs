@@ -113,30 +113,46 @@ namespace DAL
 
         }
 
-        public static List<CUsers> SelectAllParents()
-        {
-            List<Users> listUsers = new List<Users>();
-            using (NDBEntities db = new NDBEntities())
-            {
-                listUsers = (from x in db.Users
-                             where x.Permission==1
-                             select x).ToList();
-            }
-            List<CUsers> listCUsers = new List<CUsers>();
-            foreach (var item in listUsers)
-            {
-                listCUsers.Add(Mapper.convertToCUsers(item));
-            }
-            return listCUsers;
-        }
+        //public static List<CUsers> SelectAllParents()
+        //{
+        //    List<Users> listUsers = new List<Users>();
+        //    using (NDBEntities db = new NDBEntities())
+        //    {
+        //        listUsers = (from x in db.Users
+        //                     where x.Permission==1
+        //                     select x).ToList();
+        //    }
+        //    List<CUsers> listCUsers = new List<CUsers>();
+        //    foreach (var item in listUsers)
+        //    {
+        //        listCUsers.Add(Mapper.convertToCUsers(item));
+        //    }
+        //    return listCUsers;
+        //}
 
-        public static List<CUsers> SelectAllTeachers()
+        //public static List<CUsers> SelectAllTeachers()
+        //{
+        //    List<Users> listUsers = new List<Users>();
+        //    using (NDBEntities db = new NDBEntities())
+        //    {
+        //        listUsers = (from x in db.Users
+        //                     where x.Permission == 2
+        //                     select x).ToList();
+        //    }
+        //    List<CUsers> listCUsers = new List<CUsers>();
+        //    foreach (var item in listUsers)
+        //    {
+        //        listCUsers.Add(Mapper.convertToCUsers(item));
+        //    }
+        //    return listCUsers;
+        //}
+        public static List<CUsers> SelectParentOrTechers(int p)
         {
             List<Users> listUsers = new List<Users>();
             using (NDBEntities db = new NDBEntities())
             {
                 listUsers = (from x in db.Users
-                             where x.Permission == 2
+                             where x.Permission == p
                              select x).ToList();
             }
             List<CUsers> listCUsers = new List<CUsers>();

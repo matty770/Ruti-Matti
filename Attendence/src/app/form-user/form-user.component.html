@@ -1,10 +1,15 @@
+<a routerLink="/ManagerHomePage" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>Home page</h3></a>
+<a routerLink="/ListOfKinderGarden" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all kinder garden</h3></a>
+<a routerLink="/ListOfChildren" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all childrens</h3></a>
+<a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
+<a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div>
   <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
     <input name="Id" type="text"  [(ngModel)]="user.Id">id  <br>
     <input name="Name" type="text" [(ngModel)]="user.Name">name  <br>
     <input name="Address" type="text" [(ngModel)]="user.Address">address  <br>
     <input name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum">phone  <br>
-   <input name="Permission" type="number" [(ngModel)]="user.Permission">Permission  <br>
+  <!-- <input name="Permission" type="number" [(ngModel)]="user.Permission">Permission  <br>-->
     <input name="MailAddress" type="text" [(ngModel)]="user.MailAddress">mail  <br>
     <button type="submit">add</button>
   </form>

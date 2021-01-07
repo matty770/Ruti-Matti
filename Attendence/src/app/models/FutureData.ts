@@ -6,25 +6,26 @@ export enum Statuses
 }
 export class FutureData
 {
-    
-    idChild: string;
-    kinderGardenCode: number;
+
+    IdChild: string;
+    KinderGardenCode: number;
     date:Date;
     status: Statuses; 
-    updateDate: Date;
-    updateBy:string;
-    alarm:Time;
-    comments:string;
+    UpdateDate: Date;
+    UpdateBy:string;
+    Alarm:Time;
+    Comments:string;
   
-    constructor(idChild: string, kinderGardenCode: number, date:Date, status: Statuses, updateDate: Date, updateBy:string, alarm:Time, comments:string) 
+    constructor(//idChild: string, kinderGardenCode: number, date:Date, status: Statuses, updateDate: Date, updateBy:string, alarm:Time, comments:string
+    ) 
         {
-            this.idChild = idChild;
-            this.kinderGardenCode = kinderGardenCode;
-            this.date = date;
-            this.status = status;
-            this.updateDate = updateDate;
-            this.updateBy = updateBy;
-            this.alarm = alarm;
-            this.comments=comments;
+           //this.idChild = idChild;
+           //this.kinderGardenCode = kinderGardenCode;
+           //this.date = date;
+           //this.status = status;
+           //this.updateDate = updateDate;
+           //this.updateBy = updateBy;
+           //this.alarm = alarm;
+           //this.comments=comments;
     }
 }

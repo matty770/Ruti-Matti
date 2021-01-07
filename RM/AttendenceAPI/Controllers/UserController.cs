@@ -25,17 +25,22 @@ namespace AttendenceAPI.Controllers
             BUserManager.addUser(user);
         }
 
-        [HttpGet]
-        public List<CUsers> getAllParents()
-        {
-            return BUserManager.selectAllParents();
-        }
+        //[HttpGet]
+        //public List<CUsers> getAllParents()
+        //{
+        //    return BUserManager.selectAllParents();
+        //}
 
 
+        //[HttpGet]
+        //public List<CUsers> GetAllTeachers()
+        //{
+        //    return BUserManager.selectAllTeachers();
+        //}
         [HttpGet]
-        public List<CUsers> getAllTeachers()
+        public List<CUsers> SelectParentOrTechers(int p)
         {
-            return BUserManager.selectAllTeachers();
+            return BUserManager.SelectParentOrTechers(p);
         }
     }
 }
