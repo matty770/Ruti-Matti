@@ -1,3 +1,32 @@
 <p>
   child-report works!
 </p>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><h3>ID</h3></th>&nbsp;
+        <th><h3>Code Gan</h3></th>&nbsp;
+        <th><h3>Date</h3></th>&nbsp;       
+        <th><h3>Status</h3></th>&nbsp;
+        <th><h3>updated by</h3></th>&nbsp;
+        <th><h3>Alarm</h3></th>&nbsp;
+        <th><h3>Comments</h3></th>&nbsp;
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let FutureData of FutureDataList">
+      <tr>
+        <th>{{FutureData.IdChild}}</th>&nbsp;
+        <th>{{FutureData.KinderGardenCode}}</th>&nbsp;
+        <th>{{FutureData.Date}}</th>&nbsp;
+        <th>{{FutureData.Status}}</th>&nbsp;
+        <th>{{FutureData.UpdateBy}}</th>&nbsp;
+        <th>{{FutureData.Alarm}}</th>&nbsp;
+        <th>{{FutureData.Comments}}</th>&nbsp;
+      <button (click)="goToDetails()">update details</button>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="goToFutureDataForm()">Add Report</button>
+</div>

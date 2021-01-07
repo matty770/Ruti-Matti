@@ -22,7 +22,7 @@ namespace BLL
         {
             return DFutureDataManager.readAllFutureData();
         }
-        public static CFutureData selectByIdChild(string id)
+        public static List<CFutureData> selectByIdChild(string id)
         {
             return DFutureDataManager.selectByIdChild(id);
         }

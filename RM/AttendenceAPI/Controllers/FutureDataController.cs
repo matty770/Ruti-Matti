@@ -12,7 +12,7 @@ namespace AttendenceAPI.Controllers
     public class FutureDataController : ApiController
     {
         [HttpGet]
-        public CFutureData GetFutureData(string ChildId)
+        public List<CFutureData> GetFutureData(string ChildId)
         {
             var fd = BFutureDataManager.selectByIdChild(ChildId);
             return fd;

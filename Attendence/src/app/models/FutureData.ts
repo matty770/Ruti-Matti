@@ -9,8 +9,8 @@ export class FutureData
 
     IdChild: string;
     KinderGardenCode: number;
-    date:Date;
-    status: Statuses; 
+    Date:Date;
+    Status: Statuses; 
     UpdateDate: Date;
     UpdateBy:string;
     Alarm:Time;

@@ -60,18 +60,20 @@ namespace DAL
             }
             return listCFuture;
         }
-        public static CFutureData selectByIdChild(string id)
+        public static List<CFutureData> selectByIdChild(string id)
         {
+            List<FutureData> listFutureData = new List<FutureData>();
             using (NDBEntities db = new NDBEntities())
             {
-                FutureData f = (from x in db.FutureData
+                listFutureData = (from x in db.FutureData
                                 where x.IdChild.Equals(id)
-                                select x).FirstOrDefault();
-                if (f != null)
+                                select x).ToList();
+                List<CFutureData> listCFuture = new List<CFutureData>();
+                foreach (var item in listFutureData)
                 {
-                    return Mapper.convertToCFuteureData(f);
+                    listCFuture.Add(Mapper.convertToCFuteureData(item));
                 }
-                return null;
+                return listCFuture;
             }
         }
         public static void updateFutureData(CFutureData cf)

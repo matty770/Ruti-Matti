@@ -9,10 +9,18 @@ import { Child } from 'src/app/models/Child';
 })
 export class FutureDataService {
 
-  public futureData:FutureData=new FutureData();
+  public FD:FutureData=new FutureData();
+  
   constructor(private http:DataService ) { }
-  GetFutureData(ChildId:string):Observable<FutureData>
+  GetFutureData(ChildId:string):Observable<FutureData[]>
   {
     return this.http.Get('FutureData?ChildId='+ChildId);
+  }
+
+  addFutureData(futureData:FutureData)
+  {
+    this.http.post('FutureData',futureData)
+    .subscribe(res=>{ alert(res) //console.log(res)//
+    });
   }
 }

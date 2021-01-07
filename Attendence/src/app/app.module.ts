@@ -27,6 +27,7 @@ import { ListOfParentsComponent } from './list-of-parents/list-of-parents.compon
 import { FormKinderGardenComponent } from './form-kinder-garden/form-kinder-garden.component';
 import { FormChildrenComponent } from './form-children/form-children.component';
 import { FormUserComponent } from './form-user/form-user.component';
+import { FormFutureDataComponent } from './form-future-data/form-future-data.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
@@ -45,7 +46,8 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'ListOfTeachers',component:ListOfTeachersComponent},
 {path:'formKinderGarden',component:FormKinderGardenComponent},
 {path:'formChildren',component:FormChildrenComponent},
-{path:'formUser',component:FormUserComponent}
+{path:'formUser',component:FormUserComponent},
+{path:'formFutureData',component:FormFutureDataComponent}
 
 
 
@@ -77,6 +79,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     FormKinderGardenComponent,
     FormChildrenComponent,
     FormUserComponent,
+    FormFutureDataComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [

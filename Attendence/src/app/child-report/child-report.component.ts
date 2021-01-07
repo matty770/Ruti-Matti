@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FutureDataService } from 'src/app/services/future-data.service';
+import { FutureData } from '../models/FutureData';
+import {Router} from '@angular/router';
+import { time } from 'console';
 
 @Component({
   selector: 'app-child-report',
@@ -7,16 +10,22 @@ import { FutureDataService } from 'src/app/services/future-data.service';
   styleUrls: ['./child-report.component.css']
 })
 export class ChildReportComponent implements OnInit {
-
-  constructor(private futureDataService:FutureDataService) { }
-
+FutureDataList:FutureData[];
+  constructor(private futureDataService:FutureDataService, private rout:Router) { }
+  GetFutureData()
+  {   
+    return this.futureDataService.GetFutureData(this.futureDataService.FD.IdChild).subscribe(
+      data=>{this.FutureDataList = data;})
+  }
   ngOnInit() {
     this.GetFutureData();
   }
-  GetFutureData()
-  {
+  goToFutureDataForm(){
     
-    return this.futureDataService.GetFutureData(this.futureDataService.futureData.IdChild);
+    this.rout.navigate(['/formFutureData']);
+  }
+  UpdateFutureData(){
+
   }
 
 }

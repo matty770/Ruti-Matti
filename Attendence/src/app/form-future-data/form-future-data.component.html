@@ -1,0 +1,15 @@
+<p>
+  form-future-data works!
+</p>
+<div>
+  <form #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)">
+   <!-- <input name="IdChild" type="text"  [(ngModel)]="futureData.IdChild">IdChild<br>-->
+   <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="futureData.KinderGardenCode">KinderGardenCode<br>-->
+    <input name="Status" type="number" [(ngModel)]="futureData.Status">Status<br>
+   <input name="UpdateDate" type="date" [(ngModel)]="futureData.UpdateDate">Update Date  <br>
+    <input name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">UpdateBy<br>
+    <input name="Alarm" type="time" [(ngModel)]="futureData.Alarm">Alarm<br>
+    <input name="Comments" type="date" [(ngModel)]="futureData.Comments">Comments<br>
+    <button type="submit">add</button>
+  </form>
+</div>

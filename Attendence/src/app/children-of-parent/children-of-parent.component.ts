@@ -19,11 +19,11 @@ export class ChildrenOfParentComponent implements OnInit {
 
   constructor(private rout:Router,private childService:ChildService,private userService:UserService
     ,private futureDataService:FutureDataService) { }
-  goToReport(childId:string)
-  { 
-    
-    this.futureDataService.futureData.IdChild=childId; 
-    alert(this.futureDataService.futureData.IdChild); 
+  goToReport(child:Child)
+  {    
+    this.futureDataService.FD.IdChild=child.Id; 
+    this.futureDataService.FD.KinderGardenCode=child.KinderGardenCode;
+    alert(this.futureDataService.FD.IdChild); 
     this.rout.navigate(['/ChildReport']);
   }
   goToDetails()
