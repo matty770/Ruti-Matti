@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FutureDataService } from 'src/app/services/future-data.service';
 import { FutureData } from '../models/FutureData';
 import {Router} from '@angular/router';
-import { time } from 'console';
+//import { time } from 'console';
 
 @Component({
   selector: 'app-child-report',

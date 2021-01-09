@@ -149,7 +149,7 @@ namespace DAL
         {
             using (NDBEntities db = new NDBEntities())
             {
-                db.LiveData.Find(idChild).Status = Mapper.StatusEnumToInt(status);
+                db.LiveData.Find(idChild,12).Status = Mapper.StatusEnumToInt(status);
 
 
             }

@@ -21,9 +21,11 @@ export class LiveDateService {
   {
    //this.params.set('status',status.toString());
    let params = new HttpParams();
-    params = params.append('status', status.toString());
+    params = params.append('status', '3');
 
-    this.http.post('LiveData?idChild='+idChild,{params:params}).subscribe(res=>{ alert(res)
+   // this.http.post('LiveData?idChild='+idChild,{params:params}).subscribe(res=>{ alert(res)
+      this.http.post('LiveData?idChild='+idChild,status).subscribe(res=>{ alert(res)
+
      // alert(status);
      //this.http.post('LiveData?idChild='+idChild,{params:params}).subscribe(res=>{ alert(res) //console.log(res)//
      });
