@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FutureData } from '../models/FutureData';
+import { FutureData, Statuses } from '../models/FutureData';
 import { FutureDataService } from '../services/future-data.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { FutureDataService } from '../services/future-data.service';
   styleUrls: ['./form-future-data.component.css']
 })
 export class FormFutureDataComponent implements OnInit {
-futureData:FutureData;
+ futureData:FutureData=new FutureData();
+ ST:string;
   constructor(private futureDataService:FutureDataService) { }
 
   ngOnInit() {
@@ -17,6 +18,11 @@ futureData:FutureData;
   {
     this.futureData.IdChild=this.futureDataService.FD.IdChild;
     this.futureData.KinderGardenCode=this.futureDataService.FD.KinderGardenCode;
+    switch(this.ST)
+    {
+    case "1": this.futureData.Status=Statuses.Late;
+    case "2": this.futureData.Status=Statuses.NonPresent;
+    };
    // alert(this.kinderGarden.idKinderGarden);
     this.futureDataService.addFutureData(this.futureData);
     FutureDataForm.reset();

@@ -15,10 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager", "TaskManager\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendenceAPI", "AttendenceAPI\AttendenceAPI.csproj", "{36E3D332-5227-4BB3-B50C-D4DF780CB347}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerWeb", "TaskManager\TaskManagerWeb.csproj", "{D2BEB8AB-7A87-4D9C-A80F-B42B685831A2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerWeb1", "TaskManagerWeb1\TaskManagerWeb1.csproj", "{BCD6AAFC-443C-4A68-BFEF-2495B071CA76}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,14 +45,6 @@ Global
 		{36E3D332-5227-4BB3-B50C-D4DF780CB347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36E3D332-5227-4BB3-B50C-D4DF780CB347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36E3D332-5227-4BB3-B50C-D4DF780CB347}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2BEB8AB-7A87-4D9C-A80F-B42B685831A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2BEB8AB-7A87-4D9C-A80F-B42B685831A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2BEB8AB-7A87-4D9C-A80F-B42B685831A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2BEB8AB-7A87-4D9C-A80F-B42B685831A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCD6AAFC-443C-4A68-BFEF-2495B071CA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCD6AAFC-443C-4A68-BFEF-2495B071CA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCD6AAFC-443C-4A68-BFEF-2495B071CA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCD6AAFC-443C-4A68-BFEF-2495B071CA76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

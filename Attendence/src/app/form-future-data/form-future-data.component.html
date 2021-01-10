@@ -1,15 +1,20 @@
 <p>
   form-future-data works!
+  {{futureData}}
 </p>
 <div>
-  <form #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)">
+  <form #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)"><br>
    <!-- <input name="IdChild" type="text"  [(ngModel)]="futureData.IdChild">IdChild<br>-->
    <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="futureData.KinderGardenCode">KinderGardenCode<br>-->
-    <input name="Status" type="number" [(ngModel)]="futureData.Status">Status<br>
-   <input name="UpdateDate" type="date" [(ngModel)]="futureData.UpdateDate">Update Date  <br>
+   <!-- <input name="Status" type="" [(ngModel)]="futureData.Status">Status<br>-->
+<select name="Status" [(ngModel)]="ST">
+  <option value="1">איחור</option>
+  <option value="2">חיסור</option>
+</select><br>
+   <input name="UpdateDate" type="date" [(ngModel)]="futureData.UpdateDate">Update Date <br>
     <input name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">UpdateBy<br>
     <input name="Alarm" type="time" [(ngModel)]="futureData.Alarm">Alarm<br>
-    <input name="Comments" type="date" [(ngModel)]="futureData.Comments">Comments<br>
+    <input name="Comments" type="text" [(ngModel)]="futureData.Comments">Comments<br>
     <button type="submit">add</button>
   </form>
 </div>

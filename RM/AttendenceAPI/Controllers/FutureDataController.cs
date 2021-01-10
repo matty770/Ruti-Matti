@@ -17,5 +17,11 @@ namespace AttendenceAPI.Controllers
             var fd = BFutureDataManager.selectByIdChild(ChildId);
             return fd;
         }
+
+        [HttpPost]
+        public void addFutureData([FromBody]CFutureData futureData)
+        {
+            BFutureDataManager.addFutureData(futureData);
+        }
     }
 }

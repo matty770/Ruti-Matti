@@ -147,10 +147,13 @@ namespace DAL
 
         public static void ChangeStatus(string idChild, General.Statuses status)
         {
+            LiveData l = new LiveData();
+            int x= Mapper.StatusEnumToInt(status);
             using (NDBEntities db = new NDBEntities())
             {
-                db.LiveData.Find(idChild,12).Status = Mapper.StatusEnumToInt(status);
-
+                db.LiveData.Find(idChild, 14).Status = x;
+                l= db.LiveData.Find(idChild, 14);
+                db.SaveChanges();
 
             }
         }
