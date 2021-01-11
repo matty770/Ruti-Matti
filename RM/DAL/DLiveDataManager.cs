@@ -151,6 +151,7 @@ namespace DAL
             int x= Mapper.StatusEnumToInt(status);
             using (NDBEntities db = new NDBEntities())
             {
+                l = db.LiveData.Find(idChild);
                 db.LiveData.Find(idChild).Status = x;
                 l= db.LiveData.Find(idChild);
                 db.SaveChanges();

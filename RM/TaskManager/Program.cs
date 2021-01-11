@@ -15,12 +15,13 @@ namespace TaskManager
         {
             Console.WriteLine("d");
             Console.Read();
-            if (DateTime.Now.Hour >= 8 && DateTime.Now.Hour <= 20)
+            if (DateTime.Now.Hour >= 8 && DateTime.Now.Hour <= 23)
             {
                 Console.WriteLine("rtrtrtrtrtrt");
                 Console.Read();
                 List<CLiveData> listLiveData = new List<CLiveData>();
                 listLiveData = BLiveDataManager.LDIsNonPrestnt();
+                Console.WriteLine(listLiveData.FirstOrDefault().KinderGardenCode);
                 foreach (var item in listLiveData)
                 {
 

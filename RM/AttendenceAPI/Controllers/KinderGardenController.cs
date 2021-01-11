@@ -33,5 +33,10 @@ namespace AttendenceAPI.Controllers
             BKinderGardenManager.addKinderGarden(kinderGarden);
         }
 
+        [HttpPost]
+        public static CKinderGarden updateKinderGarden([FromBody] CKinderGarden ck)
+        {
+            return BKinderGardenManager.updateKinderGarden(ck);
+        }
     }
 }

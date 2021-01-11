@@ -74,23 +74,24 @@ namespace DAL
                 return null;
             }
         }
-        public static void updateKinderGarden(CKinderGarden ck)
-        {
-            CKinderGarden ck1 = selectKinderByCode(ck.IdKinderGarden);
-            if (ck1 != null)
-            {
-                ck1.Name = ck.Name;
-                ck1.Address = ck.Address;
-                ck1.Phone = ck.Phone;
-                ck1.Year = ck.Year;
-                ck1.BeginingHour = ck.BeginingHour;
-                ck1.Space = ck.Space;
-            }
-            else
-            {
-                addKinderGarden(ck);
-            }
-        }
+
+        //public static void updateKinderGarden(CKinderGarden ck)
+        //{
+        //    CKinderGarden ck1 = selectKinderByCode(ck.IdKinderGarden);
+        //    if (ck1 != null)
+        //    {
+        //        ck1.Name = ck.Name;
+        //        ck1.Address = ck.Address;
+        //        ck1.Phone = ck.Phone;
+        //        ck1.Year = ck.Year;
+        //        ck1.BeginingHour = ck.BeginingHour;
+        //        ck1.Space = ck.Space;
+        //    }
+        //    else
+        //    {
+        //        addKinderGarden(ck);
+        //    }
+        //}
         //public static List<CKinderGarden> selectKinderGardenByHour()
         //{
         //    List<CKinderGarden> listCKinderGarden = new List<CKinderGarden>();
@@ -125,6 +126,21 @@ namespace DAL
                     CKG.Add(Mapper.convertToCKinderGarden(item));
                 }
             return CKG;
+        }
+        public static CKinderGarden updateKinderGarden(CKinderGarden cc)
+        {
+            KinderGarden k = new KinderGarden();
+            CKinderGarden ck = new CKinderGarden();
+            using (NDBEntities db = new NDBEntities())
+            {
+                db.KinderGarden.Find(cc.IdKinderGarden).Address = cc.Address;
+                db.KinderGarden.Find(cc.IdKinderGarden).PhoneNumber = cc.Phone;
+                db.KinderGarden.Find(cc.IdKinderGarden).BeginingHour = cc.BeginingHour;
+                db.SaveChanges();
+                k=db.KinderGarden.Find(cc.IdKinderGarden);
+            }
+            ck = Mapper.convertToCKinderGarden(k);
+            return ck;
         }
     }
 }

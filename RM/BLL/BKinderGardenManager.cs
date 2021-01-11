@@ -25,9 +25,9 @@ namespace BLL
         {
             return DKinderGardenManager.selectKinderByCode(code);
         }
-        public static void updateKinderGarden(CKinderGarden ck)
+        public static CKinderGarden updateKinderGarden(CKinderGarden ck)
         {
-            DKinderGardenManager.updateKinderGarden(ck);
+            return DKinderGardenManager.updateKinderGarden(ck);
         }
 
         public static List<CKinderGarden> selectKinderGardenByIdTeacher(string TeacherId)
