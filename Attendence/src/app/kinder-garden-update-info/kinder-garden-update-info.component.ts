@@ -13,8 +13,9 @@ export class KinderGardenUpdateInfoComponent implements OnInit {
   kinderGarden:KinderGarden=this.kinderGardenService.kinderGarden;
   ngOnInit() {
   }
+  
   UpdateKinderGarden(KinderGardenUpdateForm)
   {
-    
+   this.kinderGardenService.UpdateKinderGarden(this.kinderGarden);
   }
 }
