@@ -1,0 +1,12 @@
+<p>
+  kinder-garden-update-info works!
+</p>
+<div>
+  <form #KinderGardenUpdateForm="ngForm" (ngSubmit)="UpdateKinderGarden(KinderGardenUpdateForm)">
+    <input name="Name" type="text"  value={{kinderGarden.Name}} disabled >name kinder garden  <br>
+    <input name="Address" type="text" value={{kinderGarden.Address}} [(ngModel)]="kinderGarden.Address">addres  <br>
+    <input name="Phone" type="text" value={{kinderGarden.Phone}} [(ngModel)]="kinderGarden.Phone">phone  <br>
+  <input name="BeginingHour" type="text" value={{kinderGarden.BeginingHour}} [(ngModel)]="kinderGarden.BeginingHour">Begining Hour  <br>
+    <button type="submit">עדכן</button>
+  </form>
+</div>

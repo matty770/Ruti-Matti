@@ -29,7 +29,14 @@ export class UserService {
     this.http.post('User',user)
     .subscribe(res=>{ alert(res) //console.log(res)//
     });
-    
+  }
+  selectUserByIdChild(idChild:string) :Observable<User>
+  {
+    return this.http.Get('User?idChild='+idChild);
+  }
+  updateUser(user:User)
+  {
+    this.http.post('User?x='+1,user).subscribe(res=>{alert(res)});
   }
   
 }

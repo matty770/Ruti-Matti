@@ -9,8 +9,9 @@ import { Child } from 'src/app/models/Child';
 })
 export class ChildService
  {
-
+  public child:Child=new Child();
   constructor(private http:DataService,private userService:UserService) {}
+  
 
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
     return this.http.Get('Children?ParentId=' + ParentId);}
@@ -25,6 +26,10 @@ export class ChildService
     getAllChildrens():Observable<Child[]>
     {
       return this.http.Get('Children');
+    }
+    UpdateChildren(children:Child,)
+    {
+      this.http.post('Children?x='+1,children).subscribe(res=>{alert(res)});
     }
 
 }

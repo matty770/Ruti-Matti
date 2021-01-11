@@ -13,19 +13,22 @@ namespace TaskManager
     {
         public static void Tasks()
         {
-            if (DateTime.Now.Hour >= 7 && DateTime.Now.Hour <= 12)
+            Console.WriteLine("d");
+            Console.Read();
+            if (DateTime.Now.Hour >= 8 && DateTime.Now.Hour <= 20)
             {
+                Console.WriteLine("rtrtrtrtrtrt");
+                Console.Read();
                 List<CLiveData> listLiveData = new List<CLiveData>();
                 listLiveData = BLiveDataManager.LDIsNonPrestnt();
                 foreach (var item in listLiveData)
                 {
+
                     Function.CheckAttendance(item);
-
                 }
-
             }
 
-            if (DateTime.Now.Hour == 5)
+            if (DateTime.Now.Hour == 18)
             {
                 BPreviousDataManager.copyLiveToPreviousData();
                 BLiveDataManager.copyChildrenToLiveData();
@@ -41,9 +44,11 @@ namespace TaskManager
         static void Main(string[] args)
         {
 
-        
+
+            Console.WriteLine("eeee");
+            Console.ReadLine();
            //BLL.BLiveDataManager.copyChildrenToLiveData();
-           //Tasks();
+           Tasks();
         }
 
     }

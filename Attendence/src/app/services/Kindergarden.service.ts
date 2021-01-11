@@ -12,7 +12,7 @@ public ListkinderGarden:KinderGarden[];
 public kinderGardenCode:number;
 
   constructor(private http:DataService,private userService:UserService) {}
-
+public kinderGarden:KinderGarden=new KinderGarden();
   selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> {
     return this.http.Get('KinderGarden?TeacherId=' + TeacherId);}
     

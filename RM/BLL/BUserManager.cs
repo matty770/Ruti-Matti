@@ -48,5 +48,9 @@ namespace BLL
         {
             return DUsersManager.SelectParentOrTechers(p);
         }
+        public static CUsers selectUserByIdChild(string idChild)
+        {
+            return DUsersManager.selectUserByIdChild(idChild);
+        }
     }
 }

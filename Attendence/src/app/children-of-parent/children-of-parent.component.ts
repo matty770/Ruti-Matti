@@ -26,17 +26,15 @@ export class ChildrenOfParentComponent implements OnInit {
     alert(this.futureDataService.FD.IdChild); 
     this.rout.navigate(['/ChildReport']);
   }
-  goToDetails()
+  goToDetails(children:Child)
   {
+    this.childService.child=children;
     this.rout.navigate(['/ChildUpdateInfo']);
   }
   selectChildrenByParentId()
   {
     this.childService.selectChildrenByParentId(this.userService.user.Id).subscribe(
-      data=>{this.children = data;
-      if(data!=null)
-      alert("bhbhbhb");
-     }
+      data=>{this.children = data; }
      )
   }
   ngOnInit() {

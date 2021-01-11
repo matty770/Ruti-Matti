@@ -42,5 +42,16 @@ namespace AttendenceAPI.Controllers
         {
             return BUserManager.SelectParentOrTechers(p);
         }
+        [HttpGet]
+        public CUsers selectUserByIdChild(string idChild)
+        {
+            return BUserManager.selectUserByIdChild(idChild);
+        }
+        [HttpPost]
+        public void updateUser(int x,[FromBody]CUsers user)
+        {
+             BUserManager.updateUser(user);
+        }
+        
     }
 }

@@ -28,6 +28,7 @@ import { FormKinderGardenComponent } from './form-kinder-garden/form-kinder-gard
 import { FormChildrenComponent } from './form-children/form-children.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { FormFutureDataComponent } from './form-future-data/form-future-data.component';
+import { KinderGardenUpdateInfoComponent } from './kinder-garden-update-info/kinder-garden-update-info.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:HomeComponent},
@@ -47,7 +48,9 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'formKinderGarden',component:FormKinderGardenComponent},
 {path:'formChildren',component:FormChildrenComponent},
 {path:'formUser',component:FormUserComponent},
-{path:'formFutureData',component:FormFutureDataComponent}
+{path:'formFutureData',component:FormFutureDataComponent},
+{path:'KinderGardenUpdateInfo',component:KinderGardenUpdateInfoComponent}
+
 
 
 
@@ -80,6 +83,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
     FormChildrenComponent,
     FormUserComponent,
     FormFutureDataComponent,
+    KinderGardenUpdateInfoComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [

@@ -92,13 +92,25 @@ namespace DAL
                 return null;
             }
         }
+        //public static void updateUser(CUsers cu)
+        //{
+        //    if (selectUserById(cu.Id) != null)
+        //    {
+        //        removeUser(cu.Id);
+        //    }
+        //    addUser(cu);
+        //}
         public static void updateUser(CUsers cu)
         {
-            if (selectUserById(cu.Id) != null)
+            Users u = Mapper.convertToUsers(selectUserById(cu.Id));
+            using (NDBEntities db = new NDBEntities())
             {
-                removeUser(cu.Id);
+                db.Users.Find(cu.Id).Address = cu.Address;
+                db.Users.Find(cu.Id).PhoneNum = cu.PhoneNum;
+                db.Users.Find(cu.Id).MailAddress = cu.mailAddress;
+                db.SaveChanges();
+
             }
-            addUser(cu);
         }
         public static int GetPermissionOfUser(string idUser)
         {

@@ -21,6 +21,7 @@ namespace DAL
                     db.LiveData.Remove(Mapper.convertToLiveData(item));
                     db.SaveChanges();
                 }
+                
             }
         }
         public static CPreviousData selectPreviousByIdChild(string id)

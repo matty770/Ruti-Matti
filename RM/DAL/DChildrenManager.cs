@@ -89,13 +89,24 @@ namespace DAL
                 return listCChildren;
             }
         }
+        //public static void updateChildren(CChildren cc)
+        //{
+        //    if (selectchildrenById(cc.Id) != null)
+        //    {
+        //        removeChildren(cc.Id);
+        //    }
+        //    addChildren(cc);
+        //}
         public static void updateChildren(CChildren cc)
         {
-            if (selectchildrenById(cc.Id) != null)
+            Children c = Mapper.convertToChildren(selectchildrenById(cc.Id));
+            using (NDBEntities db = new NDBEntities())
             {
-                removeChildren(cc.Id);
+                db.Children.Find(cc.Id).Address = cc.Address;
+                db.Children.Find(cc.Id).Phone = cc.Phone;
+                db.SaveChanges();
+             
             }
-            addChildren(cc);
         }
 
     }

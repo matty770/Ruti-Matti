@@ -14,7 +14,7 @@ namespace BLL
 {
     public class Function
     {
-        public static void sendmail(string addressMail)
+        public static void sendmail(string addressMail,string nameChild)
         {
             try
             {
@@ -23,8 +23,8 @@ namespace BLL
 
                 mail.From = new MailAddress("attendanceforstudent@gmail.com");
                 mail.To.Add(addressMail);
-                mail.Subject = "zehirut";
-                mail.Body = "hayeled lo bagan!!!!";
+                mail.Subject = "הודעה דחופה מהגן של"+nameChild;
+                mail.Body = nameChild +"לא הגיעה לגן בדקו את הענין וצרו קשר עם הגננת!!!!";
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("attendanceforstudent@gmail.com", "0533141893");
@@ -63,7 +63,7 @@ namespace BLL
             var responseString = await response.Content.ReadAsStringAsync();
             Console.WriteLine(responseString); //Gives You How many Recipients the message was sent to
         }
-        public static bool sendMessage(string PhoneNum)
+        public static bool sendMessage(string PhoneNum,string nameChild)
         {
             try
             {
@@ -84,9 +84,9 @@ namespace BLL
 
         public static void CheckAttendance(CLiveData liveData)
         {
-            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress);
-            //sendMessage(DUsersManager.selectUserByIdChild(item.IdChild).PhoneNum);
-            //item.Status = 4;
+            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress,DChildrenManager.selectchildrenById(liveData.IdChild).ChildName);
+            //sendMessage(DUsersManager.selectUserByIdChild(liveData.IdChild).PhoneNum,DChildrenManager.selectchildrenById(liveData.IdChild).ChildName);
+            DLiveDataManager.ChangeStatus(liveData.IdChild, General.Statuses.Sent);
 
 
         }

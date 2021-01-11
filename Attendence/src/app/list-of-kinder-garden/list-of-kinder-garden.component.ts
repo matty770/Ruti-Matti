@@ -25,4 +25,9 @@ listKinderGarden:KinderGarden[];
   {
     this.router.navigate(['formKinderGarden']);
   }
+  goToDetails(kinderGarden:KinderGarden)
+  {
+    this.kinderGardenService.kinderGarden=kinderGarden;
+    this.router.navigate(['KinderGardenUpdateInfo']);
+  }
 }

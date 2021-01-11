@@ -26,12 +26,8 @@ KinderGardens:KinderGarden[];
   }
   selectKinderGardensByTeacherId(TeacherId: string)
   {
-    alert("bhbhbhb");
     this.KinderGardenService.selectKinderGardensByTeacherId(this.userService.user.Id).subscribe(
-      data=>{ this.KinderGardens = data;
-      if(data!=null)
-      alert("bhbhbhb");
-     }
+      data=>{ this.KinderGardens = data; }
      )
     
   }

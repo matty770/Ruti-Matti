@@ -29,6 +29,11 @@ namespace AttendenceAPI.Controllers
         {
            return BChildrenManager.selectAllChildren();
         }
+        [HttpPost]
+        public void UpdateChildren(int x,[FromBody]CChildren children)
+        {
+            BChildrenManager.updateChildren(children);
+        }
 
 
     }
