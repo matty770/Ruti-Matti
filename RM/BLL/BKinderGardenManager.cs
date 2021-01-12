@@ -13,9 +13,9 @@ namespace BLL
         {
             DKinderGardenManager.addKinderGarden(ck);
         }
-        public static void removeKinderGarden(int code)
+        public static int removeKinderGarden(int code)
         {
-            DKinderGardenManager.removeKinderGarden(code);
+           return DKinderGardenManager.removeKinderGarden(code);
         }
         public static List<CKinderGarden> selectAllKinderGarden()
         {

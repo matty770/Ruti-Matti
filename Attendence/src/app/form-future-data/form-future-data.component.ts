@@ -1,3 +1,5 @@
+import { DatePipe } from '@angular/common';
+import { toDate } from '@angular/common/src/i18n/format_date';
 import { Component, OnInit } from '@angular/core';
 import { FutureData, Statuses } from '../models/FutureData';
 import { FutureDataService } from '../services/future-data.service';
@@ -10,6 +12,8 @@ import { FutureDataService } from '../services/future-data.service';
 export class FormFutureDataComponent implements OnInit {
  futureData:FutureData=new FutureData();
  ST:string;
+ now:DatePipe;
+  d:Date=new Date()
   constructor(private futureDataService:FutureDataService) { }
 
   ngOnInit() {

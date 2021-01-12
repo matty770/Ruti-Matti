@@ -7,14 +7,17 @@ import { KinderGarden } from 'src/app/models/kindergarden';
 @Injectable({
   providedIn: 'root'
 })
-export class KinderGardensService {
+export class KinderGardensService 
+{
 public ListkinderGarden:KinderGarden[];
 public kinderGardenCode:number;
 
   constructor(private http:DataService,private userService:UserService) {}
 public kinderGarden:KinderGarden=new KinderGarden();
-  selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> {
-    return this.http.Get('KinderGarden?TeacherId=' + TeacherId);}
+  selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> 
+  {
+    return this.http.Get('KinderGarden?TeacherId=' + TeacherId);
+  }
     
     addKinderGarden(kinderGarden:KinderGarden)
     {
@@ -34,4 +37,11 @@ public kinderGarden:KinderGarden=new KinderGarden();
       return this.http.post('KinderGarden?x='+1,kinderGarden);
       //.subscribe(res=>{ alert(res)})
     }
-}
+//
+    RemoveKinderGarden(kinderGardenCode:number):Observable<number>
+    {
+     return this.http.post('KinderGarden?x',kinderGardenCode);
+    }
+      
+  
+  }

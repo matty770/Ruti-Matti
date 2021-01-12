@@ -25,7 +25,7 @@ FutureDataList:FutureData[];
     this.rout.navigate(['/formFutureData']);
   }
   UpdateFutureData(){
-
+   // this.rout.navigate([''])
   }
 
 }

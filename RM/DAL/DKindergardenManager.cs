@@ -26,7 +26,7 @@ namespace DAL
 
             }
         }
-        public static void removeKinderGarden(int code)
+        public static int removeKinderGarden(int code)
         {
             using (NDBEntities db = new NDBEntities())
             {
@@ -37,12 +37,14 @@ namespace DAL
                 {
                     db.KinderGarden.Remove(k);
                     db.SaveChanges();
+                    return 1;
                 }
                 catch (Exception)
                 {
                     throw new allreadyExist();
                 }
             }
+            return 0;
         }
         public static List<CKinderGarden> selectAllKinderGarden()
         {
