@@ -34,7 +34,7 @@ namespace AttendenceAPI.Controllers
         }
 
         [HttpPost]
-        public static CKinderGarden updateKinderGarden([FromBody] CKinderGarden ck)
+        public CKinderGarden updateKinderGarden(int x,[FromBody] CKinderGarden ck)
         {
             return BKinderGardenManager.updateKinderGarden(ck);
         }

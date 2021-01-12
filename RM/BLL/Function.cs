@@ -37,7 +37,8 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw;
+                Console.WriteLine(ex);
+                throw ex;
                 // MessageBox.Show(ex.ToString());
                 /////////////
             }

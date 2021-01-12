@@ -28,9 +28,10 @@ public kinderGarden:KinderGarden=new KinderGarden();
       return this.http.Get('KinderGarden');
     }
     
-    UpdateKinderGarden(kinderGarden:KinderGarden)
+    updateKinderGarden(kinderGarden:KinderGarden):Observable<KinderGarden>
     {
-      return this.http.post('KinderGarden',kinderGarden)
-      .subscribe(res=>{ alert(res)})
+      alert(kinderGarden.IdKinderGarden);
+      return this.http.post('KinderGarden?x='+1,kinderGarden);
+      //.subscribe(res=>{ alert(res)})
     }
 }

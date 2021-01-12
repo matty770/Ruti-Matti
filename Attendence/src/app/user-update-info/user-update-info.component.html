@@ -1,0 +1,12 @@
+<p>
+  user-update-info works!
+</p>
+<div>
+  <form #UserUpdateForm="ngForm" (ngSubmit)="updateUser(UserUpdateForm)">
+      <input name="Name" type="text"  value={{user.Name}} disabled >name  <br>
+    <input name="Address" type="text" value={{user.Address}} [(ngModel)]="user.Address">addres  <br>
+    <input name="PhoneNum" type="text" value={{user.PhoneNum}} [(ngModel)]="user.PhoneNum">phone  <br>
+  <input name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress">mail  <br>
+    <button type="submit">עדכן</button>
+  </form>
+</div>

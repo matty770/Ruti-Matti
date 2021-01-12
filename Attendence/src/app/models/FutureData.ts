@@ -1,4 +1,5 @@
 import { Time } from '@angular/common';
+import { isDate } from 'util';
 
 export enum Statuses
 {
@@ -6,7 +7,6 @@ export enum Statuses
 }
 export class FutureData
 {
-
     IdChild: string;
     KinderGardenCode: number;
     Date:Date;

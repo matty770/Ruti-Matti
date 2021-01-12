@@ -23,7 +23,7 @@ export class FormFutureDataComponent implements OnInit {
     case "1": this.futureData.Status=Statuses.Late;
     case "2": this.futureData.Status=Statuses.NonPresent;
     };
-   // alert(this.kinderGarden.idKinderGarden);
+   alert(this.futureData.UpdateDate);
     this.futureDataService.addFutureData(this.futureData);
     FutureDataForm.reset();
   }
