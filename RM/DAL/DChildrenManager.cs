@@ -19,7 +19,7 @@ namespace DAL
                     db.Children.Add(c);
                     db.SaveChanges();
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
 
                     throw;

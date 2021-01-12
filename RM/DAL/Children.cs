@@ -17,8 +17,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Children()
         {
-            this.FutureData = new HashSet<FutureData>();
-            this.LiveData = new HashSet<LiveData>();
+            this.FutureData = new HashSet<FutureData>();         
         }
     
         public string IdChild { get; set; }

@@ -3,6 +3,7 @@ import { KinderGarden } from 'src/app/models/KinderGarden';
 import { KinderGardensService } from 'src/app/services/Kindergarden.service';
 import { forEach } from '@angular/router/src/utils/collection';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-of-kinder-garden',
@@ -29,5 +30,10 @@ listKinderGarden:KinderGarden[];
   {
     this.kinderGardenService.kinderGarden=kinderGarden;
     this.router.navigate(['KinderGardenUpdateInfo']);
+  }
+
+  RemoveKinderGarden(IdKinderGarden:number):Observable<number>
+  {
+   return this.kinderGardenService.RemoveKinderGarden(IdKinderGarden);
   }
 }

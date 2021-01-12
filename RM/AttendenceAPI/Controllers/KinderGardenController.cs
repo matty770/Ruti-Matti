@@ -38,5 +38,12 @@ namespace AttendenceAPI.Controllers
         {
             return BKinderGardenManager.updateKinderGarden(ck);
         }
+
+        [HttpPost]
+        public int RemoveKinderGarden([FromBody] int x)
+        {
+           return BKinderGardenManager.removeKinderGarden(x);
+        }
+
     }
 }
