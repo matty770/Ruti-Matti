@@ -76,13 +76,18 @@ namespace DAL
                 return listCFuture;
             }
         }
-        public static void updateFutureData(CFutureData cf)
+        public static void updateFutureData(CFutureData CFutureData)
         {
-            if (selectByIdChild(cf.IdChild) != null)
+            FutureData futureData = Mapper.convertToFutureData(selectFutureByIdChildAndDate(CFutureData.IdChild,CFutureData.Date));
+            using (NDBEntities db = new NDBEntities())
             {
-                removeFutureData(cf.IdChild);
+                futureData = db.FutureData.First(d => d.IdChild == CFutureData.IdChild);
+                futureData.Alarm = futureData.Alarm;
+                futureData.Comments = CFutureData.Comments;
+                futureData.Status = Mapper.StatusEnumToInt(CFutureData.Status);
+                db.SaveChanges();
+
             }
-            addFutureData(cf);
 
         }
         public static List<CFutureData> selectByToday()
@@ -102,6 +107,20 @@ namespace DAL
                 return cf;
             }
         }
+        public static CFutureData selectFutureByIdChildAndDate(string idChild,DateTime date)
+        {
+            FutureData futureData = new FutureData();
+            using (NDBEntities db = new NDBEntities())
+            {
+                futureData = (from x in db.FutureData
+                              where x.Date.Equals(date) && x.IdChild.Equals(idChild)
+                              select x).FirstOrDefault();
+                if(futureData!=null)
+                  return Mapper.convertToCFuteureData(futureData);
+                return null;
+            }
+        }
+
 
     }
 }

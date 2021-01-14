@@ -21,9 +21,9 @@ export class ChildrenOfParentComponent implements OnInit {
     ,private futureDataService:FutureDataService) { }
   goToReport(child:Child)
   {    
-    this.futureDataService.FD.IdChild=child.Id; 
-    this.futureDataService.FD.KinderGardenCode=child.KinderGardenCode;
-    alert(this.futureDataService.FD.IdChild); 
+    this.futureDataService.futureData.IdChild=child.Id; 
+    this.futureDataService.futureData.KinderGardenCode=child.KinderGardenCode;
+    alert(this.futureDataService.futureData.IdChild); 
     this.rout.navigate(['/ChildReport']);
   }
   goToDetails(children:Child)

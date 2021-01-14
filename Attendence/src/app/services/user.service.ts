@@ -38,5 +38,9 @@ export class UserService {
   {
     this.http.post('User?x='+1,user).subscribe(res=>{alert(res)});
   }
+  UserIs(idUser:string):Observable<boolean>
+  {
+    return this.http.Get('User?idUser='+idUser);
+  }
   
 }

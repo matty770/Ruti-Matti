@@ -18,7 +18,7 @@ namespace DAL
         public Children()
         {
             this.FutureData = new HashSet<FutureData>();
-            this.LiveData = new HashSet<LiveData>();
+            
         }
     
         public string IdChild { get; set; }

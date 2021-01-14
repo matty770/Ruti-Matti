@@ -23,5 +23,11 @@ namespace AttendenceAPI.Controllers
         {
             BFutureDataManager.addFutureData(futureData);
         }
+        
+        [HttpPost]
+        public void updateFutureData(int x, [FromBody]CFutureData futureData)
+        {
+            BFutureDataManager.updateFutureData(futureData);
+        }
     }
 }

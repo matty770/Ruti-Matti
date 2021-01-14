@@ -9,7 +9,7 @@ import { Child } from 'src/app/models/Child';
 })
 export class FutureDataService {
 
-  public FD:FutureData=new FutureData();
+  public futureData:FutureData=new FutureData();
   
   constructor(private http:DataService ) { }
   GetFutureData(ChildId:string):Observable<FutureData[]>
@@ -22,5 +22,9 @@ export class FutureDataService {
     this.http.post('FutureData',futureData)
     .subscribe(res=>{ alert(res) //console.log(res)//
     });
+  }
+  updateFutureData(futureData:FutureData)
+  {
+    this.http.post('FutureData?x='+1,futureData).subscribe(res=>{alert(res)});
   }
 }
