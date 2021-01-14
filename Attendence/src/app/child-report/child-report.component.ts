@@ -14,7 +14,7 @@ FutureDataList:FutureData[];
   constructor(private futureDataService:FutureDataService, private rout:Router) { }
   GetFutureData()
   {   
-    return this.futureDataService.GetFutureData(this.futureDataService.FD.IdChild).subscribe(
+    return this.futureDataService.GetFutureData(this.futureDataService.futureData.IdChild).subscribe(
       data=>{this.FutureDataList = data;})
   }
   ngOnInit() {
@@ -24,8 +24,9 @@ FutureDataList:FutureData[];
     
     this.rout.navigate(['/formFutureData']);
   }
-  UpdateFutureData(){
-   // this.rout.navigate([''])
+  goToDetails(futureData:FutureData){
+    this.futureDataService.futureData=futureData;
+    this.rout.navigate(['FutureDataUpdateInfo'])
   }
 
 }

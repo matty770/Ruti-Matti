@@ -20,8 +20,8 @@ export class FormFutureDataComponent implements OnInit {
   }
   addFutureData(FutureDataForm)
   {
-    this.futureData.IdChild=this.futureDataService.FD.IdChild;
-    this.futureData.KinderGardenCode=this.futureDataService.FD.KinderGardenCode;
+    this.futureData.IdChild=this.futureDataService.futureData.IdChild;
+    this.futureData.KinderGardenCode=this.futureDataService.futureData.KinderGardenCode;
     switch(this.ST)
     {
     case "1": this.futureData.Status=Statuses.Late;

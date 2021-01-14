@@ -18,7 +18,7 @@ namespace DAL
                 foreach (var item in listCLiveData)
                 {
                     db.PreviousData.Add(Mapper.converCLiveToPreviousData(item));
-                    db.LiveData.Remove(Mapper.convertToLiveData(item));
+               //     db.LiveData.Remove(Mapper.convertToLiveData(item));
                     db.SaveChanges();
                 }
                 

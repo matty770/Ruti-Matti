@@ -174,5 +174,18 @@ namespace DAL
             }
             return listCUsers;
         }
+        public static Boolean UserIs(string idUser)
+        {
+            Users user = new Users();
+            using (NDBEntities db = new NDBEntities())
+            {
+                user = (from x in db.Users
+                             where x.IdUser.Equals(idUser)
+                             select x).FirstOrDefault();
+            }
+            if (user == null)
+                return false;
+            return true;
+        }
     }
 }

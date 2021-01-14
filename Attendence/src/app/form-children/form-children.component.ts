@@ -13,26 +13,24 @@ child:Child=new Child();
 user:User=new User();
 
   constructor(private childrenService:ChildService,private userService:UserService) { }
-
+ isFound:boolean;
   ngOnInit() {
   }
 
   addChildren(ChildrenForm)
   {
-    alert(this.child.Address);
     //doesn't allow to add child
     this.user.PhoneNum=this.child.Id;
     this.user.Id=this.child.ParentCode;
     this.user.Address=this.child.Address;
     this.user.Permission=1;
-    this.userService.addUser(this.user);
-
-
+    this.userService.UserIs(this.user.Id).subscribe
+    (data=>{ this.isFound = data; })
+    if(this.isFound==false)
+    {
+      this.userService.addUser(this.user);
+    }
     this.childrenService.addChildren(this.child);
-
-    
-  
-    
     ChildrenForm.reset();
    
   }

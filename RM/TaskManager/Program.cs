@@ -22,27 +22,45 @@ namespace TaskManager
                 List<CLiveData> listLiveData = new List<CLiveData>();
 
                 listLiveData = BLiveDataManager.LDIsNonPrestnt();
-                if (listLiveData == null || listLiveData.Count ==0)
+                if (listLiveData == null || listLiveData.Count == 0)
                 {
                     Console.WriteLine("there is no sata");
-                    return;
+                    Console.Read();
+                    //return;
                 }
-                Console.WriteLine(listLiveData.FirstOrDefault().KinderGardenCode);
-                foreach (var item in listLiveData)
+                else
                 {
-                    Function.CheckAttendance(item);
-                    Console.WriteLine("end of item :" + item.IdChild);
+                    Console.WriteLine(listLiveData.FirstOrDefault().KinderGardenCode);
+                    foreach (var item in listLiveData)
+                    {
+                        Function.CheckAttendance(item);
+                        Console.WriteLine("end of item :" + item.IdChild);
+                    }
                 }
+            
+
             }
 
-            if (DateTime.Now.Hour == 12)
+            if (DateTime.Now.Hour >= 18)
             {
                 Console.WriteLine("once a day");
                 Console.Read();
                 BPreviousDataManager.copyLiveToPreviousData();
+                Console.WriteLine("end copy to previous");
+                Console.Read();
                 BLiveDataManager.copyChildrenToLiveData();
+                Console.WriteLine("end copy children to live");
+                Console.Read();
                 BLiveDataManager.copyFutureToLivaData();
+                Console.WriteLine("end copy future to live");
+                Console.Read();
             }
+            else
+            {
+                Console.WriteLine("no");
+                Console.Read();
+            }
+         
             if (DateTime.Now.Hour == 17)
             {
                 BPreviousDataManager.removePreviousByDate();
