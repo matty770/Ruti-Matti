@@ -39,7 +39,7 @@ namespace DAL
                     db.SaveChanges();
                     return 1;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     throw new allreadyExist();
                 }

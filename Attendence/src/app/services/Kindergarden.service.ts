@@ -4,14 +4,17 @@ import { Observable, of } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
 import { KinderGarden } from 'src/app/models/kindergarden';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class KinderGardensService 
 {
+ 
 public ListkinderGarden:KinderGarden[];
 public kinderGardenCode:number;
-
+kg:KinderGarden=new KinderGarden();
   constructor(private http:DataService,private userService:UserService) {}
 public kinderGarden:KinderGarden=new KinderGarden();
   selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> 
@@ -21,7 +24,7 @@ public kinderGarden:KinderGarden=new KinderGarden();
     
     addKinderGarden(kinderGarden:KinderGarden)
     {
-      this.http.post('KinderGarden',kinderGarden)
+      this.http.post('KinderGarden?A=add',kinderGarden)
       .subscribe(res=>{ alert(res) //console.log(res)//
       });
       
@@ -31,16 +34,17 @@ public kinderGarden:KinderGarden=new KinderGarden();
       return this.http.Get('KinderGarden');
     }
     
-    updateKinderGarden(kinderGarden:KinderGarden):Observable<KinderGarden>
+    updateKinderGarden(kinderGarden:KinderGarden)
     {
       alert(kinderGarden.IdKinderGarden);
-      return this.http.post('KinderGarden?x='+1,kinderGarden);
+      this.http.post('KinderGarden?A=update',kinderGarden).subscribe(res=>{ alert(res)});
       //.subscribe(res=>{ alert(res)})
     }
 //
-    RemoveKinderGarden(kinderGardenCode:number):Observable<number>
+    RemoveKinderGarden(kinderGardenCode:number)
     {
-     return this.http.post('KinderGarden?x',kinderGardenCode);
+      
+     this.http.post('KinderGarden?A=remove',kinderGardenCode).subscribe(res=>{ alert(res)});
     }
       
   

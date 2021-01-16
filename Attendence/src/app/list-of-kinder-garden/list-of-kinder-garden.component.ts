@@ -32,8 +32,8 @@ listKinderGarden:KinderGarden[];
     this.router.navigate(['KinderGardenUpdateInfo']);
   }
 
-  RemoveKinderGarden(IdKinderGarden:number):Observable<number>
+  RemoveKinderGarden(IdKinderGarden:number)
   {
-   return this.kinderGardenService.RemoveKinderGarden(IdKinderGarden);
+   this.kinderGardenService.RemoveKinderGarden(IdKinderGarden);
   }
 }

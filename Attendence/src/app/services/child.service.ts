@@ -20,8 +20,10 @@ export class ChildService
     {
       alert(child.Id);
       this.http.post('Children',child)
-      .subscribe(res=>{ alert(res) //console.log(res)//
-      });
+      .subscribe(res=>{ alert(res)
+         //console.log(res)//
+      }
+      );
       
     }
     getAllChildrens():Observable<Child[]>

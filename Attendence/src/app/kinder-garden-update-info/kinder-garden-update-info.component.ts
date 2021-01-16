@@ -17,8 +17,8 @@ export class KinderGardenUpdateInfoComponent implements OnInit {
   UpdateKinderGarden(KinderGardenUpdateForm)
   {
     
-   this.kinderGardenService.updateKinderGarden(this.kinderGarden).subscribe(
-    data=>{this.kinderGarden = data;})
+   this.kinderGardenService.updateKinderGarden(this.kinderGarden);
+  // .subscribe(data=>{this.kinderGarden = data;})
     alert(this.kinderGarden.Phone);
   }
 }

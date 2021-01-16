@@ -9,8 +9,13 @@ using BLL;
 
 namespace AttendenceAPI.Controllers
 {
+
     public class KinderGardenController : ApiController
     {
+       public enum actionType
+        {
+         add,update, remove
+        }
         [HttpGet]
         public CKinderGarden GetKinderGarden(int KGCode)
         {
@@ -28,22 +33,32 @@ namespace AttendenceAPI.Controllers
         //    return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
         //}
         [HttpPost]
-        public void addKinderGarden([FromBody]CKinderGarden kinderGarden)
+        public void addKinderGarden(actionType A, [FromBody]Object kinderGarden)
         {
-            BKinderGardenManager.addKinderGarden(kinderGarden);
+            switch (A)
+            {
+                case actionType.add:
+                    BKinderGardenManager.addKinderGarden(kinderGarden as CKinderGarden); break;
+
+                case actionType.update:
+                    BKinderGardenManager.updateKinderGarden(kinderGarden as CKinderGarden); break;
+                case actionType.remove:
+                    BKinderGardenManager.removeKinderGarden(Convert.ToInt32(kinderGarden)); break;
+            }
+            //BKinderGardenManager.addKinderGarden(kinderGarden);
         }
 
-        [HttpPost]
-        public CKinderGarden updateKinderGarden(int x,[FromBody] CKinderGarden ck)
-        {
-            return BKinderGardenManager.updateKinderGarden(ck);
-        }
+        //[HttpPost]
+        //public CKinderGarden updateKinderGarden(int x,[FromBody] CKinderGarden ck)
+        //{
+        //    return BKinderGardenManager.updateKinderGarden(ck);
+        //}
 
-        [HttpPost]
-        public int RemoveKinderGarden([FromBody] int x)
-        {
-           return BKinderGardenManager.removeKinderGarden(x);
-        }
+        //[HttpPost]
+        //public int RemoveKinderGarden(int x, [FromBody] int y, int z)
+        //{
+        //   return BKinderGardenManager.removeKinderGarden(x);
+        //}
 
     }
 }

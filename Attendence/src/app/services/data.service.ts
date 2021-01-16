@@ -8,6 +8,7 @@ import { Observable, of } from 'rxjs';
 export class DataService {
   baseUrl = "http://localhost:52490/api/"
   constructor(private http: HttpClient) { }
+  
   Get(url: string): Observable<any> {
     return this.http.get(this.baseUrl + url);
   }
