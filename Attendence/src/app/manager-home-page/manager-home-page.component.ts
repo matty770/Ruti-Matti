@@ -44,5 +44,8 @@ export class ManagerHomePageComponent implements OnInit {
     this.router.navigate(['formUser']);
   }
 
-
+  Exit()
+  {
+    this.router.navigate(['']);
+  }
 }

@@ -5,6 +5,7 @@ import { KinderGardensService } from '../services/Kindergarden.service';
 import { LiveDateService } from '../services/live-date.service';
 import { UserService } from '../services/user.service';
 import { Statuses } from 'src/app/models/FutureData';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
@@ -13,7 +14,7 @@ import { Statuses } from 'src/app/models/FutureData';
 export class AttendanceComponent implements OnInit {
   LiveDataList:LiveData[];
   
-  constructor(private kinderGarden:KinderGardensService, private liveDataService:LiveDateService) {
+  constructor(private router:Router, private kinderGarden:KinderGardensService, private liveDataService:LiveDateService) {
    }
 
   selectLiveDataByKinderGardenCode()
@@ -32,6 +33,8 @@ export class AttendanceComponent implements OnInit {
     this.liveDataService.ChangeStatus(idChild,Statuses.Present);
   }
  
-
+  goToTeacherHomePage(){
+    this.router.navigate(['/TeacherHomePage']);
+  }
 
 }

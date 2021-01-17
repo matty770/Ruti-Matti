@@ -3,6 +3,7 @@ import { ChildService } from 'src/app/services/Child.service';
 import { Child } from 'src/app/models/Child';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-child-update-info',
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ChildUpdateInfoComponent implements OnInit {
   
 
-  constructor(private childService:ChildService,private userService:UserService) { }
+  constructor(private router:Router, private childService:ChildService,private userService:UserService) { }
   child:Child=this.childService.child;
   user:User=new User()
   ngOnInit() {
@@ -26,4 +27,8 @@ export class ChildUpdateInfoComponent implements OnInit {
     this.childService.UpdateChildren(this.child);
     this.userService.updateUser(this.user);
   }
+  goToChildernOfParent()
+    {
+      this.router.navigate(['/ChildrenForParent'])
+    }
 }

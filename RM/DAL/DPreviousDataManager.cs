@@ -43,7 +43,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 listPrevious = (from x in db.PreviousData
-                         where x.Date.Day.Equals(DateTime.Now.Day) && x.Date.Month.Equals(DateTime.Now.Day) && x.Date.Year.Equals(DateTime.Now.Year)
+                         where x.Date.Day.Equals(DateTime.Now.Day) && x.Date.Month.Equals(DateTime.Now.Month) && x.Date.Year.Equals(DateTime.Now.Year)
                          select x).ToList();
                 foreach (var item in listPrevious)
                 {

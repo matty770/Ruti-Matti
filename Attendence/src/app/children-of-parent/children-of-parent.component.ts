@@ -40,5 +40,8 @@ export class ChildrenOfParentComponent implements OnInit {
   ngOnInit() {
     this.selectChildrenByParentId();
   }
-
+  Exit()
+  {
+    this.rout.navigate(['']);
+  }
 }

@@ -33,7 +33,7 @@ import { UserUpdateInfoComponent } from './user-update-info/user-update-info.com
 import { FutureDataUpdateInfoComponent } from './future-data-update-info/future-data-update-info.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
-export const Rout:Routes =[{path:'',component:HomeComponent},
+export const Rout:Routes =[{path:'',component:LoginComponent},
 {path:'seretaryMenu',component:SecretaryMenuComponent},
 {path:'myCom',component:MyComComponent},
 {path:'ChildrenForParent',component:ChildrenOfParentComponent},
@@ -54,6 +54,7 @@ export const Rout:Routes =[{path:'',component:HomeComponent},
 {path:'KinderGardenUpdateInfo',component:KinderGardenUpdateInfoComponent},
 {path:'UserUpdateInfo',component:UserUpdateInfoComponent},
 {path:'FutureDataUpdateInfo',component:FutureDataUpdateInfoComponent}
+
 
 
 

@@ -37,4 +37,8 @@ user:User=new User();
     this.user=this.userService.user;
     this.router.navigate(['UserUpdateInfo']);
   }
+  Exit()
+  {
+    this.router.navigate(['']);
+  }
 }

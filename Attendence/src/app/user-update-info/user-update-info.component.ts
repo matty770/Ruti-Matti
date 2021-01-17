@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserUpdateInfoComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private rout:Router) { }
 user:User=this.userService.user;
   ngOnInit() {
   }
@@ -17,5 +18,8 @@ user:User=this.userService.user;
   updateUser(UserUpdateForm)
   {
     this.userService.updateUser(this.user);
+  }
+  goToTeacherHomePage(){
+    this.rout.navigate(['/TeacherHomePage']);
   }
 }

@@ -32,5 +32,8 @@ FutureDataList:FutureData[];
   {
     this.futureDataService.removeFutureData(futureData);
   }
-
+  goToChildernOfParent()
+    {
+      this.rout.navigate(['/ChildrenForParent'])
+    }
 }

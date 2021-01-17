@@ -135,7 +135,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 ld = (from x in db.LiveData
-                      where x.Alarm.Hours <= DateTime.Now.Hour && x.Alarm.Minutes <= DateTime.Now.Minute && (x.Status == 4 || x.Status == 1)
+                      where (x.Alarm.Hours < DateTime.Now.Hour || x.Alarm.Hours == DateTime.Now.Hour && x.Alarm.Minutes <= DateTime.Now.Minute) && (x.Status == 4 || x.Status == 1)
                       select x).ToList();
             }
             foreach (var item in ld)

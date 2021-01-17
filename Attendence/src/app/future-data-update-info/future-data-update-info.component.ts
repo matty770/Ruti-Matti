@@ -25,7 +25,8 @@ export class FutureDataUpdateInfoComponent implements OnInit {
    case "1": this.futureData.Status=Statuses.Late;
    case "2": this.futureData.Status=Statuses.NonPresent;
    };
-    this.futureDataService.updateFutureData(this.futureData)
+     //this.futureData.UpdateDate=Date.now()
+    this.futureDataService.updateFutureData(this.futureData);
   }
   convertStatusToString()
   {
