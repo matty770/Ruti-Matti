@@ -35,12 +35,14 @@ namespace DAL
                                 select x).FirstOrDefault();
                 try
                 {
+                    //f.IdChild = null;
+                    //f.KindergardenCode = 0;
                     db.FutureData.Remove(f);
                     db.SaveChanges();
                 }
                 catch (Exception)
                 {
-                    throw new allreadyExist();
+                    throw; //new allreadyExist();
                 }
             }
         }

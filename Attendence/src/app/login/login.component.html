@@ -1,8 +1,8 @@
 
-<form #userForm="ngForm" (ngSubmit)="Login(userId.value); userForm.reset()" >
+<form #userForm="ngForm" (ngSubmit)="Login(userId.value,userName.value); userForm.reset()" >
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" #userName />
   </div>
   <div class="form-group">
     <label for="password">Password</label>

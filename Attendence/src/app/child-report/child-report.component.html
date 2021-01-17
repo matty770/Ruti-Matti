@@ -13,6 +13,7 @@
         <th><h3>Alarm</h3></th>&nbsp;
         <th><h3>Comments</h3></th>&nbsp;
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody *ngFor="let FutureData of FutureDataList">
@@ -24,7 +25,8 @@
         <th>{{FutureData.UpdateBy}}</th>&nbsp;
         <th>{{FutureData.Alarm}}</th>&nbsp;
         <th>{{FutureData.Comments}}</th>&nbsp;
-      <button (click)="goToDetails(FutureData)">update details</button>
+      <th><button (click)="goToDetails(FutureData)">update details</button></th>
+      <th><button (click)="removeFutureData(FutureData)">remove</button></th>
       </tr>
     </tbody>
   </table>

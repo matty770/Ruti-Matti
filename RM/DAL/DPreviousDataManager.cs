@@ -38,14 +38,17 @@ namespace DAL
 
         public static void removePreviousByDate()
         {
-            List<PreviousData> listP = new List<PreviousData>();
+            List<PreviousData> listPrevious = new List<PreviousData>();
+            PreviousData previusData = new PreviousData();
             using (NDBEntities db = new NDBEntities())
             {
-                listP = (from x in db.PreviousData
+                listPrevious = (from x in db.PreviousData
                          where x.Date.Day.Equals(DateTime.Now.Day) && x.Date.Month.Equals(DateTime.Now.Day) && x.Date.Year.Equals(DateTime.Now.Year)
                          select x).ToList();
-                foreach (var item in listP)
+                foreach (var item in listPrevious)
                 {
+                    item.IdChild = null;
+                    item.KindergardenCode = 0;
                     db.PreviousData.Remove(item);
                     db.SaveChanges();
                 }

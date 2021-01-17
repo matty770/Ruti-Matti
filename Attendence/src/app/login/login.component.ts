@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/user.service';
 import { User } from '../models/User';
 import { Router } from '@angular/router';
+import { forEach } from '@angular/router/src/utils/collection';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-login',
@@ -10,49 +13,38 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit
  {
- // user:User;
+  listUser:User[];
   permission: number;
+  array:any;
   constructor(private userService: UserService,private router:Router){}
 
   ngOnInit() {
   }
-  Login(userId:string)
-  {
-   this.userService.GetUser(userId).subscribe(data=>{this.userService.user = data; 
-    if(this.userService.user.Permission==1)
-      this.router.navigate(['/ChildrenForParent']);
-      else if(this.userService.user.Permission==2)
-             this.router.navigate(['/TeacherHomePage']);
-             else if(this.userService.user.Permission==3)
-                   this.router.navigate(['/ManagerHomePage']);
-   }
-)
+ Login(userId:string,name:string)
+ {
+ this.userService.GetUser(userId).subscribe(data=>{this.userService.user = data; 
+  if(this.userService.user.Permission==1)
+    this.router.navigate(['/ChildrenForParent']);
+    else if(this.userService.user.Permission==2)
+           this.router.navigate(['/TeacherHomePage']);
+           else if(this.userService.user.Permission==3)
+                 this.router.navigate(['/ManagerHomePage']);
   }
-}
+  )
 
-      
-
+ }
+//
+//  Login(userId:string,name:string)
+//  {
+//    
+//    this.userService.GetAllUsers().subscribe(data=>{this.listUser=data});
+//    this.array=this.listUser;
+//    this.array.forEach(element => {
+//      alert(element);
+//      
+//    });
+//}
      
-// צריך כאן לעשות חיפוש לפי פרמישן לאיזה קומפוננטנה להפנות את המשתמש
-       // if(data!=null)
-      //  {
-      //    this.router.navigate(['/ChildrenForParent',{data}]);
-      //    alert(data.PhoneNum);
-      //  }     
-      //  else
-      //  alert("hjuygu");
 
-       // this.userService.GetPermissionOfUser(userId).subscribe
- //   (
-  //    data=>{this.permission=data;
- //       switch(this.permission)
- //      {
-   //       case 1:{
-  //         this.router.navigate(['/ChildrenForParent',{data}]);
-     //     return;}
-   //       case 2:{
-    //        this.router.navigate(['/TeacherHomePage',{data}]);
-  //        return;}  
-      //  }
-    //  }
-  //  )
+
+}

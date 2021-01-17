@@ -25,4 +25,8 @@ listChildren:Child[];
   {
     this.router.navigate(['formChildren']);
   }
+  removeChild(child:Child)
+  {
+   this.childServive.removeChild(child);
+  }
 }

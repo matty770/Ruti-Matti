@@ -12,19 +12,17 @@ export class ChildService
   public child:Child=new Child();
   constructor(private http:DataService,private userService:UserService) {}
   
-
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
     return this.http.Get('Children?ParentId=' + ParentId);}
     
     addChildren(child:Child)
     {
       alert(child.Id);
-      this.http.post('Children',child)
+      this.http.post('Children?nameFunction=add',child)
       .subscribe(res=>{ alert(res)
          //console.log(res)//
       }
-      );
-      
+      ); 
     }
     getAllChildrens():Observable<Child[]>
     {
@@ -32,7 +30,11 @@ export class ChildService
     }
     UpdateChildren(children:Child,)
     {
-      this.http.post('Children?x='+1,children).subscribe(res=>{alert(res)});
+      this.http.post('Children?nameFunction=update',children).subscribe(res=>{alert(res)});
+    }
+    removeChild(child:Child)
+    {
+      this.http.post('Children?nameFunction=remove',child).subscribe(res=>{alert(res)});
     }
 
 }

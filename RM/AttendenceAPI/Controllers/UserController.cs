@@ -32,11 +32,11 @@ namespace AttendenceAPI.Controllers
         //}
 
 
-        //[HttpGet]
-        //public List<CUsers> GetAllTeachers()
-        //{
-        //    return BUserManager.selectAllTeachers();
-        //}
+        [HttpGet]
+        public List<CUsers> GetAllUsers()
+        {
+            return BUserManager.selectAllUsers();
+        }
         [HttpGet]
         public List<CUsers> SelectParentOrTechers(int p)
         {

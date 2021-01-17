@@ -28,5 +28,9 @@ FutureDataList:FutureData[];
     this.futureDataService.futureData=futureData;
     this.rout.navigate(['FutureDataUpdateInfo'])
   }
+  removeFutureData(futureData:FutureData)
+  {
+    this.futureDataService.removeFutureData(futureData);
+  }
 
 }

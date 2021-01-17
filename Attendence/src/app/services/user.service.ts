@@ -12,10 +12,14 @@ export class UserService {
    public user:User=new User();
   constructor(private http: DataService) { }
 
-  SelectParentOrTechers(p:number):Observable<User[]>
+GetAllUsers():Observable<User[]>
+{
+  return this.http.Get('User');
+}
+  SelectParentOrTechers(permission:number):Observable<User[]>
   {
-    alert(p);
-    return this.http.Get('User?p='+p);
+    alert(permission);
+    return this.http.Get('User?p='+permission);
   }
   GetUser(userId: string): Observable<User> {
     return this.http.Get('User?userId=' + userId);

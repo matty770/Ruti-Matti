@@ -11,28 +11,47 @@ namespace AttendenceAPI.Controllers
 {
     public class ChildrenController : ApiController
     {
+        public enum actionType
+        {
+            add, update, remove
+        }
         [HttpGet]
         public List<CChildren> selectChildrenByParentId(string ParentId)
         {
+          
             List<CChildren> lc = new List<CChildren>();
             lc = BChildrenManager.selectChildrenByParentId(ParentId);
             return lc;
 
         }
-        [HttpPost]
-        public void addChildren([FromBody]CChildren children)
-        {
-            BChildrenManager.addChildren(children);
-        }
+        //[HttpPost]
+        //public void addChildren([FromBody]CChildren children)
+        //{
+        //    BChildrenManager.addChildren(children);
+        //}
         [HttpGet]
         public List<CChildren> getAllChildrens()
         {
            return BChildrenManager.selectAllChildren();
         }
-        [HttpPost]
-        public void UpdateChildren(int x,[FromBody]CChildren children)
+        //[HttpPost]
+        //public void UpdateChildren(int x,[FromBody]CChildren children)
+        //{
+        //    BChildrenManager.updateChildren(children);
+        //}
+        public void functioPost(actionType nameFunction, [FromBody]CChildren child)
         {
-            BChildrenManager.updateChildren(children);
+            switch (nameFunction)
+            {
+                case actionType.add:
+                    BChildrenManager.addChildren(child); break;
+
+                case actionType.update:
+                    BChildrenManager.updateChildren(child); break;
+                case actionType.remove:
+                    BChildrenManager.removeChildren((child.Id)); break;
+            }
+            //BKinderGardenManager.addKinderGarden(kinderGarden);
         }
 
 

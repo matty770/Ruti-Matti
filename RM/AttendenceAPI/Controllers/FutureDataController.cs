@@ -18,16 +18,21 @@ namespace AttendenceAPI.Controllers
             return fd;
         }
 
-        [HttpPost]
-        public void addFutureData([FromBody]CFutureData futureData)
-        {
-            BFutureDataManager.addFutureData(futureData);
-        }
+        //[HttpPost]
+        //public void addFutureData([FromBody]CFutureData futureData)
+        //{
+        //    BFutureDataManager.addFutureData(futureData);
+        //}
         
+        //[HttpPost]
+        //public void updateFutureData(int x, [FromBody]CFutureData futureData)
+        //{
+        //    BFutureDataManager.updateFutureData(futureData);
+        //}
         [HttpPost]
-        public void updateFutureData(int x, [FromBody]CFutureData futureData)
+        public void removeFutureData([FromBody] CFutureData futureData)
         {
-            BFutureDataManager.updateFutureData(futureData);
+            BFutureDataManager.removeFutureData(futureData);
         }
     }
 }

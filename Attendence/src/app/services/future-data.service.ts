@@ -27,4 +27,8 @@ export class FutureDataService {
   {
     this.http.post('FutureData?x='+1,futureData).subscribe(res=>{alert(res)});
   }
+  removeFutureData(futureData:FutureData)
+  {
+    this.http.post('FutureData',futureData).subscribe(res=>{alert(res)});
+  }
 }
