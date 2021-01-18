@@ -23,7 +23,7 @@ namespace BLL
 
                 mail.From = new MailAddress("attendanceforstudent@gmail.com");
                 mail.To.Add(addressMail);
-                mail.Subject = "הודעה דחופה מהגן של"+nameChild;
+                mail.Subject = " הודעה דחופה מהגן של"+nameChild;
                 mail.Body = nameChild +"לא הגיעה לגן בדקו את הענין וצרו קשר עם הגננת!!!!";
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;

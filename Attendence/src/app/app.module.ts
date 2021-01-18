@@ -11,7 +11,7 @@ import { MyComComponent } from './my-com/my-com.component';
 //import { PhonePipePipe } from './pipes/phone-pipe.pipe';
 import { PhoneMaskDirective } from './directivs/phone-mask.directive';
 import { DirBorderDirective } from './directivs/dir-border.directive';
-//import { FilterPipe } from './pipes/filter.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './login/login.component';
 import { ChildrenOfParentComponent } from './children-of-parent/children-of-parent.component';
 import { ChildReportComponent } from './child-report/child-report.component';
@@ -73,7 +73,7 @@ export const Rout:Routes =[{path:'',component:LoginComponent},
     //nPhonePipePipe,
     PhoneMaskDirective,
     DirBorderDirective,
-    //FilterPipe,
+    FilterPipe,
     LoginComponent,
     ChildrenOfParentComponent,
     ChildReportComponent,

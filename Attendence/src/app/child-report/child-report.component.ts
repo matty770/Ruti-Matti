@@ -2,16 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { FutureDataService } from 'src/app/services/future-data.service';
 import { FutureData } from '../models/FutureData';
 import {Router} from '@angular/router';
-//import { time } from 'console';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-child-report',
   templateUrl: './child-report.component.html',
-  styleUrls: ['./child-report.component.css']
+  styleUrls: ['./child-report.component.css'],
+  providers: [DatePipe]
 })
+
 export class ChildReportComponent implements OnInit {
-FutureDataList:FutureData[];
-  constructor(private futureDataService:FutureDataService, private rout:Router) { }
+
+  FutureDataList:FutureData[];
+
+  constructor(private datePipe: DatePipe,private futureDataService:FutureDataService, private rout:Router) { }
+
   GetFutureData()
   {   
     return this.futureDataService.GetFutureData(this.futureDataService.futureData.IdChild).subscribe(

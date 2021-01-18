@@ -4,6 +4,7 @@
 <a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div >
+  <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
     <button (click)="ToChildrenForm()">add child</button><br><br>
  <table class="table" >
   <thead>
@@ -15,7 +16,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody *ngFor="let child of listChildren">
+  <tbody *ngFor="let child of listChildren | filter:search">
     <tr>
       <th>{{child.Id}}</th>&nbsp;
       <th>{{child.ChildName}}</th>&nbsp;

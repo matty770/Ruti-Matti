@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ListOfChildrenComponent implements OnInit {
 listChildren:Child[];
-  constructor(private childServive:ChildService,private router:Router) { }
 
+  constructor(private childServive:ChildService,private router:Router) { }
+  search="";
   ngOnInit() {
     this.GetAllChildrens();
   }

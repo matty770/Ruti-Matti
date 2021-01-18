@@ -12,7 +12,7 @@ namespace DAL
         public static KinderGarden convertToKinderGarden(CKinderGarden ck)
         {
             KinderGarden k = new KinderGarden();
-            k.IdKinderGarden = ck.IdKinderGarden;
+            //k.IdKinderGarden = ck.IdKinderGarden;
             k.Name = ck.Name;
             k.Address = ck.Address;
             k.PhoneNumber = ck.Phone;

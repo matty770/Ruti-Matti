@@ -33,17 +33,17 @@ namespace AttendenceAPI.Controllers
         //    return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
         //}
         [HttpPost]
-        public void addKinderGarden(actionType A, [FromBody]Object kinderGarden)
+        public void addKinderGarden(actionType A, [FromBody]CKinderGarden kinderGarden)
         {
             switch (A)
             {
                 case actionType.add:
-                    BKinderGardenManager.addKinderGarden(kinderGarden as CKinderGarden); break;
+                    BKinderGardenManager.addKinderGarden(kinderGarden); break;
 
                 case actionType.update:
-                    BKinderGardenManager.updateKinderGarden(kinderGarden as CKinderGarden); break;
+                    BKinderGardenManager.updateKinderGarden(kinderGarden); break;
                 case actionType.remove:
-                    BKinderGardenManager.removeKinderGarden(Convert.ToInt32(kinderGarden)); break;
+                    BKinderGardenManager.removeKinderGarden(kinderGarden.IdKinderGarden); break;
             }
             //BKinderGardenManager.addKinderGarden(kinderGarden);
         }
