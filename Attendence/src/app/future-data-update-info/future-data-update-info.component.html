@@ -9,7 +9,7 @@
 </select><br>
    <input name="Date" type="date" [(ngModel)]="futureData.Date" disabled> Date <br>
     <input name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">UpdateBy<br>
-    <input name="Alarm" type="time" [(ngModel)]="futureData.Alarm">Alarm<br>
+    <a *ngIf="ST==1"><input name="Alarm" type="time" [(ngModel)]="futureData.Alarm">Alarm<br></a>
     <input name="Comments" type="text" [(ngModel)]="futureData.Comments">Comments<br>
     <button type="submit">עדכן</button>
   </form>

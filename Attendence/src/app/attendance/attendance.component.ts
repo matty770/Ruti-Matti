@@ -21,7 +21,7 @@ export class AttendanceComponent implements OnInit {
 
   selectLiveDataByKinderGardenCode()
   {
-    this.liveDataService.GetLiveDate(this.kinderGardenService.kinderGardenCode).subscribe(
+    this.liveDataService.GetLiveDataByKinderGardenCode(this.kinderGarden.IdKinderGarden).subscribe(
       data=>{
       this.LiveDataList = data;
      }
