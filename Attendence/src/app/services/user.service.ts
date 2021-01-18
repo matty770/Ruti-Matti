@@ -42,7 +42,7 @@ GetAllUsers():Observable<User[]>
   {
     this.http.post('User?x='+1,user).subscribe(res=>{alert(res)});
   }
-  UserIs(idUser:string):Observable<boolean>
+  UserIs(idUser:string):Observable<number>
   {
     return this.http.Get('User?idUser='+idUser);
   }

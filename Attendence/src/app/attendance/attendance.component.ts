@@ -6,20 +6,22 @@ import { LiveDateService } from '../services/live-date.service';
 import { UserService } from '../services/user.service';
 import { Statuses } from 'src/app/models/FutureData';
 import { Router } from '@angular/router';
+import { KinderGarden } from 'src/app/models/KinderGarden';
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
   styleUrls: ['./attendance.component.css']
 })
 export class AttendanceComponent implements OnInit {
+  kinderGarden:KinderGarden=this.kinderGardenService.kinderGarden;
   LiveDataList:LiveData[];
   
-  constructor(private router:Router, private kinderGarden:KinderGardensService, private liveDataService:LiveDateService) {
+  constructor(private router:Router, private kinderGardenService:KinderGardensService, private liveDataService:LiveDateService) {
    }
 
   selectLiveDataByKinderGardenCode()
   {
-    this.liveDataService.GetLiveDate(this.kinderGarden.kinderGardenCode).subscribe(
+    this.liveDataService.GetLiveDate(this.kinderGardenService.kinderGardenCode).subscribe(
       data=>{
       this.LiveDataList = data;
      }

@@ -9,11 +9,12 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./form-children.component.css']
 })
 export class FormChildrenComponent implements OnInit {
-child:Child=new Child();
-user:User=new User();
+
 
   constructor(private childrenService:ChildService,private userService:UserService) { }
- isFound:boolean;
+  child:Child=new Child();
+user:User=new User();
+  isFound:number;
   ngOnInit() {
   }
 
@@ -25,13 +26,14 @@ user:User=new User();
     this.user.Address=this.child.Address;
     this.user.Permission=1;
     this.userService.UserIs(this.user.Id).subscribe
-    (data=>{ this.isFound = data; })
-    if(this.isFound==false)
-    {
-      this.userService.addUser(this.user);
-    }
-    this.childrenService.addChildren(this.child);
-    ChildrenForm.reset();
+    (data=>{ this.isFound = data; });
+if(this.isFound==0)
+{
+  alert(this.user.Name);
+  this.userService.addUser(this.user);
+}
+this.childrenService.addChildren(this.child);
+ChildrenForm.reset();
    
   }
 }

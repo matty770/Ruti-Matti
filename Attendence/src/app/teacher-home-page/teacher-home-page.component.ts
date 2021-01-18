@@ -12,7 +12,8 @@ import { User } from 'src/app/models/User';
 })
 export class TeacherHomePageComponent implements OnInit {
 KinderGardens:KinderGarden[];
-user:User=new User();
+user:User=this.userService.user;
+//user:User=new User();
 
   constructor(private router:Router,private KinderGardenService:KinderGardensService
     ,private userService:UserService) { }
@@ -20,9 +21,10 @@ user:User=new User();
   ngOnInit() {
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
   }
-  goToAttendance(IDKG:number)
+  goToAttendance(IdKg:number,nameKg:string)
   {
-    this.KinderGardenService.kinderGardenCode=IDKG;
+    this.KinderGardenService.kinderGarden.IdKinderGarden=IdKg;
+    this.KinderGardenService.kinderGarden.Name=nameKg;
     this.router.navigate(['/Attendance']);
     
   }

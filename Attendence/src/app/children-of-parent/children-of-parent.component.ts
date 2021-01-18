@@ -5,6 +5,7 @@ import { ChildService } from 'src/app/services/Child.service';
 import { Child } from 'src/app/models/Child';
 import { UserService } from 'src/app/services/user.service';
 import { FutureDataService } from 'src/app/services/future-data.service';
+import { User } from 'src/app/models/User';
 
 
 @Component({
@@ -15,8 +16,8 @@ import { FutureDataService } from 'src/app/services/future-data.service';
 export class ChildrenOfParentComponent implements OnInit {
   subscription: Subscription;
   listChildren:any[];
+  user:User=this.userService.user;
   children:Child[];
-
   constructor(private rout:Router,private childService:ChildService,private userService:UserService
     ,private futureDataService:FutureDataService) { }
   goToReport(child:Child)

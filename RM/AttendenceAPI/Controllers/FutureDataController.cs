@@ -11,6 +11,10 @@ namespace AttendenceAPI.Controllers
 {
     public class FutureDataController : ApiController
     {
+        public enum actionType
+        {
+            add, update, remove
+        }
         [HttpGet]
         public List<CFutureData> GetFutureData(string ChildId)
         {
@@ -23,16 +27,29 @@ namespace AttendenceAPI.Controllers
         //{
         //    BFutureDataManager.addFutureData(futureData);
         //}
-        
+
         //[HttpPost]
         //public void updateFutureData(int x, [FromBody]CFutureData futureData)
         //{
         //    BFutureDataManager.updateFutureData(futureData);
         //}
-        [HttpPost]
-        public void removeFutureData([FromBody] CFutureData futureData)
+        //    [HttpPost]
+        //    public void removeFutureData([FromBody] CFutureData futureData)
+        //    {
+        //        BFutureDataManager.removeFutureData(futureData);
+        //    }
+        public void functioPost(actionType nameFunction, [FromBody]CFutureData futureData)
         {
-            BFutureDataManager.removeFutureData(futureData);
+            switch (nameFunction)
+            {
+                case actionType.add:
+                    BFutureDataManager.addFutureData(futureData); break;
+
+                case actionType.update:
+                    BFutureDataManager.updateFutureData(futureData); break;
+                case actionType.remove:
+                    BFutureDataManager.removeFutureData(futureData); break;
+            }
         }
     }
 }

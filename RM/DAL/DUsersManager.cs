@@ -174,7 +174,7 @@ namespace DAL
             }
             return listCUsers;
         }
-        public static Boolean UserIs(string idUser)
+        public static int UserIs(string idUser)
         {
             Users user = new Users();
             using (NDBEntities db = new NDBEntities())
@@ -184,8 +184,8 @@ namespace DAL
                              select x).FirstOrDefault();
             }
             if (user == null)
-                return false;
-            return true;
+                return 0;
+            return 1;
         }
     }
 }

@@ -53,7 +53,7 @@ namespace AttendenceAPI.Controllers
              BUserManager.updateUser(user);
         }
         [HttpGet]
-        public bool UserIs(string idUser)
+        public int UserIs(string idUser)
         {
             return BUserManager.UserIs(idUser);
         }

@@ -27,4 +27,9 @@ ParentList:User[];
   {
     this.router.navigate(['formUser']);
   }
+  goToChildrenOfParent(parent:User)
+  {
+    this.UserService.user=parent;
+    this.router.navigate(['ChildrenForParent']);
+  }
 }

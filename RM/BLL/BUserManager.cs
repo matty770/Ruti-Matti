@@ -52,7 +52,7 @@ namespace BLL
         {
             return DUsersManager.selectUserByIdChild(idChild);
         }
-        public static bool UserIs(string idUser)
+        public static int UserIs(string idUser)
         {
             return DUsersManager.UserIs(idUser);
         }

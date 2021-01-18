@@ -19,16 +19,16 @@ export class FutureDataService {
 
   addFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData',futureData)
+    this.http.post('FutureData?nameFunction=add',futureData)
     .subscribe(res=>{ alert(res) //console.log(res)//
     });
   }
   updateFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData?x='+1,futureData).subscribe(res=>{alert(res)});
+    this.http.post('FutureData?nameFunction=update'+1,futureData).subscribe(res=>{alert(res)});
   }
   removeFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData',futureData).subscribe(res=>{alert(res)});
+    this.http.post('FutureData?nameFunction=remove',futureData).subscribe(res=>{alert(res)});
   }
 }
