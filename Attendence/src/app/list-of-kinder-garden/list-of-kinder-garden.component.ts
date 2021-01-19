@@ -31,6 +31,11 @@ listKinderGarden:KinderGarden[];
     this.kinderGardenService.kinderGarden=kinderGarden;
     this.router.navigate(['KinderGardenUpdateInfo']);
   }
+  goToChildrenForKinderGarden(kinderGarden:KinderGarden)
+  {
+    this.kinderGardenService.kinderGarden=kinderGarden;
+    this.router.navigate(['ChildrenForKinderGarden']);
+  }
 
   RemoveKinderGarden(IdKinderGarden:number)
   {

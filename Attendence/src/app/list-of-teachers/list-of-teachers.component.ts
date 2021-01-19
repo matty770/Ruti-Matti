@@ -22,4 +22,9 @@ export class ListOfTeachersComponent implements OnInit {
   {
     this.router.navigate(['formUser']);
   }
+  goToTeacherHomePage(techer:User)
+  {
+    this.UserService.user=techer;
+    this.router.navigate(['/TeacherHomePage'],3);
+  }
 }

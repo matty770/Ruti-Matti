@@ -31,6 +31,7 @@ import { FormFutureDataComponent } from './form-future-data/form-future-data.com
 import { KinderGardenUpdateInfoComponent } from './kinder-garden-update-info/kinder-garden-update-info.component';
 import { UserUpdateInfoComponent } from './user-update-info/user-update-info.component';
 import { FutureDataUpdateInfoComponent } from './future-data-update-info/future-data-update-info.component';
+import { ChildrenForKinderGardenComponent } from './children-for-kinder-garden/children-for-kinder-garden.component';
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:LoginComponent},
@@ -53,12 +54,9 @@ export const Rout:Routes =[{path:'',component:LoginComponent},
 {path:'formFutureData',component:FormFutureDataComponent},
 {path:'KinderGardenUpdateInfo',component:KinderGardenUpdateInfoComponent},
 {path:'UserUpdateInfo',component:UserUpdateInfoComponent},
-{path:'FutureDataUpdateInfo',component:FutureDataUpdateInfoComponent}
-
-
-
-
-
+{path:'FutureDataUpdateInfo',component:FutureDataUpdateInfoComponent},
+{path:'ChildrenForKinderGarden',component:ChildrenForKinderGardenComponent},
+{path:'TeacherHomePage/:num',component:TeacherHomePageComponent},
 
 
 //{path:'ChildrenOfTecher',component:ChildrenOfTecherComponent}
@@ -93,6 +91,7 @@ export const Rout:Routes =[{path:'',component:LoginComponent},
     KinderGardenUpdateInfoComponent,
     UserUpdateInfoComponent,
     FutureDataUpdateInfoComponent,
+    ChildrenForKinderGardenComponent,
     //ChildrenOfTecherComponent,
   ],
   imports: [

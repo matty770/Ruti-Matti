@@ -34,6 +34,11 @@ namespace AttendenceAPI.Controllers
         {
            return BChildrenManager.selectAllChildren();
         }
+        [HttpGet]
+        public List<CChildren> getChildsByKinderGarden(int kinderGardenCode)
+        {
+            return BChildrenManager.selectChildrenByKinderGardenCode(kinderGardenCode);
+        }
         //[HttpPost]
         //public void UpdateChildren(int x,[FromBody]CChildren children)
         //{

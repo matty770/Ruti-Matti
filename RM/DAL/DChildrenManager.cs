@@ -108,6 +108,22 @@ namespace DAL
              
             }
         }
+        public static List<CChildren> selectchildrenByKinderGardenCode(int code)
+        {
+            List<Children> listChildren = new List<Children>();
+            using (NDBEntities db = new NDBEntities())
+            {
+                listChildren = (from x in db.Children
+                      where x.KinderGardenCode==code
+                      select x).ToList();
+                List<CChildren> listCChildren = new List<CChildren>();
+                foreach (var item in listChildren)
+                {
+                    listCChildren.Add(Mapper.convertToCChildren(item));
+                }
+                return listCChildren;
+            }
+        }
 
     }
 }

@@ -15,6 +15,7 @@ import { KinderGarden } from 'src/app/models/KinderGarden';
 export class AttendanceComponent implements OnInit {
   kinderGarden:KinderGarden=this.kinderGardenService.kinderGarden;
   LiveDataList:LiveData[];
+  ss:Statuses=Statuses.NonPresent;
   
   constructor(private router:Router, private kinderGardenService:KinderGardensService, private liveDataService:LiveDateService) {
    }

@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit
  
   listUser:User[];
   permission: number;
+  ID:string;
   array:any;
   constructor(private userService: UserService,private router:Router){
     this.userService.user=null;
@@ -41,8 +42,6 @@ export class LoginComponent implements OnInit
 
   Login(userId:string,name:string)
   {
-    
-    
     //this.array=this.listUser;
     this.listUser.forEach(element => {
       if(element.Id==userId&&element.Name==name)

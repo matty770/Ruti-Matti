@@ -34,5 +34,9 @@ namespace BLL
         {
             DChildrenManager.updateChildren(cc);
         }
+        public static List<CChildren> selectChildrenByKinderGardenCode(int code)
+        {
+            return DChildrenManager.selectchildrenByKinderGardenCode(code);
+        }
     }
 }
