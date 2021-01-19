@@ -46,6 +46,7 @@ public kinderGarden:KinderGarden=new KinderGarden();
       
      this.http.post('KinderGarden?A=remove',kinderGardenCode).subscribe(res=>{ alert(res)});
     }
+
       
   
   }

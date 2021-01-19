@@ -1,6 +1,7 @@
-
+<p>
+  children-for-kinder-garden works!
+</p>
 <div>
-  <h3>{{user.Name}} רשימת הילדים של </h3><br>
   <table class="table">
     <thead>
       <tr>
@@ -9,7 +10,6 @@
         <th><h3>LastName</h3></th>&nbsp;
         <th><h3>Address</h3></th>&nbsp;       
         <th><h3>Phone</h3></th>&nbsp;
-        <th></th>
       </tr>
     </thead>
     <tbody *ngFor="let child of children">
@@ -19,11 +19,7 @@
         <th>{{child.LastName}}</th>&nbsp;
         <th>{{child.Address}}</th>&nbsp;
         <th>{{child.Phone}}</th>&nbsp;
-       <th><button type="button" (click)="goToReport(child)">report time</button>&nbsp;
-      <button (click)="goToDetails(child)">update details</button>
       </tr>
     </tbody>
   </table>
-  <button (click)="Exit()">יציאה</button>
 </div>
-

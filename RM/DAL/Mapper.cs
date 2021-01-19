@@ -38,7 +38,8 @@ namespace DAL
         {
             Users u = new Users();
             u.IdUser = cu.Id;
-            u.Name = cu.Name;
+            u.FirstName = cu.FirstName;
+            u.LastName = cu.LastName;
             u.Address = cu.Address;
             u.PhoneNum = cu.PhoneNum;
             // u.KinderGardenCode = cu.KinderGardenCode;
@@ -50,7 +51,8 @@ namespace DAL
         {
             CUsers cu = new CUsers();
             cu.Id = u.IdUser;
-            cu.Name = u.Name;
+            cu.FirstName = u.FirstName;
+            cu.LastName = u.LastName;
             cu.Address = u.Address;
             cu.PhoneNum = u.PhoneNum;
             //  cu.KinderGardenCode = u.KinderGardenCode;
@@ -62,7 +64,8 @@ namespace DAL
         {
             Children c = new Children();
             c.IdChild = cc.Id;
-            c.ChildName = cc.ChildName;
+            c.FirstName = cc.FirstName;
+            c.LastName = cc.LastName;
             c.Address = cc.Address;
             c.Phone = cc.Phone;
             c.ParentCode = cc.ParentCode;
@@ -73,7 +76,8 @@ namespace DAL
         {
             CChildren cc = new CChildren();
             cc.Id = c.IdChild;
-            cc.ChildName = c.ChildName;
+            cc.FirstName = c.FirstName;
+            cc.LastName = c.LastName;
             cc.Address = c.Address;
             cc.Phone = c.Phone;
             cc.ParentCode = c.ParentCode;

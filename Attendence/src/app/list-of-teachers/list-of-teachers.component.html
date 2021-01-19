@@ -5,24 +5,28 @@
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div >
   <button (click)="GoToAddTeacher()">Add Teacher</button><br><br>
+  <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
 <table class="table" >
 <thead>
   <tr>
     <th><h3>ID</h3></th>&nbsp;
-    <th><h3>Name</h3></th>&nbsp;
+    <th><h3>FirstName</h3></th>&nbsp;
+    <th><h3>LastName</h3></th>&nbsp;
     <th><h3>Address</h3></th>&nbsp;
     <th><h3>Phone</h3></th>&nbsp;
     <th><h3>EMail</h3></th>&nbsp;
     <th></th>
   </tr>
 </thead>
-<tbody *ngFor="let Teacher of TeacherList">
+<tbody *ngFor="let Teacher of TeacherList| filter:search">
   <tr>
     <th>{{Teacher.Id}}</th>&nbsp;
-    <th>{{Teacher.Name}}</th>&nbsp;
+    <th>{{Teacher.FirstName}}</th>&nbsp;
+    <th>{{Teacher.LastName}}</th>&nbsp;
     <th>{{Teacher.Address}}</th>&nbsp;
     <th>{{Teacher.PhoneNum}}</th>&nbsp;
-    <th>{{Teacher.mailAddress}}</th>
+    <th>{{Teacher.mailAddress}}</th>&nbsp;
+    <th><button (click)="goToTeacherHomePage(Teacher)">הגנים שלי</button></th>
   </tr>
 </tbody>
 </table>

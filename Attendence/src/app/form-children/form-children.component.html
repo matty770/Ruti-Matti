@@ -7,14 +7,17 @@
     <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)">
 
       <input name="IdChild" type="text" [(ngModel)]="child.Id" > תז ילד<br>
-      <input name="ChildName" type="text"  [(ngModel)]="child.ChildName" >שם הילד  <br>
+      <input name="ChildFirstName" type="text"  [(ngModel)]="child.FirstName" >שם פרטי הילד  <br>
+      
+      <input name="ChildLastName" type="text"  [(ngModel)]="child.LastName" >שם משפחה הילד  <br>
       <input name="Address" type="text" [(ngModel)]="child.Address" >כתובת  <br>
       <!--[(ngModel)]="user.Address"-->
       <input name="Phone" type="text" [(ngModel)]="child.Phone" >טלפון<br>
       <!--[(ngModel)]="user.PhoneNum"-->
       <input name="Id" type="text"  [(ngModel)]="child.ParentCode" >תז' הורה  <br>
       <!--[(ngModel)]="child.ParentCode"-->
-      <input name="Name" type="text" [(ngModel)]="user.Name">שם הורה  <br>
+      <input name="Name" type="text" [(ngModel)]="user.FirstName">שם פרטי הורה  <br>
+      <input name="Name" type="text" [(ngModel)]="user.LastName">שם משפחה הורה  <br>
       <input name="MailAddress" type="text" [(ngModel)]="user.MailAddress">כתובת דו"אל  <br>
       <input name="KinderGardenCode" type="number" [(ngModel)]="child.KinderGardenCode">קוד גן<br>
       <button type="submit">add</button>

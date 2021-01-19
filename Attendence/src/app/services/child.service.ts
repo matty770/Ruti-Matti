@@ -36,6 +36,10 @@ export class ChildService
     {
       this.http.post('Children?nameFunction=remove',child).subscribe(res=>{alert(res)});
     }
+    getChildsByKinderGarden(kinderGardenCode:number):Observable<Child[]>
+    {
+      return this.http.Get('Children?kinderGardenCode='+kinderGardenCode);
+    }
 
 }
 

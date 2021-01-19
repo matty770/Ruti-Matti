@@ -85,7 +85,7 @@ namespace BLL
 
         public static void CheckAttendance(CLiveData liveData)
         {
-            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress,DChildrenManager.selectchildrenById(liveData.IdChild).ChildName);
+            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress,DChildrenManager.selectchildrenById(liveData.IdChild).FirstName);
             //sendMessage(DUsersManager.selectUserByIdChild(liveData.IdChild).PhoneNum,DChildrenManager.selectchildrenById(liveData.IdChild).ChildName);
             DLiveDataManager.ChangeStatus(liveData.IdChild, General.Statuses.Sent);
 

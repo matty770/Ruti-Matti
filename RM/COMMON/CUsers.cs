@@ -10,11 +10,12 @@ namespace COMMON
     {
         public CUsers()
         { }
-        public CUsers(string id, string name, string address, string phoneNum
+        public CUsers(string id, string FirstName, string LastName, string address, string phoneNum
             , int permission,string mailAddress)
         {
             this.Id = id;
-            this.Name = name;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
             this.Address = address;
             this.PhoneNum = phoneNum;
             this.Permission = permission;
@@ -23,7 +24,8 @@ namespace COMMON
 
         }
         public string Id { get; set; }
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Address { get; set; }
         public string PhoneNum { get; set; }
         public int Permission { get; set; }

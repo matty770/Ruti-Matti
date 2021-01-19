@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+//import {Router} from '@angular/router';
 import { KinderGarden } from '../models/KinderGarden';
 import {KinderGardensService}from '../services/Kindergarden.service'
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/User';
+import { Subscription } from 'rxjs';
+import { Router,ActivatedRoute,Params } from '@angular/router';
 
 @Component({
   selector: 'app-teacher-home-page',
@@ -11,14 +13,19 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./teacher-home-page.component.css']
 })
 export class TeacherHomePageComponent implements OnInit {
+  subsc:Subscription;
+ num:number;
 KinderGardens:KinderGarden[];
 user:User=this.userService.user;
 //user:User=new User();
 
   constructor(private router:Router,private KinderGardenService:KinderGardensService
-    ,private userService:UserService) { }
+    ,private userService:UserService,private route:ActivatedRoute) { }
 
   ngOnInit() {
+  this.subsc=this.route.params.subscribe((params:any)=>{
+   this.num=params;
+   })
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
   }
   goToAttendance(IdKg:number,nameKg:string)
@@ -42,5 +49,9 @@ user:User=this.userService.user;
   Exit()
   {
     this.router.navigate(['']);
+  }
+  back()
+  {
+    this.router.navigate(['ListOfTeachers']);
   }
 }

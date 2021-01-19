@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
   providedIn: 'root' 
 })
 export class UserService {
+  num:number=null;
    public user:User=new User();
   constructor(private http: DataService) { }
 

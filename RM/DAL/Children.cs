@@ -18,11 +18,11 @@ namespace DAL
         public Children()
         {
             this.FutureData = new HashSet<FutureData>();
-
         }
     
         public string IdChild { get; set; }
-        public string ChildName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public string ParentCode { get; set; }

@@ -11,18 +11,20 @@ namespace COMMON
     {
         public CChildren()
         { }
-        public CChildren(string id, string childName, string address, string phone,
+        public CChildren(string id, string FirstName, string LastName, string address, string phone,
            string parentCode, int kinderGardenCode)
         {
             this.Id = id;
-            this.ChildName = childName;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
             this.Address = address;
             this.Phone = phone;
             this.ParentCode = parentCode;
             this.KinderGardenCode = kinderGardenCode;
         }
         public string Id { get; set; }
-        public string ChildName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public string ParentCode { get; set; }

@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
     var res=[];
     value.forEach(element => {
      if(element!=null){
-        if(element.ChildName.indexOf(searchText)>-1/*||element..indexOf(searchText)>-1*/)
+        if(element.FirstName.indexOf(searchText)>-1||element.LastName.indexOf(searchText)>-1)
           {
            res.push(element);
           }

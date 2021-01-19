@@ -5,10 +5,11 @@
 <a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <h1>What do you want to do?</h1><br><br>
-<button (click)="ToKinderGardenForm()">addKinderGarden</button> &nbsp;
-<button (click)="ToChildrenForm()">add Children</button> &nbsp;
-<button (click)="ToUserForm(2)">add teacher</button> &nbsp;
-<button (click)="ToUserForm(1)">add parent</button> &nbsp;
+<button (click)="ToKinderGardenForm()">הוספת גן</button> &nbsp;
+<button (click)="ToChildrenForm()">הוספת ילד</button> &nbsp;
+<button (click)="ToUserForm(2)">הוספת גננת</button> &nbsp;
+<button (click)="ToUserForm(1)">הוספת הורה</button> &nbsp;
+<!--למה צריך הוספת הורה בנפרד???-->
 <button (click)="Exit()">יציאה</button>
 
 

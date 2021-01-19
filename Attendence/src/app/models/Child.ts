@@ -1,7 +1,8 @@
 export class Child
 {
   Id : string;
-  ChildName : string;
+  FirstName : string;
+  LastName:string;
   Address : string;
   Phone : string;
   ParentCode: string;

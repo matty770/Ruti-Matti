@@ -14,8 +14,7 @@
     <tr>
       <th>{{LD.IdChild}}</th>&nbsp;
       <th>{{LD.KinderGardenCode}}</th>&nbsp;
-     <!--  <th ><button (click)="changeStatusToArrived(LD.IdChild)" >Arrived</button></th>-->
-     <th [ngStyle]="{'background-color': LD.status==3 ? 'green':'red'}"><button (click)="changeStatusToArrived(LD.IdChild)" >Arrived</button></th>
+     <th > <button [ngStyle]="{'background-color': LD.Status==3 ? 'green':'red'}" (click)="changeStatusToArrived(LD.IdChild)" >Arrived</button></th>
     </tr>
   </tbody>
 </table>

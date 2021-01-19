@@ -10,7 +10,8 @@
   <thead>
     <tr>
       <th><h3>ID</h3></th>&nbsp;
-      <th><h3>Name</h3></th>&nbsp;
+      <th><h3>First Name</h3></th>&nbsp;
+      <th><h3>Last Name</h3></th>&nbsp;
       <th><h3>Address</h3></th>&nbsp;
       <th><h3>Phone</h3></th>&nbsp;
       <th></th>
@@ -19,7 +20,8 @@
   <tbody *ngFor="let child of listChildren | filter:search">
     <tr>
       <th>{{child.Id}}</th>&nbsp;
-      <th>{{child.ChildName}}</th>&nbsp;
+      <th>{{child.FirstName}}</th>&nbsp;
+      <th>{{child.LastName}}</th>&nbsp;
       <th>{{child.Address}}</th>&nbsp;
       <th>{{child.Phone}}</th>&nbsp;
       <th><button (click)="removeChild(child)">remove</button></th>

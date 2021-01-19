@@ -1,5 +1,5 @@
 <h3>{{user.Name}} רשימת הגנים של </h3><br>
-<button (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button>
+<button *ngIf="num==null" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button>
   <div >
      
    <!-- <button (click)="selectKinderGardensByTeacherId(hhh)">clickMe</button>-->
@@ -19,9 +19,10 @@
           <th>{{KG.Name}}</th>&nbsp;
           <th>{{KG.Address}}</th>&nbsp;
           <th>{{KG.Phone}}</th>&nbsp;
-         <th><button type="button" (click)="goToAttendance(KG.IdKinderGarden,KG.Name)">Attendance</button>&nbsp;
+         <th><button *ngIf="num==null" type="button" (click)="goToAttendance(KG.IdKinderGarden,KG.Name)">Attendance</button>&nbsp;
         </tr>
       </tbody>
     </table>
+    <button *ngIf="num!=null" (click)="back()">חזרה</button>
     <button (click)="Exit()">יציאה</button>
   </div>

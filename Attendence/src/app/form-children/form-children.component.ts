@@ -29,7 +29,7 @@ user:User=new User();
     (data=>{ this.isFound = data; });
 if(this.isFound==0)
 {
-  alert(this.user.Name);
+  alert(this.user.FirstName+" "+this.user.LastName);
   this.userService.addUser(this.user);
 }
 this.childrenService.addChildren(this.child);

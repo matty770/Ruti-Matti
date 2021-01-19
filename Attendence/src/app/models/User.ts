@@ -1,7 +1,8 @@
 export class User
 {
 Id : string;
-Name : string;
+FirstName : string;
+LastName:string;
 Address : string;
 PhoneNum : string;
 Permission : number;

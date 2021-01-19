@@ -4,7 +4,8 @@
 <div>
   <form #ChildrenUpdateForm="ngForm" (ngSubmit)="UpdateChild(ChildrenUpdateForm)">
       <input name="Name" type="text"  value={{user.Name}} disabled >name parent  <br>
-    <input name="ChildName" type="text"   value={{child.ChildName}} disabled>name child  <br>
+    <input name="ChildFirstName" type="text"   value={{child.FirstName}} disabled> שם משפחה<br>
+    <input name="ChildLastName" type="text"   value={{child.LastName}} disabled>שם פרטי<br>
     <input name="Address" type="text" value={{child.Address}} [(ngModel)]="child.Address">addres  <br>
     <input name="Phone" type="text" value={{child.Phone}} [(ngModel)]="child.Phone">phone  <br>
   <input name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress">mail  <br>
