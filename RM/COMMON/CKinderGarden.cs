@@ -11,7 +11,7 @@ namespace COMMON
         public CKinderGarden() { }
         public CKinderGarden(/*int idKinderGarden, */
             string name, string address,string phone,
-            int year, TimeSpan BeginingHour, TimeSpan Space)
+            int year, TimeSpan BeginingHour, TimeSpan Space,int active)
         {
           //  this.IdKinderGarden = idKinderGarden;
             this.Name = name;
@@ -20,6 +20,7 @@ namespace COMMON
             this.Year = year;
             this.BeginingHour = BeginingHour;
             this.Space = Space;
+            this.Active = active;
         }
 
         public int IdKinderGarden { get; set; }
@@ -29,5 +30,7 @@ namespace COMMON
         public int Year { get; set; }
         public TimeSpan BeginingHour { get; set; }
         public TimeSpan Space { get; set; }
+        public int Active { get; set; }
+
     }
 }

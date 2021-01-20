@@ -11,7 +11,7 @@ namespace COMMON
         public CUsers()
         { }
         public CUsers(string id, string FirstName, string LastName, string address, string phoneNum
-            , int permission,string mailAddress)
+            , int permission,string mailAddress,int Active)
         {
             this.Id = id;
             this.FirstName = FirstName;
@@ -20,6 +20,7 @@ namespace COMMON
             this.PhoneNum = phoneNum;
             this.Permission = permission;
             this.mailAddress = mailAddress;
+            this.Active = Active;
            
 
         }
@@ -30,6 +31,8 @@ namespace COMMON
         public string PhoneNum { get; set; }
         public int Permission { get; set; }
         public string mailAddress { get; set; }
+        public int Active { get; set; }
+
     }
 }
 

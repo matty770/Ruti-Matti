@@ -8,6 +8,7 @@ export class Child
   ParentCode: string;
   Picture: ImageData;
   KinderGardenCode:number;
+  Active:number;
     constructor(  // Id : string, ChildName : string,Address : string, Phone : string,ParentCode: string,
        // Picture: ImageData,KinderGardenCode:number
     ) 

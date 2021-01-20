@@ -12,7 +12,7 @@ namespace COMMON
         public CChildren()
         { }
         public CChildren(string id, string FirstName, string LastName, string address, string phone,
-           string parentCode, int kinderGardenCode)
+           string parentCode, int kinderGardenCode,int active)
         {
             this.Id = id;
             this.FirstName = FirstName;
@@ -21,6 +21,7 @@ namespace COMMON
             this.Phone = phone;
             this.ParentCode = parentCode;
             this.KinderGardenCode = kinderGardenCode;
+            this.Active = active;
         }
         public string Id { get; set; }
         public string FirstName { get; set; }
@@ -29,6 +30,8 @@ namespace COMMON
         public string Phone { get; set; }
         public string ParentCode { get; set; }
         public int KinderGardenCode { get; set; }
+        public int Active { get; set; }
+
     }
 }
 
