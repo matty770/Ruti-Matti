@@ -25,6 +25,6 @@ export class ListOfTeachersComponent implements OnInit {
   goToTeacherHomePage(techer:User)
   {
     this.UserService.user=techer;
-    this.router.navigate(['/TeacherHomePage']/*,3*/);
+    this.router.navigate(['/TeacherHomePage',1]);
   }
 }

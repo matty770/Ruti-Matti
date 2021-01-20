@@ -10,28 +10,34 @@ import { UserService } from '../services/user.service';
 })
 export class FormChildrenComponent implements OnInit {
 
-
-  constructor(private childrenService:ChildService,private userService:UserService) { }
-  child:Child=new Child();
+ 
+  constructor(private childrenService:ChildService,private userService:UserService,) {
+   }
+child:Child=new Child();
 user:User=new User();
-  isFound:number;
+ isFound:number=9;
   ngOnInit() {
+   
   }
 
   addChildren(ChildrenForm)
   {
+    this.userService.UserIs(this.child.ParentCode).subscribe
+    (data=>{ this.isFound = data; });
     //doesn't allow to add child
+    this.child.Active=1;
+    this.user.Active=1;
     this.user.PhoneNum=this.child.Id;
     this.user.Id=this.child.ParentCode;
     this.user.Address=this.child.Address;
     this.user.Permission=1;
-    this.userService.UserIs(this.user.Id).subscribe
-    (data=>{ this.isFound = data; });
+
 if(this.isFound==0)
 {
   alert(this.user.FirstName+" "+this.user.LastName);
   this.userService.addUser(this.user);
 }
+alert(this.isFound);
 this.childrenService.addChildren(this.child);
 ChildrenForm.reset();
    
