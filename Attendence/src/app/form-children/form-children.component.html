@@ -5,10 +5,8 @@
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div>
     <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)">
-
       <input name="IdChild" type="text" [(ngModel)]="child.Id" > תז ילד<br>
       <input name="ChildFirstName" type="text"  [(ngModel)]="child.FirstName" >שם פרטי הילד  <br>
-      
       <input name="ChildLastName" type="text"  [(ngModel)]="child.LastName" >שם משפחה הילד  <br>
       <input name="Address" type="text" [(ngModel)]="child.Address" >כתובת  <br>
       <!--[(ngModel)]="user.Address"-->
