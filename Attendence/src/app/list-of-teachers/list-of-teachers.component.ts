@@ -20,6 +20,7 @@ export class ListOfTeachersComponent implements OnInit {
   }
   GoToAddTeacher()
   {
+    this.UserService.permission=2;
     this.router.navigate(['formUser']);
   }
   goToTeacherHomePage(techer:User)
