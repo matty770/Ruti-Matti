@@ -14,7 +14,7 @@ import { Router,ActivatedRoute,Params } from '@angular/router';
 })
 export class TeacherHomePageComponent implements OnInit {
   subsc:Subscription;
- num:number;
+ num:number=0;
 KinderGardens:KinderGarden[];
 user:User=this.userService.user;
 //user:User=new User();
@@ -25,6 +25,7 @@ user:User=this.userService.user;
   ngOnInit() {
   this.subsc=this.route.params.subscribe((params:any)=>{
    this.num=params;
+   alert(this.num);
    })
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
   }

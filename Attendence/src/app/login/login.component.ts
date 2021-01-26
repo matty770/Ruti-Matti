@@ -44,9 +44,10 @@ export class LoginComponent implements OnInit
   {
     //this.array=this.listUser;
     this.listUser.forEach(element => {
-      if(element.Id==userId&&element.FirstName==FirstName,element.LastName==LastName)
+      if(element.Id==userId&&element.FirstName==FirstName&&element.LastName==LastName)
       {
         this.userService.user=element;  
+        alert(this.userService.user.Id);
       }          
     });
 

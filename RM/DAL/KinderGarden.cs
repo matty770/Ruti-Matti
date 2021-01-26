@@ -29,6 +29,7 @@ namespace DAL
         public int Year { get; set; }
         public System.TimeSpan BeginingHour { get; set; }
         public System.TimeSpan Space { get; set; }
+        public int Active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Children> Children { get; set; }
