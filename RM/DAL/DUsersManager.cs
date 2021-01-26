@@ -12,18 +12,29 @@ namespace DAL
         public static void addUser(CUsers cu)
         {
             Users u = Mapper.convertToUsers(cu);
+            
             using (NDBEntities db = new NDBEntities())
             {
-                try
+                Users u2 = db.Users.First(d => d.IdUser == u.IdUser);
+                if (u2 != null&& u2.Permission != u.Permission)
                 {
-                    db.Users.Add(u);
+                    u2.Permission = 4;
                     db.SaveChanges();
                 }
-                catch (Exception e)
+                else
                 {
+                    try
+                    {
+                        db.Users.Add(u);
+                        db.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
 
-                    throw e;
+                        throw e;
+                    }
                 }
+                
             }
         }
         public static void removeUser(string id)
@@ -164,7 +175,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 listUsers = (from x in db.Users
-                             where x.Permission == p
+                             where x.Permission == p||x.Permission==4
                              select x).ToList();
             }
             List<CUsers> listCUsers = new List<CUsers>();

@@ -25,6 +25,7 @@ ParentList:User[];
 
   GoToAddParent()
   {
+    this.UserService.permission=1;
     this.router.navigate(['formUser']);
   }
   goToChildrenOfParent(parent:User)

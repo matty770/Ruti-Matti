@@ -4,19 +4,18 @@
 <a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div>
-  <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
+   <!-- <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
     <input name="Id" type="text"  ngModel>id  <br>
     <input name="FirstName" type="text" ngModel>שם פרטי  <br>
     <input name="LastName" type="text" ngModel>שם משפחה  <br>
     <input name="Address" type="text" ngModel>כתובת  <br>
     <input name="PhoneNum" appPhoneMask type="text" ngModel>פלאפון  <br>
-  <!-- <input name="Permission" type="number" [(ngModel)]="user.Permission">Permission  <br>-->
     <input name="MailAddress" type="text" ngModel>כתובת דוא"ל  <br>
     <button type="submit">add</button>
   </form>
-</div>
+</div>-->
 <div>
- <!-- <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
+<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
     <input name="Id" type="text"  [(ngModel)]="user.Id">id  <br>
     <input name="FirstName" type="text" [(ngModel)]="user.FirstName">שם פרטי  <br>
     <input name="LastName" type="text" [(ngModel)]="user.LastName">שם משפחה  <br>
@@ -26,5 +25,5 @@
     <button type="submit">add</button>
   </form>
 </div>
--->
+
 
