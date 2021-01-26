@@ -5,6 +5,7 @@ import { User } from '../models/User';
 import { DataService } from 'src/app/services/data.service';
 import { Form } from '@angular/forms/src/directives/form_interface';
 import { FormArray } from '@angular/forms/src/model';
+import { last } from '@angular/router/src/utils/collection';
 
 
 @Injectable({
@@ -13,6 +14,7 @@ import { FormArray } from '@angular/forms/src/model';
 export class UserService {
   num:number=null;
    public user:User=new User();
+   permission:number;
   constructor(private http: DataService) { }
 
 GetAllUsers():Observable<User[]>
@@ -24,8 +26,12 @@ GetAllUsers():Observable<User[]>
     alert(permission);
     return this.http.Get('User?p='+permission);
   }
-  GetUser(userId: string): Observable<User> {
-    return this.http.Get('User?userId=' + userId);
+ //GetUser(userId: string,firstName:string,lastName:string): Observable<User> {
+ //  alert(lastName);
+ //  return this.http.Get('User? "userId=" + userId + "&firstName=firstName&lastName=lastName');
+ //}
+  GetUser(userId: string,firstName:string,lastName:string): Observable<User> {
+    return this.http.Get('User? "userId=" + userId + "&firstName=firstName&lastName=lastName');
   }
   GetPermissionOfUser(userId :string): Observable<number>{
     alert("ddd");

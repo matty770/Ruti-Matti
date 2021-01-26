@@ -12,7 +12,7 @@ namespace AttendenceAPI.Controllers
     public class UserController : ApiController
     {
         [HttpGet]
-        public CUsers GetUser(string userId)
+        public CUsers GetUser(string userId,string firstName,string lastName)
         {
             var u = BUserManager.selectUserById(userId);
             return u;

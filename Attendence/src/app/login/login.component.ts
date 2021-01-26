@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { forEach } from '@angular/router/src/utils/collection';
 import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 import { $ } from 'protractor';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -26,9 +27,9 @@ export class LoginComponent implements OnInit
     this.userService.GetAllUsers().subscribe(data=>{this.listUser=data});
    // alert(this.listUser.length);
   }
-//Login(userId:string,name:string)
+//Login(userId:string,FirstName:string,LastName:string)
 //{
-//this.userService.GetUser(userId).subscribe(data=>{this.userService.user = data; 
+//this.userService.GetUser(userId,FirstName,LastName).subscribe(data=>{this.userService.user = data; 
 // if(this.userService.user.Permission==1)
 //   this.router.navigate(['/ChildrenForParent']);
 //   else if(this.userService.user.Permission==2)
@@ -40,28 +41,29 @@ export class LoginComponent implements OnInit
 //
 //}
 
-  Login(userId:string,FirstName:string,LastName:string)
-  {
-    //this.array=this.listUser;
-    this.listUser.forEach(element => {
-      if(element.Id==userId&&element.FirstName==FirstName&&element.LastName==LastName)
-      {
-        this.userService.user=element;  
-        alert(this.userService.user.Id);
-      }          
-    });
+ Login(userId:string,FirstName:string,LastName:string)
+ {
 
-    if(this.userService.user!=null)
-    {
-      //alert(this.userService.user.Id);
-      switch (this.userService.user.Permission) {
-        case 1:  this.router.navigate(['/ChildrenForParent']); break;         
-        case 2:  this.router.navigate(['/TeacherHomePage']); break;     
-        case 3: this.router.navigate(['/ManagerHomePage']);  break;           
-        }
-    }
-    else
-      alert("שם המשתמש או הסיסמה שגויים");
-  }
+
+   this.listUser.forEach(element => {
+     if(element.Id==userId&&element.FirstName==FirstName&&element.LastName==LastName)
+     {
+       this.userService.user=element;  
+       alert(this.userService.user.Id);
+     }          
+   });
+
+   if(this.userService.user!=null)
+   {
+     //alert(this.userService.user.Id);
+     switch (this.userService.user.Permission) {
+       case 1:  this.router.navigate(['/ChildrenForParent']); break;         
+       case 2:  this.router.navigate(['/TeacherHomePage']); break;     
+       case 3: this.router.navigate(['/ManagerHomePage']);  break;           
+       }
+   }
+   else
+     alert("שם המשתמש או הסיסמה שגויים");
+ }
 
 }
