@@ -19,12 +19,13 @@ export class LoginComponent implements OnInit
   permission: number;
   ID:string;
   array:any;
+  u:User;
   constructor(private userService: UserService,private router:Router){
-    this.userService.user=null;
+    //this.userService.user=null;
   }
 
   ngOnInit() {
-    this.userService.GetAllUsers().subscribe(data=>{this.listUser=data});
+  //  this.userService.GetAllUsers().subscribe(data=>{this.listUser=data});
    // alert(this.listUser.length);
   }
 //Login(userId:string,FirstName:string,LastName:string)
@@ -43,20 +44,24 @@ export class LoginComponent implements OnInit
 
  Login(userId:string,FirstName:string,LastName:string)
  {
+   
+  this.userService.GetUser(userId,FirstName,LastName).toPromise().then(
+  // subscribe(
+  data=>{this.u=data;
 
+  // this.listUser.forEach(element => {
+    // if(element.Id==userId&&element.FirstName==FirstName&&element.LastName==LastName)
+    // {
+     //  this.userService.user=element;  
+      // alert(this.userService.user.Id);
+    // }          
+  // });
 
-   this.listUser.forEach(element => {
-     if(element.Id==userId&&element.FirstName==FirstName&&element.LastName==LastName)
-     {
-       this.userService.user=element;  
-       alert(this.userService.user.Id);
-     }          
-   });
-
-   if(this.userService.user!=null)
+   if(this.u!=null)
    {
+    localStorage.setItem("PermissionOfCurrentUser",this.u.Permission.toString());
      //alert(this.userService.user.Id);
-     switch (this.userService.user.Permission) {
+     switch (this.u.Permission) {
        case 1:  this.router.navigate(['/ChildrenForParent']); break;         
        case 2:  this.router.navigate(['/TeacherHomePage']); break;     
        case 3: this.router.navigate(['/ManagerHomePage']);  break;           
@@ -64,6 +69,7 @@ export class LoginComponent implements OnInit
    }
    else
      alert("שם המשתמש או הסיסמה שגויים");
+    });
  }
 
 }

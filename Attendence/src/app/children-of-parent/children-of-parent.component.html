@@ -1,6 +1,6 @@
 
 <div>
-  <h3>{{user.Name}} רשימת הילדים של </h3><br>
+  <h3> רשימת הילדים של {{user.FirstName}}{{user.LastName}}</h3><br>
   <table class="table">
     <thead>
       <tr>
@@ -19,8 +19,8 @@
         <th>{{child.LastName}}</th>&nbsp;
         <th>{{child.Address}}</th>&nbsp;
         <th>{{child.Phone}}</th>&nbsp;
-       <th><button type="button" (click)="goToReport(child)">report time</button>&nbsp;
-      <button (click)="goToDetails(child)">update details</button>
+       <th><button  *ngIf="CUP=='1'" type="button" (click)="goToReport(child)">report time</button>&nbsp;
+      <button *ngIf="CUP=='1'" (click)="goToDetails(child)">update details</button>
       </tr>
     </tbody>
   </table>

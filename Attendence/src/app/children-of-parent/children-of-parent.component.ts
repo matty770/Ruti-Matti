@@ -18,6 +18,8 @@ export class ChildrenOfParentComponent implements OnInit {
   listChildren:any[];
   user:User=this.userService.user;
   children:Child[];
+  CUP:string;
+  
   constructor(private rout:Router,private childService:ChildService,private userService:UserService
     ,private futureDataService:FutureDataService) { }
   goToReport(child:Child)
@@ -40,6 +42,7 @@ export class ChildrenOfParentComponent implements OnInit {
   }
   ngOnInit() {
     this.selectChildrenByParentId();
+    this.CUP=localStorage.getItem("PermissionOfCurrentUser");
   }
   Exit()
   {

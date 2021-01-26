@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 import { User } from '../models/User';
 import { DataService } from 'src/app/services/data.service';
 import { Form } from '@angular/forms/src/directives/form_interface';
@@ -30,8 +30,9 @@ GetAllUsers():Observable<User[]>
  //  alert(lastName);
  //  return this.http.Get('User? "userId=" + userId + "&firstName=firstName&lastName=lastName');
  //}
-  GetUser(userId: string,firstName:string,lastName:string): Observable<User> {
-    return this.http.Get('User? "userId=" + userId + "&firstName=firstName&lastName=lastName');
+ 
+  GetUser(userId: string,firstName:string,lastName:string): Observable<User> {   
+    return this.http.Get('User?userId='+ userId + '&firstName='+firstName+'&lastName='+lastName);
   }
   GetPermissionOfUser(userId :string): Observable<number>{
     alert("ddd");
