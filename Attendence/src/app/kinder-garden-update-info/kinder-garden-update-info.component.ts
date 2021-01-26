@@ -21,4 +21,9 @@ export class KinderGardenUpdateInfoComponent implements OnInit {
   // .subscribe(data=>{this.kinderGarden = data;})
     alert(this.kinderGarden.Phone);
   }
+
+  GoBack()
+  {
+
+  }
 }

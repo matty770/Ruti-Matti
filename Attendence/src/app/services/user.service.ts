@@ -13,6 +13,7 @@ import { FormArray } from '@angular/forms/src/model';
 export class UserService {
   num:number=null;
    public user:User=new User();
+   permission:number;
   constructor(private http: DataService) { }
 
 GetAllUsers():Observable<User[]>
