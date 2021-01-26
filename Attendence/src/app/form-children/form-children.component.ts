@@ -4,6 +4,8 @@ import { Child } from 'src/app/models/Child';
 import { User } from '../models/User';
 import { UserService } from '../services/user.service';
 import isIsraeliIdValid from 'israeli-id-validator';
+import { KinderGarden } from '../models/KinderGarden';
+import { KinderGardensService } from '../services/Kindergarden.service';
 @Component({
   selector: 'app-form-children',
   templateUrl: './form-children.component.html',
@@ -12,15 +14,20 @@ import isIsraeliIdValid from 'israeli-id-validator';
 export class FormChildrenComponent implements OnInit {
 
  
-  constructor(private childrenService:ChildService,private userService:UserService,) {
+  constructor(private childrenService:ChildService,private userService:UserService,private kinderGardenService:KinderGardensService) {
    }
 child:Child=new Child();
 user:User=new User();
  isFound:number=9;
+ ListKinderGarden:KinderGarden[];
   ngOnInit() {
-   
+    this.getKinderGardenList();
   }
-
+getKinderGardenList()
+{
+  this.kinderGardenService.GetAllKinderGarden().subscribe(
+      data=>{this.ListKinderGarden=data;});
+}
   addChildren(ChildrenForm)
   {
     if(isIsraeliIdValid(this.child.Id)==true&&isIsraeliIdValid(this.child.ParentCode)==true)

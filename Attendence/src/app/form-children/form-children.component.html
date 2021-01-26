@@ -17,9 +17,14 @@
       <input name="Name" type="text" [(ngModel)]="user.FirstName">שם פרטי הורה  <br>
       <input name="Name" type="text" [(ngModel)]="user.LastName">שם משפחה הורה  <br>
       <input name="MailAddress" type="text" [(ngModel)]="user.MailAddress">כתובת דו"אל  <br>
-      <input name="KinderGardenCode" type="number" [(ngModel)]="child.KinderGardenCode">קוד גן<br>
+     <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="child.KinderGardenCode">קוד גן<br>-->
+      <select  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="child.KinderGardenCode" >     
+        <option *ngFor="let k of ListKinderGarden"  [value]="k.IdKinderGarden" >{{k.Name}}</option>
+      </select>
+      <br>
       <button type="submit">add</button>
     </form>
+   
   </div>
 
 

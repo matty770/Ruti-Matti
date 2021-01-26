@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/user.service';
 import { User } from 'src/app/models/User';
 import isIsraeliIdValid from 'israeli-id-validator';
-import { ViewChild } from '@angular/core/src/metadata/di';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
 
 @Component({
   selector: 'app-form-user',
@@ -17,7 +15,6 @@ user:User=new User();
 
   ngOnInit() {
   }
-
 //addUser(UserForm)
 //{
 //  if(isIsraeliIdValid(UserForm.value.Id)==true)
@@ -39,4 +36,5 @@ addUser(UserForm)
   }
   else alert("תעודת זהות אינה תקינה, נסה שוב")  
 }
+
 }

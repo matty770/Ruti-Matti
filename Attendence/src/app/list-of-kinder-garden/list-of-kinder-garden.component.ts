@@ -29,7 +29,7 @@ listKinderGarden:KinderGarden[];
   goToDetails(kinderGarden:KinderGarden)
   {
     this.kinderGardenService.kinderGarden=kinderGarden;
-    this.router.navigate(['KinderGardenUpdateInfo']);
+    this.router.navigate(['KinderGardenUpdateInfo',"ListOfKinderGarden"]);
   }
   goToChildrenForKinderGarden(kinderGarden:KinderGarden)
   {
