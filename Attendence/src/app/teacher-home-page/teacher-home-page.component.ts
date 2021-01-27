@@ -57,6 +57,7 @@ CUP:string;
   }
   goToChildrenForKinderGarden(IdKg:number,nameKg:string)
   {
+    localStorage.setItem("Router","/TeacherHomePage");
     this.KinderGardenService.kinderGarden.IdKinderGarden=IdKg;
     this.KinderGardenService.kinderGarden.Name=nameKg;
     this.router.navigate(['ChildrenForKinderGarden']);

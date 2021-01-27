@@ -33,6 +33,7 @@ listKinderGarden:KinderGarden[];
   }
   goToChildrenForKinderGarden(kinderGarden:KinderGarden)
   {
+    localStorage.setItem("Router","/ListOfKinderGarden");
     this.kinderGardenService.kinderGarden=kinderGarden;
     this.router.navigate(['ChildrenForKinderGarden']);
   }

@@ -26,7 +26,7 @@ export class ChildrenForKinderGardenComponent implements OnInit {
   }
   GoBack()
   {
-    this.router.navigate(['ListOfKinderGarden']);
+    this.router.navigate([localStorage.getItem("Router")]);
   }
   Exit()
   {
