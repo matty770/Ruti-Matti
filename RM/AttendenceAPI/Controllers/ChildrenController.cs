@@ -58,6 +58,11 @@ namespace AttendenceAPI.Controllers
             }
             //BKinderGardenManager.addKinderGarden(kinderGarden);
         }
+        [HttpGet]
+        public Boolean changeToNotActive(string idChild)
+        {
+            return BChildrenManager.changeToNotActive(idChild);
+        }
 
 
     }

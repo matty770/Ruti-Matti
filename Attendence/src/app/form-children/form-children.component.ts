@@ -32,10 +32,12 @@ getKinderGardenList()
   {
     if(isIsraeliIdValid(this.child.Id)==true&&isIsraeliIdValid(this.child.ParentCode)==true)
     {
-      this.userService.UserIs(this.child.ParentCode).subscribe
+      this.userService.UserIs(this.child.ParentCode).toPromise().then
       (data=>{ this.isFound = data; });
+    alert(this.isFound);
       if(this.isFound==0)
        {
+        alert("הורה לא קיים");
         this.user.Active=1;
         this.user.PhoneNum=this.child.Id;
         this.user.Id=this.child.ParentCode;
@@ -49,6 +51,7 @@ getKinderGardenList()
     }
     else
     {
+      alert("הורה קיים");
       if(isIsraeliIdValid(this.child.Id)==false&&isIsraeliIdValid(this.child.Id)==false)
       {
         alert("תעודת זהות של ההורה ושל הילד אינם תקינים");

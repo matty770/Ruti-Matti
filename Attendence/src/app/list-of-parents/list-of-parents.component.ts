@@ -23,11 +23,11 @@ ParentList:User[];
     this.GetAllParents();
   }
 
-  GoToAddParent()
-  {
-    this.UserService.permission=1;
-    this.router.navigate(['formUser']);
-  }
+ //GoToAddParent()
+ //{
+ //  this.UserService.permission=1;
+ //  this.router.navigate(['formUser']);
+ //}
   goToChildrenOfParent(parent:User)
   {
     this.UserService.user=parent;

@@ -26,24 +26,24 @@ namespace DAL
                 }
             }
         }
-        public static void removeChildren(string idChild)
+    public static void removeChildren(string idChild)
+    {
+        using (NDBEntities db = new NDBEntities())
         {
-            using (NDBEntities db = new NDBEntities())
+            Children c = (from x in db.Children
+                          where x.IdChild.Equals(idChild)
+                          select x).FirstOrDefault();
+            try
             {
-                Children c = (from x in db.Children
-                              where x.IdChild.Equals(idChild)
-                              select x).FirstOrDefault();
-                try
-                {
-                    db.Children.Remove(c);
-                    db.SaveChanges();
-                }
-                catch (Exception)
-                {
-                    throw new allreadyExist();
-                }
+                db.Children.Remove(c);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new allreadyExist();
             }
         }
+    }
         public static List<CChildren> selectAllChildren()
         {
             List<Children> listChildren = new List<Children>();
@@ -122,6 +122,27 @@ namespace DAL
                     listCChildren.Add(Mapper.convertToCChildren(item));
                 }
                 return listCChildren;
+            }
+        }
+        public static Boolean changeToNotActive(string idChild)
+        {
+            Children child = new Children();
+            using (NDBEntities db = new NDBEntities())
+            {
+                
+                try
+                {
+                    child = db.Children.First(d => d.IdChild == idChild);
+                    child.Active = 0;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch(Exception ex)
+                {
+                    return false;
+                    throw (ex);
+                }
+
             }
         }
 

@@ -14,19 +14,19 @@ import { Router,ActivatedRoute,Params } from '@angular/router';
 })
 export class TeacherHomePageComponent implements OnInit {
   subsc:Subscription;
- num:number=0;
 KinderGardens:KinderGarden[];
 user:User=this.userService.user;
+CUP:string;
 //user:User=new User();
 
   constructor(private router:Router,private KinderGardenService:KinderGardensService
     ,private userService:UserService,private route:ActivatedRoute) { }
 
   ngOnInit() {
-  this.subsc=this.route.params.subscribe((params:any)=>{
-   this.num=params;
-   alert(this.num);
-   })
+ //this.subsc=this.route.params.subscribe((params:any)=>{
+ // this.num=params;
+   //})
+   this.CUP=localStorage.getItem("PermissionOfCurrentUser");
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
   }
   goToAttendance(IdKg:number,nameKg:string)
@@ -54,5 +54,11 @@ user:User=this.userService.user;
   back()
   {
     this.router.navigate(['ListOfTeachers']);
+  }
+  goToChildrenForKinderGarden(IdKg:number,nameKg:string)
+  {
+    this.KinderGardenService.kinderGarden.IdKinderGarden=IdKg;
+    this.KinderGardenService.kinderGarden.Name=nameKg;
+    this.router.navigate(['ChildrenForKinderGarden']);
   }
 }

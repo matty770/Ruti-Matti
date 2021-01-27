@@ -38,5 +38,9 @@ namespace BLL
         {
             return DChildrenManager.selectchildrenByKinderGardenCode(code);
         }
+        public static Boolean changeToNotActive(string idChild)
+        {
+            return DChildrenManager.changeToNotActive(idChild);
+        }
     }
 }

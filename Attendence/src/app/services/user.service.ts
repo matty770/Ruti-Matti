@@ -35,7 +35,6 @@ GetAllUsers():Observable<User[]>
     return this.http.Get('User?userId='+ userId + '&firstName='+firstName+'&lastName='+lastName);
   }
   GetPermissionOfUser(userId :string): Observable<number>{
-    alert("ddd");
     return this.http.Get('User?userId='+userId);
   }
   addUser(user:User)

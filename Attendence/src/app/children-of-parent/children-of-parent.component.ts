@@ -48,4 +48,8 @@ export class ChildrenOfParentComponent implements OnInit {
   {
     this.rout.navigate(['']);
   }
+  GoBack()
+  {
+    this.rout.navigate(['ListOfParent']);
+  }
 }

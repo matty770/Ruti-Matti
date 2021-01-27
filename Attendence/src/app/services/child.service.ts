@@ -17,7 +17,6 @@ export class ChildService
     
     addChildren(child:Child)
     {
-      alert(child.Id);
       this.http.post('Children?nameFunction=add',child)
       .subscribe(res=>{ alert(res)
          //console.log(res)//
@@ -32,13 +31,17 @@ export class ChildService
     {
       this.http.post('Children?nameFunction=update',children).subscribe(res=>{alert(res)});
     }
-    removeChild(child:Child)
-    {
-      this.http.post('Children?nameFunction=remove',child).subscribe(res=>{alert(res)});
-    }
+   // removeChild(child:Child)
+   // {
+   //   this.http.post('Children?nameFunction=remove',child).subscribe(res=>{alert(res)});
+   // }
     getChildsByKinderGarden(kinderGardenCode:number):Observable<Child[]>
     {
       return this.http.Get('Children?kinderGardenCode='+kinderGardenCode);
+    }
+    changeToNotActive(idChild:string):Observable<boolean>
+    {
+      return this.http.Get('Children?idChild='+idChild);
     }
 
 }

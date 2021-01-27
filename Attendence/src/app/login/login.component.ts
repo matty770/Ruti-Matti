@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit
   permission: number;
   ID:string;
   array:any;
-  u:User;
+  user:User;
   constructor(private userService: UserService,private router:Router){
     //this.userService.user=null;
   }
@@ -44,10 +44,9 @@ export class LoginComponent implements OnInit
 
  Login(userId:string,FirstName:string,LastName:string)
  {
-   
   this.userService.GetUser(userId,FirstName,LastName).toPromise().then(
   // subscribe(
-  data=>{this.u=data;
+  data=>{this.user=data;
 
   // this.listUser.forEach(element => {
     // if(element.Id==userId&&element.FirstName==FirstName&&element.LastName==LastName)
@@ -57,14 +56,21 @@ export class LoginComponent implements OnInit
     // }          
   // });
 
-   if(this.u!=null)
+   if(this.user!=null)
    {
-    localStorage.setItem("PermissionOfCurrentUser",this.u.Permission.toString());
+     this.userService.user=this.user;
+    localStorage.setItem("PermissionOfCurrentUser",this.user.Permission.toString());
      //alert(this.userService.user.Id);
-     switch (this.u.Permission) {
+     switch (this.user.Permission) {
        case 1:  this.router.navigate(['/ChildrenForParent']); break;         
        case 2:  this.router.navigate(['/TeacherHomePage']); break;     
-       case 3: this.router.navigate(['/ManagerHomePage']);  break;           
+       case 3: this.router.navigate(['/ManagerHomePage']);  break;     
+       case 4: {
+        if(confirm(" משתמש יקר! הנך רשום במערכת כהורה וכגננת באיזו האם תרצה להכנס כגננת?")==true)
+        this.router.navigate(['/TeacherHomePage']);
+        else this.router.navigate(['/ChildrenForParent']);break;
+              }    
+     
        }
    }
    else

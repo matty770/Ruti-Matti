@@ -4,7 +4,7 @@
 <a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div >
-  <button (click)="GoToAddParent()">Add Parent</button><br><br>
+  <!--<button (click)="GoToAddParent()">Add Parent</button><br><br>-->
   <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
 <table class="table" >
 <thead>
