@@ -84,7 +84,8 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 futureData = db.FutureData.First(d => d.IdChild == CFutureData.IdChild);
-                futureData.Alarm = futureData.Alarm;
+                futureData.Alarm = CFutureData.Alarm;
+                futureData.UpdateBy = CFutureData.UpdateBy;
                 futureData.Comments = CFutureData.Comments;
                 futureData.Status = Mapper.StatusEnumToInt(CFutureData.Status);
                 db.SaveChanges();

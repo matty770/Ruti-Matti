@@ -77,5 +77,4 @@ export class LoginComponent implements OnInit
      alert("שם המשתמש או הסיסמה שגויים");
     });
  }
-
 }
