@@ -28,7 +28,9 @@ namespace DAL
         public string ParentCode { get; set; }
         public byte[] Picture { get; set; }
         public int KinderGardenCode { get; set; }
-    
+        public int Active { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FutureData> FutureData { get; set; }
         public virtual LiveData LiveData { get; set; }
