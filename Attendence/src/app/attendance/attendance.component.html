@@ -7,6 +7,7 @@
           <th><h3>ID</h3></th>&nbsp;
           <th><h3>KINDER</h3></th>&nbsp;
           <th><h3>Status Change</h3></th>&nbsp;
+          <th></th>
         </tr>
       </thead>
   <!-- נוכחות ילדים איך עושים שהתמונות יצופו אחד ליד השני?-->
@@ -15,6 +16,7 @@
       <th>{{LD.IdChild}}</th>&nbsp;
       <th>{{LD.KinderGardenCode}}</th>&nbsp;
      <th > <button [ngStyle]="{'background-color': LD.Status==3 ? 'green':'red'}" (click)="changeStatusToArrived(LD.IdChild)" >Arrived</button></th>
+     <th> <button (click)="changeStatusToCconfirm(LD.IdChild)" >חיסור באישור</button></th>
     </tr>
   </tbody>
 </table>

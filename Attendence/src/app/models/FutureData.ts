@@ -3,7 +3,7 @@ import { isDate } from 'util';
 
 export enum Statuses
 {
-    Late = 1, Absent, Present, NonPresent, Sent
+    Late = 1, Absent, Present, NonPresent, Sent,Confirm
 }
 export class FutureData
 {

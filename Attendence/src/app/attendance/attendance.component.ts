@@ -35,6 +35,10 @@ export class AttendanceComponent implements OnInit {
   {
     this.liveDataService.ChangeStatus(idChild,Statuses.Present);
   }
+  changeStatusToCconfirm(idChild:string)
+  {
+    this.liveDataService.ChangeStatus(idChild,Statuses.Confirm);
+  }
  
   goToTeacherHomePage(){
     this.router.navigate(['/TeacherHomePage']);

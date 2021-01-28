@@ -167,6 +167,7 @@ namespace DAL
                 case General.Statuses.Present: return 3;
                 case General.Statuses.NonPresent: return 4;
                 case General.Statuses.Sent: return 5;
+                case General.Statuses.Confirm: return 6;
                 default:
                     return 0;
             }
@@ -181,6 +182,7 @@ namespace DAL
                 case 3: return General.Statuses.Present;
                 case 4: return General.Statuses.NonPresent;
                 case 5: return General.Statuses.Sent;
+                case 6:return General.Statuses.Confirm;
                 default: return 0;
             }
         }

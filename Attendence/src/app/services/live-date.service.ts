@@ -21,8 +21,8 @@ export class LiveDateService {
   ChangeStatus(idChild:string,status:Statuses)
   {
    //this.params.set('status',status.toString());
-   let params = new HttpParams();
-    params = params.append('status', '3');
+  // let params = new HttpParams();
+    //params = params.append('status', '3');
 
    // this.http.post('LiveData?idChild='+idChild,{params:params}).subscribe(res=>{ alert(res)
       this.http.post('LiveData?idChild='+idChild,status).subscribe(res=>{ alert(res)

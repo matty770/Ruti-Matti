@@ -70,7 +70,6 @@ export class LoginComponent implements OnInit
         this.router.navigate(['/TeacherHomePage']);
         else this.router.navigate(['/ChildrenForParent']);break;
               }    
-     
        }
    }
    else

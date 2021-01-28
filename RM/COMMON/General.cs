@@ -10,7 +10,7 @@ namespace COMMON
     {
         public enum Statuses
         {
-            Late = 1, Absent, Present, NonPresent, Sent
+            Late = 1, Absent, Present, NonPresent, Sent,Confirm
         }
 
        
