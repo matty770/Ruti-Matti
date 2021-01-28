@@ -84,6 +84,20 @@ namespace DAL
                 return null;
             }
         }
+        public static CUsers selectUserByParameters(string id,string FirstName, string LastName)
+        {
+            using (NDBEntities db = new NDBEntities())
+            {
+                Users u = (from x in db.Users
+                           where x.IdUser.Equals(id)&&x.FirstName.Equals(FirstName)&&x.LastName.Equals(LastName)
+                           select x).FirstOrDefault();
+                if (u != null)
+                {
+                    return Mapper.convertToCUsers(u);
+                }
+                return null;
+            }
+        }
 
         //////////////////////////////////////////////////////////////
         public static CUsers selectUserByIdChild(string idChild)

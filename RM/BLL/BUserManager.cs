@@ -27,6 +27,10 @@ namespace BLL
         {
             return DUsersManager.selectUserById(id);
         }
+        public static CUsers selectUserByParameters(string id, string FirstName,string LastName)
+        {
+            return DUsersManager.selectUserByParameters(id,FirstName,LastName);
+        }
         public static void updateUser(CUsers cu)
         {
             DUsersManager.updateUser(cu);

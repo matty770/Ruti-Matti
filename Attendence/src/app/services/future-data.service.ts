@@ -25,7 +25,7 @@ export class FutureDataService {
   }
   updateFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData?nameFunction=update'+1,futureData).subscribe(res=>{alert(res)});
+    this.http.post('FutureData?nameFunction=update',futureData).subscribe(res=>{alert(res)});
   }
   removeFutureData(futureData:FutureData)
   {
