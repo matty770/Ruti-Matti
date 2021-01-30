@@ -30,7 +30,7 @@
     <input name="FirstName" type="text" [(ngModel)]="user.FirstName">שם פרטי  <br>
     <input name="LastName" type="text" [(ngModel)]="user.LastName">שם משפחה  <br>
     <input name="Address" type="text" [(ngModel)]="user.Address">כתובת  <br>
-    <input name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum">פלאפון  <br>
+    <input name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask >פלאפון  <br>
     <input name="MailAddress" type="text" [(ngModel)]="user.MailAddress">כתובת דוא"ל  <br>
     <button type="submit">add</button>
   </form>
