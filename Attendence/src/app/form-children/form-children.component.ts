@@ -41,7 +41,7 @@ getKinderGardenList()
         this.user.Id=this.child.ParentCode;
         this.user.Address=this.child.Address;
         this.user.Permission=1;
-        this.userService.addUser(this.user);
+       // this.userService.addUser(this.user);
        }
        this.child.Active=1;
        this.childrenService.addChildren(this.child);

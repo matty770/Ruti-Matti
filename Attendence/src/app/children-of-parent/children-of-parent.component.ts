@@ -6,6 +6,7 @@ import { Child } from 'src/app/models/Child';
 import { UserService } from 'src/app/services/user.service';
 import { FutureDataService } from 'src/app/services/future-data.service';
 import { User } from 'src/app/models/User';
+import { error } from 'util';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class ChildrenOfParentComponent implements OnInit {
   selectChildrenByParentId()
   {
     this.childService.selectChildrenByParentId(this.userService.user.Id).subscribe(
-      data=>{this.children = data; }
+      data=>{this.children = data; },
+      error=>{console.log("error:" + error);}
      )
   }
   ngOnInit() {

@@ -18,10 +18,17 @@ namespace AttendenceAPI.Controllers
         [HttpGet]
         public List<CChildren> selectChildrenByParentId(string ParentId)
         {
-          
-            List<CChildren> lc = new List<CChildren>();
-            lc = BChildrenManager.selectChildrenByParentId(ParentId);
-            return lc;
+            try
+            {
+                List<CChildren> lc = new List<CChildren>();
+                lc = BChildrenManager.selectChildrenByParentId(ParentId);
+                return lc;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+    
 
         }
         //[HttpPost]
@@ -57,6 +64,11 @@ namespace AttendenceAPI.Controllers
                     BChildrenManager.removeChildren((child.Id)); break;
             }
             //BKinderGardenManager.addKinderGarden(kinderGarden);
+        }
+        [HttpPost]
+        public int addChildren([FromBody]CChildren child)
+        {
+            return BChildrenManager.addChildren(child);
         }
         [HttpGet]
         public Boolean changeToNotActive(string idChild)

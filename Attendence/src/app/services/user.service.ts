@@ -6,6 +6,7 @@ import { DataService } from 'src/app/services/data.service';
 import { Form } from '@angular/forms/src/directives/form_interface';
 import { FormArray } from '@angular/forms/src/model';
 import { last } from '@angular/router/src/utils/collection';
+import { error } from 'selenium-webdriver';
 
 
 @Injectable({
@@ -41,7 +42,7 @@ GetAllUsers():Observable<User[]>
   { 
     this.http.post('User',user)
     .subscribe(res=>{ alert(res) //console.log(res)//
-    });
+    },error=>{console.log("error:"+error)});
   }
   selectUserByIdChild(idChild:string) :Observable<User>
   {

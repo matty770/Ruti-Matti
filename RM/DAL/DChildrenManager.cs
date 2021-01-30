@@ -9,7 +9,7 @@ namespace DAL
 {
     public class DChildrenManager
     {
-        public static void addChildren(CChildren cc)
+        public static int addChildren(CChildren cc)
         {
             Children c = Mapper.convertToChildren(cc);
             using (NDBEntities db = new NDBEntities())
@@ -18,6 +18,7 @@ namespace DAL
                 {
                     db.Children.Add(c);
                     db.SaveChanges();
+                    return 1;
                 }
                 catch (Exception e)
                 {
@@ -113,15 +114,23 @@ namespace DAL
             List<Children> listChildren = new List<Children>();
             using (NDBEntities db = new NDBEntities())
             {
-                listChildren = (from x in db.Children
-                      where x.KinderGardenCode==code
-                      select x).ToList();
-                List<CChildren> listCChildren = new List<CChildren>();
-                foreach (var item in listChildren)
+                try
                 {
-                    listCChildren.Add(Mapper.convertToCChildren(item));
+                    listChildren = (from x in db.Children
+                                    where x.KinderGardenCode == code
+                                    select x).ToList();
+                    List<CChildren> listCChildren = new List<CChildren>();
+                    foreach (var item in listChildren)
+                    {
+                        listCChildren.Add(Mapper.convertToCChildren(item));
+                    }
+                    return listCChildren;
                 }
-                return listCChildren;
+                catch (Exception )
+                {
+                    throw;
+                }
+               
             }
         }
         public static Boolean changeToNotActive(string idChild)

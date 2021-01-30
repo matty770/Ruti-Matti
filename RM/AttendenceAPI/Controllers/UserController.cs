@@ -22,7 +22,16 @@ namespace AttendenceAPI.Controllers
         [HttpPost]
         public void addUser([FromBody]CUsers user)
         {
-            BUserManager.addUser(user);
+            try
+            {
+                BUserManager.addUser(user);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         //[HttpGet]

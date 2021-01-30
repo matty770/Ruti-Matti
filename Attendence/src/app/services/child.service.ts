@@ -17,10 +17,10 @@ export class ChildService
     
     addChildren(child:Child)
     {
-      this.http.post('Children?nameFunction=add',child)
-      .subscribe(res=>{ alert(res)
+     // this.http.post('Children?nameFunction=add',child)
+    this.http.post('Children',child).subscribe(res=>{ alert(res)
          //console.log(res)//
-      }
+      },error=>{alert(error.innerException)}
       ); 
     }
     getAllChildrens():Observable<Child[]>
