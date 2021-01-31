@@ -60,5 +60,10 @@ namespace BLL
         {
             return DUsersManager.UserIs(idUser);
         }
+
+       public static int addKinderGardenToTeacher(int KGCode,string id)
+       {
+            return DUsersManager.addKinderGardenToTeacher(KGCode, id);
+       }
     }
 }

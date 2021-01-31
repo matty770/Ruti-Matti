@@ -22,16 +22,19 @@ namespace AttendenceAPI.Controllers
             var kg = BKinderGardenManager.selectKinderGardenByCode(KGCode);
             return kg;
         }
+
         [HttpGet]
         public List<CKinderGarden> GetAllKinderGarden()
         {
             return BKinderGardenManager.selectAllKinderGarden();
         }
-        //[HttpGet]
-        //public List<CKinderGarden> selectKinderGardensByTeacherId(string TeacherId)
-        //{
-        //    return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
-        //}
+
+        [HttpGet]
+        public List<CKinderGarden> selectKinderGardensByTeacherId(string TeacherId)
+        {
+            return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
+        }
+
         [HttpPost]
         public void addKinderGarden(actionType A, [FromBody]CKinderGarden kinderGarden)
         {

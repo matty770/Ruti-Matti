@@ -42,7 +42,7 @@ GetAllUsers():Observable<User[]>
   { 
     this.http.post('User',user)
     .subscribe(res=>{ alert(res) //console.log(res)//
-    },error=>{console.log("error:"+error)});
+    },error=>{alert(error.InnerException.InnerException.ExceptionMessage)});
   }
   selectUserByIdChild(idChild:string) :Observable<User>
   {
@@ -56,5 +56,8 @@ GetAllUsers():Observable<User[]>
   {
     return this.http.Get('User?idUser='+idUser);
   }
-  
+  addKinderGardenToTeacher(KGCode:number,Id:string)
+  {
+    this.http.post('User?KGCode='+KGCode,Id).subscribe(res=>{alert(res)});
+  }
 }

@@ -51,6 +51,7 @@ namespace AttendenceAPI.Controllers
         //{
         //    BChildrenManager.updateChildren(children);
         //}
+        [HttpPost]
         public void functioPost(actionType nameFunction, [FromBody]CChildren child)
         {
             switch (nameFunction)
@@ -65,11 +66,11 @@ namespace AttendenceAPI.Controllers
             }
             //BKinderGardenManager.addKinderGarden(kinderGarden);
         }
-        [HttpPost]
-        public int addChildren([FromBody]CChildren child)
-        {
-            return BChildrenManager.addChildren(child);
-        }
+        
+        //public int addChildren([FromBody]CChildren child)
+        //{
+        //    return BChildrenManager.addChildren(child);
+        //}
         [HttpGet]
         public Boolean changeToNotActive(string idChild)
         {

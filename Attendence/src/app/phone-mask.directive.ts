@@ -20,10 +20,10 @@ export class PhoneMaskDirective {
       this.render.setProperty(this.element.nativeElement,
          "value", str.substring(0,str.length - 1));
     }
-    if (str.length > 9)
+    if (str.length > 10)
     {
      this.render.setProperty(this.element.nativeElement
-       , "value", str.substring(0, 9));
+       , "value", str.substring(0, 10));
     } 
  
   }

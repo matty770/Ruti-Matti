@@ -15,10 +15,13 @@ namespace DAL
             
             using (NDBEntities db = new NDBEntities())
             {
-                Users u2 = db.Users.First(d => d.IdUser == u.IdUser);
-                if (u2 != null&& u2.Permission != u.Permission)
+
+                Users u2 = (from x in db.Users
+                            where x.IdUser.Equals(u.IdUser)&&x.Permission!=u.Permission
+                            select x).FirstOrDefault();
+                if(u2!=null)
                 {
-                    u2.Permission = 4;
+                    db.Users.Find(u2.IdUser).Permission = 4;
                     db.SaveChanges();
                 }
                 else
@@ -34,7 +37,8 @@ namespace DAL
                         throw e;
                     }
                 }
-                
+
+
             }
         }
         public static void removeUser(string id)
@@ -211,6 +215,19 @@ namespace DAL
             if (user == null)
                 return 0;
             return 1;
+        }
+
+       public static int addKinderGardenToTeacher(int KGCode, string id)
+        {
+            KinderGardenOfTeacher k = new KinderGardenOfTeacher();
+            k.IdKinderGarden = KGCode;
+            k.IdTeacher = id;
+            using (NDBEntities db = new NDBEntities())
+            {
+                db.KinderGardenOfTeacher.Add(k);
+                db.SaveChanges();
+                return 1;
+            }
         }
     }
 }

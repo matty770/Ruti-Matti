@@ -20,17 +20,19 @@ namespace AttendenceAPI.Controllers
         }
 
         [HttpPost]
-        public void addUser([FromBody]CUsers user)
+        public int addUser([FromBody]CUsers user)
         {
             try
             {
                 BUserManager.addUser(user);
+                return 1;
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+             //  if(e.InnerException.InnerException.HResult.Equals(-214623200))
+                throw e;
             }
         }
 
@@ -67,6 +69,11 @@ namespace AttendenceAPI.Controllers
             return BUserManager.UserIs(idUser);
         }
 
-
+        [HttpPost]
+        
+        public int addKinderGardenToTeacher(int KGCode,[FromBody] string Id)
+        {
+            return BUserManager.addKinderGardenToTeacher(KGCode,Id);
+        }
     }
 }

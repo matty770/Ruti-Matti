@@ -20,9 +20,9 @@ export class PhoneMaskDirective {
       if(!isNumbere){
         this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,phone.length-1))
       }
-      if(phone.length>9)
+      if(phone.length>10)
       {
-          this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,9));
+          this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,10));
       }
     }
   } 
