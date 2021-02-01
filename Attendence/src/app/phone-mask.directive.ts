@@ -22,13 +22,13 @@ export class PhoneMaskDirective {
     }
     if (str.length > 10)
     {
-     this.render.setProperty(this.element.nativeElement
-       , "value", str.substring(0, 10));
+    this.render.setProperty(this.element.nativeElement
+      , "value", str.substring(0, 10));
     } 
  
   }
-  @HostListener('keydown')
-  keydown()
+  @HostListener('Kye')
+  onKye()
   {
     var  str: string;
     str = this.element.nativeElement.value;

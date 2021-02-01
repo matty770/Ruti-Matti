@@ -33,7 +33,7 @@ getKinderGardenList()
     if(isIsraeliIdValid(this.child.Id)==true&&isIsraeliIdValid(this.child.ParentCode)==true)
     {
       this.userService.UserIs(this.child.ParentCode).toPromise().then
-      (data=>{ this.isFound = data; });
+      (data=>{ this.isFound = data;
       if(this.isFound==0)
        {
         this.user.Active=1;
@@ -41,11 +41,12 @@ getKinderGardenList()
         this.user.Id=this.child.ParentCode;
         this.user.Address=this.child.Address;
         this.user.Permission=1;
-       // this.userService.addUser(this.user);
+        this.userService.addUser(this.user);
        }
        this.child.Active=1;
        this.childrenService.addChildren(this.child);
        ChildrenForm.reset();
+      });
     }
     else
     {

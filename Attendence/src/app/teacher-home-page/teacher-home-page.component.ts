@@ -17,6 +17,8 @@ export class TeacherHomePageComponent implements OnInit {
 KinderGardens:KinderGarden[];
 user:User=this.userService.user;
 CUP:string;
+ListAllKinderGarden:KinderGarden[];
+KinderGardenofTeacher:number;
 //user:User=new User();
 
   constructor(private router:Router,private KinderGardenService:KinderGardensService
@@ -28,6 +30,7 @@ CUP:string;
    //})
    this.CUP=localStorage.getItem("PermissionOfCurrentUser");
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
+    this.getKinderGardenList();
   }
   goToAttendance(IdKg:number,nameKg:string)
   {
@@ -61,5 +64,13 @@ CUP:string;
     this.KinderGardenService.kinderGarden.IdKinderGarden=IdKg;
     this.KinderGardenService.kinderGarden.Name=nameKg;
     this.router.navigate(['ChildrenForKinderGarden']);
+  }
+  addKinderGardenOfTeacher()
+  {    
+  }
+  getKinderGardenList()
+  {
+    this.KinderGardenService.GetAllKinderGarden().subscribe(
+        data=>{this.ListAllKinderGarden=data;});
   }
 }

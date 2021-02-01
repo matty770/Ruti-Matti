@@ -1,6 +1,10 @@
 <h3>{{user.Name}} רשימת הגנים של </h3><br>
 <button *ngIf="CUP=='2'||CUP=='4'" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button>
-  <div >
+<!--<button *ngIf="CUP=='3'" (click)="addKinderGardenOfTeacher()">לעדכון הפרטים שלי</button>
+<select *ngIf="CUP=='3'"  placeholder="select a gan" name="KinderGardenCode" required [(ngModel)]="KinderGardenofTeacher">     
+  <option *ngFor="let k of ListAllKinderGarden"  [value]="k.IdKinderGarden"  >{{k.Name}}</option>
+</select>-->
+<div >
      
    <!-- <button (click)="selectKinderGardensByTeacherId(hhh)">clickMe</button>-->
     <table class="table">
@@ -24,6 +28,6 @@
         </tr>
       </tbody>
     </table>
-    <button *ngIf="CUP=='3'" (click)="back()">חזרה</button>
+    <button *ngIf="CUP=='3'" (click)="back()">חזרה</button>&nbsp;
     <button (click)="Exit()">יציאה</button>
   </div>
