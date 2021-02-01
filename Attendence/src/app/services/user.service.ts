@@ -42,7 +42,7 @@ GetAllUsers():Observable<User[]>
   { 
     this.http.post('User',user)
     .subscribe(res=>{ alert(res) //console.log(res)//
-    },error=>{alert(error.InnerException.InnerException.ExceptionMessage)});
+    },error=>{alert("קרתה שגיאה")});
   }
   selectUserByIdChild(idChild:string) :Observable<User>
   {
