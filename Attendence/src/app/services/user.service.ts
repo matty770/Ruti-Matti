@@ -40,9 +40,9 @@ GetAllUsers():Observable<User[]>
   }
   addUser(user:User)
   { 
-    this.http.post('User',user)
-    .subscribe(res=>{ alert(res) //console.log(res)//
-    },error=>{alert(error.InnerException.InnerException.ExceptionMessage)});
+    this.http.post('User?nameFunction=add',user)
+    .subscribe(res=>{ if(res==0) alert("המשתמש כבר קיים") //console.log(res)//
+    },error=>{alert("ארע תקלה בהכנסת המשתמש")});
   }
   selectUserByIdChild(idChild:string) :Observable<User>
   {
@@ -50,7 +50,7 @@ GetAllUsers():Observable<User[]>
   }
   updateUser(user:User)
   {
-    this.http.post('User?x='+1,user).subscribe(res=>{alert(res)});
+    this.http.post('User?nameFunction=update',user).subscribe(res=>{alert(res)});
   }
   UserIs(idUser:string):Observable<number>
   {
@@ -58,6 +58,12 @@ GetAllUsers():Observable<User[]>
   }
   addKinderGardenToTeacher(KGCode:number,Id:string)
   {
-    this.http.post('User?KGCode='+KGCode,Id).subscribe(res=>{alert(res)});
+    this.http.post('User?nameFunction=addKGToTeachet'+ '&KGCode='+KGCode,Id).subscribe(res=>{alert(res)});
+  }
+  addTeacher(KGCode:number,teacher:User)
+  {
+    this.http.post('User?nameFunction=addTeacher'+ '&KGCode='+KGCode,teacher).subscribe
+    (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
+    
   }
 }

@@ -41,11 +41,18 @@ addUser(UserForm)
   {
     this.user.Active=1;
     this.user.Permission=this.userService.user.Permission;
-    this.userService.addUser(this.user);
     if(this.user.Permission==2)
     {
-      this.userService.addKinderGardenToTeacher(this.KinderGardenofTeacher,this.user.Id);
+      alert("t");
+      this.userService.addTeacher(this.KinderGardenofTeacher,this.user);
     }
+    else
+    {
+      alert("p");
+      this.userService.addUser(this.user);
+    }
+   
+
     UserForm.reset();
   }
   else alert("תעודת זהות אינה תקינה, נסה שוב")  

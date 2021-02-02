@@ -13,12 +13,13 @@ import { Router,ActivatedRoute,Params } from '@angular/router';
   styleUrls: ['./teacher-home-page.component.css']
 })
 export class TeacherHomePageComponent implements OnInit {
-  subsc:Subscription;
+//subsc:Subscription;
 KinderGardens:KinderGarden[];
 user:User=this.userService.user;
 CUP:string;
 ListAllKinderGarden:KinderGarden[];
 KinderGardenofTeacher:number;
+add:number;
 //user:User=new User();
 
   constructor(private router:Router,private KinderGardenService:KinderGardensService
@@ -30,7 +31,7 @@ KinderGardenofTeacher:number;
    //})
    this.CUP=localStorage.getItem("PermissionOfCurrentUser");
     this.selectKinderGardensByTeacherId(this.userService.user.Id);
-    this.getKinderGardenList();
+   
   }
   goToAttendance(IdKg:number,nameKg:string)
   {
@@ -66,7 +67,9 @@ KinderGardenofTeacher:number;
     this.router.navigate(['ChildrenForKinderGarden']);
   }
   addKinderGardenOfTeacher()
-  {    
+  { 
+     this.getKinderGardenList();   
+    this.add=1;
   }
   getKinderGardenList()
   {

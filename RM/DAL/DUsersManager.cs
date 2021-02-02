@@ -17,7 +17,7 @@ namespace DAL
             {
 
                 Users u2 = (from x in db.Users
-                            where x.IdUser.Equals(u.IdUser)&&x.Permission!=u.Permission
+                            where x.IdUser.Equals(u.IdUser)&&x.Permission!=u.Permission&&x.Permission!=4
                             select x).FirstOrDefault();
                 if(u2!=null)
                 {

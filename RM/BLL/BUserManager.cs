@@ -65,5 +65,10 @@ namespace BLL
        {
             return DUsersManager.addKinderGardenToTeacher(KGCode, id);
        }
+        public static void addTeacher(int KGCode,CUsers teacher)
+        {
+            DUsersManager.addUser(teacher);
+            DUsersManager.addKinderGardenToTeacher(KGCode, teacher.Id);
+        }
     }
 }
