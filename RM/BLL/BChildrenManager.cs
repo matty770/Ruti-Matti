@@ -10,7 +10,7 @@ namespace BLL
 {
     public class BChildrenManager
     {
-        public static int addChildren(CChildren cc)
+        public static int addChildren(CChildParent cc)
         {
             return DChildrenManager.addChildren(cc);
         }

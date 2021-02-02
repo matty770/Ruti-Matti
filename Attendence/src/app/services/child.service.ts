@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
 import { Child } from 'src/app/models/Child';
+import { ChildParent } from '../models/ChildParent';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class ChildService
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
     return this.http.Get('Children?ParentId=' + ParentId);}
     
-    addChildren(child:Child)
+    addChildren(child:ChildParent)
     {
      // this.http.post('Children?nameFunction=add',child)
     this.http.post('Children?nameFunction=add',child).subscribe(res=>{ alert(res)

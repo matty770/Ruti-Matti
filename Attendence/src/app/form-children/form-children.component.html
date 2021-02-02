@@ -5,20 +5,20 @@
 <a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
 <div>
     <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)">
-      <input name="IdChild" type="text" [(ngModel)]="child.Id" > תז ילד<br>
-      <input name="ChildFirstName" type="text"  [(ngModel)]="child.FirstName" >שם פרטי הילד  <br>
-      <input name="ChildLastName" type="text"  [(ngModel)]="child.LastName" >שם משפחה הילד  <br>
-      <input name="Address" type="text" [(ngModel)]="child.Address" >כתובת  <br>
+      <input name="IdChild" type="text" [(ngModel)]="childParent.ChildId" > תז ילד<br>
+      <input name="ChildFirstName" type="text"  [(ngModel)]="childParent.ChildFirstName" >שם פרטי הילד  <br>
+      <input name="ChildLastName" type="text"  [(ngModel)]="childParent.ChildLastName" >שם משפחה הילד  <br>
+      <input name="Address" type="text" [(ngModel)]="childParent.address" >כתובת  <br>
       <!--[(ngModel)]="user.Address"-->
-      <input name="Phone" type="text" [(ngModel)]="child.Phone" >טלפון<br>
+      <input name="Phone" type="text" [(ngModel)]="childParent.phone" >טלפון<br>
       <!--[(ngModel)]="user.PhoneNum"-->
-      <input name="Id" type="text"  [(ngModel)]="child.ParentCode" >תז' הורה  <br>
+      <input name="Id" type="text"  [(ngModel)]="childParent.parentCode" >תז' הורה  <br>
       <!--[(ngModel)]="child.ParentCode"-->
-      <input name="Name" type="text" [(ngModel)]="user.FirstName">שם פרטי הורה  <br>
-      <input name="Name" type="text" [(ngModel)]="user.LastName">שם משפחה הורה  <br>
-      <input name="MailAddress" type="text" [(ngModel)]="user.MailAddress">כתובת דו"אל  <br>
+      <input name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">שם פרטי הורה  <br>
+      <input name="Name" type="text" [(ngModel)]="childParent.ParentLastName">שם משפחה הורה  <br>
+      <input name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">כתובת דו"אל  <br>
      <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="child.KinderGardenCode">קוד גן<br>-->
-      <select  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="child.KinderGardenCode" >     
+      <select  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="childParent.kinderGardenCode" >     
         <option *ngFor="let k of ListKinderGarden"  [value]="k.IdKinderGarden" >{{k.Name}}</option>
       </select>
       <br>

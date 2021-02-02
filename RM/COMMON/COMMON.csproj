@@ -51,6 +51,7 @@
     <Compile Include="allreadyExist.cs" />
     <Compile Include="CChildren.cs" />
     <Compile Include="CFutureData.cs" />
+    <Compile Include="CChildParent.cs" />
     <Compile Include="CKinderGarden.cs" />
     <Compile Include="CLiveData.cs" />
     <Compile Include="CPreviousData.cs" />

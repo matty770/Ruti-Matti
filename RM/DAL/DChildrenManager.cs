@@ -9,14 +9,43 @@ namespace DAL
 {
     public class DChildrenManager
     {
-        public static int addChildren(CChildren cc)
+        //public static int addChildren(CChildren cc)
+        //{
+        //    Children c = Mapper.convertToChildren(cc);
+        //    using (NDBEntities db = new NDBEntities())
+        //    {
+        //        try
+        //        {
+        //            db.Children.Add(c);
+        //            db.SaveChanges();
+        //            return 1;
+        //        }
+        //        catch (Exception e)
+        //        {
+
+        //            throw;
+        //        }
+        //    }
+        //}
+
+        public static int addChildren(CChildParent cc)
         {
-            Children c = Mapper.convertToChildren(cc);
+            CUsers u = new CUsers(cc.ParentId, cc.ParentFirstName, cc.ParentLastName, cc.Address, cc.Phone, 1,cc.mailAddress,cc.Active);
+            Users u1 = Mapper.convertToUsers(u);
+            CChildren c = new CChildren(cc.ChildId, cc.ChildFirstName, cc.ChildLastName, cc.Address, cc.Phone, cc.ParentCode, cc.KinderGardenCode, cc.Active);
+            Children c1 = Mapper.convertToChildren(c);
             using (NDBEntities db = new NDBEntities())
             {
                 try
                 {
-                    db.Children.Add(c);
+                    var idParent = (from x in db.Users
+                                       where u1.IdUser == x.IdUser
+                                       select x).FirstOrDefault();
+                    if (idParent == null)
+                    {
+                        db.Users.Add(u1);
+                    }
+                    db.Children.Add(c1);
                     db.SaveChanges();
                     return 1;
                 }
@@ -27,7 +56,7 @@ namespace DAL
                 }
             }
         }
-    public static void removeChildren(string idChild)
+        public static void removeChildren(string idChild)
     {
         using (NDBEntities db = new NDBEntities())
         {

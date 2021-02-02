@@ -24,18 +24,25 @@
     <button type="submit">add</button>
   </form>
 </div>  -->
-<div>
+
 <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
-    <input class="from-control" name="Id" type="text"  [(ngModel)]="user.Id" required >id  <br>
-   <!-- <span [hidden]="Id.valid" class="alert alert-danger"  ></span>-->
-    <input name="FirstName" type="text" [(ngModel)]="user.FirstName" required>שם פרטי  <br>
-    <input name="LastName" type="text" [(ngModel)]="user.LastName" required>שם משפחה  <br>
-    <input name="Address" type="text" [(ngModel)]="user.Address" required>כתובת  <br>
-    <input name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required >פלאפון  <br>
-    <input name="MailAddress" type="text" [(ngModel)]="user.MailAddress" required>כתובת דוא"ל  <br>
-    <select name="select a gan" multiple   name="KinderGardenCode" required [(ngModel)]="KinderGardenofTeacher">     
-      <option *ngFor="let k of ListKinderGarden"    [value]="k.IdKinderGarden"  >{{k.Name}}</option>
-    </select>
-    <button type="submit">add</button>
+  <div class="form-group" >
+    <label for="Id" class="append-right">מספר זהות</label>
+    <input class="form-control" name="Id" type="text"  [(ngModel)]="user.Id" required >
+    <label for="FirstName"> שם פרטי</label>
+    <input class="form-control" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+    <label for="LastName"> שם משפחה</label>
+    <input class="form-control" name="LastName" type="text" [(ngModel)]="user.LastName" required>
+    <label for="Address">כתובת</label>
+    <input class="form-control" name="Address" type="text" [(ngModel)]="user.Address" required>
+    <label for="PhoneNum">פלאפון</label>
+    <input class="form-control" name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required >
+    <label for="MailAddress">כתובת דוא"ל</label>
+    <input class="form-control" name="MailAddress" type="text" [(ngModel)]="user.MailAddress" required><br>
+    <label for="KinderGardenCode">בחר גן</label>
+    <select multiple class="form-control" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode" required >
+      <option *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden"  >{{k.Name}}</option>
+    </select><br>
+    <button class="btn btn-primary" type="submit">add</button>
+  </div>
   </form>
-</div>

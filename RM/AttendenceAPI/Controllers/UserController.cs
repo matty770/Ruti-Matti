@@ -142,7 +142,7 @@ namespace AttendenceAPI.Controllers
             return 0;
         }
         [HttpPost]
-        public int functioPostWithParameter(actionType nameFunction,int KGCode, [FromBody]CUsers user)
+        public int functioPostWithParameter(actionType nameFunction,List<int> KGCode, [FromBody]CUsers user)
         {
             switch (nameFunction)
             {

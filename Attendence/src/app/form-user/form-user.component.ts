@@ -12,11 +12,20 @@ import { KinderGardensService } from '../services/Kindergarden.service';
 })
 export class FormUserComponent implements OnInit {
   //@ViewChild('f') userForm:NgForm;
+KinderGardenArray:KinderGarden[]=[]; 
+kin:KinderGarden;
 user:User=new User();
 ListKinderGarden:KinderGarden[];
 KinderGardenofTeacher:number;
-  constructor(private userService:UserService,private kinderGardenService:KinderGardensService) { }
-
+  
+constructor(private userService:UserService,private kinderGardenService:KinderGardensService) {
+ }
+  
+selectedKinderGarden(){
+    alert(this.kin);   
+    this.KinderGardenArray.push(this.kin);
+    alert(this.KinderGardenArray.length);
+ }
   ngOnInit() {
     this.getKinderGardenList();
   }
@@ -37,6 +46,7 @@ KinderGardenofTeacher:number;
 //}
 addUser(UserForm)
 {
+  alert(this.KinderGardenArray.length);
   if(isIsraeliIdValid(this.user.Id)==true)
   {
     this.user.Active=1;
@@ -44,7 +54,7 @@ addUser(UserForm)
     if(this.user.Permission==2)
     {
       alert("t");
-      this.userService.addTeacher(this.KinderGardenofTeacher,this.user);
+      this.userService.addTeacher(this.KinderGardenArray,this.user);
     }
     else
     {

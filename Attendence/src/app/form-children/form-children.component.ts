@@ -6,6 +6,7 @@ import { UserService } from '../services/user.service';
 import isIsraeliIdValid from 'israeli-id-validator';
 import { KinderGarden } from '../models/KinderGarden';
 import { KinderGardensService } from '../services/Kindergarden.service';
+import { ChildParent } from '../models/ChildParent';
 @Component({
   selector: 'app-form-children',
   templateUrl: './form-children.component.html',
@@ -16,7 +17,7 @@ export class FormChildrenComponent implements OnInit {
  
   constructor(private childrenService:ChildService,private userService:UserService,private kinderGardenService:KinderGardensService) {
    }
-child:Child=new Child();
+childParent:ChildParent=new ChildParent();
 user:User=new User();
  isFound:number=9;
  ListKinderGarden:KinderGarden[];
@@ -30,31 +31,30 @@ getKinderGardenList()
 }
   addChildren(ChildrenForm)
   {
-    if(isIsraeliIdValid(this.child.Id)==true&&isIsraeliIdValid(this.child.ParentCode)==true)
+    if(isIsraeliIdValid(this.childParent.ChildId)==true&&isIsraeliIdValid(this.childParent.parentCode)==true)
     {
-      this.userService.UserIs(this.child.ParentCode).toPromise().then
-      (data=>{ this.isFound = data;
-      if(this.isFound==0)
-       {
-        this.user.Active=1;
-        this.user.PhoneNum=this.child.Id;
-        this.user.Id=this.child.ParentCode;
-        this.user.Address=this.child.Address;
-        this.user.Permission=1;
-        this.userService.addUser(this.user);//.toPromise().then() יש כאן בעיה חמורה!!!!
-       }
-       this.child.Active=1;
-       this.childrenService.addChildren(this.child);
-       ChildrenForm.reset();
-      });
+     // this.userService.UserIs(this.childParent.ParentId).toPromise().then
+     // (data=>{ this.isFound = data;
+      //if(this.isFound==0)
+      // {
+        this.childParent.active=1;
+        this.childParent.ParentId=this.childParent.parentCode;
+        this.childParent.address=this.childParent.address;
+       // this.user.Permission=1;
+        //this.userService.addUser(this.user);//.toPromise().then() יש כאן בעיה חמורה!!!!
+        this.childrenService.addChildren(this.childParent);      
+      // this.child.Active=1;
+      // this.childrenService.addChildren(this.child);
+       ChildrenForm.reset();      
+     // });
     }
     else
     {
-      if(isIsraeliIdValid(this.child.Id)==false&&isIsraeliIdValid(this.child.ParentCode)==false)
+      if(isIsraeliIdValid(this.childParent.ChildId)==false&&isIsraeliIdValid(this.childParent.parentCode)==false)
       {
         alert("תעודת זהות של ההורה ושל הילד אינם תקינים");
       }
-      else if(isIsraeliIdValid(this.child.Id)==false)
+      else if(isIsraeliIdValid(this.childParent.ChildId)==false)
       {
         alert("תעודת זהות של הילד אינה תקינה");
       }

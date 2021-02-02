@@ -52,7 +52,7 @@ namespace AttendenceAPI.Controllers
         //    BChildrenManager.updateChildren(children);
         //}
         [HttpPost]
-        public void functioPost(actionType nameFunction, [FromBody]CChildren child)
+        public void functioPost(actionType nameFunction, [FromBody]CChildParent child)
         {
             switch (nameFunction)
             {
@@ -60,9 +60,16 @@ namespace AttendenceAPI.Controllers
                     BChildrenManager.addChildren(child); break;
 
                 case actionType.update:
-                    BChildrenManager.updateChildren(child); break;
+                    {
+                        CChildren c = new CChildren(child.ChildId, child.ChildFirstName, child.ChildLastName, child.Address, child.Phone, child.ParentCode, child.KinderGardenCode, child.Active);
+                        BChildrenManager.updateChildren(c); break;
+                    }
+                    
                 case actionType.remove:
-                    BChildrenManager.removeChildren((child.Id)); break;
+                    {
+                        //CChildren c = new CChildren(child.ChildId, child.ChildFirstName, child.ChildLastName, child.Address, child.Phone, child.ParentCode, child.KinderGardenCode, child.Active);
+                        BChildrenManager.removeChildren((child.ChildId)); break;
+                    }
             }
             //BKinderGardenManager.addKinderGarden(kinderGarden);
         }

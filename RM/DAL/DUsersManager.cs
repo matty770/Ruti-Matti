@@ -217,16 +217,34 @@ namespace DAL
             return 1;
         }
 
-       public static int addKinderGardenToTeacher(int KGCode, string id)
+       public static int addKinderGardenToTeacher(List<int> KGCode, string id)
         {
-            KinderGardenOfTeacher k = new KinderGardenOfTeacher();
-            k.IdKinderGarden = KGCode;
-            k.IdTeacher = id;
+           List< KinderGardenOfTeacher> k = new List<KinderGardenOfTeacher>();
+            foreach (var item in KGCode)
+            {
+                KinderGardenOfTeacher k1 = new KinderGardenOfTeacher();                
+                k1.IdKinderGarden = item;
+                k1.IdTeacher = id;
+                k.Add(k1);
+            }
+            
             using (NDBEntities db = new NDBEntities())
             {
-                db.KinderGardenOfTeacher.Add(k);
-                db.SaveChanges();
-                return 1;
+                try
+                {
+                    foreach (var item in k)
+                    {
+                        db.KinderGardenOfTeacher.Add(item);
+                        db.SaveChanges();
+                    }
+                    return 1;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+               
             }
         }
     }

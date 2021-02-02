@@ -7,6 +7,7 @@ import { Form } from '@angular/forms/src/directives/form_interface';
 import { FormArray } from '@angular/forms/src/model';
 import { last } from '@angular/router/src/utils/collection';
 import { error } from 'selenium-webdriver';
+import { KinderGarden } from '../models/KinderGarden';
 
 
 @Injectable({
@@ -60,9 +61,9 @@ GetAllUsers():Observable<User[]>
   {
     this.http.post('User?nameFunction=addKGToTeachet'+ '&KGCode='+KGCode,Id).subscribe(res=>{alert(res)});
   }
-  addTeacher(KGCode:number,teacher:User)
+  addTeacher(KGCodeList:KinderGarden[],teacher:User)
   {
-    this.http.post('User?nameFunction=addTeacher'+ '&KGCode='+KGCode,teacher).subscribe
+    this.http.post('User?nameFunction=addTeacher'+ '&KGCode='+KGCodeList,teacher).subscribe
     (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
     
   }
