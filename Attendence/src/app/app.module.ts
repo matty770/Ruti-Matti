@@ -32,6 +32,7 @@ import { KinderGardenUpdateInfoComponent } from './kinder-garden-update-info/kin
 import { UserUpdateInfoComponent } from './user-update-info/user-update-info.component';
 import { FutureDataUpdateInfoComponent } from './future-data-update-info/future-data-update-info.component';
 import { ChildrenForKinderGardenComponent } from './children-for-kinder-garden/children-for-kinder-garden.component';
+
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:LoginComponent},

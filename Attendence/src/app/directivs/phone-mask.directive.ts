@@ -11,7 +11,7 @@ export class PhoneMaskDirective {
   
     constructor(private element: ElementRef, private render : Renderer2) { }
     @HostListener('keyup')
-    myFunc()
+    keyup()
     {
       var phone:string;
       phone= this.element.nativeElement.value;
@@ -20,9 +20,19 @@ export class PhoneMaskDirective {
       if(!isNumbere){
         this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,phone.length-1))
       }
-      if(phone.length>10)
+     if(phone.length>10)
+     {
+         this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,10));
+     }
+    }
+    @HostListener('mouseout')
+    mouseout()
+    {
+      var  str: string;
+      str = this.element.nativeElement.value;
+      if(str.length<9)
       {
-          this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,10));
+        alert("מס' הטלפון אינו חוקי");
       }
     }
   } 

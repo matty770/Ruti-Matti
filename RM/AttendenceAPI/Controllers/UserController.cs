@@ -109,7 +109,6 @@ namespace AttendenceAPI.Controllers
                     {
                          if(e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
                         {
-                            return 0;
                             //איך משנים את ה massage?
                         }
 
