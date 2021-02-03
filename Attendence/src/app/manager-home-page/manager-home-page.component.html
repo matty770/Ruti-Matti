@@ -1,16 +1,20 @@
 
-<a routerLink="/ManagerHomePage" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>Home page</h3></a>
-<a routerLink="/ListOfKinderGarden" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all kinder garden</h3></a>
-<a routerLink="/ListOfChildren" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all childrens</h3></a>
-<a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
-<a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
-<h1>What do you want to do?</h1><br><br>
-<button (click)="ToKinderGardenForm()">הוספת גן</button> &nbsp;
-<button (click)="ToChildrenForm()">הוספת ילד</button> &nbsp;
-<button (click)="ToUserForm(2)">הוספת גננת</button> &nbsp;
+<div>
+<a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
+</div>
+<br><br><br><br>
+<div>
+<h1>?מה תרצה לעשות עכשיו</h1><br><br>
+<button class="btn btn-info" (click)="ToKinderGardenForm()">הוספת גן</button> &nbsp;
+<button class="btn btn-info" (click)="ToChildrenForm()">הוספת ילד</button> &nbsp;
+<button class="btn btn-info" (click)="ToUserForm(2)">הוספת גננת</button> &nbsp;
 <!--<button (click)="ToUserForm(1)">הוספת הורה</button> &nbsp;-->
-<button (click)="Exit()">יציאה</button>
-
+<button class="btn btn-info" (click)="Exit()">יציאה</button>
+</div>
 
 
 

@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit
 
  Login(userId:string,FirstName:string,LastName:string)
  {
+  localStorage.setItem("select","");
   this.userService.GetUser(userId,FirstName,LastName).toPromise().then(
   // subscribe(
   data=>{this.user=data;

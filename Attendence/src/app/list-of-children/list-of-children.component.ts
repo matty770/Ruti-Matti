@@ -11,7 +11,11 @@ import { Router } from '@angular/router';
 export class ListOfChildrenComponent implements OnInit {
 listChildren:Child[];
 bool:boolean=null;
-  constructor(private childServive:ChildService,private router:Router) { }
+select:string;
+  constructor(private childServive:ChildService,private router:Router) { 
+    this.select="";
+  }
+  
   search="";
   ngOnInit() {
     this.GetAllChildrens();

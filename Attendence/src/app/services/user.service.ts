@@ -25,7 +25,7 @@ GetAllUsers():Observable<User[]>
 }
   SelectParentOrTechers(permission:number):Observable<User[]>
   {
-    alert(permission);
+    //alert(permission);
     return this.http.Get('User?p='+permission);
   }
  //GetUser(userId: string,firstName:string,lastName:string): Observable<User> {

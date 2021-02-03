@@ -1,0 +1,11 @@
+input{
+    max-width: max-content;
+}
+select{
+    max-width: max-content;
+}
+form{
+    justify-content:center;
+    margin-left: 40%;
+    margin-right: 40%;
+}

@@ -17,7 +17,7 @@ kin:KinderGarden;
 user:User=new User();
 ListKinderGarden:KinderGarden[];
 KinderGardenofTeacher:number;
-  
+select:string="";
 constructor(private userService:UserService,private kinderGardenService:KinderGardensService) {
  }
   

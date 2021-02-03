@@ -13,7 +13,7 @@ import { ChildParent } from '../models/ChildParent';
   styleUrls: ['./form-children.component.css']
 })
 export class FormChildrenComponent implements OnInit {
-
+  select:string="";
  
   constructor(private childrenService:ChildService,private userService:UserService,private kinderGardenService:KinderGardensService) {
    }

@@ -26,11 +26,11 @@
           <th>{{KG.Name}}</th>&nbsp;
           <th>{{KG.Address}}</th>&nbsp;
           <th>{{KG.Phone}}</th>&nbsp;
-         <th><button *ngIf="CUP=='2'||CUP=='4'" type="button" (click)="goToAttendance(KG.IdKinderGarden,KG.Name)">Attendance</button>&nbsp;
-          <th><button *ngIf="CUP=='3'" type="button" (click)="goToChildrenForKinderGarden(KG.IdKinderGarden,KG.Name)">לרשימת הילדים</button>&nbsp;
+         <th><button class="btn btn-info" *ngIf="CUP=='2'||CUP=='4'" type="button" (click)="goToAttendance(KG.IdKinderGarden,KG.Name)">Attendance</button>&nbsp;
+          <th><button class="btn btn-info" *ngIf="CUP=='3'" type="button" (click)="goToChildrenForKinderGarden(KG.IdKinderGarden,KG.Name)">לרשימת הילדים</button>&nbsp;
         </tr>
       </tbody>
     </table>
-    <button *ngIf="CUP=='3'" (click)="back()">חזרה</button>&nbsp;
-    <button (click)="Exit()">יציאה</button>
+    <button class="btn btn-info" *ngIf="CUP=='3'" (click)="back()">חזרה</button>&nbsp;
+    <button class="btn btn-info" (click)="Exit()">יציאה</button>
   </div>

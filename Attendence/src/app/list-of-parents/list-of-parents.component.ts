@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class ListOfParentsComponent implements OnInit {
 ParentList:User[];
-
+select:string="";
   constructor(private UserService:UserService, private router:Router) { }
   GetAllParents()
   { 

@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./manager-home-page.component.css']
 })
 export class ManagerHomePageComponent implements OnInit {
- 
+  select:string="";
 
   constructor(private managerService:ManagerService,private kinderGardenService:KinderGardensService,
   private router:Router,private userService:UserService)
@@ -39,7 +39,7 @@ export class ManagerHomePageComponent implements OnInit {
   }
   ToUserForm(permission:number)
   {
-    alert(permission);
+    //alert(permission);
     this.userService.user.Permission=permission;
     this.router.navigate(['formUser']);
   }

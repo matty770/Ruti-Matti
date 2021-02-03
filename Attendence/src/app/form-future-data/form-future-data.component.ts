@@ -14,6 +14,7 @@ export class FormFutureDataComponent implements OnInit {
  futureData:FutureData=new FutureData();
  ST:string;
  now:DatePipe;
+ select:string="";
   d:Date=new Date()
   constructor(private futureDataService:FutureDataService, private router:Router) { }
 

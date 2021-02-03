@@ -36,7 +36,7 @@ public kinderGarden:KinderGarden=new KinderGarden();
     
     updateKinderGarden(kinderGarden:KinderGarden)
     {
-      alert(kinderGarden.IdKinderGarden);
+     // alert(kinderGarden.IdKinderGarden);
       this.http.post('KinderGarden?A=update',kinderGarden).subscribe(res=>{ alert(res)});
       //.subscribe(res=>{ alert(res)})
     }

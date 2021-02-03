@@ -8,7 +8,7 @@ import { KinderGarden } from 'src/app/models/KinderGarden';
   styleUrls: ['./form-kinder-garden.component.css']
 })
 export class FormKinderGardenComponent implements OnInit {
-
+  select:string="";
   kinderGarden:KinderGarden=new KinderGarden();
   constructor(private kinderGardenService:KinderGardensService) { }
 

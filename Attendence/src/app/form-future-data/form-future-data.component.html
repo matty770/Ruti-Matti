@@ -1,7 +1,3 @@
-<p>
-  form-future-data works!
-  {{futureData}}
-</p>
 <div>
   <form #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)"><br>
    <!-- <input name="IdChild" type="text"  [(ngModel)]="futureData.IdChild">IdChild<br>-->
@@ -15,7 +11,7 @@
     <input name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">UpdateBy<br>
     <input name="Comments" type="text" [(ngModel)]="futureData.Comments">Comments<br>
     <p *ngIf="ST==1"> <input name="Alarm" type="time"  [(ngModel)]="futureData.Alarm">Alarm</p><br>
-    <button type="submit">add</button>
+    <button class="btn btn-primary" type="submit">add</button>
   </form>
   <button (click)="GoBack()">חזרה</button>
 </div>

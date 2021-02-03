@@ -8,4 +8,16 @@ form{
     justify-content:center;
     margin-left: 40%;
     margin-right: 40%;
+    text-align: center;
+}
+a{
+    background-color:cornflowerblue;
+    color:cornsilk;
+}
+.selected{
+    color: cornflowerblue;
+    background-color:cornsilk;
+}
+div{
+    text-align: center;
 }

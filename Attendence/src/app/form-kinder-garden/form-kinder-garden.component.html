@@ -1,18 +1,19 @@
-<!--
-<a routerLink="/ManagerHomePage" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>Home page</h3></a>
-<a routerLink="/ListOfKinderGarden" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all kinder garden</h3></a>
-<a routerLink="/ListOfChildren" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all childrens</h3></a>
-<a routerLink="/ListOfParent" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all parents</h3></a>
-<a routerLink="/ListOfTeachers" class="btn btn-link" (click)="boolAddClass= !boolAddClass" [ngStyle]="{'color': boolAddClass?'red':'green'}"><h3>view all teachers</h3></a>
--->
+
+<div>
+  <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
+  </div>
 <div>
   <form #kinderGardenForm="ngForm" (ngSubmit)="addKinderGarden(kinderGardenForm)">
   <!--  <input name="idKinderGarden" type="number"  [(ngModel)]="kinderGarden.idKinderGarden">code  <br>-->
-    <input name="name" type="text"  [(ngModel)]="kinderGarden.name">name  <br>
-    <input name="Address" type="text" [(ngModel)]="kinderGarden.Address">addres  <br>
-    <input name="phone" type="text" [(ngModel)]="kinderGarden.phone">phone  <br>
-    <input name="year" type="number" [(ngModel)]="kinderGarden.year">year  <br>
-    <input name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">begining hour  <br>
-    <button type="submit">add</button>
+    <input class="form-control" name="name" type="text"  [(ngModel)]="kinderGarden.name">name  <br>
+    <input class="form-control" name="Address" type="text" [(ngModel)]="kinderGarden.Address">addres  <br>
+    <input class="form-control" name="phone" type="text" [(ngModel)]="kinderGarden.phone">phone  <br>
+    <input class="form-control" name="year" type="number" [(ngModel)]="kinderGarden.year">year  <br>
+    <input class="form-control" name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">begining hour  <br>
+    <button class="btn btn-primary" type="submit">add</button>
   </form>
 </div>
