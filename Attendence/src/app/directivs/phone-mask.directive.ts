@@ -25,16 +25,16 @@ export class PhoneMaskDirective {
          this.render.setProperty(this.element.nativeElement,"value",phone.substring(0,10));
      }
     }
-    @HostListener('mouseout')
-    mouseout()
-    {
-      var  str: string;
-      str = this.element.nativeElement.value;
-      if(str.length<9)
-      {
-        alert("מס' הטלפון אינו חוקי");
-      }
-    }
+//@HostListener('mouseout')
+//mouseout()
+//{
+//  var  str: string;
+//  str = this.element.nativeElement.value;
+//  if(str.length<9)
+//  {
+//    alert("מס' הטלפון אינו חוקי");
+//  }
+//}
   } 
   
 

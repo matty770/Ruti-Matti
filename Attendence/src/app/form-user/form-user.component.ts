@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class FormUserComponent implements OnInit {
   //@ViewChild('f') userForm:NgForm;
-KinderGardenArray:KinderGarden[]=[]; 
+KinderGardenArray:number[]=[]; 
 kin:KinderGarden;
 user:User=new User();
 ListKinderGarden:KinderGarden[];
@@ -24,7 +24,7 @@ constructor(private userService:UserService,private kinderGardenService:KinderGa
   
 selectedKinderGarden(){
     alert(this.kin);   
-    this.KinderGardenArray.push(this.kin);
+    this.KinderGardenArray.push(this.kin.IdKinderGarden);
     alert(this.KinderGardenArray.length);
  }
   ngOnInit() {
@@ -47,19 +47,18 @@ selectedKinderGarden(){
 //}
 addUser(UserForm)
 {
-  alert(this.KinderGardenArray.length);
+  alert(this.KinderGardenArray.length+"כמות הגנים");
   if(isIsraeliIdValid(this.user.Id)==true)
   {
     this.user.Active=1;
     this.user.Permission=this.userService.user.Permission;
     if(this.user.Permission==2)
     {
-      alert("t");
+      alert("הוספת ");
       this.userService.addTeacher(this.KinderGardenArray,this.user);
     }
     else
     {
-      alert("p");
       this.userService.addUser(this.user);
     }
    

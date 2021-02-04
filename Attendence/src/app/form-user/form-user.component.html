@@ -66,7 +66,7 @@
     <input class="form-control" name="MailAddress" type="text" [(ngModel)]="user.MailAddress" required><br>
     <label for="KinderGardenCode">בחר גן</label>
     <select multiple class="form-control" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode" required >
-      <option *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden"  >{{k.Name}}</option>
+      <option *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" >{{k.Name}}</option>
     </select><br>
     <button class="btn btn-primary" type="submit">add</button>
   </div>

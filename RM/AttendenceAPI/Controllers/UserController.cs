@@ -114,7 +114,8 @@ namespace AttendenceAPI.Controllers
                     {
                          if(e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
                         {
-                            //איך משנים את ה massage?
+                            allreadyExist ex = new allreadyExist();
+                            throw ex;
                         }
 
                         throw e;
@@ -146,14 +147,14 @@ namespace AttendenceAPI.Controllers
             return 0;
         }
         [HttpPost]
-        public int functioPostWithParameter(actionType nameFunction,List<int> KGCode, [FromBody]CUsers user)
+        public int functioPostWithParameter(actionType nameFunction, int[] KGCodeList , [FromBody]CUsers user)
         {
             switch (nameFunction)
             {
                 case actionType.addTeacher:
                     try
                     {
-                        BUserManager.addTeacher(KGCode, user);
+                        BUserManager.addTeacher(KGCodeList, user);
                         return 1;
                     }
                     catch (Exception)
@@ -164,7 +165,7 @@ namespace AttendenceAPI.Controllers
                 case actionType.addKGToTeachet:
                     try
                     {
-                        BUserManager.addKinderGardenToTeacher(KGCode, user.Id);
+                        BUserManager.addKinderGardenToTeacher(KGCodeList, user.Id);
                         return 1;
                     }
                     catch (Exception)

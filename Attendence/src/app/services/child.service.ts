@@ -19,11 +19,8 @@ export class ChildService
     addChildren(child:ChildParent)
     {
      // this.http.post('Children?nameFunction=add',child)
-    this.http.post('Children?nameFunction=add',child).subscribe(res=>{ alert(res)
-         //console.log(res)//
-      }
-      //,error=>{alert(error.innerException)}
-      ); 
+    this.http.post('Children?nameFunction=add',child).subscribe(res=>{  console.log(res)
+    },error=>{});/*alert(error.Message) */
     }
     getAllChildrens():Observable<Child[]>
     {

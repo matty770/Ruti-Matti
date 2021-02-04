@@ -57,8 +57,20 @@ namespace AttendenceAPI.Controllers
             switch (nameFunction)
             {
                 case actionType.add:
-                    BChildrenManager.addChildren(child); break;
+                    try
+                    {
+                        BChildrenManager.addChildren(child); break;
+                    }
+                    catch (Exception e)
+                    {
+                        if (e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
+                        {
+                            allreadyExist ex = new allreadyExist();
+                            throw ex;
+                        }
 
+                        throw e;
+                    }
                 case actionType.update:
                     {
                         CChildren c = new CChildren(child.ChildId, child.ChildFirstName, child.ChildLastName, child.Address, child.Phone, child.ParentCode, child.KinderGardenCode, child.Active);
