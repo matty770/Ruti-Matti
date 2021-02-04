@@ -70,5 +70,10 @@ namespace BLL
             DUsersManager.addUser(teacher);
             DUsersManager.addKinderGardenToTeacher(KGCode, teacher.Id);
         }
+        public static CUsers Login(string userId, string firstName, string lastName)
+        {
+            return DUsersManager.Login(userId, firstName, lastName);
+        }
+
     }
 }

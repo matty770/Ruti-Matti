@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Child } from 'src/app/models/Child';
 import { ChildService } from 'src/app/services/Child.service';
 import { Router } from '@angular/router';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-list-of-children',

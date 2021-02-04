@@ -246,6 +246,19 @@ namespace DAL
                 }
                
             }
+
         }
+      public static CUsers Login(string userId, string firstName, string lastName)
+      {
+          using (NDBEntities db = new NDBEntities())
+          {
+                Users u = (from x in db.Users
+                           where x.IdUser.Equals(userId) && x.FirstName.Equals(firstName) && x.LastName.Equals(lastName)
+                           select x).FirstOrDefault();
+                if (u != null)
+                    return Mapper.convertToCUsers(u);
+                return null;
+          }
+      }
     }
 }

@@ -32,8 +32,11 @@ GetAllUsers():Observable<User[]>
  //  alert(lastName);
  //  return this.http.Get('User? "userId=" + userId + "&firstName=firstName&lastName=lastName');
  //}
- 
-  GetUser(userId: string,firstName:string,lastName:string): Observable<User> {   
+ GetUser(userId: string):Observable<User>
+ {
+   return this.http.Get('User?userId='+ userId);
+ }
+  Login(userId: string,firstName:string,lastName:string): Observable<User> {   
     return this.http.Get('User?userId='+ userId + '&firstName='+firstName+'&lastName='+lastName);
   }
   GetPermissionOfUser(userId :string): Observable<number>{
