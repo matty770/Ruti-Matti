@@ -33,4 +33,8 @@ select:string="";
     this.UserService.user=parent;
     this.router.navigate(['ChildrenForParent']);
   }
+  Exit()
+  {
+    this.router.navigate(['']);
+  }
 }

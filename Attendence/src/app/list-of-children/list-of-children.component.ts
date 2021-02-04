@@ -43,4 +43,8 @@ select:string;
    } 
    
   }
+  Exit()
+  {
+    this.router.navigate(['']);
+  }
 }

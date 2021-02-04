@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KinderGardensService } from 'src/app/services/Kindergarden.service';
 import { KinderGarden } from 'src/app/models/KinderGarden';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kinder-garden-update-info',
@@ -9,7 +10,7 @@ import { KinderGarden } from 'src/app/models/KinderGarden';
 })
 export class KinderGardenUpdateInfoComponent implements OnInit {
 
-  constructor(private kinderGardenService:KinderGardensService) { }
+  constructor(private kinderGardenService:KinderGardensService,private router:Router) { }
   kinderGarden:KinderGarden=this.kinderGardenService.kinderGarden;
   ngOnInit() {
   }
@@ -22,8 +23,8 @@ export class KinderGardenUpdateInfoComponent implements OnInit {
     alert(this.kinderGarden.Phone);
   }
 
-  GoBack()
+  Exit()
   {
-
+    this.router.navigate(['']);
   }
 }

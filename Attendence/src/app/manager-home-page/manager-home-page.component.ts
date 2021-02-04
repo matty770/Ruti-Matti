@@ -4,6 +4,7 @@ import{ManagerService} from '../services/manager.service';
 import { KinderGardensService } from 'src/app/services/Kindergarden.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { User } from '../models/User';
 
 
 @Component({
@@ -13,10 +14,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ManagerHomePageComponent implements OnInit {
   select:string="";
-
+user:User;
   constructor(private managerService:ManagerService,private kinderGardenService:KinderGardensService,
   private router:Router,private userService:UserService)
-   { }
+   { 
+     this.user=this.userService.user;
+   }
   ngOnInit() {
   }
 

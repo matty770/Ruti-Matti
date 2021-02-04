@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core'
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SecretaryMenuComponent } from './secretary-menu/secretary-menu.component';
-import { HomeComponent } from 'src/app/home/home.component';
 import { Routes,RouterModule } from '@angular/router';
 import { MyComComponent } from './my-com/my-com.component';
 //import { PhonePipePipe } from './pipes/phone-pipe.pipe';
@@ -17,7 +15,6 @@ import { ChildrenOfParentComponent } from './children-of-parent/children-of-pare
 import { ChildReportComponent } from './child-report/child-report.component';
 import { ChildUpdateInfoComponent } from './child-update-info/child-update-info.component';
 import { TeacherHomePageComponent } from './teacher-home-page/teacher-home-page.component';
-import { ChildrenOfTeacherComponent } from './children-of-teacher/children-of-teacher.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ManagerHomePageComponent } from './manager-home-page/manager-home-page.component';
 import { ListOfChildrenComponent } from './list-of-children/list-of-children.component';
@@ -32,17 +29,15 @@ import { KinderGardenUpdateInfoComponent } from './kinder-garden-update-info/kin
 import { UserUpdateInfoComponent } from './user-update-info/user-update-info.component';
 import { FutureDataUpdateInfoComponent } from './future-data-update-info/future-data-update-info.component';
 import { ChildrenForKinderGardenComponent } from './children-for-kinder-garden/children-for-kinder-garden.component';
-
+import bootstrap from "bootstrap";
 //import { ChildrenOfTecherComponent } from './children-of-techer/children-of-techer.component';
 
 export const Rout:Routes =[{path:'',component:LoginComponent},
-{path:'seretaryMenu',component:SecretaryMenuComponent},
 {path:'myCom',component:MyComComponent},
 {path:'ChildrenForParent',component:ChildrenOfParentComponent},
 {path:'ChildReport',component:ChildReportComponent},
 {path:'ChildUpdateInfo',component:ChildUpdateInfoComponent},
 {path:'TeacherHomePage',component:TeacherHomePageComponent},
-{path:'ChildrenOfTeacher',component:ChildrenOfTeacherComponent},
 {path:'Attendance',component:AttendanceComponent},
 {path:'ManagerHomePage',component:ManagerHomePageComponent},
 {path:'ListOfKinderGarden',component:ListOfKinderGardenComponent},
@@ -66,8 +61,6 @@ export const Rout:Routes =[{path:'',component:LoginComponent},
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SecretaryMenuComponent,
     MyComComponent,
     //nPhonePipePipe,
     PhoneMaskDirective,
@@ -78,7 +71,6 @@ export const Rout:Routes =[{path:'',component:LoginComponent},
     ChildReportComponent,
     ChildUpdateInfoComponent,
     TeacherHomePageComponent,
-    ChildrenOfTeacherComponent,
     AttendanceComponent,
     ManagerHomePageComponent,
     ListOfChildrenComponent,

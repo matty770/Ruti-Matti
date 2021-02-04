@@ -1,24 +1,40 @@
-
-<div>
-  <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" (click)="select='ManagerHomePage'" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a  routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg nav-item active" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
-  </div>
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info " >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info active">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info ">הצג גננות</a>
+    </li>
+  </ul>
+</nav>
+<h3>  :משתמש נוכחי {{user.FirstName}} {{user.LastName}} ניתן לבצע את הפעולות הבאות</h3>
+<div >
     <button class="btn btn-primary" (click)="ToKinderGardenForm()">addKinderGarden</button><br><br>
     <div *ngIf="add=='1'">
       <app-form-kinder-garden></app-form-kinder-garden>
       <button class="btn btn-outline-info" (click)="cancelAdd()">ביטול</button>
     </div><br><br>
     <div >
- <table class="table" >
+ <table class="table" thead-dark>
   <thead>
     <tr>
      <!-- <th><h3>ID</h3></th>&nbsp;-->
-      <th><h3>Name</h3></th>&nbsp;
-      <th><h3>Address</h3></th>&nbsp;
-      <th><h3>Phone</h3></th>&nbsp;
+      <th><h3>שם גן</h3></th>&nbsp;
+      <th><h3>כתובת</h3></th>&nbsp;
+      <th><h3>מס' טלפון</h3></th>&nbsp;
       <th></th>
       <th></th>
     </tr>
@@ -29,8 +45,8 @@
       <th>{{kinderGarden.Name}}</th>&nbsp;
       <th>{{kinderGarden.Address}}</th>&nbsp;
       <th>{{kinderGarden.Phone}}</th>&nbsp;
-      <th><button (click)="goToDetails(kinderGarden)">update details</button></th>
-      <th><button (click)="goToChildrenForKinderGarden(kinderGarden)">לרשימת הילדים</button></th>
+      <th><button class="btn btn-info" *ngIf="CUP=='2'" (click)="goToDetails(kinderGarden)">עדכון פרטי גן</button></th>
+      <th><button class="btn btn-info" (click)="goToChildrenForKinderGarden(kinderGarden)">לרשימת הילדים</button></th>
       <!--<th><button (click)="RemoveKinderGarden(kinderGarden.IdKinderGarden)">Remove</button></th>-->
     </tr>
   </tbody>

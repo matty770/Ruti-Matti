@@ -18,7 +18,7 @@ namespace AttendenceAPI.Controllers
         [HttpGet]
         public CUsers GetUser(string userId,string firstName,string lastName)
         {
-            var u = BUserManager.selectUserById(userId);
+            var u = BUserManager.selectUserByParameters(userId,firstName,lastName);
             return u;
 
         }
