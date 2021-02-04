@@ -1,19 +1,25 @@
-
+<!--
 <div>
   <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
-  </div>
+  </div>-->
 <div>
-  <form #kinderGardenForm="ngForm" (ngSubmit)="addKinderGarden(kinderGardenForm)">
+  <form #kinderGardenForm="ngForm" (ngSubmit)="function(kinderGardenForm)">
   <!--  <input name="idKinderGarden" type="number"  [(ngModel)]="kinderGarden.idKinderGarden">code  <br>-->
+ <!-- <div class="form-group">
+    <label for="uname">שם הגן:</label>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>-->
     <input class="form-control" name="name" type="text"  [(ngModel)]="kinderGarden.name">name  <br>
     <input class="form-control" name="Address" type="text" [(ngModel)]="kinderGarden.Address">addres  <br>
     <input class="form-control" name="phone" type="text" [(ngModel)]="kinderGarden.phone">phone  <br>
     <input class="form-control" name="year" type="number" [(ngModel)]="kinderGarden.year">year  <br>
     <input class="form-control" name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">begining hour  <br>
-    <button class="btn btn-primary" type="submit">add</button>
+    <button class="btn btn-outline-info" type="submit">add</button>
   </form>
 </div>

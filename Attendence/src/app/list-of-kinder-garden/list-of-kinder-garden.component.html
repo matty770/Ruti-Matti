@@ -1,15 +1,15 @@
 
 <div>
   <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" (click)="select='ManagerHomePage'" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a  routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg nav-item active" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
   </div>
-    <button (click)="ToKinderGardenForm()">addKinderGarden</button><br><br>
+    <button class="btn btn-primary" (click)="ToKinderGardenForm()">addKinderGarden</button><br><br>
     <div *ngIf="add=='1'">
       <app-form-kinder-garden></app-form-kinder-garden>
-      <button (click)="cancelAdd()">ביטול</button>
+      <button class="btn btn-outline-info" (click)="cancelAdd()">ביטול</button>
     </div><br><br>
     <div >
  <table class="table" >

@@ -2,15 +2,15 @@
 <form #userForm="ngForm" (ngSubmit)="Login(userId.value,userFirstName.value,userLastName.value); userForm.reset()" >
   <div class="form-group">
     <label for="userFirstName">שם פרטי</label>
-    <input type="text" class="form-control" #userFirstName />
+    <input type="text" class="form-control" #userFirstName placeholder="הכנס שם פרטי" />
   </div>
   <div class="form-group">
     <label for="userLastName">שם משפחה</label>
-    <input type="text" class="form-control" #userLastName />
+    <input type="text" class="form-control" #userLastName placeholder="הכנס שם משפחה" />
   </div>
   <div class="form-group">
     <label for="password">סיסמה</label>
-    <input type="password" name="ID" class="form-control" [(ngModel)]="ID" #userId/>
+    <input type="password" name="ID" class="form-control" [(ngModel)]="ID" #userId placeholder="הכנס מ.ז"/>
   </div>
   <div class="form-group">
     <button type="submit"  class="btn btn-primary">
