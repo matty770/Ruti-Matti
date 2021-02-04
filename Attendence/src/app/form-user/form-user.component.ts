@@ -29,7 +29,7 @@ selectedKinderGarden(){
   ngOnInit() {
     this.getKinderGardenList();
   }
-  getKinderGardenList()
+  getKinderGardenList()  
 {
   this.kinderGardenService.GetAllKinderGarden().subscribe(
       data=>{this.ListKinderGarden=data;});
