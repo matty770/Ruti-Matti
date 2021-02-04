@@ -15,13 +15,13 @@ namespace AttendenceAPI.Controllers
         {
             add, update, remove, addTeacher,addKGToTeachet
         }
-        [HttpGet]
-        public CUsers GetUser(string userId)
-        {
-            var u = BUserManager.selectUserByParameters(userId,firstName,lastName);
-            return u;
+        //[HttpGet]
+        //public CUsers GetUser(string userId)
+        //{
+        //    var u = BUserManager.selectUserByParameters(userId,firstName,lastName);
+        //    return u;
 
-        }
+        //}
        [HttpGet]
        public CUsers Login(string userId, string firstName, string lastName)
        {
