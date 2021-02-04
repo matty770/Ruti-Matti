@@ -1,7 +1,10 @@
 
+<header>
+  <button class="btn btn-danger" (click)="Exit()">יציאה</button>
+</header>
 <div>
   <h3> רשימת הילדים של {{user.FirstName}}{{user.LastName}}</h3><br>
-  <table class="table">
+  <table class="table" thead-dark>
     <thead>
       <tr>
         <th><h3>ID</h3></th>&nbsp;
@@ -24,7 +27,6 @@
       </tr>
     </tbody>
   </table>
-  <button (click)="Exit()">יציאה</button>&nbsp;&nbsp;
   <button *ngIf="CUP=='3'" (click)="GoBack()">חזרה</button>
 </div>
 

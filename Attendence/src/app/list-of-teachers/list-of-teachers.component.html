@@ -1,23 +1,38 @@
-
-<div>
-  <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg nav-item active" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
-  </div>
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info active">הצג גננות</a>
+    </li>
+  </ul>
+</nav>
+<h3>  :משתמש נוכחי {{user.FirstName}} {{user.LastName}} ניתן לבצע את הפעולות הבאות</h3>
 <div >
-  <button (click)="GoToAddTeacher()">Add Teacher</button><br><br>
+  <button class="btn btn-info" (click)="GoToAddTeacher()">Add Teacher</button><br><br>
   <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
-<table class="table" >
+<table class="table"> 
 <thead>
   <tr>
-    <th><h3>ID</h3></th>&nbsp;
-    <th><h3>FirstName</h3></th>&nbsp;
-    <th><h3>LastName</h3></th>&nbsp;
-    <th><h3>Address</h3></th>&nbsp;
-    <th><h3>Phone</h3></th>&nbsp;
-    <th><h3>EMail</h3></th>&nbsp;
+    <th><h3>.מ.ז</h3></th>&nbsp;
+    <th><h3>שם פרטי</h3></th>&nbsp;
+    <th><h3>שם משפחה</h3></th>&nbsp;
+    <th><h3>כתובת</h3></th>&nbsp;
+    <th><h3>מס' טלפון</h3></th>&nbsp;
+    <th><h3>דוא"ל</h3></th>&nbsp;
     <th></th>
   </tr>
 </thead>

@@ -52,4 +52,8 @@ select:string="";
   {
    this.kinderGardenService.RemoveKinderGarden(IdKinderGarden);
   }
+  Exit()
+  {
+    this.router.navigate(['']);
+  }
 }

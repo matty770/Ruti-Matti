@@ -1,11 +1,27 @@
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info active">הצג גננות</a>
+    </li>
+  </ul>
+</nav>
 
-<div>
-  <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg"  >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" >הצג גננות</a>
-  </div>
+<div >
  <!--<div>
 
    <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
@@ -28,14 +44,20 @@
   </form>
 </div>  -->
 
-<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
-  <div class="form-group" >
-    <label for="Id" class="append-right">מספר זהות</label>
-    <input class="form-control" name="Id" type="text"  [(ngModel)]="user.Id" required >
-    <label for="FirstName"> שם פרטי</label>
-    <input class="form-control" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
-    <label for="LastName"> שם משפחה</label>
-    <input class="form-control" name="LastName" type="text" [(ngModel)]="user.LastName" required>
+<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" >
+  <div class="container" class="row">    
+    <input class="col" class="form-control" name="Id" type="text"  [(ngModel)]="user.Id" required >
+    <label class="col" for="Id">מספר זהות</label>
+  </div>
+  <div class="container" class="row">    
+    <input class="col" class="form-control" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+    <label class="col" for="FirstName"> שם פרטי</label>
+  </div >
+  <div class="container" class="row"> 
+    <input class="col" class="form-control" name="LastName" type="text" [(ngModel)]="user.LastName" required>
+    <label class="col" for="LastName"> שם משפחה</label>
+  </div>
+  <div>
     <label for="Address">כתובת</label>
     <input class="form-control" name="Address" type="text" [(ngModel)]="user.Address" required>
     <label for="PhoneNum">פלאפון</label>

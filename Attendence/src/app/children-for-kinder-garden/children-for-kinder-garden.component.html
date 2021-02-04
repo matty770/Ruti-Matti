@@ -1,8 +1,9 @@
-<p>
-  children-for-kinder-garden works!
-</p>
+
+<header>
+  <button class="btn btn-danger" (click)="Exit()">יציאה</button>
+</header>
 <div>
-  <table class="table">
+  <table class="table" thead-dark>
     <thead>
       <tr>
         <th><h3>ID</h3></th>&nbsp;
@@ -22,6 +23,5 @@
       </tr>
     </tbody>
   </table>
-  <button (click)="GoBack()">חזרה</button>&nbsp;&nbsp;
-  <button (click)="Exit()">יציאה</button>
+  <button class="btn btn-info" (click)="GoBack()">חזרה</button>&nbsp;&nbsp;
 </div>

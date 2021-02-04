@@ -2,16 +2,15 @@
   child-report works!
 </p>
 <div>
-  <table class="table">
+  <table class="table" thead-dark>
     <thead>
       <tr>
-        <th><h3>ID</h3></th>&nbsp;
-        <th><h3>Code Gan</h3></th>&nbsp;
-        <th><h3>Date</h3></th>&nbsp;       
-        <th><h3>Status</h3></th>&nbsp;
-        <th><h3>updated by</h3></th>&nbsp;
-        <th><h3>Alarm</h3></th>&nbsp;
-        <th><h3>Comments</h3></th>&nbsp;
+        <th><h3>.מ.ז</h3></th>&nbsp;
+        <th><h3>תאריך</h3></th>&nbsp;       
+        <th><h3>סטטוס</h3></th>&nbsp;
+        <th><h3>עודכן ע"י</h3></th>&nbsp;
+        <th><h3>שעת הגעה</h3></th>&nbsp;
+        <th><h3>...הערות</h3></th>&nbsp;
         <th></th>
         <th></th>
       </tr>
@@ -19,17 +18,16 @@
     <tbody *ngFor="let FutureData of FutureDataList">
       <tr>
         <th>{{FutureData.IdChild}}</th>&nbsp;
-        <th>{{FutureData.KinderGardenCode}}</th>&nbsp;
         <th>{{FutureData.Date | date: 'shortDate'}}</th>&nbsp;
         <th>{{FutureData.Status}}</th>&nbsp;
         <th>{{FutureData.UpdateBy}}</th>&nbsp;
         <th>{{FutureData.Alarm}}</th>&nbsp;
         <th>{{FutureData.Comments}}</th>&nbsp;
-      <th><button (click)="goToDetails(FutureData)">update details</button></th>
-      <th><button (click)="removeFutureData(FutureData)">remove</button></th>
+      <th><button class="btn btn-info" (click)="goToDetails(FutureData)">update details</button></th>
+      <th><button (click)="removeFutureData(FutureData)" class="btn btn-danger">remove</button></th>
       </tr>
     </tbody>
   </table>
-  <button (click)="goToFutureDataForm()">Add Report</button>
-  <button (click)="goToChildernOfParent()">חזרה</button>
+  <button class="btn btn-info" (click)="goToFutureDataForm()">Add Report</button>
+  <button class="btn btn-success" class="btn btn-info" (click)="goToChildernOfParent()">חזרה</button>
 </div>

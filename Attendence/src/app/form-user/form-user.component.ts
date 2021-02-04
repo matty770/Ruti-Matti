@@ -4,6 +4,7 @@ import { User } from 'src/app/models/User';
 import isIsraeliIdValid from 'israeli-id-validator';
 import { KinderGarden } from '../models/KinderGarden';
 import { KinderGardensService } from '../services/Kindergarden.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-user',
@@ -18,7 +19,7 @@ user:User=new User();
 ListKinderGarden:KinderGarden[];
 KinderGardenofTeacher:number;
 select:string="";
-constructor(private userService:UserService,private kinderGardenService:KinderGardensService) {
+constructor(private userService:UserService,private kinderGardenService:KinderGardensService, private router:Router) {
  }
   
 selectedKinderGarden(){
@@ -66,6 +67,10 @@ addUser(UserForm)
     UserForm.reset();
   }
   else alert("תעודת זהות אינה תקינה, נסה שוב")  
+}
+Exit()
+{
+  this.router.navigate(['']);
 }
 
 }

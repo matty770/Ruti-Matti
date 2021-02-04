@@ -1,11 +1,12 @@
 input{
     max-width: max-content;
+    text-align: right;
 }
 select{
     max-width: max-content;
 }
 form{
-    justify-content:center;
+  /*justify-content:center;*/
     margin-left: 40%;
     margin-right: 40%;
     text-align: center;

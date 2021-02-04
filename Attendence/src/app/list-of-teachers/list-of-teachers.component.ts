@@ -29,4 +29,8 @@ export class ListOfTeachersComponent implements OnInit {
     this.UserService.user=techer;
     this.router.navigate(['/TeacherHomePage',1]);
   }
+  Exit()
+  {
+    this.router.navigate(['']);
+  }
 }

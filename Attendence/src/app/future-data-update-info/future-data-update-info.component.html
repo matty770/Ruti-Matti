@@ -1,6 +1,3 @@
-<p>
-  future-data-update-info works!
-</p>
 <div>
   <form #UpdateFutureData="ngForm" (ngSubmit)="updateFutureData(UpdateFutureData)"><br>
 <select name="Status" [(ngModel)]="ST">
@@ -13,5 +10,5 @@
     <input name="Comments" type="text" [(ngModel)]="futureData.Comments">Comments<br>
     <button type="submit">עדכן</button>
   </form>
-  <button (click)="Back()">חזרה</button>
+  <button class="btn btn-success" (click)="Back()">חזרה</button>
 </div>
