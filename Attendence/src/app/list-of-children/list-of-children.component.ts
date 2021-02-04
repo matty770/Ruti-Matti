@@ -42,7 +42,6 @@ select:string;
      }
      else alert(this.bool);
    } 
-   
   }
   Exit()
   {

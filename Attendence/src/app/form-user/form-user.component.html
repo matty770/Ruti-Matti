@@ -44,28 +44,24 @@
   </form>
 </div>  -->
 
-<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" >
-  <div class="container" class="row">    
-    <input class="col" class="form-control" name="Id" type="text"  [(ngModel)]="user.Id" required >
-    <label class="col" for="Id">מספר זהות</label>
+<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)"  style="width:100% " >
+  <div class="row ">  
+  <label  for="Id">מספר זהות</label> 
+    <input  class="form-control col" name="Id" type="text"  [(ngModel)]="user.Id" required >
+    <label  for="FirstName"> שם פרטי</label>
+    <input  class="form-control col" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+    <label  for="LastName"> שם משפחה</label>
+    <input  class="form-control col" name="LastName" type="text" [(ngModel)]="user.LastName" required>
   </div>
-  <div class="container" class="row">    
-    <input class="col" class="form-control" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
-    <label class="col" for="FirstName"> שם פרטי</label>
-  </div >
-  <div class="container" class="row"> 
-    <input class="col" class="form-control" name="LastName" type="text" [(ngModel)]="user.LastName" required>
-    <label class="col" for="LastName"> שם משפחה</label>
-  </div>
-  <div>
-    <label for="Address">כתובת</label>
-    <input class="form-control" name="Address" type="text" [(ngModel)]="user.Address" required>
-    <label for="PhoneNum">פלאפון</label>
-    <input class="form-control" name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required >
-    <label for="MailAddress">כתובת דוא"ל</label>
-    <input class="form-control" name="MailAddress" type="text" [(ngModel)]="user.MailAddress" required><br>
+  <div class="row">
+    <label for="Address" >כתובת</label>
+    <input class="form-control col " name="Address" type="text" [(ngModel)]="user.Address" required>
+    <label for="PhoneNum" >פלאפון</label>
+    <input class="form-control col " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required >
+    <label for="MailAddress" >כתובת דוא"ל</label>
+    <input class="form-control col" name="MailAddress" type="email" [(ngModel)]="user.MailAddress" required><br>
     <label for="KinderGardenCode">בחר גן</label>
-    <select multiple class="form-control" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode" required >
+    <select multiple class="form-control col" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode" required >
       <option *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" >{{k.Name}}</option>
     </select><br>
     <button class="btn btn-primary" type="submit">add</button>
