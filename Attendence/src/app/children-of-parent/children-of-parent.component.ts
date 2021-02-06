@@ -27,7 +27,7 @@ export class ChildrenOfParentComponent implements OnInit {
   {    
     this.futureDataService.futureData.IdChild=child.Id; 
     this.futureDataService.futureData.KinderGardenCode=child.KinderGardenCode;
-    alert(this.futureDataService.futureData.IdChild); 
+    //alert(this.futureDataService.futureData.IdChild); 
     this.rout.navigate(['/ChildReport']);
   }
   goToDetails(children:Child)

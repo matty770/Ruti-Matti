@@ -28,6 +28,7 @@ export class FutureDataUpdateInfoComponent implements OnInit {
    };
      this.futureData.UpdateDate=(new Date);
     this.futureDataService.updateFutureData(this.futureData);
+    this.Back();
   }
   convertStatusToString()
   {
