@@ -1,29 +1,36 @@
-
-<header>
-  <button class="btn btn-danger" (click)="Exit()">יציאה</button>
-</header>
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item">
+       <h3> רשימת הילדים של {{user.FirstName}} {{user.LastName}}</h3>
+    </li>   
+  </ul>
+</nav>
 <div>
-  <h3> רשימת הילדים של {{user.FirstName}}{{user.LastName}}</h3><br>
+  <br>
   <table class="table" thead-dark>
     <thead>
       <tr>
-        <th><h3>ID</h3></th>&nbsp;
-        <th><h3>FirstName</h3></th>&nbsp;
-        <th><h3>LastName</h3></th>&nbsp;
-        <th><h3>Address</h3></th>&nbsp;       
-        <th><h3>Phone</h3></th>&nbsp;
         <th></th>
+        <th><h4>מס' טלפון</h4></th>&nbsp;
+        <th><h4>כתובת</h4></th>&nbsp;
+        <th><h4>שם משפחה</h4></th>&nbsp;
+        <th><h4>שם פרטי</h4></th>&nbsp;       
+        <th><h4>.מ.ז</h4></th>&nbsp;       
       </tr>
     </thead>
     <tbody *ngFor="let child of children">
       <tr>
-        <th>{{child.Id}}</th>&nbsp;
-        <th>{{child.FirstName}}</th>&nbsp;
-        <th>{{child.LastName}}</th>&nbsp;
-        <th>{{child.Address}}</th>&nbsp;
+        <th><button class="btn btn-info"  *ngIf="CUP=='1'" type="button" (click)="goToReport(child)">תזמון היעדרות</button>&nbsp;
+        <button class="btn btn-info"  *ngIf="CUP=='1'" (click)="goToDetails(child)">ערוך פרטים </button>
+      </th>
         <th>{{child.Phone}}</th>&nbsp;
-       <th><button  *ngIf="CUP=='1'" type="button" (click)="goToReport(child)">report time</button>&nbsp;
-      <button *ngIf="CUP=='1'" (click)="goToDetails(child)">update details</button>
+        <th>{{child.Address}}</th>&nbsp;      
+        <th>{{child.LastName}}</th>&nbsp;
+        <th>{{child.FirstName}}</th>&nbsp;       
+        <th>{{child.Id}}</th>&nbsp;
       </tr>
     </tbody>
   </table>

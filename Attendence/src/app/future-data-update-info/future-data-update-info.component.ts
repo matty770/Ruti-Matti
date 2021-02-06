@@ -43,4 +43,8 @@ export class FutureDataUpdateInfoComponent implements OnInit {
   {
     this.rout.navigate(['ChildReport']);
   }
+  Exit()
+  {
+    this.rout.navigate(['']);
+  }
 }

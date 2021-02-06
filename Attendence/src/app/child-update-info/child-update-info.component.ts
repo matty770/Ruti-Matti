@@ -31,4 +31,8 @@ export class ChildUpdateInfoComponent implements OnInit {
     {
       this.router.navigate(['/ChildrenForParent'])
     }
+    Exit()
+    {
+      this.router.navigate(['']);
+    }
 }

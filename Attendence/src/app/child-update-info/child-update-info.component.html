@@ -1,15 +1,24 @@
-<p>
-  child-update-info works!
-</p>
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+        <li>
+          <button class="btn btn-success" (click)="goToChildernOfParent()">חזרה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item">
+       <h3> עריכת פרטי   {{child.FirstName}} {{child.LastName}}</h3>
+    </li>   
+  </ul>
+</nav>
 <div>
-  <form #ChildrenUpdateForm="ngForm" (ngSubmit)="UpdateChild(ChildrenUpdateForm)">
-      <input name="Name" type="text"  value={{user.Name}} disabled >name parent  <br>
-    <input name="ChildFirstName" type="text"   value={{child.FirstName}} disabled> שם משפחה<br>
-    <input name="ChildLastName" type="text"   value={{child.LastName}} disabled>שם פרטי<br>
-    <input name="Address" type="text" value={{child.Address}} [(ngModel)]="child.Address">addres  <br>
-    <input name="Phone" type="text" value={{child.Phone}} [(ngModel)]="child.Phone">phone  <br>
-  <input name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress">mail  <br>
-    <button type="submit">עדכן</button>
+  <form class="form" #ChildrenUpdateForm="ngForm" (ngSubmit)="UpdateChild(ChildrenUpdateForm)">
+      שם הורה<input class="form-control" name="Name" type="text"  value={{user.FirstName}} disabled ><br>
+     שם ילד<input class="form-control" name="ChildLastName" type="text"   value={{child.FirstName}} disabled> <br>
+     שם משפחה<input class="form-control" name="ChildFirstName" type="text"   value={{child.LastName}} disabled>  <br>
+    כתובת<input class="form-control" name="Address" type="text" value={{child.Address}} [(ngModel)]="child.Address">  <br>
+    מס' טל/פלאפון<input class="form-control" name="Phone" type="text" value={{child.Phone}} [(ngModel)]="child.Phone">  <br>
+  כתובת דוא"ל<input class="form-control" name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress"><br>
+    <button class="btn btn-info" type="submit">עדכן</button>
   </form>
-  <button class="btn btn-info" (click)="goToChildernOfParent()">חזרה</button>
 </div>

@@ -1,14 +1,26 @@
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+        <li>
+          <button class="btn btn-success" (click)="Back()">חזרה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item">
+       <h3> עידכון תזמון היעדרות</h3>
+    </li>   
+  </ul>
+</nav>
 <div>
-  <form #UpdateFutureData="ngForm" (ngSubmit)="updateFutureData(UpdateFutureData)"><br>
-<select name="Status" [(ngModel)]="ST">
+  <form class="form" #UpdateFutureData="ngForm" (ngSubmit)="updateFutureData(UpdateFutureData)"><br>
+סטטוס<select class="form-control" name="Status" [(ngModel)]="ST">
   <option value="1">איחור</option>
   <option value="2">חיסור</option>
 </select><br>
-   <input name="Date" type="date" [(ngModel)]="futureData.Date" disabled> Date <br>
-    <input name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">UpdateBy<br>
-    <a *ngIf="ST==1"><input name="Alarm" type="time" [(ngModel)]="futureData.Alarm">Alarm<br></a>
-    <input name="Comments" type="text" [(ngModel)]="futureData.Comments">Comments<br>
-    <button type="submit">עדכן</button>
+   תאריך<input class="form-control" name="Date" type="text" [(ngModel)]="futureData.Date" disabled>  <br>
+    עודכן ע"י<input class="form-control" name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy"><br>
+    <p *ngIf="ST==1">שעת הגעה<input class="form-control" name="Alarm" type="time" [(ngModel)]="futureData.Alarm"><br></p>
+    הערות<input class="form-control" name="Comments" type="text" [(ngModel)]="futureData.Comments"><br>
+    <button class="btn btn-info" type="submit">עדכן</button>
   </form>
-  <button class="btn btn-success" (click)="Back()">חזרה</button>
 </div>

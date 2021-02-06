@@ -1,33 +1,41 @@
-<p>
-  child-report works!
-</p>
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+        <li>
+          <button class="btn btn-success" (click)="goToChildernOfParent()">חזרה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item">
+       <h3> תזמוני היעדרות  </h3>
+    </li>   
+  </ul>
+</nav>
 <div>
   <table class="table" thead-dark>
     <thead>
       <tr>
-        <th><h3>.מ.ז</h3></th>&nbsp;
-        <th><h3>תאריך</h3></th>&nbsp;       
-        <th><h3>סטטוס</h3></th>&nbsp;
-        <th><h3>עודכן ע"י</h3></th>&nbsp;
-        <th><h3>שעת הגעה</h3></th>&nbsp;
-        <th><h3>...הערות</h3></th>&nbsp;
         <th></th>
-        <th></th>
+        <th><h4>...הערות</h4></th>&nbsp;
+        <th><h4>שעת הגעה</h4></th>&nbsp;              
+        <th><h4>עודכן ע"י</h4></th>&nbsp;
+        <th><h4>סטטוס</h4></th>&nbsp;
+        <th><h4>תאריך</h4></th>&nbsp; 
+        <th><h4>.מ.ז</h4></th>&nbsp;
       </tr>
     </thead>
     <tbody *ngFor="let FutureData of FutureDataList">
       <tr>
-        <th>{{FutureData.IdChild}}</th>&nbsp;
-        <th>{{FutureData.Date | date: 'shortDate'}}</th>&nbsp;
-        <th>{{FutureData.Status}}</th>&nbsp;
-        <th>{{FutureData.UpdateBy}}</th>&nbsp;
-        <th>{{FutureData.Alarm}}</th>&nbsp;
+        <th><button class="btn btn-info" (click)="goToDetails(FutureData)">עדכון פרטי תזמון</button>&nbsp;&nbsp;
+        <button (click)="removeFutureData(FutureData)" class="btn btn-danger">מחיקת תזמון</button></th>
         <th>{{FutureData.Comments}}</th>&nbsp;
-      <th><button class="btn btn-info" (click)="goToDetails(FutureData)">update details</button></th>
-      <th><button (click)="removeFutureData(FutureData)" class="btn btn-danger">remove</button></th>
+        <th>{{FutureData.Alarm}}</th>&nbsp;       
+        <th>{{FutureData.UpdateBy}}</th>&nbsp;
+        <th>{{FutureData.Status}}</th>&nbsp;
+        <th>{{FutureData.Date | date: 'shortDate'}}</th>&nbsp;
+        <th>{{FutureData.IdChild}}</th>&nbsp;
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-info" (click)="goToFutureDataForm()">Add Report</button>
-  <button class="btn btn-success" class="btn btn-info" (click)="goToChildernOfParent()">חזרה</button>
+  <button class="btn btn-info" (click)="goToFutureDataForm()">הוספת תזמון חדש</button>
 </div>

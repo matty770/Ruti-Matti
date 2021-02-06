@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit
    {
      this.userService.user=this.user;
     localStorage.setItem("PermissionOfCurrentUser",this.user.Permission.toString());
+    localStorage.setItem("NameOfCurrentUser",this.user.FirstName+this.user.LastName);
      //alert(this.userService.user.Id);
      switch (this.user.Permission) {
        case 1:  this.router.navigate(['/ChildrenForParent']); break;         

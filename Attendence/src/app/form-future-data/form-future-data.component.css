@@ -10,11 +10,8 @@ form{
     margin-right: 40%;
     text-align: center;
 }
-a{
-    background-color:cornflowerblue;
-    color:cornsilk;
-}
-.selected{
-    color: cornflowerblue;
-    background-color:cornsilk;
+h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+    font-size: xx-large;
 }

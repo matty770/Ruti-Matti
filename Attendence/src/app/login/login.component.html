@@ -1,6 +1,10 @@
-
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <h3>ניהול נוכחות ובטיחות בגני ילדים</h3>
+</nav>
+<!-- <img class="rounded" src="Logo.jpg" >-->
 <form #userForm="ngForm" (ngSubmit)="Login(userId.value,userFirstName.value,userLastName.value); userForm.reset()" >
-  <div class="form-group">
+  <div class="form-group ">
+    <br><br><br><br><br>
     <label for="userFirstName">שם פרטי</label>
     <input type="text" class="form-control" #userFirstName placeholder="הכנס שם פרטי" />
   </div>
@@ -13,8 +17,8 @@
     <input type="password" name="ID" class="form-control" [(ngModel)]="ID" #userId placeholder="הכנס מ.ז"/>
   </div>
   <div class="form-group">
-    <button type="submit"  class="btn btn-primary">
-      Login
+    <button type="submit" class="btn btn-primary ">
+      כניסה
     </button>
   </div>
 </form>

@@ -3,6 +3,9 @@ import { FutureDataService } from 'src/app/services/future-data.service';
 import { FutureData } from '../models/FutureData';
 import {Router} from '@angular/router';
 import {DatePipe} from '@angular/common';
+import { ChildParent } from '../models/ChildParent';
+import { ChildService } from '../services/Child.service';
+import { Child } from '../models/Child';
 
 @Component({
   selector: 'app-child-report',
@@ -15,7 +18,7 @@ export class ChildReportComponent implements OnInit {
 
   FutureDataList:FutureData[];
 
-  constructor(private datePipe: DatePipe,private futureDataService:FutureDataService, private rout:Router) { }
+  constructor(private datePipe: DatePipe,private futureDataService:FutureDataService, private rout:Router,private childService:ChildService) { }
 
   GetFutureData()
   {   
@@ -41,4 +44,8 @@ export class ChildReportComponent implements OnInit {
     {
       this.rout.navigate(['/ChildrenForParent'])
     }
+    Exit()
+  {
+    this.rout.navigate(['']);
+  }
 }

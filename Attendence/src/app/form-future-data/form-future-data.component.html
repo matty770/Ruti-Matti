@@ -1,17 +1,29 @@
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+        <li>
+          <button class="btn btn-success" (click)="GoBack()">חזרה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item">
+       <h3>   הוספת תזמון היעדרות </h3>
+    </li>   
+  </ul>
+</nav>
 <div>
-  <form #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)"><br>
+  <form class="form" #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)"><br>
    <!-- <input name="IdChild" type="text"  [(ngModel)]="futureData.IdChild">IdChild<br>-->
    <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="futureData.KinderGardenCode">KinderGardenCode<br>-->
    <!-- <input name="Status" type="" [(ngModel)]="futureData.Status">Status<br>-->
-<select name="Status" [(ngModel)]="ST">
+סטטוס<select class="form-control" name="Status" [(ngModel)]="ST">
   <option value="1">איחור</option>
   <option value="2">חיסור</option>
 </select><br>
-   <input name="Date" type="date" [(ngModel)]="futureData.Date" > Date <br>
-    <input name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">UpdateBy<br>
-    <input name="Comments" type="text" [(ngModel)]="futureData.Comments">Comments<br>
-    <p *ngIf="ST==1"> <input name="Alarm" type="time"  [(ngModel)]="futureData.Alarm">Alarm</p><br>
-    <button class="btn btn-primary" type="submit">add</button>
+   תאריך היעדרות<input class="form-control" name="Date" type="date" [(ngModel)]="futureData.Date" ><br>
+    עודכן ע"י<input class="form-control" name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy"><br>
+    הערות<input class="form-control" name="Comments" type="text" [(ngModel)]="futureData.Comments"><br>
+    <p *ngIf="ST==1"> זמן הגעה<input class="form-control" name="Alarm" type="time"  [(ngModel)]="futureData.Alarm"></p><br>
+    <button class="form-control" class="btn btn-primary" type="submit">הוסף</button>
   </form>
-  <button (click)="GoBack()">חזרה</button>
 </div>

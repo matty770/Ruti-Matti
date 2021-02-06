@@ -1,11 +1,26 @@
-
-<div>
-  <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" (click)="select='ManagerHomePage'" [ngClass]="select=='ManagerHomePage'? 'selected':''">דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" [ngClass]="select=='ListOfKinderGarden'? 'selected':''">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" [ngClass]="select=='ListOfChildren'? 'selected':''">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" [ngClass]="select=='ListOfParent'? 'selected':''">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" [ngClass]="select=='ListOfTeachers'? 'selected':''">הצג גננות</a>
-  </div>
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info">הצג גננות</a>
+    </li>
+   
+  </ul>
+</nav>
 <div>
     <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)">
       <input name="IdChild" type="text" [(ngModel)]="childParent.ChildId" > תז ילד<br>

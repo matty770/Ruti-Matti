@@ -1,13 +1,28 @@
-<!--
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info">הצג גננות</a>
+    </li>
+   
+  </ul>
+</nav>
 <div>
-  <a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
-  </div>-->
-<div>
-  <form #kinderGardenForm="ngForm" (ngSubmit)="function(kinderGardenForm)">
+  <form #kinderGardenForm="ngForm" (ngSubmit)="function(kinderGardenForm)" class="form">
   <!--  <input name="idKinderGarden" type="number"  [(ngModel)]="kinderGarden.idKinderGarden">code  <br>-->
  <!-- <div class="form-group">
     <label for="uname">שם הגן:</label>
@@ -15,11 +30,11 @@
     <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>-->
-    <input class="form-control" name="name" type="text"  [(ngModel)]="kinderGarden.name">name  <br>
-    <input class="form-control" name="Address" type="text" [(ngModel)]="kinderGarden.Address">addres  <br>
-    <input class="form-control" name="phone" type="text" [(ngModel)]="kinderGarden.phone">phone  <br>
-    <input class="form-control" name="year" type="number" [(ngModel)]="kinderGarden.year">year  <br>
-    <input class="form-control" name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">begining hour  <br>
-    <button class="btn btn-outline-info" type="submit">add</button>
+    שם גן<input class="form-control" name="name" type="text" placeholder="שם גן" [(ngModel)]="kinderGarden.name">
+    כתובת<input class="form-control" name="Address" type="text" placeholder="כתובת" [(ngModel)]="kinderGarden.Address">
+    טלפון<input class="form-control" name="phone" type="text" placeholder="טלפון" [(ngModel)]="kinderGarden.phone">
+    שנה<input class="form-control" name="year" type="number" placeholder="שנה" [(ngModel)]="kinderGarden.year">
+    שעת תחילת הגן<input class="form-control" placeholder="שעת תחילת הגן" name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">
+    <button class="btn btn-primary" type="submit">הוסף גן</button>
   </form>
 </div>
