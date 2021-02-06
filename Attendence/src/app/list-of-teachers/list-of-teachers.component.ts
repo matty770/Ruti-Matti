@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service';
 export class ListOfTeachersComponent implements OnInit {
   TeacherList:User[];
   select:string="";
+  add:number=0;
   constructor(private UserService:UserService, private router:Router) { }
   GetAllParents()
   {   
@@ -21,8 +22,9 @@ export class ListOfTeachersComponent implements OnInit {
   }
   GoToAddTeacher()
   {
+    this.add=1;
     this.UserService.permission=2;
-    this.router.navigate(['formUser']);
+    //this.router.navigate(['formUser']);
   }
   goToTeacherHomePage(techer:User)
   {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+<!--<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
   <ul class="navbar-nav">
       <li class="nav-item">
           <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -19,7 +19,7 @@
       <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info active">הצג גננות</a>
     </li>
   </ul>
-</nav>
+</nav>-->
 
 <div >
  <!--<div>
@@ -44,26 +44,28 @@
   </form>
 </div>  -->
 
-<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)"  style="width:100% " >
+<div style=" display: -ms-flexbox;justify-content: center;align-items: center;">
+<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)"  style= " width:50%; margin:auto;vertical-align: middle; " >
   <div class="row ">  
   <label  for="Id">מספר זהות</label> 
-    <input  class="form-control col" name="Id" type="text"  [(ngModel)]="user.Id" required >
+    <input  class="form-control col" name="Id" type="text"  [(ngModel)]="user.Id" required placeholder= "מ.ז" >
     <label  for="FirstName"> שם פרטי</label>
-    <input  class="form-control col" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+    <input  class="form-control col" name="FirstName" type="text" [(ngModel)]="user.FirstName"  required placeholder="שם פרטי">
     <label  for="LastName"> שם משפחה</label>
-    <input  class="form-control col" name="LastName" type="text" [(ngModel)]="user.LastName" required>
-  </div>
+    <input  class="form-control col" name="LastName" type="text" [(ngModel)]="user.LastName" required placeholder="שם משפחה">
+  </div><br><br><br>
   <div class="row">
     <label for="Address" >כתובת</label>
-    <input class="form-control col " name="Address" type="text" [(ngModel)]="user.Address" required>
+    <input class="form-control col " name="Address" type="text" [(ngModel)]="user.Address" required placeholder="כתובת" >
     <label for="PhoneNum" >פלאפון</label>
-    <input class="form-control col " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required >
+    <input class="form-control col " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required placeholder="טלפון" >
     <label for="MailAddress" >כתובת דוא"ל</label>
-    <input class="form-control col" name="MailAddress" type="email" [(ngModel)]="user.MailAddress" required><br>
+    <input class="form-control col" name="MailAddress" type="email" [(ngModel)]="user.MailAddress" required placeholder=" כתובת מייל" ><br>
     <label for="KinderGardenCode">בחר גן</label>
-    <select multiple class="form-control col" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode" required >
+    <select multiple class="form-control col" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode"  >
       <option *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" >{{k.Name}}</option>
     </select><br>
-    <button class="btn btn-primary" type="submit">add</button>
   </div>
+  <button class="btn btn-primary" type="submit">add</button>
   </form>
+</div>

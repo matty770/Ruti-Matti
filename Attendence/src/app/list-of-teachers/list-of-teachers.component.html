@@ -22,7 +22,13 @@
 </nav>
 <h3>  :משתמש נוכחי {{user.FirstName}} {{user.LastName}} ניתן לבצע את הפעולות הבאות</h3>
 <div >
-  <button class="btn btn-info" (click)="GoToAddTeacher()">Add Teacher</button><br><br>
+    <button class="btn btn-info" (click)="GoToAddTeacher()">Add Teacher</button><br><br>
+    <div *ngIf="add=='1'">
+      <app-form-user></app-form-user>
+      <br><br>
+      <button class="btn btn-outline-info" (click)="cancelAdd()">ביטול</button>
+    </div><br><br>
+    <div >
   <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
 <table class="table"> 
 <thead>
