@@ -43,7 +43,37 @@
     <th>{{Parent.Address}}</th>&nbsp;
     <th>{{Parent.PhoneNum}}</th>&nbsp;
     <th>{{Parent.mailAddress}}</th>
-    <th><button (click)="goToChildrenOfParent(Parent)">הילדים שלי</button></th>
+   <!--<th><button (click)="goToChildrenOfParent(Parent)">הילדים שלי</button></th>-->
+   <th>
+      <button (click)="goToChildrenOfParent(Parent)" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          לרשימת הילדים שלי
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <table class="table"  thead-dark>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th><h6>מס' טלפון</h6></th>
+                        <th><h6>כתובת</h6></th>
+                        <th><h6>שם משפחה</h6></th>
+                        <th><h6>שם פרטי</h6></th>      
+                        <th><h6>.מ.ז</h6></th>     
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let child of children">
+                      <tr>
+                        <th>{{child.Phone}}</th>
+                        <th>{{child.Address}}</th>    
+                        <th>{{child.LastName}}</th>
+                        <th>{{child.FirstName}}</th>     
+                        <th>{{child.Id}}</th>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+   </th>
   </tr>
 </tbody>
 </table>

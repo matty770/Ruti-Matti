@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/User';
 import { UserService } from '../services/user.service';
+import { ChildService } from 'src/app/services/Child.service';
+import { Child } from 'src/app/models/Child';
 
 @Component({
   selector: 'app-list-of-parents',
@@ -11,7 +13,8 @@ import { UserService } from '../services/user.service';
 export class ListOfParentsComponent implements OnInit {
 ParentList:User[];
 select:string="";
-  constructor(private UserService:UserService, private router:Router) { }
+children:Child[];
+  constructor(private UserService:UserService, private router:Router,private childService:ChildService) { }
   GetAllParents()
   { 
       
@@ -30,8 +33,12 @@ select:string="";
  //}
   goToChildrenOfParent(parent:User)
   {
+    this.childService.selectChildrenByParentId(parent.Id).subscribe(
+      data=>{this.children = data; },
+      error=>{console.log("error:" + error);}
+     )
     this.UserService.user=parent;
-    this.router.navigate(['ChildrenForParent']);
+    //this.router.navigate(['ChildrenForParent']);
   }
   Exit()
   {

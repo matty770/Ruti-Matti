@@ -44,17 +44,17 @@
   </form>
 </div>  -->
 
-<div style=" display: -ms-flexbox;justify-content: center;align-items: center;">
-<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)"  style= " width:50%; margin:auto;vertical-align: middle; " >
-  <div class="row ">  
-  <label  for="Id">מספר זהות</label> 
-    <input  class="form-control col" name="Id" type="text"  [(ngModel)]="user.Id" required placeholder= "מ.ז" >
-    <label  for="FirstName"> שם פרטי</label>
-    <input  class="form-control col" name="FirstName" type="text" [(ngModel)]="user.FirstName"  required placeholder="שם פרטי">
-    <label  for="LastName"> שם משפחה</label>
-    <input  class="form-control col" name="LastName" type="text" [(ngModel)]="user.LastName" required placeholder="שם משפחה">
-  </div><br><br><br>
-  <div class="row">
+<div class=" d-flex justify-content-center align-items-center container-fluid pt-5" style="background-color: aqua;">
+<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" class="col-10 " style="background-color:bisque" >
+  <div class="row d-flex  p-5" style="background-color:blue">  
+  <label class="col" for="Id">מספר זהות</label> 
+    <input  class="form-control col " name="Id" type="text"  [(ngModel)]="user.Id" required placeholder= "מ.ז" >
+    <label class="col"   for="FirstName"> שם פרטי</label>
+    <input  class="form-control col " name="FirstName" type="text" [(ngModel)]="user.FirstName"  required placeholder="שם פרטי">
+    <label class="col"  for="LastName"> שם משפחה</label>
+    <input  class="form-control col " name="LastName" type="text" [(ngModel)]="user.LastName" required placeholder="שם משפחה">
+  </div>
+  <div class="d-flex row p-5" style="background-color:white">
     <label for="Address" >כתובת</label>
     <input class="form-control col " name="Address" type="text" [(ngModel)]="user.Address" required placeholder="כתובת" >
     <label for="PhoneNum" >פלאפון</label>
