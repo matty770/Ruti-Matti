@@ -21,16 +21,31 @@
    
   </ul>
 </nav>
-<div>
-    <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)">
-      <input name="IdChild" type="text" [(ngModel)]="childParent.ChildId" > תז ילד<br>
-      <input name="ChildFirstName" type="text"  [(ngModel)]="childParent.ChildFirstName" >שם פרטי הילד  <br>
-      <input name="ChildLastName" type="text"  [(ngModel)]="childParent.ChildLastName" >שם משפחה הילד  <br>
-      <input name="Address" type="text" [(ngModel)]="childParent.address" >כתובת  <br>
-      <!--[(ngModel)]="user.Address"-->
-      <input name="Phone" type="text" [(ngModel)]="childParent.phone" >טלפון<br>
+<div class=" d-flex justify-content-center align-items-center container-fluid pt-5" >
+    <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)" class="col-10 justify-content-center" >
+      <div class="row d-flex  p-5">
+          <input class="form-control col border border-danger border-5 " name="IdChild" type="text" [(ngModel)]="childParent.ChildId" >
+          <label class="col " for="Id" >מספר זהות</label> 
+          <input class="form-control col border border-danger border-5 "  name="ChildFirstName" type="text"  [(ngModel)]="childParent.ChildFirstName" >
+          <label class="col " for="Id" >שם פרטי ילד</label> 
+          <input class="form-control col border border-danger border-5 " name="ChildLastName" type="text"  [(ngModel)]="childParent.ChildLastName" >
+          <label class="col " for="Id" >שם משפחה ילד</label> 
+      </div>
+      <div class="row d-flex  p-5">
+          <input name="Address" type="text" [(ngModel)]="childParent.address" >
+          <label class="col " for="Id" >מספר זהות</label> 
+          <input name="Phone" type="text" [(ngModel)]="childParent.phone" >
+          <label class="col " for="Id" >מספר זהות</label> 
+          <input name="Id" type="text"  [(ngModel)]="childParent.parentCode" >תז' הור
+          <label class="col " for="Id" >מספר זהות</label> 
+      </div>
+      
+      
+      
+     
+      
       <!--[(ngModel)]="user.PhoneNum"-->
-      <input name="Id" type="text"  [(ngModel)]="childParent.parentCode" >תז' הורה  <br>
+     
       <!--[(ngModel)]="child.ParentCode"-->
       <input name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">שם פרטי הורה  <br>
       <input name="Name" type="text" [(ngModel)]="childParent.ParentLastName">שם משפחה הורה  <br>
