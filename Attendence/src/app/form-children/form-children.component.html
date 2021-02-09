@@ -21,43 +21,40 @@
    
   </ul>
 </nav>
-<div class=" d-flex justify-content-center align-items-center container-fluid pt-5" >
+<div class="d-flex justify-content-center m-4" ><h2>הוספת ילד</h2></div>
+<div class=" d-flex justify-content-center align-items-center container-fluid " >
     <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)" class="col-10 justify-content-center" >
-      <div class="row d-flex  p-5">
+      <div class="row d-flex  p-4">
           <input class="form-control col border border-danger border-5 " name="IdChild" type="text" [(ngModel)]="childParent.ChildId" >
           <label class="col " for="Id" >מספר זהות</label> 
           <input class="form-control col border border-danger border-5 "  name="ChildFirstName" type="text"  [(ngModel)]="childParent.ChildFirstName" >
           <label class="col " for="Id" >שם פרטי ילד</label> 
           <input class="form-control col border border-danger border-5 " name="ChildLastName" type="text"  [(ngModel)]="childParent.ChildLastName" >
-          <label class="col " for="Id" >שם משפחה ילד</label> 
+          <label class="col " for="Id" >שם משפחה </label> 
       </div>
-      <div class="row d-flex  p-5">
-          <input name="Address" type="text" [(ngModel)]="childParent.address" >
-          <label class="col " for="Id" >מספר זהות</label> 
-          <input name="Phone" type="text" [(ngModel)]="childParent.phone" >
-          <label class="col " for="Id" >מספר זהות</label> 
-          <input name="Id" type="text"  [(ngModel)]="childParent.parentCode" >תז' הור
-          <label class="col " for="Id" >מספר זהות</label> 
+      <div class="row d-flex  p-4">
+          <input class="form-control col border border-danger border-5 " name="Address" type="text" [(ngModel)]="childParent.address" >
+          <label class="col " for="Id" >כתובת </label> 
+          <input class="form-control col border border-danger border-5 " name="Phone" type="text" [(ngModel)]="childParent.phone" >
+          <label class="col " for="Id" >טלפון </label> 
+          <input class="form-control col border border-danger border-5 " name="Id" type="text"  [(ngModel)]="childParent.parentCode" >
+          <label class="col " for="Id" >מספר זהות הורה</label> 
       </div>
-      
-      
-      
-     
-      
-      <!--[(ngModel)]="user.PhoneNum"-->
-     
-      <!--[(ngModel)]="child.ParentCode"-->
-      <input name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">שם פרטי הורה  <br>
-      <input name="Name" type="text" [(ngModel)]="childParent.ParentLastName">שם משפחה הורה  <br>
-      <input name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">כתובת דו"אל  <br>
-     <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="child.KinderGardenCode">קוד גן<br>-->
-      <select  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="childParent.kinderGardenCode" >     
-        <option *ngFor="let k of ListKinderGarden"  [value]="k.IdKinderGarden" >{{k.Name}}</option>
-      </select>
-      <br>
-      <button class="btn btn-primary" type="submit">add</button>
+      <div class="row d-flex  p-4">
+        <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">
+        <label class="col " for="Id" > שם פרטי הורה</label> 
+        <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentLastName">
+       <!-- <label class="col " for="Id" >שם משפחה הורה </label> 
+        <input class="form-control col border border-danger border-5 " name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">-->
+        <label class="col " for="Id" > כתובת מייל</label>
+        <select class="form-control col border-danger border-5"  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="childParent.kinderGardenCode" >     
+          <option *ngFor="let k of ListKinderGarden"  [value]="k.IdKinderGarden" >{{k.Name}}</option>
+        </select>
+        <label class="col " for="Id" >בחר גן</label> 
+      </div>
+      <button class="btn btn-dark p-y-5 m-5"  type="submit">add</button>
     </form>
-   
+
   </div>
 
 

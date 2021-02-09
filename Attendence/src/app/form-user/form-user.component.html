@@ -1,10 +1,10 @@
-<!--<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
   <ul class="navbar-nav">
       <li class="nav-item">
           <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </li>
     <li class="nav-item active">
-      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -16,48 +16,24 @@
       <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info active">הצג גננות</a>
+      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info">הצג גננות</a>
     </li>
+   
   </ul>
-</nav>-->
-
-<div >
- <!--<div>
-
-   <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
-  <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
-    <input name="Id" type="text"  ngModel>id  <br>
-    <input name="FirstName" type="text" ngModel>שם פרטי  <br>
-    <input name="LastName" type="text" ngModel>שם משפחה  <br>
-    <input name="Address" type="text" ngModel>כתובת  <br>
-    <input name="PhoneNum" appPhoneMask type="text" ngModel>פלאפון  <br>
-
-  <input name="Permission" type="number" [(ngModel)]="user.Permission">Permission
-    <input name="MailAddress" type="text" ngModel>כתובת דוא"ל  <br>
-    <button type="submit">add</button>
-  </form>
-</div>
-<div>-->
- <!-- <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)">
-    <input name="MailAddress" type="text" ngModel>כתובת דוא"ל  <br>
-    <button type="submit">add</button>
-  </form>
-</div>  -->
-<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
-  <h3 class="fw-bolder" style="color:red" >הוספת גננת</h3>
 </nav>
-<div class=" d-flex justify-content-center align-items-center container-fluid pt-5" >
+<div class="d-flex justify-content-center m-4" ><h2>הוספת גננת</h2></div>
+<div class=" d-flex justify-content-center align-items-center container-fluid " >
 <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" class="col-10 justify-content-center " >
   <div class="row d-flex  p-5" >  
-      <input  class="form-control col border border-danger border-5 " name="Id" type="text"  [(ngModel)]="user.Id" required >
-  <label class="col " for="Id" >מספר זהות</label> 
-  <input  class="form-control col border-danger border-5" name="FirstName" type="text" [(ngModel)]="user.FirstName"  required >
+    <input  class="form-control col border border-danger border-5 " name="Id" type="text"  [(ngModel)]="user.Id" required >
+    <label class="col " for="Id" >מספר זהות</label> 
+    <input  class="form-control col border-danger border-5" name="FirstName" type="text" [(ngModel)]="user.FirstName"  required >
     <label class="col"   for="FirstName"> שם פרטי</label>
     <input  class="form-control col border-danger border-5 " name="LastName" type="text" [(ngModel)]="user.LastName" required >
     <label class="col"  for="LastName"> שם משפחה</label>
   </div>
   <div class="d-flex row p-5">
-      <input class="form-control col border-danger border-5" name="Address" type="text" [(ngModel)]="user.Address" required  >
+    <input class="form-control col border-danger border-5" name="Address" type="text" [(ngModel)]="user.Address" required  >
     <label class="col" for="Address" >כתובת</label>
     <input class="form-control col border-danger border-5 " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required  >
     <label for="PhoneNum" class="col" >פלאפון</label>
@@ -70,6 +46,6 @@
     </select><br>
     <label class="col-1"   for="KinderGardenCode">בחר גן</label>
   </div>
-  <button class="btn btn-dark p-y-5 m-5" type="submit"><h6 style="color:red">add</h6></button>
+  <button class="btn btn-dark p-y-5 m-5" type="submit"><h6>add</h6></button>
   </form>
 </div>

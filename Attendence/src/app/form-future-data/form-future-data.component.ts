@@ -14,6 +14,7 @@ export class FormFutureDataComponent implements OnInit {
  futureData:FutureData=new FutureData();
  ST:string;
  now:DatePipe;
+ idChild:string=this.futureDataService.futureData.IdChild;
  select:string="";
   d:Date=new Date()
   constructor(private futureDataService:FutureDataService, private router:Router) { }
@@ -22,7 +23,7 @@ export class FormFutureDataComponent implements OnInit {
   }
   addFutureData(FutureDataForm)
   {
-    this.futureData.IdChild=this.futureDataService.futureData.IdChild;
+    this.futureData.IdChild=this.idChild;
     this.futureData.KinderGardenCode=this.futureDataService.futureData.KinderGardenCode;
     switch(this.ST)
     {

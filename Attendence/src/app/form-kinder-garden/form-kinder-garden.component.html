@@ -1,4 +1,4 @@
-<!--<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
   <ul class="navbar-nav">
       <li class="nav-item">
           <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -20,21 +20,24 @@
     </li>
    
   </ul>
-</nav>-->
-<div>
-  <form #kinderGardenForm="ngForm" (ngSubmit)="function(kinderGardenForm)" class="form">
-  <!--  <input name="idKinderGarden" type="number"  [(ngModel)]="kinderGarden.idKinderGarden">code  <br>-->
- <!-- <div class="form-group">
-    <label for="uname">שם הגן:</label>
-    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>-->
-    שם גן<input class="form-control" name="name" type="text" placeholder="שם גן" [(ngModel)]="kinderGarden.name">
-    כתובת<input class="form-control" name="Address" type="text" placeholder="כתובת" [(ngModel)]="kinderGarden.Address">
-    טלפון<input class="form-control" name="phone" type="text" placeholder="טלפון" [(ngModel)]="kinderGarden.phone">
-    שנה<input class="form-control" name="year" type="number" placeholder="שנה" [(ngModel)]="kinderGarden.year">
-    שעת תחילת הגן<input class="form-control" placeholder="שעת תחילת הגן" name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">
-    <button class="btn btn-primary" type="submit">הוסף גן</button>
+</nav>
+<div class="d-flex justify-content-center m-4" ><h2>הוספת ילד</h2></div>
+<div class=" d-flex justify-content-center align-items-center container-fluid " >
+<form #kinderGardenForm="ngForm" (ngSubmit)="function(kinderGardenForm)" class="col-10 justify-content-center">
+    <div class="row d-flex  p-5">
+      <input class="form-control col border border-danger border-5 " name="name" type="text"  [(ngModel)]="kinderGarden.name">
+      <label class="col " for="Id" >שם גן</label> 
+      <input class="form-control col border border-danger border-5 " name="Address" type="text"  [(ngModel)]="kinderGarden.Address">
+      <label class="col " for="Id" >כתובת</label> 
+      <input class="form-control col border border-danger border-5 " name="phone" type="text"  [(ngModel)]="kinderGarden.phone">
+      <label class="col " for="Id" >טלפון</label> 
+    </div>
+    <div class="row d-flex  p-5 justify-content-center ">
+      <input class="form-control col border border-danger border-5 " name="year" type="number"  [(ngModel)]="kinderGarden.year">
+      <label class="col-2 " for="Id" >שנת הקמת הגן</label>
+      <input class="form-control col border border-danger border-5 " p name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">
+      <label class="col-2 " for="Id" >שעת תחילת הגן</label>
+    </div>
+    <button class="btn btn-dark p-y-5 m-5"  type="submit">הוסף גן</button>
   </form>
 </div>

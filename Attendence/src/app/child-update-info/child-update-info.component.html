@@ -11,14 +11,27 @@
     </li>   
   </ul>
 </nav>
-<div>
-  <form class="form" #ChildrenUpdateForm="ngForm" (ngSubmit)="UpdateChild(ChildrenUpdateForm)">
-      שם הורה<input class="form-control" name="Name" type="text"  value={{user.FirstName}} disabled ><br>
-     שם ילד<input class="form-control" name="ChildLastName" type="text"   value={{child.FirstName}} disabled> <br>
-     שם משפחה<input class="form-control" name="ChildFirstName" type="text"   value={{child.LastName}} disabled>  <br>
-    כתובת<input class="form-control" name="Address" type="text" value={{child.Address}} [(ngModel)]="child.Address">  <br>
-    מס' טל/פלאפון<input class="form-control" name="Phone" type="text" value={{child.Phone}} [(ngModel)]="child.Phone">  <br>
-  כתובת דוא"ל<input class="form-control" name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress"><br>
-    <button class="btn btn-info" type="submit">עדכן</button>
+<div class=" d-flex justify-content-center align-items-center container-fluid m-4" >
+  <form class="col-10 justify-content-center " #ChildrenUpdateForm="ngForm" (ngSubmit)="UpdateChild(ChildrenUpdateForm)">
+      <div class="row d-flex  p-5" >
+       <input class="form-control col border-danger border-5" name="Name" type="text"  value={{user.FirstName}} disabled >
+       <label class="col " for="Id" >שם הורה</label> 
+       <input class="form-control col border-danger border-5" name="ChildLastName" type="text"   value={{child.FirstName}} disabled>
+       <label class="col " for="Id" >שם ילד</label> 
+       <input class="form-control col border-danger border-5" name="ChildFirstName" type="text"   value={{child.LastName}} disabled>
+       <label class="col " for="Id" >שם משפחה</label> 
+      </div>
+      <div class="row d-flex  p-5" >
+        <input class="form-control col border-danger border-5" name="Address" type="text" value={{child.Address}} [(ngModel)]="child.Address">
+        <label class="col " for="Id" >כתובת</label>
+        <input class="form-control col border-danger border-5" name="Phone" type="text" value={{child.Phone}} [(ngModel)]="child.Phone">
+        <label class="col " for="Id" >טלפון</label>
+        <input class="form-control col border-danger border-5" name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress">
+        <label class="col " for="Id" >כתובת מייל</label>
+      </div>
+      <div class="row d-flex justify-content-center ">
+       <button class="btn btn-dark p-y-5 m-5" type="submit">עדכן פרטים</button>
+       <button class="btn btn-dark p-y-5 m-5" (click)="cancel()">ביטול</button>
+      </div>
   </form>
 </div>

@@ -11,19 +11,30 @@
     </li>   
   </ul>
 </nav>
-<div>
-  <form class="form" #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)"><br>
-   <!-- <input name="IdChild" type="text"  [(ngModel)]="futureData.IdChild">IdChild<br>-->
-   <!-- <input name="KinderGardenCode" type="number" [(ngModel)]="futureData.KinderGardenCode">KinderGardenCode<br>-->
-   <!-- <input name="Status" type="" [(ngModel)]="futureData.Status">Status<br>-->
-סטטוס<select class="form-control" name="Status" [(ngModel)]="ST">
-  <option value="1">איחור</option>
-  <option value="2">חיסור</option>
-</select><br>
-   תאריך היעדרות<input class="form-control" name="Date" type="date" [(ngModel)]="futureData.Date" ><br>
-    עודכן ע"י<input class="form-control" name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy"><br>
-    הערות<input class="form-control" name="Comments" type="text" [(ngModel)]="futureData.Comments"><br>
-    <p *ngIf="ST==1"> זמן הגעה<input class="form-control" name="Alarm" type="time"  [(ngModel)]="futureData.Alarm"></p><br>
+<div class=" d-flex justify-content-center align-items-center container-fluid " >
+  <form class="col-10 justify-content-center" #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)">
+    <div class="row d-flex justify-content-center  p-4">
+      <div class="row d-flex justify-content-center" *ngIf="ST==1" >
+        <input class="form-control col border border-danger border-5 " name="Alarm" type="time"  [(ngModel)]="futureData.Alarm">
+        <label class="col " for="Id" >שעת הגעה</label> 
+      </div>
+      <select class="form-control col border border-danger border-5 " name="Status" [(ngModel)]="ST">
+        <option value="1">איחור</option>
+        <option value="2">חיסור</option>
+      </select>
+      <label class="col " for="Id" >סטטוס</label>
+      <input class="form-control col border border-danger border-5 " name="idChild" [(ngModel)]="idChild" >
+      <label class="col " for="Id" >מ.ז ילד</label> 
+    </div>
+    <div class="row d-flex justify-content-center p-4">
+      <input class="form-control col border border-danger border-5 " name="Date" type="date" [(ngModel)]="futureData.Date" >
+      <label class="col " for="Id" >תאריך העדרות</label> 
+      <input class="form-control col border border-danger border-5 " name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">
+      <label class="col " for="Id" >עודכן ע"י</label>
+      <input class="form-control col border border-danger border-5 " name="Comments" type="text" [(ngModel)]="futureData.Comments">
+      <label class="col " for="Id" >הערות</label>
+    </div>
+    <br>
     <button class="form-control" class="btn btn-primary" type="submit">הוסף</button>
   </form>
 </div>
