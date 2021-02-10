@@ -65,10 +65,11 @@ namespace AttendenceAPI.Controllers
                     {
                         if (e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
                         {
-                            allreadyExist ex = new allreadyExist();
-                            throw ex;
+                            allreadyExist ex1 = new allreadyExist();
+                            throw ex1;
                         }
-
+                        allreadyExist ex = new allreadyExist();
+                        throw ex;
                         throw e;
                     }
                 case actionType.update:

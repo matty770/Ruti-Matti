@@ -48,7 +48,7 @@
       <button (click)="goToChildrenOfParent(Parent)" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           לרשימת הילדים שלי
         </button>
-        <div class="collapse" id="collapseExample">
+        <div  class="collapse" id="collapseExample" *ngIf="Parent.Id==idParent">
             <div class="card card-body">
                 <table class="table"  thead-dark>
                     <thead>

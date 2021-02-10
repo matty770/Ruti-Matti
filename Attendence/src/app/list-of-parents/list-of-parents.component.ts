@@ -14,6 +14,7 @@ export class ListOfParentsComponent implements OnInit {
 ParentList:User[];
 select:string="";
 children:Child[];
+idParent:string;
   constructor(private UserService:UserService, private router:Router,private childService:ChildService) { }
   GetAllParents()
   { 
@@ -38,6 +39,8 @@ children:Child[];
       error=>{console.log("error:" + error);}
      )
     this.UserService.user=parent;
+    this.idParent=parent.Id;
+    alert(this.children.length);
     //this.router.navigate(['ChildrenForParent']);
   }
   Exit()

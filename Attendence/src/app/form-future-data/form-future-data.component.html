@@ -7,14 +7,14 @@
           <button class="btn btn-success" (click)="GoBack()">חזרה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </li>
     <li class="nav-item">
-       <h3>   הוספת תזמון היעדרות </h3>
+       <h3> הוספת תזמון היעדרות </h3>
     </li>   
   </ul>
 </nav>
-<div class=" d-flex justify-content-center align-items-center container-fluid " >
+<div class=" d-flex justify-content-center align-items-center container-fluid m-5 " >
   <form class="col-10 justify-content-center" #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)">
-    <div class="row d-flex justify-content-center  p-4">
-      <div class="row d-flex justify-content-center" *ngIf="ST==1" >
+    <div class="row d-flex justify-content-center  p-4" style="background-color:aqua">
+      <div class="row d-flex justify-content-center" *ngIf="ST==1" style="background-color:bisque" >
         <input class="form-control col border border-danger border-5 " name="Alarm" type="time"  [(ngModel)]="futureData.Alarm">
         <label class="col " for="Id" >שעת הגעה</label> 
       </div>

@@ -25,7 +25,7 @@
 <div class=" d-flex justify-content-center align-items-center container-fluid " >
 <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" class="col-10 justify-content-center " >
   <div class="row d-flex  p-5" >  
-    <input  class="form-control col border border-danger border-5 " name="Id" type="text"  [(ngModel)]="user.Id" required >
+    <input  class="form-control col border border-danger border-5 " Id="idU" name="Id" type="text"  [(ngModel)]="user.Id" required >
     <label class="col " for="Id" >מספר זהות</label> 
     <input  class="form-control col border-danger border-5" name="FirstName" type="text" [(ngModel)]="user.FirstName"  required >
     <label class="col"   for="FirstName"> שם פרטי</label>

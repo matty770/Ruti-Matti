@@ -5,6 +5,8 @@ import isIsraeliIdValid from 'israeli-id-validator';
 import { KinderGarden } from '../models/KinderGarden';
 import { KinderGardensService } from '../services/Kindergarden.service';
 import { Router } from '@angular/router';
+import { ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-user',
@@ -13,6 +15,8 @@ import { Router } from '@angular/router';
 })
 export class FormUserComponent implements OnInit {
   //@ViewChild('f') userForm:NgForm;
+ 
+
 KinderGardenArray:number[]=[]; 
 kin:KinderGarden;
 user:User=new User();
