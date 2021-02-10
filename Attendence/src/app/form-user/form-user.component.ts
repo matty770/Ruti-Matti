@@ -26,10 +26,11 @@ select:string="";
 constructor(private userService:UserService,private kinderGardenService:KinderGardensService, private router:Router) {
  }
   
-selectedKinderGarden(){
-    alert(this.kin);   
-    this.KinderGardenArray.push(this.kin.IdKinderGarden);
-    alert(this.KinderGardenArray.length);
+selectedKinderGarden(obj){
+   // alert(this.kin);  
+    console.log(obj);
+    this.KinderGardenArray.push(obj[0]);
+   // alert(this.KinderGardenArray.length);
  }
   ngOnInit() {
     this.getKinderGardenList();

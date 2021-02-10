@@ -41,9 +41,12 @@
     <label for="MailAddress" class="col" >כתובת דוא"ל</label>
   </div>
   <div class="row d-flex justify-content-center">
-  <select  multiple class="form-control col border-danger border-5" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode"  >
+  <!--<select  multiple class="form-control col border-danger border-5" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode"  >
       <option *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" >{{k.Name}}</option>
-    </select><br>
+    </select><br>-->
+    <select name="KinderGardenCode" [(ngModel)]="KinderGardenArray" multiple>
+      <option *ngFor="let k of ListKinderGarden" [ngValue]="k.IdKinderGarden">{{k.Name}}</option>
+  </select>
     <label class="col-1"   for="KinderGardenCode">בחר גן</label>
   </div>
   <button class="btn btn-dark p-y-5 m-5" type="submit"><h6>add</h6></button>

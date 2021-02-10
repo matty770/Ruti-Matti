@@ -67,8 +67,8 @@ GetAllUsers():Observable<User[]>
   addTeacher(KGCodeList:number[],teacher:User)
   {
     alert(KGCodeList.length+" in service");
-    this.http.post('User?nameFunction=addTeacher'+ '&KGCode='+KGCodeList,teacher).subscribe
-    (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
+   // this.http.post('User?nameFunction=addTeacher',{KGCodeList,teacher,}).subscribe
+   // (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
     
   }
 }

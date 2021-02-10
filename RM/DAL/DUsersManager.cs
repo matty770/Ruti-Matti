@@ -217,7 +217,7 @@ namespace DAL
             return 1;
         }
 
-       public static int addKinderGardenToTeacher(int[] KGCode, string id)
+       public static int addKinderGardenToTeacher(List<int> KGCode, string id)
         {
            List< KinderGardenOfTeacher> k = new List<KinderGardenOfTeacher>();
             foreach (var item in KGCode)
