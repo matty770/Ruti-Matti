@@ -99,68 +99,68 @@ namespace AttendenceAPI.Controllers
 //     }
 //
 // }
-        //[HttpPost]
-        //public int functioPost(actionType nameFunction, [FromBody]CUsers user)
-        //{
-        //    switch (nameFunction)
-        //    {
-        //        case actionType.add:
-        //            try
-        //            {
-        //                BUserManager.addUser(user);
-        //                return 1;
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                 if(e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
-        //                {
-        //                    allreadyExist ex = new allreadyExist();
-        //                    throw ex;
-        //                }
-
-        //                throw e;
-        //            }
-        //        case actionType.update:
-        //            try
-        //            {
-        //                BUserManager.updateUser(user);
-        //                return 1;
-        //            }
-        //            catch (Exception)
-        //            {
-
-        //                throw;
-        //            }
-        //        case actionType.remove:
-        //            try
-        //            {
-        //                BUserManager.removeUser((user.Id));
-        //                return 1;
-
-        //            }
-        //            catch (Exception)
-        //            {
-
-        //                throw;
-        //            }
-        //    }
-        //    return 0;
-        //}
-
+ [HttpPost]
+ public int functioPost(actionType nameFunction, [FromBody]CUsers user)
+ {
+     switch (nameFunction)
+     {
+         case actionType.add:
+             try
+             {
+                 BUserManager.addUser(user);
+                 return 1;
+             }
+             catch (Exception e)
+             {
+                  if(e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
+                 {
+                     allreadyExist ex = new allreadyExist();
+                     throw ex;
+                 }
+ 
+                 throw e;
+             }
+         case actionType.update:
+             try
+             {
+                 BUserManager.updateUser(user);
+                 return 1;
+             }
+             catch (Exception)
+             {
+ 
+                 throw;
+             }
+         case actionType.remove:
+             try
+             {
+                 BUserManager.removeUser((user.Id));
+                 return 1;
+ 
+             }
+             catch (Exception)
+             {
+ 
+                 throw;
+             }
+     }
+     return 0;
+ }
+ 
         public class Test
         {
            public List<int> KGCodeList;
            public CUsers user;
         }
         [HttpPost]
-        public int functioPostWithParameter(actionType nameFunction, [FromBody]Test test1)
+        public int functioPostWithParameter(actionType nameFunction,List<CKinderGarden> listKG, [FromBody]CUsers user)
         {
             switch (nameFunction)
             {
                 case actionType.addTeacher:
                     try
                     {
-                        BUserManager.addTeacher(test1.KGCodeList, test1.user);
+                        BUserManager.addTeacher(listKG,user);
                         return 1;
                     }
                     catch (Exception)
@@ -171,7 +171,7 @@ namespace AttendenceAPI.Controllers
                 case actionType.addKGToTeachet:
                     try
                     {
-                        BUserManager.addKinderGardenToTeacher(test1.KGCodeList, test1.user.Id);
+                        BUserManager.addKinderGardenToTeacher(listKG,user.Id);
                         return 1;
                     }
                     catch (Exception)
@@ -185,3 +185,4 @@ namespace AttendenceAPI.Controllers
         }
     }
 }
+

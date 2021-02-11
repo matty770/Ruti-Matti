@@ -23,14 +23,17 @@ user:User=new User();
 ListKinderGarden:KinderGarden[];
 KinderGardenofTeacher:number;
 select:string="";
+kinderGardenListOfTeacher:KinderGarden[];
 constructor(private userService:UserService,private kinderGardenService:KinderGardensService, private router:Router) {
  }
   
 selectedKinderGarden(obj){
-   // alert(this.kin);  
-    console.log(obj);
-    this.KinderGardenArray.push(obj[0]);
-   // alert(this.KinderGardenArray.length);
+  alert(this.kin); 
+  
+ //   console.log(obj);
+   // this.KinderGardenArray.push(obj[0]);
+  //  alert(this.KinderGardenArray.length);
+  this.kinderGardenListOfTeacher.push(this.kin);
  }
   ngOnInit() {
     this.getKinderGardenList();
@@ -52,15 +55,20 @@ selectedKinderGarden(obj){
 //}
 addUser(UserForm)
 {
-  alert(this.KinderGardenArray.length+"כמות הגנים");
+  //alert(this.KinderGardenArray.length+"כמות הגנים");
   if(isIsraeliIdValid(this.user.Id)==true)
   {
     this.user.Active=1;
     this.user.Permission=this.userService.user.Permission;
     if(this.user.Permission==2)
     {
-      alert("הוספת ");
-      this.userService.addTeacher(this.KinderGardenArray,this.user);
+      alert("גננת הוספת ");
+    //  this.KinderGardenArray.forEach(element => {
+   //  this.kinderGardenService.GetKinderGarden(element).subscribe(data=>{
+     //  this.kinderGardenListOfTeacher.push(data) });    
+         
+    // });
+     this.userService.addTeacher(this.kinderGardenListOfTeacher,this.user);  
     }
     else
     {
