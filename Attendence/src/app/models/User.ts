@@ -8,6 +8,7 @@ PhoneNum : string;
 Permission : number;
 mailAddress : string;
 Active:number;
+KinderGardens: number[];
   
     constructor(  // Id : string, Name : string,Address : string, PhoneNum : string, KinderGardenCode: number
        // , Permission : number,MailAddress : string

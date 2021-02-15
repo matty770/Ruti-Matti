@@ -217,13 +217,13 @@ namespace DAL
             return 1;
         }
 
-       public static int addKinderGardenToTeacher(List<CKinderGarden> listKG, string id)
+       public static int addKinderGardenToTeacher(List<int> listKG, string id)
         {
            List< KinderGardenOfTeacher> k = new List<KinderGardenOfTeacher>();
             foreach (var item in listKG)
             {
                 KinderGardenOfTeacher k1 = new KinderGardenOfTeacher();                
-                k1.IdKinderGarden = item.IdKinderGarden;
+                k1.IdKinderGarden = item;
                 k1.IdTeacher = id;
                 k.Add(k1);
             }

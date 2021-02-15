@@ -29,6 +29,10 @@
     <div class="row d-flex justify-content-center p-4">
       <input class="form-control col border border-danger border-5 " name="Date" type="date" [(ngModel)]="futureData.Date" >
       <label class="col " for="Id" >תאריך העדרות</label> 
+      <div class="row d-flex justify-content-center" *ngIf="ST==2" style="background-color:bisque" >
+      <input class="form-control col border border-danger border-5 " name="Date" type="date" [(ngModel)]="date2" >
+      <label class="col " for="Id" >עד לתאריך</label> 
+      </div>
       <input class="form-control col border border-danger border-5 " name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">
       <label class="col " for="Id" >עודכן ע"י</label>
       <input class="form-control col border border-danger border-5 " name="Comments" type="text" [(ngModel)]="futureData.Comments">

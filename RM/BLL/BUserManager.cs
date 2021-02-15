@@ -61,14 +61,14 @@ namespace BLL
             return DUsersManager.UserIs(idUser);
         }
 
-       public static int addKinderGardenToTeacher(List<CKinderGarden> listKG,string id)
+       public static int addKinderGardenToTeacher(List<int> listKG,string id)
        {
             return DUsersManager.addKinderGardenToTeacher(listKG, id);
        }
-        public static void addTeacher(List<CKinderGarden> listKG, CUsers teacher)
+        public static void addTeacher(CTeacher teacher)
         {
             DUsersManager.addUser(teacher);
-            DUsersManager.addKinderGardenToTeacher(listKG, teacher.Id);
+            DUsersManager.addKinderGardenToTeacher(teacher.KinderGardens, teacher.Id);
         }
         public static CUsers Login(string userId, string firstName, string lastName)
         {

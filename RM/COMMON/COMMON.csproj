@@ -55,6 +55,7 @@
     <Compile Include="CKinderGarden.cs" />
     <Compile Include="CLiveData.cs" />
     <Compile Include="CPreviousData.cs" />
+    <Compile Include="CTeacher.cs" />
     <Compile Include="CUsers.cs" />
     <Compile Include="General.cs" />
     <Compile Include="notExistException.cs" />

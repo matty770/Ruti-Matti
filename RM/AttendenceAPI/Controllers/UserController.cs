@@ -147,42 +147,6 @@ namespace AttendenceAPI.Controllers
      return 0;
  }
  
-        public class Test
-        {
-           public List<int> KGCodeList;
-           public CUsers user;
-        }
-        [HttpPost]
-        public int functioPostWithParameter(actionType nameFunction,List<CKinderGarden> listKG, [FromBody]CUsers user)
-        {
-            switch (nameFunction)
-            {
-                case actionType.addTeacher:
-                    try
-                    {
-                        BUserManager.addTeacher(listKG,user);
-                        return 1;
-                    }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
-                case actionType.addKGToTeachet:
-                    try
-                    {
-                        BUserManager.addKinderGardenToTeacher(listKG,user.Id);
-                        return 1;
-                    }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
-                
-            }
-            return 0;
-        }
     }
 }
 

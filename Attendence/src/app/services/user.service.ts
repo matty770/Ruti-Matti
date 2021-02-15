@@ -64,10 +64,11 @@ GetAllUsers():Observable<User[]>
   {
     this.http.post('User?nameFunction=addKGToTeachet'+ '&KGCode='+KGCode,Id).subscribe(res=>{alert(res)});
   }
-  addTeacher(KGCodeList:KinderGarden[],teacher:User)
+  addTeacher(KGCodeList:number[],teacher:User)
   {
     alert(" in service");
-   this.http.post('User?nameFunction=addTeacher'+'&listKG='+KGCodeList,teacher,).subscribe
+    teacher.KinderGardens = KGCodeList;
+   this.http.post('Teacher',teacher).subscribe
     (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
 
   }

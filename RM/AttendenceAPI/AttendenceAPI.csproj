@@ -103,6 +103,7 @@
     <Compile Include="Controllers\FutureDataController.cs" />
     <Compile Include="Controllers\KinderGardenController.cs" />
     <Compile Include="Controllers\LiveDataController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

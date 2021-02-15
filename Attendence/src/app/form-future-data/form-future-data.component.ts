@@ -16,13 +16,16 @@ export class FormFutureDataComponent implements OnInit {
  now:DatePipe;
  idChild:string=this.futureDataService.futureData.IdChild;
  select:string="";
+ days:number;
   d:Date=new Date()
+  date2:Date = new Date();
   constructor(private futureDataService:FutureDataService, private router:Router) { }
 
   ngOnInit() {
   }
   addFutureData(FutureDataForm)
   {
+    alert("ff");
     this.futureData.IdChild=this.idChild;
     this.futureData.KinderGardenCode=this.futureDataService.futureData.KinderGardenCode;
     switch(this.ST)
@@ -30,8 +33,16 @@ export class FormFutureDataComponent implements OnInit {
     case "1": this.futureData.Status=Statuses.Late;
     case "2": this.futureData.Status=Statuses.NonPresent;
     };
-    this.futureData.UpdateDate=(new Date);
+    this.futureData.UpdateDate=(new Date());
+    alert(this.futureData.Date.getDate());
+    this.days=this.futureData.Date.getDate()-this.date2.getDate();
+    alert(this.days);
+    var i=0;
+    do
+   {
+    this.futureData.Date.setDate(this.futureData.Date.getDate()-this.days-i);
     this.futureDataService.addFutureData(this.futureData);
+   } while( i<this.days );
     FutureDataForm.reset();
   }
   GoBack()
