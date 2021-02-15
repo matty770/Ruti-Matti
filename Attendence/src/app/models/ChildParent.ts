@@ -12,6 +12,7 @@ export class ChildParent
     ParentFirstName:string;
     ParentLastName:string;
     mailAddress:string;
+   // picture: File;
     
     constructor() {
        

@@ -13,7 +13,7 @@ namespace COMMON
 
         }
         public CChildParent(string ChildId, string ChildFirstName, string ChildLastName, string address, string phone,
-           string parentCode, int kinderGardenCode, int active,string ParentId, string ParentFirstName, string ParentLastName, string mailAddress)
+           string parentCode, int kinderGardenCode, int active,string ParentId, string ParentFirstName, string ParentLastName, string mailAddress, byte[] picture)
         {
             this.ChildId = ChildId;
             this.ChildFirstName = ChildFirstName;
@@ -27,6 +27,7 @@ namespace COMMON
             this.ParentFirstName = ParentFirstName;
             this.ParentLastName = ParentLastName;
             this.mailAddress = mailAddress;
+            this.picture = picture;
         }
         public string ChildId { get; set; }
         public string ChildFirstName { get; set; }
@@ -40,5 +41,6 @@ namespace COMMON
         public string ParentFirstName { get; set; }
         public string ParentLastName { get; set; }
         public string mailAddress { get; set; }
+        public byte[] picture { get; set; }
     }
 }

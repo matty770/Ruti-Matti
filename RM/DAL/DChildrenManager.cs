@@ -32,7 +32,7 @@ namespace DAL
         {
             CUsers u = new CUsers(cc.ParentId, cc.ParentFirstName, cc.ParentLastName, cc.Address, cc.Phone, 1,cc.mailAddress,cc.Active);
             Users u1 = Mapper.convertToUsers(u);
-            CChildren c = new CChildren(cc.ChildId, cc.ChildFirstName, cc.ChildLastName, cc.Address, cc.Phone, cc.ParentCode, cc.KinderGardenCode, cc.Active);
+            CChildren c = new CChildren(cc.ChildId, cc.ChildFirstName, cc.ChildLastName, cc.Address, cc.Phone, cc.ParentCode, cc.KinderGardenCode, cc.Active,cc.picture);
             Children c1 = Mapper.convertToChildren(c);
             using (NDBEntities db = new NDBEntities())
             {
@@ -171,7 +171,7 @@ namespace DAL
                 try
                 {
                     child = db.Children.First(d => d.IdChild == idChild);
-                    child.Active = 0;
+                  //  child.Active = 0;
                     db.SaveChanges();
                     return true;
                 }

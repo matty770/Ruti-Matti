@@ -27,9 +27,7 @@ namespace DAL
         public string PhoneNum { get; set; }
         public int Permission { get; set; }
         public string MailAddress { get; set; }
-        public int Active { get; set; }
-
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Children> Children { get; set; }
         public virtual Permissions Permissions { get; set; }

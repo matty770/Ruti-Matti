@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using BLL;
 using COMMON;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AttendenceAPI.Controllers
 {
@@ -44,7 +49,15 @@ namespace AttendenceAPI.Controllers
         [HttpGet]
         public List<CChildren> getChildsByKinderGarden(int kinderGardenCode)
         {
-            return BChildrenManager.selectChildrenByKinderGardenCode(kinderGardenCode);
+            var children = BChildrenManager.selectChildrenByKinderGardenCode(kinderGardenCode);
+            foreach (var child in children)
+            {
+                if (child.picture != null)
+                {
+                    child.pictureBase64 = Convert.ToBase64String(child.picture);
+                }
+            }
+            return children;
         }
         //[HttpPost]
         //public void UpdateChildren(int x,[FromBody]CChildren children)
@@ -74,7 +87,7 @@ namespace AttendenceAPI.Controllers
                     }
                 case actionType.update:
                     {
-                        CChildren c = new CChildren(child.ChildId, child.ChildFirstName, child.ChildLastName, child.Address, child.Phone, child.ParentCode, child.KinderGardenCode, child.Active);
+                        CChildren c = new CChildren(child.ChildId, child.ChildFirstName, child.ChildLastName, child.Address, child.Phone, child.ParentCode, child.KinderGardenCode, child.Active,child.picture);
                         BChildrenManager.updateChildren(c); break;
                     }
                     
@@ -86,11 +99,40 @@ namespace AttendenceAPI.Controllers
             }
             //BKinderGardenManager.addKinderGarden(kinderGarden);
         }
-        
+
         //public int addChildren([FromBody]CChildren child)
         //{
         //    return BChildrenManager.addChildren(child);
         //}
+
+        [HttpPost]
+        public void add()
+        {
+            var childJson= HttpContext.Current.Request.Params["child"];
+           var child = JsonConvert.DeserializeObject(childJson);
+            CChildParent c= JsonConvert.DeserializeObject<CChildParent>(childJson);
+            // CChildParent child = (CChildParent)ser.DeserializeObject(childJson);
+            if (HttpContext.Current.Request.Files.AllKeys.Any())
+            {
+                var file = HttpContext.Current.Request.Files["file"];
+                ;
+                byte[] data;
+                using (Stream inputStream = file.InputStream)
+                {
+                    MemoryStream memoryStream = inputStream as MemoryStream;
+                    if (memoryStream == null)
+                    {
+                        memoryStream = new MemoryStream();
+                        inputStream.CopyTo(memoryStream);
+                    }
+                    data = memoryStream.ToArray();
+                    c.picture = data;
+                }
+
+            }
+
+            BChildrenManager.addChildren(c);
+        }
         [HttpGet]
         public Boolean changeToNotActive(string idChild)
         {

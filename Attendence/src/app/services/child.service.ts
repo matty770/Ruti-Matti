@@ -16,10 +16,13 @@ export class ChildService
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
     return this.http.Get('Children?ParentId=' + ParentId);}
     
-    addChildren(child:ChildParent)
+    addChildren(child:ChildParent, file: File)
     {
+      let formData = new FormData();
+      formData.append('child', JSON.stringify(child));
+      formData.append('file', file, file.name);
      // this.http.post('Children?nameFunction=add',child)
-    this.http.post('Children?nameFunction=add',child).subscribe(res=>{  console.log(res)
+    this.http.post1('Children/add',formData).subscribe(res=>{  console.log(res)
     },error=>{alert(error.message);console.log(error+" eeeeeeeeeeeee");});/*alert(error.Message) */
     }
     getAllChildrens():Observable<Child[]>

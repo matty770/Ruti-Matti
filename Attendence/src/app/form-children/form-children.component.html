@@ -44,13 +44,14 @@
         <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">
         <label class="col " for="Id" > שם פרטי הורה</label> 
         <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentLastName">
-       <!-- <label class="col " for="Id" >שם משפחה הורה </label> 
-        <input class="form-control col border border-danger border-5 " name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">-->
-        <label class="col " for="Id" > כתובת מייל</label>
+       <label class="col " for="Id" >שם משפחה הורה </label> 
+       <!-- <input class="form-control col border border-danger border-5 " name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">
+        <label class="col " for="Id" > כתובת מייל</label>-->
         <select class="form-control col border-danger border-5"  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="childParent.kinderGardenCode" >     
           <option *ngFor="let k of ListKinderGarden"  [value]="k.IdKinderGarden" >{{k.Name}}</option>
         </select>
         <label class="col " for="Id" >בחר גן</label> 
+        <input type="file" (change)="handleFileInput($event.target.files)">
       </div>
       <button class="btn btn-dark p-y-5 m-5"  type="submit">add</button>
     </form>

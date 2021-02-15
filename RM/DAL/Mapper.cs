@@ -19,7 +19,7 @@ namespace DAL
             k.Year = ck.Year;
             k.BeginingHour = ck.BeginingHour;
             k.Space = ck.Space;
-            k.Active = ck.Active;
+           // k.Active = ck.Active;
             return k;
         }
         public static CKinderGarden convertToCKinderGarden(KinderGarden k)
@@ -32,7 +32,7 @@ namespace DAL
             ck.Year = k.Year;
             ck.BeginingHour = k.BeginingHour;
             ck.Space = k.Space;
-            ck.Active = k.Active;
+          //  ck.Active = k.Active;
             return ck;
 
         }
@@ -47,7 +47,7 @@ namespace DAL
             // u.KinderGardenCode = cu.KinderGardenCode;
             u.MailAddress = cu.mailAddress;
             u.Permission = cu.Permission;
-            u.Active = cu.Active;
+          //  u.Active = cu.Active;
             return u;
         }
         public static CUsers convertToCUsers(Users u)
@@ -61,7 +61,7 @@ namespace DAL
             //  cu.KinderGardenCode = u.KinderGardenCode;
             cu.Permission = u.Permission;
             cu.mailAddress = u.MailAddress;
-            cu.Active = u.Active;
+          //  cu.Active = u.Active;
             return cu;
         }
         public static Children convertToChildren(CChildren cc)
@@ -74,7 +74,8 @@ namespace DAL
             c.Phone = cc.Phone;
             c.ParentCode = cc.ParentCode;
             c.KinderGardenCode = cc.KinderGardenCode;
-            c.Active = cc.Active;
+           c.Active = cc.Active;
+            c.Picture = cc.picture;
             return c;
         }
         public static CChildren convertToCChildren(Children c)
@@ -88,6 +89,7 @@ namespace DAL
             cc.ParentCode = c.ParentCode;
             cc.KinderGardenCode = c.KinderGardenCode;
             cc.Active = c.Active;
+            cc.picture = c.Picture;
             return cc;
         }
         public static FutureData convertToFutureData(CFutureData cf)

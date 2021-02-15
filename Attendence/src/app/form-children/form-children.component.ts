@@ -14,6 +14,7 @@ import { ChildParent } from '../models/ChildParent';
 })
 export class FormChildrenComponent implements OnInit {
   select:string="";
+  picture: File;
  
   constructor(private childrenService:ChildService,private userService:UserService,private kinderGardenService:KinderGardensService) {
    }
@@ -40,9 +41,11 @@ getKinderGardenList()
         this.childParent.active=1;
         this.childParent.ParentId=this.childParent.parentCode;
         this.childParent.address=this.childParent.address;
+     // this.childParent.picture = this.picture;
        // this.user.Permission=1;
         //this.userService.addUser(this.user);//.toPromise().then() יש כאן בעיה חמורה!!!!
-        this.childrenService.addChildren(this.childParent);      
+        this.childrenService.addChildren(this.childParent, this.picture);  
+       // this.childrenService.uploadFile(this.picture, this.childParent.ChildId);    
       // this.child.Active=1;
       // this.childrenService.addChildren(this.child);
        ChildrenForm.reset();      
@@ -61,5 +64,9 @@ getKinderGardenList()
       else alert("תעודת זהות של ההורה אינה תקינה");
 
     }
+  }
+
+  handleFileInput(files: FileList){
+    this.picture = files.item(0);
   }
 }

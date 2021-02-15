@@ -18,4 +18,8 @@ export class DataService {
     return this.http.post(this.baseUrl + url,JSON.stringify(data)
     ,{headers :{"Content-Type":"application/json"}});
   }
+
+  post1(url:string, data){
+    return this.http.post(this.baseUrl +url , data);
+  }
 }

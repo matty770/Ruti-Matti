@@ -1,39 +1,13 @@
-<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      </li> 
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info">הצג גננות</a>
-      </li>
-     
-    </ul>
-  </nav>
-  <!--
-<header>
-    <button class="btn btn-danger" (click)="Exit()">יציאה</button>
-</header>
-<div >
-<a routerLink="/ManagerHomePage" role="button" class="btn btn-info btn-lg nav-item active" >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a routerLink="/ListOfKinderGarden" role="button" class="btn btn-info btn-lg" (click)="select='ListOfKinderGarden'" >הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a routerLink="/ListOfChildren" role="button" class="btn btn-info btn-lg" (click)="select='ListOfChildren'" >הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a routerLink="/ListOfParent"role="button" class="btn btn-info btn-lg" (click)="select='ListOfParent'" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a routerLink="/ListOfTeachers"role="button" class="btn btn-info btn-lg" (click)="select='ListOfTeachers'" >הצג גננות</a>
-</div>
-<br><br><br><br>
--->
+<nav class="bg-dark d-flex justify-content-around navbar">
+    <ul class="navbar-nav d-flex justify-content-center align-items-between">
+      <li class="nav-item"><button class="btn btn-danger" (click)="Exit()">יציאה</button></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active" >דף הבית</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info">הצג גננות</a></li>
+    </ul> 
+</nav>
 <br><br><br>
 <h3>  :משתמש נוכחי :{{user.FirstName}} {{user.LastName}}, ניתן לבצע את הפעולות הבאות</h3>
 <br><br><br>

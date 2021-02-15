@@ -11,6 +11,7 @@
         <th><h3>LastName</h3></th>&nbsp;
         <th><h3>Address</h3></th>&nbsp;       
         <th><h3>Phone</h3></th>&nbsp;
+        <th></th>
       </tr>
     </thead>
     <tbody *ngFor="let child of children">
@@ -20,6 +21,7 @@
         <th>{{child.LastName}}</th>&nbsp;
         <th>{{child.Address}}</th>&nbsp;
         <th>{{child.Phone}}</th>&nbsp;
+        <th><img [src]="'data:image/jpeg;base64,'+ child.pictureBase64"></th>
       </tr>
     </tbody>
   </table>
