@@ -40,13 +40,25 @@ namespace DAL
                 {
                     var idParent = (from x in db.Users
                                        where u1.IdUser == x.IdUser
-                                       select x).FirstOrDefault();
+                                       select x.IdUser).FirstOrDefault();
                     if (idParent == null)
                     {
                         db.Users.Add(u1);
                     }
-                    db.Children.Add(c1);
-                    db.SaveChanges();
+                    Children child=(from x in db.Children
+                               where x.IdChild.Equals(cc.ChildId)&&x.Active==0
+                               select x).FirstOrDefault();
+                    if(child!=null)
+                    {
+                        Children ch = db.Children.First(d => d.IdChild.Equals(child.IdChild));
+                        ch.Active=1;
+                    }
+                    else
+                    {
+                        db.Children.Add(c1);
+                        db.SaveChanges();
+                    }
+
                     return 1;
                 }
                 catch (Exception e)
@@ -80,6 +92,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 listChildren = (from x in db.Children
+                                where x.Active==1
                                 select x).ToList();
             }
             List<CChildren> listCChildren = new List<CChildren>();
@@ -109,7 +122,7 @@ namespace DAL
             using (NDBEntities db = new NDBEntities())
             {
                 lc = (from x in db.Children
-                      where x.ParentCode.Equals(idParent)
+                      where x.ParentCode.Equals(idParent)&&x.Active==1
                       select x).ToList();
                 List<CChildren> listCChildren = new List<CChildren>();
                 foreach (var item in lc)
@@ -146,7 +159,7 @@ namespace DAL
                 try
                 {
                     listChildren = (from x in db.Children
-                                    where x.KinderGardenCode == code
+                                    where x.KinderGardenCode == code&&x.Active==1
                                     select x).ToList();
                     List<CChildren> listCChildren = new List<CChildren>();
                     foreach (var item in listChildren)
@@ -171,7 +184,7 @@ namespace DAL
                 try
                 {
                     child = db.Children.First(d => d.IdChild == idChild);
-                  //  child.Active = 0;
+                   child.Active = 0;
                     db.SaveChanges();
                     return true;
                 }

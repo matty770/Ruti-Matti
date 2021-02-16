@@ -21,12 +21,13 @@ namespace DAL
         }
     
         public string IdUser { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public string Address { get; set; }
         public string PhoneNum { get; set; }
         public int Permission { get; set; }
         public string MailAddress { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Children> Children { get; set; }
