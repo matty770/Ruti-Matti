@@ -1,12 +1,10 @@
-<nav class="bg-dark d-flex justify-content-around navbar">
-    <ul class="navbar-nav d-flex justify-content-center align-items-between">
-      <li class="nav-item"><button class="btn btn-danger" (click)="Exit()">יציאה</button></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active" >דף הבית</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info">הצג גננות</a></li>
-    </ul> 
+<nav class="bg-dark d-flex justify-content-center navbar">
+  <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
+  <div><a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active m-1" >דף הבית</a></div>
+  <div><a routerLink="/ListOfKinderGarden" class="btn btn-info m-1">הצג גני ילדים</a></div>
+  <div><a routerLink="/ListOfChildren" class="btn btn-info m-1">הצג ילדים</a></div>
+  <div><a routerLink="/ListOfParent" class="btn btn-info m-1">הצג הורים</a></div>
+  <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
 </nav>
 <br><br><br>
 <h3>  :משתמש נוכחי :{{user.FirstName}} {{user.LastName}}, ניתן לבצע את הפעולות הבאות</h3>

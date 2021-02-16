@@ -14,7 +14,6 @@ export class LiveDateService {
   constructor(private http: DataService) { }
 
   GetLiveDataByKinderGardenCode(KinderGardenCode: number): Observable<LiveData[]> {
-
     return this.http.Get('LiveData?KinderGardenCode=' + KinderGardenCode);
   }
 

@@ -1,24 +1,10 @@
-<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
-  <ul class="navbar-nav">
-      <li class="nav-item">
-          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </li>
-    <li class="nav-item active">
-      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md " >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li> 
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info active" >הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info ">הצג גננות</a>
-    </li>
-  </ul>
+<nav class="bg-dark d-flex justify-content-center navbar">
+  <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
+  <div><a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item  m-1" >דף הבית</a></div>
+  <div><a routerLink="/ListOfKinderGarden" class="btn btn-info m-1">הצג גני ילדים</a></div>
+  <div><a routerLink="/ListOfChildren" class="btn btn-info m-1">הצג ילדים</a></div>
+  <div><a routerLink="/ListOfParent" class="btn btn-info m-1 active">הצג הורים</a></div>
+  <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
 </nav>
 
 <div >
@@ -45,11 +31,9 @@
     <th>{{Parent.mailAddress}}</th>
    <!--<th><button (click)="goToChildrenOfParent(Parent)">הילדים שלי</button></th>-->
    <th>
-      <button (click)="goToChildrenOfParent(Parent)" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          לרשימת הילדים שלי
-        </button>
-        <div  class="collapse" id="collapseExample" *ngIf="Parent.Id==idParent">
-            <div class="card card-body">
+      <button (mousedown)="change(Parent)" (click)="goToChildrenOfParent(Parent)"  class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">לרשימת הילדים שלי</button>
+        <div class="collapse row" id="collapseExample" *ngIf="Parent.Id==idParent">
+            <div class="card card-body col-12">
                 <table class="table"  thead-dark>
                     <thead>
                       <tr>

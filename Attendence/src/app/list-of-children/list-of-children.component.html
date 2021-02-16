@@ -1,26 +1,11 @@
-<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
-  <ul class="navbar-nav">
-      <li class="nav-item">
-          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </li>
-    <li class="nav-item active">
-      <a class="nav-link" routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item " >דף הבית</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfKinderGarden" class="btn btn-info">הצג גני ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfChildren" class="btn btn-info active">הצג ילדים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li> 
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfParent" class="btn btn-info">הצג הורים</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/ListOfTeachers" class="btn btn-info ">הצג גננות</a>
-    </li>
-  </ul>
+<nav class="bg-dark d-flex justify-content-center navbar">
+  <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
+  <div><a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item  m-1" >דף הבית</a></div>
+  <div><a routerLink="/ListOfKinderGarden" class="btn btn-info m-1">הצג גני ילדים</a></div>
+  <div><a routerLink="/ListOfChildren" class="btn btn-info m-1 active">הצג ילדים</a></div>
+  <div><a routerLink="/ListOfParent" class="btn btn-info m-1">הצג הורים</a></div>
+  <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
 </nav>
-<h3>  :משתמש נוכחי {{user.FirstName}} {{user.LastName}} ניתן לבצע את הפעולות הבאות</h3>
 <div >
 <div >
   <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">

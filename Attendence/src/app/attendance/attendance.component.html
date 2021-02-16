@@ -1,5 +1,6 @@
-<h3> {{kinderGarden.Name}} נוכחות ל  </h3>
-
+<h3 class="d-flex font-weight-bold justify-content-center p-4"> ברוכים הבאים ל{{kinderGarden.Name}}</h3>
+<div id="d1" class="justify-content-center row">
+<!--
 <div>
 <table thead-dark class="table">
     <thead>
@@ -10,7 +11,7 @@
           <th></th>
         </tr>
       </thead>
-  <!-- נוכחות ילדים איך עושים שהתמונות יצופו אחד ליד השני?-->
+   נוכחות ילדים איך עושים שהתמונות יצופו אחד ליד השני?
   <tbody *ngFor="let LD of LiveDataList">
     <tr>
       <th>{{LD.IdChild}}</th>&nbsp;
@@ -21,4 +22,17 @@
   </tbody>
 </table>
 <button (click)="goToTeacherHomePage()">חזרה</button>
+</div>
+-->
+<div *ngFor="let c of childrenList" class="col-md-2 col-sm-8 m-2">
+  <div *ngIf="ChildAppears(c)">
+  <div class="card">
+    <img [src]="'data:image/jpeg;base64,'+ c.pictureBase64" class="card-img-top" alt="no pic">
+    <div class="card-body">
+      <h5 class="card-title">{{c.FirstName}} {{c.LastName}}</h5>
+      <button class="btn btn-success" (click)="changeStatusToArrived(c.Id)">הגיע</button>
+    </div>
+  </div>
+</div>
+</div>
 </div>

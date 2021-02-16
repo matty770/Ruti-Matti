@@ -34,17 +34,18 @@ idParent:string;
  //}
   goToChildrenOfParent(parent:User)
   {
+    //this.idParent=parent.Id;
     this.childService.selectChildrenByParentId(parent.Id).subscribe(
       data=>{this.children = data; },
       error=>{console.log("error:" + error);}
      )
     this.UserService.user=parent;
-    this.idParent=parent.Id;
-    alert(this.children.length);
-    //this.router.navigate(['ChildrenForParent']);
   }
   Exit()
   {
     this.router.navigate(['']);
+  }
+  change(parent:User){
+    this.idParent=parent.Id;
   }
 }
