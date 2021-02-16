@@ -45,6 +45,5 @@ export class ChildService
     {
       return this.http.Get('Children?idChild='+idChild);
     }
-
 }
 

@@ -33,9 +33,15 @@ export class FormFutureDataComponent implements OnInit {
     case "1": this.futureData.Status=Statuses.Late;
     case "2": this.futureData.Status=Statuses.NonPresent;
     };
+  var date1 = new Date(); 
+   //var date2 = new Date("07/30/2019"); 
+   //var Difference_In_Time = date2.getTime() - date1.getTime(); 
+   //var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+    //alert(Difference_In_Days);
     this.futureData.UpdateDate=(new Date());
-    alert(this.futureData.Date.getDate());
-    this.days=this.futureData.Date.getDate()-this.date2.getDate();
+    var dat1=new Date(this.futureData.Date);
+    var dat2=new Date(this.date2);
+    this.days=this.futureData.Date.getTime()-this.date2.getTime();
     alert(this.days);
     var i=0;
     do

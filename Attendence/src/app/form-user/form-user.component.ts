@@ -26,11 +26,26 @@ export class FormUserComponent implements OnInit {
   kinderGardenListOfTeacher: KinderGarden[];
   constructor(private userService: UserService, private kinderGardenService: KinderGardensService, private router: Router) {
   }
-
+ 
   selectedKinderGarden(obj) {
-
+    var s=null;
+    var p=document.getElementById("d");
+    p.style.backgroundColor="red";
     if (this.kin.length > 0 && this.kin[0])
+    {
+        for(var i=0;i<this.KinderGardenArray.length;i++)
+        {
+          if(this.KinderGardenArray[i]==this.kin[0])
+          {
+            this.KinderGardenArray.splice(i,1);
+            s=1;
+            break;
+          }
+        }
+      if(!s)
       this.KinderGardenArray.push(this.kin[0]);
+    }
+    
     //this.KinderGardenArray.push(this.kin);ע
     //  console.log(obj);
     //   this.KinderGardenArray.push(obj[0]);
@@ -40,6 +55,7 @@ export class FormUserComponent implements OnInit {
   ngOnInit() { 
     this.getKinderGardenList();
   }
+  
   getKinderGardenList() {
     this.kinderGardenService.GetAllKinderGarden().subscribe(
       data => { this.ListKinderGarden = data; });
@@ -55,6 +71,7 @@ export class FormUserComponent implements OnInit {
   //  else alert("תעודת זהות אינה תקינה, נסה שוב")  
   //}
   addUser(UserForm) {
+    alert(this.KinderGardenArray.length);
     //alert(this.KinderGardenArray.length+"כמות הגנים");
     if (isIsraeliIdValid(this.user.Id) == true) {
       this.user.Active = 1;
