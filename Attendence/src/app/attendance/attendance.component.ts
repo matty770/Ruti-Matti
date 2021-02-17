@@ -20,9 +20,13 @@ export class AttendanceComponent implements OnInit {
   childrenList:Child[];
   childernandLiveData:Child[];
   ss:Statuses=Statuses.NonPresent;
-  
+  FirstName: string;
+  LastName:string;
+  pictureBase64: string;
+  arr=[];
   constructor(private childService:ChildService, private router:Router, private kinderGardenService:KinderGardensService, private liveDataService:LiveDateService) {
-   }
+   
+  }
 
   selectLiveDataByKinderGardenCode()
   {
@@ -40,7 +44,18 @@ export class AttendanceComponent implements OnInit {
   ngOnInit() {
    this.selectLiveDataByKinderGardenCode();
    this.getChildsByKinderGarden();
-   //this.createList();
+   for (let index = 0; index < this.LiveDataList.length; index++) {
+     this.childrenList.forEach(element => {
+       if(this.LiveDataList[index].IdChild==element.Id)
+       {
+         this.FirstName=element.FirstName;
+         this.LastName=element.LastName;
+         this.pictureBase64=element.pictureBase64;
+       }
+     });
+     this.arr.push({'id':this.LiveDataList[index].IdChild, 'status':this.LiveDataList[index].status,
+    'alarm':this.LiveDataList[index].alarm,'FirstName':this.FirstName,'LastName':this.LastName,'Picture':this.pictureBase64});
+   }
   }
   
   changeStatusToArrived(idChild:string)

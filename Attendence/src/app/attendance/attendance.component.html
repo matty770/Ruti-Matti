@@ -24,12 +24,13 @@
 <button (click)="goToTeacherHomePage()">חזרה</button>
 </div>
 -->
-<div *ngFor="let c of childrenList" class="col-md-2 col-sm-8 m-2">
-  <div *ngIf="ChildAppears(c)">
+<div *ngFor="let c of arr" class="col-md-2 col-sm-8 m-2">
+  <div>
   <div class="card">
     <img [src]="'data:image/jpeg;base64,'+ c.pictureBase64" class="card-img-top" alt="no pic">
     <div class="card-body">
       <h5 class="card-title">{{c.FirstName}} {{c.LastName}}</h5>
+      <h6 class="card-title">{{c.status}}</h6>
       <button class="btn btn-success" (click)="changeStatusToArrived(c.Id)">הגיע</button>
     </div>
   </div>
