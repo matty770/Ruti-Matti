@@ -13,13 +13,17 @@ namespace AttendenceAPI.Controllers
     {
 
         [HttpPost]
-        // [Route("/GetKin")]
-        public int functioPostWithParameter([FromBody]CTeacher user)
+        [Route("api/Teacher/addTeacher")]
+        public int addTeacher([FromBody]CTeacher user)
         {
             BUserManager.addTeacher(user);
             return 1;
-            // BUserManager.addKinderGardenToTeacher(listKG, user.Id);
-
+        }
+        [HttpPost]
+        [Route("api/Teacher/addKinderGardenToTeacher")]
+         public int addKinderGardenToTeacher(string Id,[FromBody] List<int> listKinderGarden)
+        {
+               return BUserManager.addKinderGardenToTeacher(listKinderGarden,Id);
         }
     }
 }

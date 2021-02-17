@@ -24,8 +24,9 @@ export class ChildUpdateInfoComponent implements OnInit {
   {
     this.user.Address=this.child.Address;
     this.user.PhoneNum=this.child.Phone;
-    this.childService.UpdateChildren(this.child);
     this.userService.updateUser(this.user);
+    this.childService.UpdateChildren(this.child);
+ 
   }
   goToChildernOfParent()
     {

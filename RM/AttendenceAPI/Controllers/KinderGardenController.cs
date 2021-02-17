@@ -12,11 +12,8 @@ namespace AttendenceAPI.Controllers
 
     public class KinderGardenController : ApiController
     {
-       public enum actionType
-        {
-         add,update, remove
-        }
         [HttpGet]
+        [Route("api/KinderGarden/GetKinderGarden")]
         public CKinderGarden GetKinderGarden(int KGCode)
         {
             var kg = BKinderGardenManager.selectKinderGardenByCode(KGCode);
@@ -24,44 +21,30 @@ namespace AttendenceAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/KinderGarden/GetAllKinderGarden")]
         public List<CKinderGarden> GetAllKinderGarden()
         {
             return BKinderGardenManager.selectAllKinderGarden();
         }
 
         [HttpGet]
+        [Route("api/KinderGarden/selectKinderGardensByTeacherId")]
         public List<CKinderGarden> selectKinderGardensByTeacherId(string TeacherId)
         {
             return BKinderGardenManager.selectKinderGardenByIdTeacher(TeacherId);
         }
-
         [HttpPost]
-        public void addKinderGarden(actionType A, [FromBody]CKinderGarden kinderGarden)
+        [Route("api/KinderGarden/addKinderGarden")]
+        public void addKinderGarden([FromBody]CKinderGarden kinderGarden)
         {
-            switch (A)
-            {
-                case actionType.add:
-                    BKinderGardenManager.addKinderGarden(kinderGarden); break;
-
-                case actionType.update:
-                    BKinderGardenManager.updateKinderGarden(kinderGarden); break;
-                case actionType.remove:
-                    BKinderGardenManager.removeKinderGarden(kinderGarden.IdKinderGarden); break;
-            }
-            //BKinderGardenManager.addKinderGarden(kinderGarden);
+            BKinderGardenManager.addKinderGarden(kinderGarden);
         }
-
-        //[HttpPost]
-        //public CKinderGarden updateKinderGarden(int x,[FromBody] CKinderGarden ck)
-        //{
-        //    return BKinderGardenManager.updateKinderGarden(ck);
-        //}
-
-        //[HttpPost]
-        //public int RemoveKinderGarden(int x, [FromBody] int y, int z)
-        //{
-        //   return BKinderGardenManager.removeKinderGarden(x);
-        //}
+        [HttpPost]
+        [Route("api/KinderGarden/updateKinderGarden")]
+        public CKinderGarden updateKinderGarden([FromBody] CKinderGarden ck)
+        {
+            return BKinderGardenManager.updateKinderGarden(ck);
+        }
 
     }
 }

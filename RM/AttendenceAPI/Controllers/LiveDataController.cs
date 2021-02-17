@@ -13,6 +13,7 @@ namespace AttendenceAPI.Controllers
     public class LiveDataController : ApiController
     {
         [HttpGet]
+        [Route("api/LiveData/GetLiveData")]
         public CLiveData GetLiveData(string ChildId)
         {
             var ld = BLiveDataManager.selectLiveDataByIdChild(ChildId);
@@ -20,12 +21,14 @@ namespace AttendenceAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/LiveData/GetLiveDataByKinderGardenCode")]
         public List<CLiveData> GetLiveDataByKinderGardenCode(int KinderGardenCode)
         {
             return BLiveDataManager.selectLiveDataByKinderGardenCode(KinderGardenCode);
             
         }
         [HttpPost]
+        [Route("api/LiveData/ChangeStatus")]
         public  void ChangeStatus(string idChild, [FromBody] General.Statuses status)
         {
             BLiveDataManager.ChangeStatus(idChild,status);

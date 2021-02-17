@@ -17,38 +17,30 @@ public kinderGardenCode:number;
 kg:KinderGarden=new KinderGarden();
   constructor(private http:DataService,private userService:UserService) {}
 public kinderGarden:KinderGarden=new KinderGarden();
-  selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> 
+selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]> 
   {
-    return this.http.Get('KinderGarden?TeacherId=' + TeacherId);
+    return this.http.Get('KinderGarden/selectKinderGardensByTeacherId?TeacherId=' + TeacherId);
   }
     
     addKinderGarden(kinderGarden:KinderGarden)
     {
-      this.http.post('KinderGarden?A=add',kinderGarden)
+     this.http.post('KinderGarden/addKinderGarden',kinderGarden)
       .subscribe(res=>{ alert(res) //console.log(res)//
       });
       
     }
     GetAllKinderGarden(): Observable<KinderGarden[]>
     {
-      return this.http.Get('KinderGarden');
+      return this.http.Get('KinderGarden/GetAllKinderGarden');
     }
     
     updateKinderGarden(kinderGarden:KinderGarden)
     {
-     // alert(kinderGarden.IdKinderGarden);
-      this.http.post('KinderGarden?A=update',kinderGarden).subscribe(res=>{ alert(res)});
-      //.subscribe(res=>{ alert(res)})
-    }
-//
-    RemoveKinderGarden(kinderGardenCode:number)
-    {
-      
-     this.http.post('KinderGarden?A=remove',kinderGardenCode).subscribe(res=>{ alert(res)});
+     this.http.post('KinderGarden/updateKinderGarden',kinderGarden).subscribe(res=>{ alert(res)});
     }
     GetKinderGarden(kinderGardenCode:number): Observable<KinderGarden>
     {
-      return this.http.Get('KinderGarden?KGCode='+kinderGardenCode);
+      return this.http.Get('KinderGarden/GetKinderGarden?KGCode='+kinderGardenCode);
     }
 
       

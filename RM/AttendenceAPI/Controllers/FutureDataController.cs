@@ -11,45 +11,31 @@ namespace AttendenceAPI.Controllers
 {
     public class FutureDataController : ApiController
     {
-        public enum actionType
-        {
-            add, update, remove
-        }
         [HttpGet]
+        [Route("api/FutureData/GetFutureData")]
         public List<CFutureData> GetFutureData(string ChildId)
         {
             var fd = BFutureDataManager.selectByIdChild(ChildId);
             return fd;
         }
 
-        //[HttpPost]
-        //public void addFutureData([FromBody]CFutureData futureData)
-        //{
-        //    BFutureDataManager.addFutureData(futureData);
-        //}
-
-        //[HttpPost]
-        //public void updateFutureData(int x, [FromBody]CFutureData futureData)
-        //{
-        //    BFutureDataManager.updateFutureData(futureData);
-        //}
-        //    [HttpPost]
-        //    public void removeFutureData([FromBody] CFutureData futureData)
-        //    {
-        //        BFutureDataManager.removeFutureData(futureData);
-        //    }
-        public void functioPost(actionType nameFunction, [FromBody]CFutureData futureData)
+        [HttpPost]
+        [Route("api/FutureData/addFutureData")]
+        public void addFutureData([FromBody]CFutureData futureData)
         {
-            switch (nameFunction)
-            {
-                case actionType.add:
-                    BFutureDataManager.addFutureData(futureData); break;
-
-                case actionType.update:
-                    BFutureDataManager.updateFutureData(futureData); break;
-                case actionType.remove:
-                    BFutureDataManager.removeFutureData(futureData); break;
-            }
+            BFutureDataManager.addFutureData(futureData);
+        }
+        [HttpPost]
+        [Route("api/FutureData/updateFutureData")]
+        public void updateFutureData(int x, [FromBody]CFutureData futureData)
+        {
+            BFutureDataManager.updateFutureData(futureData);
+        }
+        [HttpPost]
+        [Route("api/FutureData/removeFutureData")]
+        public void removeFutureData([FromBody] CFutureData futureData)
+        {
+            BFutureDataManager.removeFutureData(futureData);
         }
     }
 }

@@ -26,7 +26,7 @@ GetAllUsers():Observable<User[]>
   SelectParentOrTechers(permission:number):Observable<User[]>
   {
     //alert(permission);
-    return this.http.Get('User?p='+permission);
+    return this.http.Get('User/SelectParentOrTechers?p='+permission);
   }
  //GetUser(userId: string,firstName:string,lastName:string): Observable<User> {
  //  alert(lastName);
@@ -37,38 +37,39 @@ GetAllUsers():Observable<User[]>
    return this.http.Get('User?userId='+ userId);
  }
   Login(userId: string,firstName:string,lastName:string): Observable<User> {   
-    return this.http.Get('User?userId='+ userId + '&firstName='+firstName+'&lastName='+lastName);
+    return this.http.Get('User/Login?userId='+ userId + '&firstName='+firstName+'&lastName='+lastName);
   }
   GetPermissionOfUser(userId :string): Observable<number>{
-    return this.http.Get('User?userId='+userId);
+    return this.http.Get('User/GetPermissionOfUser?userId='+userId);
   }
   addUser(user:User)
   { 
-    this.http.post('User?nameFunction=add',user)
+    this.http.post('User/addUser',user)
     .subscribe(res=>{  console.log(res)
     },error=>{alert(error.InnerException.InnerException.Message)});
   }
   selectUserByIdChild(idChild:string) :Observable<User>
   {
-    return this.http.Get('User?idChild='+idChild);
+    return this.http.Get('User/selectUserByIdChild?idChild='+idChild);
   }
   updateUser(user:User)
   {
-    this.http.post('User?nameFunction=update',user).subscribe(res=>{alert(res)});
+   // this.http.post('User?nameFunction=update',user).subscribe(res=>{alert(res)});
+    this.http.post('User/updateUser',user).subscribe(res=>{alert(res)});
   }
   UserIs(idUser:string):Observable<number>
   {
-    return this.http.Get('User?idUser='+idUser);
+    return this.http.Get('User/UserIs?idUser='+idUser);
   }
-  addKinderGardenToTeacher(KGCode:number,Id:string)
+  addKinderGardenToTeacher(KGCode:number[],Id:string)
   {
-    this.http.post('User?nameFunction=addKGToTeachet'+ '&KGCode='+KGCode,Id).subscribe(res=>{alert(res)});
+    this.http.post('Teacher/addKinderGardenToTeacher?Id='+Id,KGCode).subscribe(res=>{alert(res)});
   }
   addTeacher(KGCodeList:number[],teacher:User)
   {
     alert(" in service");
     teacher.KinderGardens = KGCodeList;
-   this.http.post('Teacher',teacher).subscribe
+   this.http.post('Teacher/addTeacher',teacher).subscribe
     (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
 
   }

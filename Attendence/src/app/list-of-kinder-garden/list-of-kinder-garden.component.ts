@@ -48,10 +48,6 @@ select:string="";
   this.add=0;
   this.GetAllKinderGarden();
 }
-  RemoveKinderGarden(IdKinderGarden:number)
-  {
-   this.kinderGardenService.RemoveKinderGarden(IdKinderGarden);
-  }
   Exit()
   {
     this.router.navigate(['']);

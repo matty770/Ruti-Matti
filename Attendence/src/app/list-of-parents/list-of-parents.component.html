@@ -12,28 +12,30 @@
 <table class="table" >
 <thead>
   <tr>
-    <th><h3>.מ.ז</h3></th>&nbsp;
-    <th><h3>שם פרטי</h3></th>&nbsp;
-    <th><h3>שם משפחה</h3></th>&nbsp;
-    <th><h3>כתובת</h3></th>&nbsp;
-    <th><h3>מס' טלפון</h3></th>&nbsp;
-    <th><h3>דוא"ל</h3></th>&nbsp;
     <th></th>
+    <th><h3>דוא"ל</h3></th>&nbsp;
+    <th><h3>מס' טלפון</h3></th>&nbsp;
+    <th><h3>כתובת</h3></th>&nbsp;
+    <th><h3>שם משפחה</h3></th>&nbsp;
+    <th><h3>שם פרטי</h3></th>&nbsp;
+    <th style="background-color: blue"><h3>.מ.ז</h3></th>&nbsp;
   </tr>
 </thead>
 <tbody *ngFor="let Parent of ParentList| filter:search">
   <tr>
-    <th>{{Parent.Id}}</th>&nbsp;
-    <th>{{Parent.FirstName}}</th>&nbsp;
-    <th>{{Parent.LastName}}</th>&nbsp;
-    <th>{{Parent.Address}}</th>&nbsp;
-    <th>{{Parent.PhoneNum}}</th>&nbsp;
-    <th>{{Parent.mailAddress}}</th>
-   <!--<th><button (click)="goToChildrenOfParent(Parent)">הילדים שלי</button></th>-->
    <th>
       <button (mousedown)="change(Parent)" (click)="goToChildrenOfParent(Parent)"  class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">לרשימת הילדים שלי</button>
-        <div class="collapse row" id="collapseExample" *ngIf="Parent.Id==idParent">
-            <div class="card card-body col-12">
+    </th>
+    <th>{{Parent.mailAddress}}</th>
+    <th>{{Parent.PhoneNum}}</th>&nbsp;
+    <th>{{Parent.Address}}</th>&nbsp;
+    <th>{{Parent.LastName}}</th>&nbsp;
+    <th>{{Parent.FirstName}}</th>&nbsp;
+    <th style="background-color: blue">{{Parent.Id}}</th>&nbsp;
+  </tr>
+    <tr style="background-color:aqua">
+        <div class="collapse " id="collapseExample"   *ngIf="Parent.Id==idParent">
+            <div class="card card-body">
                 <table class="table"  thead-dark>
                     <thead>
                       <tr>
@@ -57,7 +59,6 @@
                   </table>
             </div>
           </div>
-   </th>
   </tr>
 </tbody>
 </table>

@@ -16,7 +16,7 @@ import { NgForm } from '@angular/forms';
 export class FormUserComponent implements OnInit {
   //@ViewChild('f') userForm:NgForm;
 
-
+  id:number;
   KinderGardenArray: number[] = [];
   kin: number[];
   user: User = new User();
@@ -26,11 +26,14 @@ export class FormUserComponent implements OnInit {
   kinderGardenListOfTeacher: KinderGarden[];
   constructor(private userService: UserService, private kinderGardenService: KinderGardensService, private router: Router) {
   }
- 
+  changeStyle(id:number)
+  {
+    this.id=id;
+  }
   selectedKinderGarden(obj) {
     var s=null;
-    var p=document.getElementById("d");
-    p.style.backgroundColor="red";
+   // var p=document.getElementById("d");
+   // p.style.backgroundColor="red";
     if (this.kin.length > 0 && this.kin[0])
     {
         for(var i=0;i<this.KinderGardenArray.length;i++)

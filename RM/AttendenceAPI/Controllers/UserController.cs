@@ -11,142 +11,72 @@ namespace AttendenceAPI.Controllers
 {
     public class UserController : ApiController
     {
-        public enum actionType
-        {
-            add, update, remove, addTeacher,addKGToTeachet
-        }
-        //[HttpGet]
-        //public CUsers GetUser(string userId)
-        //{
-        //    var u = BUserManager.selectUserByParameters(userId,firstName,lastName);
-        //    return u;
-
-        //}
-       [HttpGet]
-       public CUsers Login(string userId, string firstName, string lastName)
-       {
-           return BUserManager.Login(userId, firstName, lastName);
-       }
-
- // [HttpPost]
- // public int addUser([FromBody]CUsers user)
- // {
- //     try
- //     {
- //         BUserManager.addUser(user);
- //         return 1;
- //
- //     }
- //     catch (Exception e)
- //     {
- //
- //      //  if(e.InnerException.InnerException.HResult.Equals(-214623200))
- //         throw e;
- //     }
- // }
-
-        //[HttpGet]
-        //public List<CUsers> getAllParents()
-        //{
-        //    return BUserManager.selectAllParents();
-        //}
-
-
         [HttpGet]
-        public List<CUsers> GetAllUsers()
+        [Route("api/User/Login")]
+        public CUsers Login(string userId, string firstName, string lastName)
         {
-            return BUserManager.selectAllUsers();
+            return BUserManager.Login(userId, firstName, lastName);
         }
         [HttpGet]
+        [Route("api/User/GetPermissionOfUser")]
+        public  int GetPermissionOfUser(string idUser)
+        {
+           return BUserManager.GetPermissionOfUser(idUser);
+        }
+        [HttpGet]
+        [Route("api/User/SelectParentOrTechers")]
         public List<CUsers> SelectParentOrTechers(int p)
         {
             return BUserManager.SelectParentOrTechers(p);
         }
         [HttpGet]
+        [Route("api/User/selectUserByIdChild")]
         public CUsers selectUserByIdChild(string idChild)
         {
             return BUserManager.selectUserByIdChild(idChild);
         }
-     //   [HttpPost]
-     //   public void updateUser(int x,[FromBody]CUsers user)
-     //   {
-     //        BUserManager.updateUser(user);
-     //   }
         [HttpGet]
+        [Route("api/User/UserIs")]
         public int UserIs(string idUser)
         {
             return BUserManager.UserIs(idUser);
         }
+        [HttpPost]
+        [Route("api/User/addUser")]
+        public int addUser([FromBody]CUsers user)
+        {
+            try
+            {
+                BUserManager.addUser(user);
+                return 1;
+            }
+            catch (Exception e)
+            {
+                if (e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
+                {
+                    allreadyExist ex = new allreadyExist();
+                    throw ex;
+                }
 
-  //   [HttpPost]
-  //  
-  //   public int addKinderGardenToTeacher(int KGCode,[FromBody] string Id)
-  //   {
-  //       return BUserManager.addKinderGardenToTeacher(KGCode,Id);
-  //   }
-// [HttpPost]
-// public int addTeacher(int KGCode,[FromBody]CUsers teacher)
-// {
-//     try
-//     {
-//         BUserManager.addUser(teacher);
-//         return BUserManager.addKinderGardenToTeacher(KGCode, teacher.Id);
-//         return 1;
-//     }
-//     catch (Exception)
-//     {
-//         throw;
-//     }
-//
-// }
- [HttpPost]
- public int functioPost(actionType nameFunction, [FromBody]CUsers user)
- {
-     switch (nameFunction)
-     {
-         case actionType.add:
-             try
-             {
-                 BUserManager.addUser(user);
-                 return 1;
-             }
-             catch (Exception e)
-             {
-                  if(e.InnerException.InnerException.Message.Equals("Violation of PRIMARY KEY constraint 'PK__Users__B7C9263840CFC3C0'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (319100160).\r\nThe statement has been terminated."))
-                 {
-                     allreadyExist ex = new allreadyExist();
-                     throw ex;
-                 }
- 
-                 throw e;
-             }
-         case actionType.update:
-             try
-             {
-                 BUserManager.updateUser(user);
-                 return 1;
-             }
-             catch (Exception)
-             {
- 
-                 throw;
-             }
-         case actionType.remove:
-             try
-             {
-                 BUserManager.removeUser((user.Id));
-                 return 1;
- 
-             }
-             catch (Exception)
-             {
- 
-                 throw;
-             }
-     }
-     return 0;
- }
- 
+                throw e;
+            }
+        }
+
+        [HttpPost]
+        [Route("api/User/updateUser")]
+        public int updateUser([FromBody]CUsers user)
+        {
+            try
+            {
+                BUserManager.updateUser(user);
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
-

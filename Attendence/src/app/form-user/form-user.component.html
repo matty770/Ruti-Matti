@@ -28,7 +28,7 @@
   </div>
   <div class="row d-flex justify-content-center">
   <select  multiple class="form-control col border-danger border-5" style="height: 100px;" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode"  >
-      <option id="d" *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" >{{k.Name}}</option>
+      <option id="d" *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" (mousedown)="changeStyle(k.IdKinderGarden)"  [ngStyle]="{'background-color':id==k.IdKinderGarden?'red':'green'}"  >{{k.Name}}</option>
     </select><br>
     <label class="col-1"   for="KinderGardenCode">בחר גן</label>
   </div>

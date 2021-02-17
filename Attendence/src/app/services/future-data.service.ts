@@ -14,21 +14,21 @@ export class FutureDataService {
   constructor(private http:DataService ) { }
   GetFutureData(ChildId:string):Observable<FutureData[]>
   {
-    return this.http.Get('FutureData?ChildId='+ChildId);
+    return this.http.Get('FutureData/GetFutureData?ChildId='+ChildId);
   }
 
   addFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData?nameFunction=add',futureData)
+    this.http.post('FutureData/addFutureData',futureData)
     .subscribe(res=>{ alert(res) //console.log(res)//
     });
   }
   updateFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData?nameFunction=update',futureData).subscribe(res=>{alert(res)});
+    this.http.post('FutureData/updateFutureData',futureData).subscribe(res=>{alert(res)});
   }
   removeFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData?nameFunction=remove',futureData).subscribe(res=>{alert(res)});
+    this.http.post('FutureData/removeFutureData',futureData).subscribe(res=>{alert(res)});
   }
 }

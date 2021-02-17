@@ -14,7 +14,7 @@ export class ChildService
   constructor(private http:DataService,private userService:UserService) {}
   
    selectChildrenByParentId(ParentId:string): Observable <Child[]> {
-    return this.http.Get('Children?ParentId=' + ParentId);}
+    return this.http.Get('Children/selectChildrenByParentId?ParentId=' + ParentId);}
     
     addChildren(child:ChildParent, file: File)
     {
@@ -27,23 +27,19 @@ export class ChildService
     }
     getAllChildrens():Observable<Child[]>
     {
-      return this.http.Get('Children');
+      return this.http.Get('Children/getAllChildrens');
     }
     UpdateChildren(children:Child,)
     {
-      this.http.post('Children?nameFunction=update',children).subscribe(res=>{alert(res)});
+      this.http.post('Children/UpdateChildren',children).subscribe(res=>{alert(res)});
     }
-   // removeChild(child:Child)
-   // {
-   //   this.http.post('Children?nameFunction=remove',child).subscribe(res=>{alert(res)});
-   // }
     getChildsByKinderGarden(kinderGardenCode:number):Observable<Child[]>
     {
-      return this.http.Get('Children?kinderGardenCode='+kinderGardenCode);
+      return this.http.Get('Children/getChildsByKinderGarden?kinderGardenCode='+kinderGardenCode);
     }
     changeToNotActive(idChild:string):Observable<boolean>
     {
-      return this.http.Get('Children?idChild='+idChild);
+      return this.http.Get('Children/changeToNotActive?idChild='+idChild);
     }
 }
 
