@@ -1,14 +1,18 @@
-<p>
-  user-update-info works!
-</p>
-<div>
-  <form #UserUpdateForm="ngForm" (ngSubmit)="updateUser(UserUpdateForm)">
-      <input name="FirstName" type="text"  value={{user.FirstName}} disabled >שם פרטי <br>
-      <input name="LastName" type="text"  value={{user.LastName}} disabled >שם משפחה <br>
-    <input name="Address" type="text" value={{user.Address}} [(ngModel)]="user.Address">addres  <br>
-    <input name="PhoneNum" type="text" value={{user.PhoneNum}} [(ngModel)]="user.PhoneNum">phone  <br>
-  <input name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress">mail  <br>
-    <button type="submit">עדכן</button>
+<div >
+  <div>
+    <nav class="bg-dark d-flex justify-content-around navbar">
+      <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button>
+        <button class="btn btn-success" (click)="goToTeacherHomePage()">חזרה</button></div>
+      <h3 class="align-self-center" style="color:red">רשימת הגנים של {{user.FirstName}} {{user.LastName}} </h3>    
+    </nav>
+    </div>
+<div class="d-flex justify-content-center">
+  <form class="align-items-end d-flex flex-column m-5 ng-pristine ng-untouched ng-valid" #UserUpdateForm="ngForm" (ngSubmit)="updateUser(UserUpdateForm)">
+      <input class="form-control" name="FirstName" type="text"  value={{user.FirstName}} disabled >שם פרטי <br>
+      <input class="form-control" name="LastName" type="text"  value={{user.LastName}} disabled >שם משפחה <br>
+    <input class="form-control" name="Address" type="text" value={{user.Address}} [(ngModel)]="user.Address">כתובת  <br>
+    <input class="form-control" name="PhoneNum" type="text" value={{user.PhoneNum}} [(ngModel)]="user.PhoneNum">טל/פלאפון  <br>
+  <input class="form-control" name="mailAddress" type="text" value={{user.mailAddress}} [(ngModel)]="user.mailAddress">דוא"ל <br>
+    <button class="btn btn-info align-self-center" type="submit">עדכן</button>
   </form>
-  <button (click)="goToTeacherHomePage()">חזרה</button>
 </div>

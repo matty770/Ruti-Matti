@@ -11,35 +11,44 @@
 <div class=" d-flex justify-content-center align-items-center container-fluid " >
     <form #ChildrenForm="ngForm" (ngSubmit)="addChildren(ChildrenForm)" class="col-10 justify-content-center" >
       <div class="row d-flex  p-4">
-          <input class="form-control col border border-danger border-5 " name="IdChild" type="text" [(ngModel)]="childParent.ChildId" >
-          <label class="col " for="Id" >מספר זהות</label> 
+        <input class="form-control col border border-danger border-5 " name="ChildLastName" type="text"  [(ngModel)]="childParent.ChildLastName" >
+        <label class="col " for="Id" >שם משפחה ילד </label> 
           <input class="form-control col border border-danger border-5 "  name="ChildFirstName" type="text"  [(ngModel)]="childParent.ChildFirstName" >
-          <label class="col " for="Id" >שם פרטי ילד</label> 
-          <input class="form-control col border border-danger border-5 " name="ChildLastName" type="text"  [(ngModel)]="childParent.ChildLastName" >
-          <label class="col " for="Id" >שם משפחה </label> 
+          <label class="col " for="Id" >שם פרטי ילד</label>         
+          <input class="form-control col border border-danger border-5 " name="IdChild" type="text" [(ngModel)]="childParent.ChildId" >
+          <label class="col " for="Id" >מספר זהות ילד</label> 
       </div>
       <div class="row d-flex  p-4">
-          <input class="form-control col border border-danger border-5 " name="Address" type="text" [(ngModel)]="childParent.address" >
-          <label class="col " for="Id" >כתובת </label> 
-          <input class="form-control col border border-danger border-5 " name="Phone" type="text" [(ngModel)]="childParent.phone" >
-          <label class="col " for="Id" >טלפון </label> 
+          
+          <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentLastName">
+       <label class="col " for="Id" >שם משפחה הורה </label> 
+          <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">
+        <label class="col " for="Id" > שם פרטי הורה</label> 
           <input class="form-control col border border-danger border-5 " name="Id" type="text"  [(ngModel)]="childParent.parentCode" >
           <label class="col " for="Id" >מספר זהות הורה</label> 
       </div>
       <div class="row d-flex  p-4">
-        <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentFirstName">
-        <label class="col " for="Id" > שם פרטי הורה</label> 
-        <input class="form-control col border border-danger border-5 " name="Name" type="text" [(ngModel)]="childParent.ParentLastName">
-       <label class="col " for="Id" >שם משפחה הורה </label> 
-       <!-- <input class="form-control col border border-danger border-5 " name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">
-        <label class="col " for="Id" > כתובת מייל</label>-->
+        
+        <input class="form-control col border border-danger border-5 " name="Address" type="text" [(ngModel)]="childParent.address" >
+          <label class="col " for="Id" >כתובת </label> 
+          <input class="form-control col border border-danger border-5 " name="Phone" type="text" [(ngModel)]="childParent.phone" >
+          <label class="col " for="Id" >טלפון </label> 
+       <input class="form-control col border border-danger border-5 " name="MailAddress" type="text" [(ngModel)]="childParent.mailAddress">
+        <label class="col " for="Id" > כתובת מייל</label>
+
+      </div>
+      <div class="row d-flex  p-4">
         <select class="form-control col border-danger border-5"  placeholder="select a gan" name="KinderGardenCode" [(ngModel)]="childParent.kinderGardenCode" >     
           <option *ngFor="let k of ListKinderGarden"  [value]="k.IdKinderGarden" >{{k.Name}}</option>
         </select>
         <label class="col " for="Id" >בחר גן</label> 
-        <input type="file" (change)="handleFileInput($event.target.files)">
-      </div>
-      <button class="btn btn-dark p-y-5 m-5"  type="submit">add</button>
+        <div>        
+          <input class="btn p-0" type="file" id="fileInput" (change)="handleFileInput($event.target.files)">
+          <label for="fileInput" class="form-label">בחר תמונה</label>
+        </div>
+        
+      </div >
+      <button class="btn btn-dark p-y-5 m-5"  type="submit">הוסף</button>
     </form>
 
   </div>

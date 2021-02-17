@@ -8,7 +8,7 @@
 </nav>
 
 <div >
-  <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
+  <input class="form-control m-3" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
 <table class="table" >
 <thead>
   <tr>
@@ -18,7 +18,7 @@
     <th><h3>כתובת</h3></th>&nbsp;
     <th><h3>שם משפחה</h3></th>&nbsp;
     <th><h3>שם פרטי</h3></th>&nbsp;
-    <th style="background-color: blue"><h3>.מ.ז</h3></th>&nbsp;
+    <th><h3>.מ.ז</h3></th>&nbsp;
   </tr>
 </thead>
 <tbody *ngFor="let Parent of ParentList| filter:search">
@@ -31,15 +31,14 @@
     <th>{{Parent.Address}}</th>&nbsp;
     <th>{{Parent.LastName}}</th>&nbsp;
     <th>{{Parent.FirstName}}</th>&nbsp;
-    <th style="background-color: blue">{{Parent.Id}}</th>&nbsp;
+    <th>{{Parent.Id}}</th>&nbsp;
   </tr>
     <tr style="background-color:aqua">
         <div class="collapse " id="collapseExample"   *ngIf="Parent.Id==idParent">
             <div class="card card-body">
-                <table class="table"  thead-dark>
+                <table class="table">
                     <thead>
                       <tr>
-                        <th></th>
                         <th><h6>מס' טלפון</h6></th>
                         <th><h6>כתובת</h6></th>
                         <th><h6>שם משפחה</h6></th>

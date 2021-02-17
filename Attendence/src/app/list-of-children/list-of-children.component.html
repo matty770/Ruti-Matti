@@ -1,3 +1,4 @@
+<div>
 <nav class="bg-dark d-flex justify-content-center navbar">
   <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
   <div><a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item  m-1" >דף הבית</a></div>
@@ -6,29 +7,30 @@
   <div><a routerLink="/ListOfParent" class="btn btn-info m-1">הצג הורים</a></div>
   <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
 </nav>
+</div>
+
 <div >
-<div >
-  <input class="form-control" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
-    <button (click)="ToChildrenForm()">add child</button><br><br>
+  <input class="form-control m-3" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">
  <table class="table" >
   <thead>
     <tr>
-      <th><h3>.מ.ז</h3></th>&nbsp;
-      <th><h3>שם פרטי</h3></th>&nbsp;
-      <th><h3>שם משפחה</h3></th>&nbsp;
-      <th><h3>כתובת</h3></th>&nbsp;
-      <th><h3>מס' טלפון</h3></th>&nbsp;
       <th></th>
+      <th><h3>מס' טלפון</h3></th>&nbsp;
+      <th><h3>כתובת</h3></th>&nbsp;
+      <th><h3>שם משפחה</h3></th>&nbsp;     
+      <th><h3>שם פרטי</h3></th>&nbsp;
+      <th><h3>.מ.ז</h3></th>&nbsp;
+      
     </tr>
   </thead>
   <tbody *ngFor="let child of listChildren | filter:search">
     <tr>
-      <th>{{child.Id}}</th>&nbsp;
-      <th>{{child.FirstName}}</th>&nbsp;
-      <th>{{child.LastName}}</th>&nbsp;
-      <th>{{child.Address}}</th>&nbsp;
+      <th><button (click)="changeToNotActive(child.Id)" class="btn btn-danger">הפוך ל-לא פעיל</button></th>
       <th>{{child.Phone}}</th>&nbsp;
-      <th><button (click)="changeToNotActive(child.Id)" class="btn btn-danger">changeToNotActive</button></th>
+      <th>{{child.Address}}</th>&nbsp;
+      <th>{{child.LastName}}</th>&nbsp;    
+      <th>{{child.FirstName}}</th>&nbsp;
+      <th>{{child.Id}}</th>&nbsp;     
     </tr>
   </tbody>
 </table>

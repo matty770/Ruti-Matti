@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserUpdateInfoComponent implements OnInit {
 
-  constructor(private userService:UserService, private rout:Router) { }
+  constructor(private router:Router,private userService:UserService, private rout:Router) { }
 user:User=this.userService.user;
   ngOnInit() {
   }
@@ -21,5 +21,9 @@ user:User=this.userService.user;
   }
   goToTeacherHomePage(){
     this.rout.navigate(['/TeacherHomePage']);
+  }
+  Exit()
+  {
+    this.router.navigate(['']);
   }
 }

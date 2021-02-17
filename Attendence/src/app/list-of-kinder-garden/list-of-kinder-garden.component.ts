@@ -15,6 +15,7 @@ export class ListOfKinderGardenComponent implements OnInit {
 listKinderGarden:KinderGarden[];
 add:number=0;
 select:string="";
+
   constructor(private kinderGardenService:KinderGardensService,private router:Router) { }
 
   ngOnInit() {

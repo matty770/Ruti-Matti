@@ -1,29 +1,33 @@
-
-<header>
-  <button class="btn btn-danger" (click)="Exit()">יציאה</button>
-</header>
+<div>
+  <nav class="bg-dark d-flex justify-content-between navbar">
+    <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
+    <div><a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item  m-1" >דף הבית</a></div>
+    <div> <button class="btn btn-success" (click)="GoBack()">חזרה</button></div>
+  </nav>
+  </div>
 <div>
   <table class="table" thead-dark>
     <thead>
       <tr>
-        <th><h3>ID</h3></th>&nbsp;
-        <th><h3>FirstName</h3></th>&nbsp;
-        <th><h3>LastName</h3></th>&nbsp;
-        <th><h3>Address</h3></th>&nbsp;       
-        <th><h3>Phone</h3></th>&nbsp;
         <th></th>
+        <th><h3>טל/פלאפון</h3></th>&nbsp;
+        <th><h3>כתובת</h3></th>&nbsp;
+        <th><h3>שם משפחה</h3></th>&nbsp;       
+        <th><h3>שם פרטי</h3></th>&nbsp;
+        
+        <th><h3>.מ.ז</h3></th>&nbsp;
       </tr>
     </thead>
     <tbody *ngFor="let child of children">
       <tr>
-        <th>{{child.Id}}</th>&nbsp;
-        <th>{{child.FirstName}}</th>&nbsp;
-        <th>{{child.LastName}}</th>&nbsp;
-        <th>{{child.Address}}</th>&nbsp;
+        <th><img class="w-100 m-1" [src]="'data:image/jpeg;base64,'+ child.pictureBase64"></th>
         <th>{{child.Phone}}</th>&nbsp;
-        <th><img [src]="'data:image/jpeg;base64,'+ child.pictureBase64"></th>
+        <th>{{child.Address}}</th>&nbsp;
+        <th>{{child.LastName}}</th>&nbsp;
+        <th>{{child.FirstName}}</th>&nbsp;
+        <th>{{child.Id}}</th>&nbsp;
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-info" (click)="GoBack()">חזרה</button>&nbsp;&nbsp;
+ 
 </div>

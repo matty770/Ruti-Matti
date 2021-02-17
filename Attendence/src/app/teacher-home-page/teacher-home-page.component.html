@@ -1,4 +1,4 @@
-<h3>{{user.Name}} רשימת הגנים של </h3><br>
+<!--<h3>רשימת הגנים של {{user.FirstName}} {{user.LastName}} </h3>
 <button *ngIf="CUP=='2'||CUP=='4'" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button>
 <button *ngIf="CUP=='3'" (click)="addKinderGardenOfTeacher()">להוספת גן לגננת</button>&nbsp;
 <span *ngIf="add=='1'" [ngModel]="add" >
@@ -6,29 +6,36 @@
 <select placeholder="select a gan" name="KinderGardenCode"  [(ngModel)]="KinderGardenofTeacher" multiple>  
   <option *ngFor="let k of ListAllKinderGarden"  [value]="k.IdKinderGarden"  >{{k.Name}}</option>
 </select>
-</span>
+</span>-->
 <div >
-     
+  <div>
+    <nav class="bg-dark d-flex justify-content-around navbar">
+      <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
+      <div><button class="btn btn-info"*ngIf="CUP=='2'||CUP=='4'" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button></div>
+      <h3 style="color:red">רשימת הגנים של {{user.FirstName}} {{user.LastName}} </h3>
+      <div><button class="btn btn-success" *ngIf="CUP=='3'" (click)="back()">חזרה</button></div>
+      
+    </nav>
+    </div>
    <!-- <button (click)="selectKinderGardensByTeacherId(hhh)">clickMe</button>-->
     <table class="table">
       <thead>
         <tr>
-          <th><h3>Name</h3></th>&nbsp;
-          <th><h3>Address</h3></th>&nbsp;
-          <th><h3>Phone</h3></th>&nbsp;
           <th></th>
+          <th><h3>טל/פלאפון</h3></th>&nbsp;
+          <th><h3>כתובת</h3></th>&nbsp;
+          <th><h3>שם גן</h3></th>&nbsp;
+          
         </tr>
       </thead>
       <tbody *ngFor="let KG of KinderGardens">
         <tr>
-          <th>{{KG.Name}}</th>&nbsp;
+          <th><button class="btn btn-info" *ngIf="CUP=='2'||CUP=='4'" type="button" (click)="goToAttendance(KG.IdKinderGarden,KG.Name)">נוכחות</button>&nbsp;
+            <th><button class="btn btn-info" *ngIf="CUP=='3'" type="button" (click)="goToChildrenForKinderGarden(KG.IdKinderGarden,KG.Name)">לרשימת הילדים</button>&nbsp;
+            <th>{{KG.Phone}}</th>&nbsp;         
           <th>{{KG.Address}}</th>&nbsp;
-          <th>{{KG.Phone}}</th>&nbsp;
-         <th><button class="btn btn-info" *ngIf="CUP=='2'||CUP=='4'" type="button" (click)="goToAttendance(KG.IdKinderGarden,KG.Name)">Attendance</button>&nbsp;
-          <th><button class="btn btn-info" *ngIf="CUP=='3'" type="button" (click)="goToChildrenForKinderGarden(KG.IdKinderGarden,KG.Name)">לרשימת הילדים</button>&nbsp;
-        </tr>
+          <th>{{KG.Name}}</th>&nbsp;
+         </tr>
       </tbody>
     </table>
-    <button class="btn btn-info" *ngIf="CUP=='3'" (click)="back()">חזרה</button>&nbsp;
-    <button class="btn btn-info" (click)="Exit()">יציאה</button>
   </div>

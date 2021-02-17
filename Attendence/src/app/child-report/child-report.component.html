@@ -1,10 +1,11 @@
 <nav class="bg-dark d-flex justify-content-between navbar">
   <div id="divExit"><button class="btn btn-danger align-start m-1" (click)="Exit()">יציאה</button>
   <button class="btn btn-success m-1" (click)="goToChildernOfParent()">חזרה</button></div>
+  <button class="btn btn-info" (click)="goToFutureDataForm()">הוספת תזמון חדש</button>
   <div > <h3> תזמוני היעדרות  </h3></div>
 </nav>
 <div>
-  <table class="table" thead-dark>
+  <table class="table">
     <thead>
       <tr>
         <th></th>
@@ -29,5 +30,5 @@
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-info" (click)="goToFutureDataForm()">הוספת תזמון חדש</button>
+
 </div>

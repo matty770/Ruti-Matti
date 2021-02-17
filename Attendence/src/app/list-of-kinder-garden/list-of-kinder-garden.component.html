@@ -6,34 +6,25 @@
   <div><a routerLink="/ListOfParent" class="btn btn-info m-1">הצג הורים</a></div>
   <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
 </nav>
-
+<!--<input class="form-control m-3" style="width: 15%" [(ngModel)]="search" name="search" placeholder="search...">-->
 <div >
-    <button class="btn btn-primary" (click)="ToKinderGardenForm()">addKinderGarden</button><br><br>
-    <div *ngIf="add=='1'">
-      <app-form-kinder-garden></app-form-kinder-garden>
-      <br><br>
-      <button class="btn btn-outline-info" (click)="cancelAdd()">ביטול</button>
-    </div><br><br>
-    <div >
- <table class="table" thead-dark>
+ <table class="table text-align-center">
   <thead>
     <tr>
-     <!-- <th><h3>ID</h3></th>&nbsp;-->
-      <th><h3>שם גן</h3></th>&nbsp;
-      <th><h3>כתובת</h3></th>&nbsp;
+      <th></th>
+      <th></th>
       <th><h3>מס' טלפון</h3></th>&nbsp;
-      <th></th>
-      <th></th>
+      <th><h3>כתובת</h3></th>&nbsp;
+      <th><h3>שם גן</h3></th>&nbsp;
     </tr>
   </thead>
   <tbody *ngFor="let kinderGarden of listKinderGarden">
     <tr>
-      <!--<th>{{kinderGarden.IdKinderGarden}}</th>&nbsp;-->
-      <th>{{kinderGarden.Name}}</th>&nbsp;
-      <th>{{kinderGarden.Address}}</th>&nbsp;
-      <th>{{kinderGarden.Phone}}</th>&nbsp;
       <th><button class="btn btn-info" *ngIf="CUP=='2'" (click)="goToDetails(kinderGarden)">עדכון פרטי גן</button></th>
       <th><button class="btn btn-info" (click)="goToChildrenForKinderGarden(kinderGarden)">לרשימת הילדים</button></th>
+      <th>{{kinderGarden.Phone}}</th>&nbsp;
+      <th>{{kinderGarden.Address}}</th>&nbsp;     
+      <th>{{kinderGarden.Name}}</th>&nbsp;
     </tr>
   </tbody>
 </table>

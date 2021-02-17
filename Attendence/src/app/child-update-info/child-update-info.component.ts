@@ -26,14 +26,11 @@ export class ChildUpdateInfoComponent implements OnInit {
     this.user.PhoneNum=this.child.Phone;
     this.userService.updateUser(this.user);
     this.childService.UpdateChildren(this.child);
- 
+    this.goToChildernOfParent();
   }
   goToChildernOfParent()
     {
       this.router.navigate(['/ChildrenForParent'])
-    }
-    cancel()
-    {
     }
     Exit()
     {

@@ -7,22 +7,23 @@
   <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
 </nav>
 
-<div class="d-flex justify-content-center m-4" ><h2>הוספת ילד</h2></div>
+<div class="d-flex justify-content-center m-4" ><h2>הוספת גן</h2></div>
 <div class=" d-flex justify-content-center align-items-center container-fluid " >
 <form #kinderGardenForm="ngForm" (ngSubmit)="addKinderGarden(kinderGardenForm)" class="col-10 justify-content-center">
     <div class="row d-flex  p-5">
-      <input class="form-control col border border-danger border-5 " name="name" type="text"  [(ngModel)]="kinderGarden.name">
-      <label class="col " for="Id" >שם גן</label> 
-      <input class="form-control col border border-danger border-5 " name="Address" type="text"  [(ngModel)]="kinderGarden.Address">
-      <label class="col " for="Id" >כתובת</label> 
       <input class="form-control col border border-danger border-5 " name="phone" type="text"  [(ngModel)]="kinderGarden.phone">
       <label class="col " for="Id" >טלפון</label> 
+      <input class="form-control col border border-danger border-5 " name="Address" type="text"  [(ngModel)]="kinderGarden.Address">
+      <label class="col " for="Id" >כתובת</label> 
+      <input class="form-control col border border-danger border-5 " name="name" type="text"  [(ngModel)]="kinderGarden.name">
+      <label class="col " for="Id" >שם גן</label> 
     </div>
     <div class="row d-flex  p-5 justify-content-center ">
       <input class="form-control col border border-danger border-5 " name="year" type="number"  [(ngModel)]="kinderGarden.year">
       <label class="col-2 " for="Id" >שנת הקמת הגן</label>
       <input class="form-control col border border-danger border-5 " p name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">
       <label class="col-2 " for="Id" >שעת תחילת הגן</label>
+     
     </div>
     <button class="btn btn-dark p-y-5 m-5"  type="submit">הוסף גן</button>
   </form>
