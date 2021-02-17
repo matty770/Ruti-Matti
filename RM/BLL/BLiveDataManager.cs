@@ -51,5 +51,9 @@ namespace BLL
         {
             DLiveDataManager.ChangeStatus(idChild, status);
         }
+        public static List<General.Attendance> copyToAttendace(int idKinderGarden)
+        {
+            return DLiveDataManager.copyToAttendace(idKinderGarden);
+        }
     }
 }

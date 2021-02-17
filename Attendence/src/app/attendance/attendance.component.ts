@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { KinderGarden } from 'src/app/models/KinderGarden';
 import { forEach } from '@angular/router/src/utils/collection';
 import { createHostListener } from '@angular/compiler/src/core';
+import { Attendance } from 'src/app/models/Attendance';
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
@@ -24,6 +25,7 @@ export class AttendanceComponent implements OnInit {
   LastName:string;
   pictureBase64: string;
   arr=[];
+  listAttendances:Attendance[];
   constructor(private childService:ChildService, private router:Router, private kinderGardenService:KinderGardensService, private liveDataService:LiveDateService) {
    
   }
@@ -42,20 +44,23 @@ export class AttendanceComponent implements OnInit {
     .subscribe( data=>{this.childrenList = data; });
   }
   ngOnInit() {
-   this.selectLiveDataByKinderGardenCode();
-   this.getChildsByKinderGarden();
-   for (let index = 0; index < this.LiveDataList.length; index++) {
-     this.childrenList.forEach(element => {
-       if(this.LiveDataList[index].IdChild==element.Id)
-       {
-         this.FirstName=element.FirstName;
-         this.LastName=element.LastName;
-         this.pictureBase64=element.pictureBase64;
-       }
-     });
-     this.arr.push({'id':this.LiveDataList[index].IdChild, 'status':this.LiveDataList[index].status,
-    'alarm':this.LiveDataList[index].alarm,'FirstName':this.FirstName,'LastName':this.LastName,'Picture':this.pictureBase64});
-   }
+    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
+    (data=>{this.listAttendances=data;alert(this.listAttendances.length);});
+
+  //this.selectLiveDataByKinderGardenCode();
+  //this.getChildsByKinderGarden();
+  //for (let index = 0; index < this.LiveDataList.length; index++) {
+  //  this.childrenList.forEach(element => {
+  //    if(this.LiveDataList[index].IdChild==element.Id)
+  //    {
+  //      this.FirstName=element.FirstName;
+  //      this.LastName=element.LastName;
+  //      this.pictureBase64=element.pictureBase64;
+  //    }
+  //  });
+  //  this.arr.push({'id':this.LiveDataList[index].IdChild, 'status':this.LiveDataList[index].status,
+  // 'alarm':this.LiveDataList[index].alarm,'FirstName':this.FirstName,'LastName':this.LastName,'Picture':this.pictureBase64});
+  //}
   }
   
   changeStatusToArrived(idChild:string)

@@ -114,7 +114,6 @@ namespace DAL
             {
                 foreach (var item in listCFuture)
                 {
-
                     foreach (var item2 in listCLivaData)
                     {
                         if (item.IdChild.Equals(item2.IdChild))
@@ -123,10 +122,33 @@ namespace DAL
                             updateLiveData(cl);
                             DFutureDataManager.removeFutureData(item.IdChild);
                         }
-
                     }
                 }
             }
+        }
+        public static List<General.Attendance> copyToAttendace(int idKinderGarden)
+        {
+            List<General.Attendance> listAttendances = new List<General.Attendance>();
+            List<CFutureData> listCFuture = DFutureDataManager.selectByToday();
+            List<CChildren> listCChildren = DChildrenManager.selectchildrenByKinderGardenCode(idKinderGarden);
+                foreach (var item in listCChildren)
+                {
+                    General.Attendance attendance = new General.Attendance(item.Id, item.FirstName, item.LastName, item.pictureBase64, General.Statuses.NonPresent);
+                    listAttendances.Add(attendance);
+                }
+                foreach (var item in listCFuture)
+                {
+                    int i = 0;
+                    foreach (var item2 in listAttendances)
+                    {
+                        if (item.IdChild.Equals(item2.Id))
+                        {
+                            listAttendances[i].Status = item.Status; 
+                        }
+                        i++;
+                    }
+                }
+            return listAttendances;
         }
         public static List<CLiveData> selectLiveIsNonPresent()
         {

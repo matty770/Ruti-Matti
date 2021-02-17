@@ -43,25 +43,25 @@ namespace TaskManager
 
             }
 
-            //if (DateTime.Now.Hour == 9 && DateTime.Now.Minute<=15)
-            //{
-            //   // Console.WriteLine("once a day");
-            //   // Console.Read();
-            //   // BPreviousDataManager.copyLiveToPreviousData();
-            //   // Console.WriteLine("end copy to previous");
-            //   // Console.Read();
-            //    BLiveDataManager.copyChildrenToLiveData();
-            //    Console.WriteLine("end copy children to live");
-            //    Console.Read();
-            //    BLiveDataManager.copyFutureToLivaData();
-            //    Console.WriteLine("end copy future to live");
-            //    Console.Read();
-            //}
-            //else
-            //{
-            //    Console.WriteLine("no");
-            //    Console.Read();
-            //}
+          if (DateTime.Now.Hour == 9 && DateTime.Now.Minute<=15)
+          {
+             // Console.WriteLine("once a day");
+             // Console.Read();
+             // BPreviousDataManager.copyLiveToPreviousData();
+             // Console.WriteLine("end copy to previous");
+             // Console.Read();
+              BLiveDataManager.copyChildrenToLiveData();
+              Console.WriteLine("end copy children to live");
+              Console.Read();
+              BLiveDataManager.copyFutureToLivaData();
+              Console.WriteLine("end copy future to live");
+              Console.Read();
+          }
+          else
+          {
+              Console.WriteLine("no");
+              Console.Read();
+          }
          
             if (DateTime.Now.Hour == 17)
             {

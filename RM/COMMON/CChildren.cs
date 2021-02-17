@@ -9,13 +9,7 @@ namespace COMMON
 {
     public class CChildren
     {
-      // public class Attendance
-      // {
-      //     public string Id { get; set; }
-      //     public string FirstName { get; set; }
-      //     public string LastName { get; set; }
-      //     public byte[] picture { get; set; }
-      // }
+
         public CChildren()
         { }
         public CChildren(string id, string FirstName, string LastName, string address, string phone,

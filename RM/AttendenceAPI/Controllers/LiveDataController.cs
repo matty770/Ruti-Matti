@@ -33,5 +33,11 @@ namespace AttendenceAPI.Controllers
         {
             BLiveDataManager.ChangeStatus(idChild,status);
         }
+        [HttpGet]
+        [Route("api/LiveData/copyToAttendance")]
+        public List<General.Attendance> copyToAttendance(int idKinderGarden)
+        {
+            return BLiveDataManager.copyToAttendace(idKinderGarden);
+        }
     }
 }
