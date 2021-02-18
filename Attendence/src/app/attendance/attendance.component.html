@@ -11,7 +11,7 @@
 <div *ngFor="let c of listAttendances" class="   col-8 col-md-2 m-2">
   <div>
   <div class="card " style="background-color:rgb(54, 53, 53)">
-    <img [src]="'data:image/jpeg;base64,'+ c.pictureBase64" class="card-img-top rounded-circle" alt="no pic">
+    <img [src]="'data:image/jpeg;base64,'+ c.pictureBase64" class="card-img-top" alt="no pic">
     <div class="card-body justify-content-center" style="padding:0">
       <h5 style="text-align:center!important; color:white;" class="card-title m-0">{{c.FirstName}} {{c.LastName}}</h5>
       <h6 style="text-align:center!important; color:azure" class="card-title m-0">{{c.Status}}</h6>

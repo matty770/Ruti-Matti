@@ -20,7 +20,7 @@ export class FutureDataService {
   addFutureData(futureData:FutureData)
   {
     this.http.post('FutureData/addFutureData',futureData)
-    .subscribe(res=>{ alert(res) //console.log(res)//
+    .subscribe(res=>{ //alert(res) //console.log(res)//
     });
   }
   updateFutureData(futureData:FutureData)

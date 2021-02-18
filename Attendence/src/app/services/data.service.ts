@@ -14,7 +14,7 @@ export class DataService {
   }
   post(url: string, data: any): Observable<any> 
    { 
-     alert("post");
+    // alert("post");
     return this.http.post(this.baseUrl + url,JSON.stringify(data)
     ,{headers :{"Content-Type":"application/json"}});
   }

@@ -25,7 +25,7 @@ export class FormFutureDataComponent implements OnInit {
   }
   addFutureData(FutureDataForm)
   {
-    alert("ff");
+    //alert("ff");
     this.futureData.IdChild=this.idChild;
     this.futureData.KinderGardenCode=this.futureDataService.futureData.KinderGardenCode;
     switch(this.ST)
@@ -33,23 +33,24 @@ export class FormFutureDataComponent implements OnInit {
     case "1": this.futureData.Status=Statuses.Late;
     case "2": this.futureData.Status=Statuses.NonPresent;
     };
-  var date1 = new Date(); 
+ // var date1 = new Date(); 
    //var date2 = new Date("07/30/2019"); 
    //var Difference_In_Time = date2.getTime() - date1.getTime(); 
    //var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
     //alert(Difference_In_Days);
     this.futureData.UpdateDate=(new Date());
-    var dat1=new Date(this.futureData.Date);
-    var dat2=new Date(this.date2);
-    this.days=this.futureData.Date.getTime()-this.date2.getTime();
-    alert(this.days);
-    var i=0;
-    do
-   {
-    this.futureData.Date.setDate(this.futureData.Date.getDate()-this.days-i);
+   // var dat1=new Date(this.futureData.Date);
+    //var dat2=new Date(this.date2);
+   // this.days=this.futureData.Date.getTime()-this.date2.getTime();
+    //alert(this.days);
+  //  var i=0;
+  //  do
+  // {
+    //this.futureData.Date.setDate(this.futureData.Date.getDate()-this.days-i);
     this.futureDataService.addFutureData(this.futureData);
-   } while( i<this.days );
+  // } while( i<this.days );
     FutureDataForm.reset();
+    this.GoBack();
   }
   GoBack()
   {

@@ -43,32 +43,41 @@ namespace BLL
                 /////////////
             }
         }
-        static async Task SendUsingAPIAsync(string phoneNum)
+        static async Task SendUsingAPIAsync(string phoneNum, string fName)
         {
-            HttpClient client = new HttpClient();
-            //Define the Required Variables
-            string key = "7vYa2efTp";
-            string user = "0533141893";
-            string pass = "62577475";
-            string sender = "Test";
-            string recipient = phoneNum;
-            string msg = "Testing Api Using C#";
-            var values = new Dictionary<string, string>
+            try
+            {
+                HttpClient client = new HttpClient();
+                //Define the Required Variables
+                string key = "7vYa2efTp";
+                string user = "0533141893";
+                string pass = "62577475";
+                string sender = "Test";
+                string recipient = phoneNum;
+                string msg = "הודעת חרום מהגן של " + fName + "!" + " " + fName + " .לא הגיעה לגן. צרו קשר מיידי עם הגננת";
+                var values = new Dictionary<string, string>
             {
                 { "key", key }, { "user", user },{ "pass", pass },
                 { "sender", sender }, { "recipient", recipient },
                 { "msg", msg }
             };
-            var content = new FormUrlEncodedContent(values); //Encode the Data
-            var response = await client.PostAsync("https://www.sms4free.co.il/ApiSMS/SendSMS", content);
-            var responseString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseString); //Gives You How many Recipients the message was sent to
+                var content = new FormUrlEncodedContent(values); //Encode the Data
+                var response = await client.PostAsync("https://www.sms4free.co.il/ApiSMS/SendSMS", content);
+                var responseString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseString); //Gives You How many Recipients the message was sent to
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            
         }
         public static bool sendMessage(string PhoneNum,string nameChild)
         {
             try
             {
-                SendUsingAPIAsync(PhoneNum); //This Method Sends Using API and its ASYNC (You have to wait until the process ends)
+                SendUsingAPIAsync(PhoneNum, nameChild); //This Method Sends Using API and its ASYNC (You have to wait until the process ends)
                 System.Threading.Thread.Sleep(5000); //Sleep for 5 SECOND Until API FINISH His Work
                                                      //                var client = new Client("test", "my-api-key");
                                                      //var link = client.SendMessage("Trying to send a sms message", "0013472631115");
@@ -77,17 +86,18 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw;
-
-                //  return false;
+               // throw;
+                Console.WriteLine(ex.Message);
+                  return false;
             }
         }
 
         public static void CheckAttendance(CLiveData liveData)
         {
-            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress,DChildrenManager.selectchildrenById(liveData.IdChild).FirstName);
-            //sendMessage(DUsersManager.selectUserByIdChild(liveData.IdChild).PhoneNum,DChildrenManager.selectchildrenById(liveData.IdChild).ChildName);
-            DLiveDataManager.ChangeStatus(liveData.IdChild, General.Statuses.Sent);
+            string fname = DChildrenManager.selectchildrenById(liveData.IdChild).FirstName;
+            sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress,fname);
+            sendMessage(DUsersManager.selectUserByIdChild(liveData.IdChild).PhoneNum,fname);
+           // DLiveDataManager.ChangeStatus(liveData.IdChild, General.Statuses.Sent);
 
 
         }
