@@ -15,15 +15,10 @@
       <label class="col " for="Id" >טלפון</label> 
       <input class="form-control col border border-danger border-5 " name="Address" type="text"  [(ngModel)]="kinderGarden.Address">
       <label class="col " for="Id" >כתובת</label> 
-      <input class="form-control col border border-danger border-5 " name="name" type="text"  [(ngModel)]="kinderGarden.name">
+      <input class="form-control col border border-danger border-5 " name="name" type="text"  [(ngModel)]="kinderGarden.Name">
       <label class="col " for="Id" >שם גן</label> 
     </div>
     <div class="row d-flex  p-5 justify-content-center ">
-        <span style="color: red;"
-        *ngIf="myForm.get('lastname').invalid && (myForm.get('lastname').dirty || myForm.get('lastname').touched || myForm.get('lastname').errors)">
-        <span *ngIf="myForm.get('lastname').errors.required">
-          שדה חובה
-        </span>
       <input class="form-control col border border-danger border-5 " name="year" type="number"  [(ngModel)]="kinderGarden.year">
       <label class="col-2 " for="Id" >שנת הקמת הגן</label>
       <input class="form-control col border border-danger border-5 " p name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">

@@ -1,31 +1,12 @@
-
+<nav class="bg-dark d-flex justify-content-between navbar">
+  <div id="divExit"><button class="btn btn-danger align-start m-1" (click)="Exit()">יציאה</button>
+  <button class="btn btn-success m-1" (click)="goToTeacherHomePage()">חזרה</button></div>
+  <div > <h3 style="color:red" class="font-weight-bold justify-self-center p-2"> ברוכים הבאים ל{{kinderGarden.Name}}</h3></div>
+</nav>
 <!--
-<div>
-<table thead-dark class="table">
-    <thead>
-        <tr>
-          <th><h3>ID</h3></th>&nbsp;
-          <th><h3>KINDER</h3></th>&nbsp;
-          <th><h3>Status Change</h3></th>&nbsp;
-          <th></th>
-        </tr>
-      </thead>
-   נוכחות ילדים איך עושים שהתמונות יצופו אחד ליד השני?
-  <tbody *ngFor="let LD of LiveDataList">
-    <tr>
-      <th>{{LD.IdChild}}</th>&nbsp;
-      <th>{{LD.KinderGardenCode}}</th>&nbsp;
-     <th > <button [ngStyle]="{'background-color': LD.Status==3 ? 'green':'red'}" (click)="changeStatusToArrived(LD.IdChild)" >Arrived</button></th>
-     <th> <button (click)="changeStatusToCconfirm(LD.IdChild)" >חיסור באישור</button></th>
-    </tr>
-  </tbody>
-</table>
-<button (click)="goToTeacherHomePage()">חזרה</button>
-</div>
- -->
  <nav class="bg-dark d-flex justify-content-center navbar m-3">
   <h3 style="color:red" class="font-weight-bold  p-2"> ברוכים הבאים ל{{kinderGarden.Name}}</h3>
- </nav>
+ </nav>-->
 <div id="d1" class="justify-content-center row" style="width:100vw">
 <div *ngFor="let c of listAttendances" class="   col-8 col-md-2 m-2">
   <div>

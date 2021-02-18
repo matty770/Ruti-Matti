@@ -36,7 +36,7 @@ export class FormUserComponent implements OnInit {
    // p.style.backgroundColor="red";
     if (this.kin.length > 0 && this.kin[0])
     {
-        for(var i=0;i<this.KinderGardenArray.length;i++)
+        for(var i=0;i<this.KinderGardenArray.length+1;i++)
         {
           if(this.KinderGardenArray[i]==this.kin[0])
           {

@@ -1,22 +1,9 @@
-<!--<h3>רשימת הגנים של {{user.FirstName}} {{user.LastName}} </h3>
-<button *ngIf="CUP=='2'||CUP=='4'" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button>
-<button *ngIf="CUP=='3'" (click)="addKinderGardenOfTeacher()">להוספת גן לגננת</button>&nbsp;
-<span *ngIf="add=='1'" [ngModel]="add" >
-  <label>בחר גן</label>
-<select placeholder="select a gan" name="KinderGardenCode"  [(ngModel)]="KinderGardenofTeacher" multiple>  
-  <option *ngFor="let k of ListAllKinderGarden"  [value]="k.IdKinderGarden"  >{{k.Name}}</option>
-</select>
-</span>-->
-<div >
-  <div>
-    <nav class="bg-dark d-flex justify-content-around navbar">
-      <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
-      <div><button class="btn btn-info"*ngIf="CUP=='2'||CUP=='4'" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button></div>
-      <h3 style="color:red">רשימת הגנים של {{user.FirstName}} {{user.LastName}} </h3>
-      <div><button class="btn btn-success" *ngIf="CUP=='3'" (click)="back()">חזרה</button></div>
-      
+    <nav class="bg-dark d-flex justify-content-between navbar">
+      <div id="divExit"><button class="btn btn-danger align-start m-1" (click)="Exit()">יציאה</button>
+        <button class="btn btn-success" *ngIf="CUP=='3'" (click)="back()">חזרה</button></div>
+        <div><button class="btn btn-info"*ngIf="CUP=='2'||CUP=='4'" (click)="toUpdateTeacherInfo()">לעדכון הפרטים שלי</button></div>
+      <div >  <h3 style="color:red">רשימת הגנים של {{user.FirstName}} {{user.LastName}} </h3>  </div>
     </nav>
-    </div>
    <!-- <button (click)="selectKinderGardensByTeacherId(hhh)">clickMe</button>-->
     <table class="table">
       <thead>
@@ -38,4 +25,3 @@
          </tr>
       </tbody>
     </table>
-  </div>

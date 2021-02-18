@@ -12,8 +12,7 @@ import { HttpParams } from '@angular/common/http';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit
- {
+export class LoginComponent implements OnInit{
  
   listUser:User[];
   permission: number;
@@ -28,20 +27,6 @@ export class LoginComponent implements OnInit
   //  this.userService.GetAllUsers().subscribe(data=>{this.listUser=data});
    // alert(this.listUser.length);
   }
-//Login(userId:string,FirstName:string,LastName:string)
-//{
-//this.userService.GetUser(userId,FirstName,LastName).subscribe(data=>{this.userService.user = data; 
-// if(this.userService.user.Permission==1)
-//   this.router.navigate(['/ChildrenForParent']);
-//   else if(this.userService.user.Permission==2)
-//          this.router.navigate(['/TeacherHomePage']);
-//          else if(this.userService.user.Permission==3)
-//                this.router.navigate(['/ManagerHomePage']);
-// }
-// )
-//
-//}
-
  Login(userId:string,FirstName:string,LastName:string)
  {
   localStorage.setItem("select","");
