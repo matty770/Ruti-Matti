@@ -44,8 +44,8 @@ export class AttendanceComponent implements OnInit {
     .subscribe( data=>{this.childrenList = data; });
   }
   ngOnInit() {
-    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
-    (data=>{this.listAttendances=data;alert(this.listAttendances.length);});
+    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).subscribe
+    (data=>{this.listAttendances=data;});
 
   //this.selectLiveDataByKinderGardenCode();
   //this.getChildsByKinderGarden();

@@ -10,7 +10,7 @@
 </nav>
 <div class="m-4">
   <br>
-  <table class="table" thead-dark>
+  <table class="table " thead-dark>
     <thead>
       <tr>
         <th></th>
@@ -23,8 +23,8 @@
     </thead>
     <tbody *ngFor="let child of children">
       <tr>
-        <th><button class="btn btn-info"  *ngIf="CUP=='1'" type="button" (click)="goToReport(child)">תזמון היעדרות</button>&nbsp;
-        <button class="btn btn-info"  *ngIf="CUP=='1'" (click)="goToDetails(child)">ערוך פרטים </button>
+        <th><button class="btn btn-dark"  *ngIf="CUP=='1'" type="button" (click)="goToReport(child)">תזמון היעדרות</button>&nbsp;
+        <button class="btn btn-dark"  *ngIf="CUP=='1'" (click)="goToDetails(child)">ערוך פרטים </button>
       </th>
         <th>{{child.Phone}}</th>&nbsp;
         <th>{{child.Address}}</th>&nbsp;      

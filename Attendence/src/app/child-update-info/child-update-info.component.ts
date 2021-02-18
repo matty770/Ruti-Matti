@@ -15,10 +15,11 @@ export class ChildUpdateInfoComponent implements OnInit {
 
   constructor(private router:Router, private childService:ChildService,private userService:UserService) { }
   child:Child=this.childService.child;
-  user:User=new User()
+  user:User=new User();
+  user2:User=new User();
   ngOnInit() {
     this.userService.selectUserByIdChild(this.child.Id).subscribe(
-      data=>{this.user = data});
+      data=>{this.user = data;});
   }
   UpdateChild(ChildrenUpdateForm)
   {

@@ -1,5 +1,4 @@
-<h3 class="d-flex font-weight-bold justify-content-center p-4"> ברוכים הבאים ל{{kinderGarden.Name}}</h3>
-<div id="d1" class="justify-content-center row">
+
 <!--
 <div>
 <table thead-dark class="table">
@@ -23,17 +22,24 @@
 </table>
 <button (click)="goToTeacherHomePage()">חזרה</button>
 </div>
--->
-<div *ngFor="let c of listAttendances" class="col-md-2 col-sm-8 m-2">
+ -->
+ <nav class="bg-dark d-flex justify-content-center navbar m-3">
+  <h3 style="color:red" class="font-weight-bold  p-2"> ברוכים הבאים ל{{kinderGarden.Name}}</h3>
+ </nav>
+<div id="d1" class="justify-content-center row" style="width:100vw">
+<div *ngFor="let c of listAttendances" class="   col-8 col-md-2 m-2">
   <div>
-  <div class="card">
-    <img [src]="'data:image/jpeg;base64,'+ c.pictureBase64" class="card-img-top" alt="no pic">
-    <div class="card-body">
-      <h5 class="card-title">{{c.FirstName}} {{c.LastName}}</h5>
-      <h6 class="card-title">{{c.Status}}</h6>
-      <button class="btn btn-success" (click)="changeStatusToArrived(c.Id)">הגיע</button>
+  <div class="card " style="background-color:rgb(54, 53, 53)">
+    <img [src]="'data:image/jpeg;base64,'+ c.pictureBase64" class="card-img-top rounded-circle" alt="no pic">
+    <div class="card-body justify-content-center" style="padding:0">
+      <h5 style="text-align:center!important; color:white;" class="card-title m-0">{{c.FirstName}} {{c.LastName}}</h5>
+      <h6 style="text-align:center!important; color:azure" class="card-title m-0">{{c.Status}}</h6>
+      <div class="row  justify-content-center row">
+      <button class="btn btn-danger m-1" (click)="changeStatusToArrived(c.Id)">הגיע</button>
+      <button class="btn btn-danger m-1" (click)="changeStatusToCconfirm(c.Id)">חסר באישור </button>
     </div>
-  </div>
+    </div>
+</div>
 </div>
 </div>
 </div>

@@ -133,8 +133,16 @@ namespace DAL
             List<CChildren> listCChildren = DChildrenManager.selectchildrenByKinderGardenCode(idKinderGarden);
                 foreach (var item in listCChildren)
                 {
-                    General.Attendance attendance = new General.Attendance(item.Id, item.FirstName, item.LastName, item.pictureBase64, General.Statuses.NonPresent);
+                if (item.picture != null)
+                {
+                    General.Attendance attendance = new General.Attendance(item.Id, item.FirstName, item.LastName, Convert.ToBase64String(item.picture), General.Statuses.NonPresent);
                     listAttendances.Add(attendance);
+                }
+                else
+                {
+                    General.Attendance attendance = new General.Attendance(item.Id, item.FirstName, item.LastName, null, General.Statuses.NonPresent);
+                    listAttendances.Add(attendance);
+                }
                 }
                 foreach (var item in listCFuture)
                 {

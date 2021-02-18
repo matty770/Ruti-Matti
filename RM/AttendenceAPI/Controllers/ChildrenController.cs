@@ -22,9 +22,17 @@ namespace AttendenceAPI.Controllers
         {
             try
             {
-                List<CChildren> lc = new List<CChildren>();
-                lc = BChildrenManager.selectChildrenByParentId(ParentId);
-                return lc;
+                //List<CChildren> lc = new List<CChildren>();
+               // lc = BChildrenManager.selectChildrenByParentId(ParentId);
+                var children = BChildrenManager.selectChildrenByParentId(ParentId);
+                foreach (var child in children)
+                {
+                    if (child.picture != null)
+                    {
+                        child.pictureBase64 = Convert.ToBase64String(child.picture);
+                    }
+                }
+                return children;
             }
             catch (Exception)
             {
