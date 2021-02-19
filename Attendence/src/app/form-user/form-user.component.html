@@ -1,37 +1,75 @@
 <nav class="bg-dark d-flex justify-content-center navbar">
-  <div id="divExit"><button class="btn btn-danger align-start" (click)="Exit()">יציאה</button></div>
-  <div><a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active m-1" >דף הבית</a></div>
-  <div><a routerLink="/ListOfKinderGarden" class="btn btn-info m-1">הצג גני ילדים</a></div>
-  <div><a routerLink="/ListOfChildren" class="btn btn-info m-1">הצג ילדים</a></div>
-  <div><a routerLink="/ListOfParent" class="btn btn-info m-1">הצג הורים</a></div>
-  <div><a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a></div>
+  <div id="divExit">
+    <button class="btn btn-danger align-start" (click)="Exit()">יציאה</button>
+  </div>
+  <div>
+    <a routerLink="/ManagerHomePage" class="btn btn-info btn-md nav-item active m-1">דף הבית</a>
+  </div>
+  <div>
+    <a routerLink="/ListOfKinderGarden" class="btn btn-info m-1">הצג גני ילדים</a>
+  </div>
+  <div>
+    <a routerLink="/ListOfChildren" class="btn btn-info m-1">הצג ילדים</a>
+  </div>
+  <div>
+    <a routerLink="/ListOfParent" class="btn btn-info m-1">הצג הורים</a>
+  </div>
+  <div>
+    <a routerLink="/ListOfTeachers" class="btn btn-info m-1">הצג גננות</a>
+  </div>
 </nav>
 
-<div class="d-flex justify-content-center m-4" ><h2>הוספת גננת</h2></div>
-<div class=" d-flex justify-content-center align-items-center container-fluid " >
-<form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" class="col-10 justify-content-center " >
-  <div class="row d-flex  p-5" >  
-    <input class="form-control col border-danger border-5 " name="LastName" type="text" [(ngModel)]="user.LastName" required >
-    <label class="col"  for="LastName"> שם משפחה</label>
-    <input class="form-control col border-danger border-5" name="FirstName" type="text" [(ngModel)]="user.FirstName"  required >
-    <label class="col"   for="FirstName"> שם פרטי</label> 
-    <input class="form-control col border border-danger border-5 " Id="idU" name="Id" type="text"  [(ngModel)]="user.Id" required >
-    <label class="col " for="Id" >מספר זהות</label> 
-  </div>
-  <div class="d-flex row p-5">
-    <input class="form-control col border-danger border-5" name="MailAddress" type="email" [(ngModel)]="user.MailAddress" required  ><br>
-    <label for="MailAddress" class="col" >כתובת דוא"ל</label>
-    <input class="form-control col border-danger border-5" name="Address" type="text" [(ngModel)]="user.Address" required  >
-    <label class="col" for="Address" >כתובת</label>
-    <input class="form-control col border-danger border-5 " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask required  >
-    <label for="PhoneNum" class="col" >פלאפון</label>
-  </div>
-  <div class="row d-flex justify-content-center">
-  <select  multiple class="form-control col border-danger border-5" style="height: 100px;" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)" name="KinderGardenCode"  >
-      <option id="d" *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" (mousedown)="changeStyle(k.IdKinderGarden)"  [ngStyle]="{'background-color':id==k.IdKinderGarden?'red':'green'}"  >{{k.Name}}</option>
-    </select><br>
-    <label class="col-1"   for="KinderGardenCode">בחר גן</label>
-  </div>
-  <button class="btn btn-dark p-y-5 m-5" type="submit"><h6>הוסף</h6></button>
+<div class="d-flex justify-content-center m-4">
+  <h2>הוספת גננת</h2>
+</div>
+<div class=" d-flex justify-content-center align-items-center container-fluid ">
+  <form #UserForm="ngForm" (ngSubmit)="addUser(UserForm)" class="col-10 justify-content-center ">
+    <div class="row d-flex  p-5">
+      <div>
+      <input class="form-control col border-danger border-5 " #lastName="ngModel" name="LastName" type="text" [(ngModel)]="user.LastName" required>
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger p-0">
+          <div *ngIf="lastName.errors.required">
+          שדה זה אינו יכול להיות ריק 
+          </div>
+      </div>
+    </div>
+      <label class="col" for="LastName"> שם משפחה</label>
+      <input class="form-control col border-danger border-5" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+      <label class="col" for="FirstName"> שם פרטי</label>
+      <input class="form-control col border border-danger border-5 " Id="idU" name="Id" type="text" [(ngModel)]="user.Id" required>
+      <label class="col " for="Id">מספר זהות</label>
+    </div>
+    <div class="d-flex row p-5">
+      <div>
+      <input class="form-control col border-danger border-5" #mailAddress="ngModel" name="MailAddress" type="email" [(ngModel)]="user.MailAddress"
+      required pattern="[^A-Za-z]+" >
+          <div *ngIf="mailAddress.invalid && (mailAddress.dirty || mailAddress.touched)" class="alert alert-danger p-0">
+              <div *ngIf="mailAddress.errors.required">
+              שדה זה אינו יכול להיות ריק 
+              </div>
+              <div *ngIf="mailAddress.errors.pattern">
+                שדה אינו חוקי
+              </div>
+            </div>
+      </div>
+      <label for="MailAddress" class="col">כתובת דוא"ל</label>
+      <input class="form-control col border-danger border-5" name="Address" type="text" [(ngModel)]="user.Address" required>
+      <label class="col" for="Address">כתובת</label>
+      <input class="form-control col border-danger border-5 " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask
+        required>
+      <label for="PhoneNum" class="col">פלאפון</label>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <select multiple class="form-control col border-danger border-5" style="height: 100px;" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)"
+        name="KinderGardenCode">
+        <option id="d" *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" (mousedown)="changeStyle(k.IdKinderGarden)"
+          [ngStyle]="{'background-color':id==k.IdKinderGarden?'red':'green'}">{{k.Name}}</option>
+      </select>
+      <br>
+      <label class="col-1" for="KinderGardenCode">בחר גן</label>
+    </div>
+    <button class="btn btn-dark p-y-5 m-5" type="submit">
+      <h6>הוסף</h6>
+    </button>
   </form>
 </div>

@@ -129,33 +129,26 @@ namespace DAL
         public static List<General.Attendance> copyToAttendace(int idKinderGarden)
         {
             List<General.Attendance> listAttendances = new List<General.Attendance>();
-            List<CFutureData> listCFuture = DFutureDataManager.selectByToday();
-            List<CChildren> listCChildren = DChildrenManager.selectchildrenByKinderGardenCode(idKinderGarden);
-                foreach (var item in listCChildren)
+            List<CLiveData> listLiveData = selectLiveDataByKinderGardenCode(idKinderGarden);
+           // List<CFutureData> listCFuture = DFutureDataManager.selectByToday();
+         List<CChildren> listCChildren = DChildrenManager.selectchildrenByKinderGardenCode(idKinderGarden);
+            foreach (var item in listLiveData)
+            {
+                foreach(var item2 in listCChildren)
                 {
-                if (item.picture != null)
-                {
-                    General.Attendance attendance = new General.Attendance(item.Id, item.FirstName, item.LastName, Convert.ToBase64String(item.picture), General.Statuses.NonPresent);
-                    listAttendances.Add(attendance);
-                }
-                else
-                {
-                    General.Attendance attendance = new General.Attendance(item.Id, item.FirstName, item.LastName, null, General.Statuses.NonPresent);
-                    listAttendances.Add(attendance);
-                }
-                }
-                foreach (var item in listCFuture)
-                {
-                    int i = 0;
-                    foreach (var item2 in listAttendances)
-                    {
-                        if (item.IdChild.Equals(item2.Id))
+                    if(item.IdChild.Equals(item2.Id))
+                        if(item2.picture != null)
                         {
-                            listAttendances[i].Status = item.Status; 
+                          General.Attendance attendance = new General.Attendance(item2.Id, item2.FirstName, item2.LastName, Convert.ToBase64String(item2.picture), item.Status);
+                          listAttendances.Add(attendance);
                         }
-                        i++;
-                    }
+                    else
+                        {
+                            General.Attendance attendance = new General.Attendance(item2.Id, item2.FirstName, item2.LastName, null, item.Status);
+                            listAttendances.Add(attendance);
+                        }  
                 }
+            }
             return listAttendances;
         }
         public static List<CLiveData> selectLiveIsNonPresent()
@@ -181,7 +174,7 @@ namespace DAL
             int newStatus = Mapper.StatusEnumToInt(status);
             using (NDBEntities db = new NDBEntities())
             {
-                l = db.LiveData.First(d => d.IdChild == idChild);
+                l = db.LiveData.First(d => d.IdChild .Equals( idChild));
                 l.Status = newStatus;
                 //  l= db.LiveData.Find(idChild);
                 db.SaveChanges();

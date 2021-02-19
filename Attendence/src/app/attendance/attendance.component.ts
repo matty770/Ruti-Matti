@@ -44,8 +44,10 @@ export class AttendanceComponent implements OnInit {
     .subscribe( data=>{this.childrenList = data; });
   }
   ngOnInit() {
-    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).subscribe
-    (data=>{this.listAttendances=data;});
+    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
+    (data=>{this.listAttendances=data;
+    if(this.listAttendances.length==0)
+     alert("הצגת הנוכחות היא בשעות הגן בלבד")});
 
   //this.selectLiveDataByKinderGardenCode();
   //this.getChildsByKinderGarden();
@@ -66,10 +68,15 @@ export class AttendanceComponent implements OnInit {
   changeStatusToArrived(idChild:string)
   {
     this.liveDataService.ChangeStatus(idChild,Statuses.Present);
+    alert("ffff");
+    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
+    (data=>{this.listAttendances=data;});
   }
   changeStatusToCconfirm(idChild:string)
   {
     this.liveDataService.ChangeStatus(idChild,Statuses.Confirm);
+    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
+    (data=>{this.listAttendances=data;});
   }
  
   goToTeacherHomePage(){

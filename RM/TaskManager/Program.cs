@@ -73,12 +73,13 @@ namespace TaskManager
         static void Main(string[] args)
         {
 
+            BLiveDataManager.copyChildrenToLiveData();
+            BLiveDataManager.copyFutureToLivaData();
 
-
-            Console.WriteLine("eeee");
-            Console.ReadLine();
+           // Console.WriteLine("eeee");
+           // Console.ReadLine();
             //BLL.BLiveDataManager.copyChildrenToLiveData();
-            Tasks();
+            //Tasks();
         }
 
     }

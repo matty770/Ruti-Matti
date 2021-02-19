@@ -73,7 +73,13 @@ export class FormUserComponent implements OnInit {
   //  }
   //  else alert("תעודת זהות אינה תקינה, נסה שוב")  
   //}
-  addUser(UserForm) {
+  addUser(UserForm: NgForm) {
+    if(!UserForm.valid){
+        (<any>Object).keys( UserForm.controls).forEach(key => {
+          UserForm.controls[key].markAsDirty();
+        });
+      return;
+    }
     alert(this.KinderGardenArray.length);
     //alert(this.KinderGardenArray.length+"כמות הגנים");
     if (isIsraeliIdValid(this.user.Id) == true) {
