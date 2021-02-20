@@ -48,10 +48,10 @@ namespace BLL
             {
                 HttpClient client = new HttpClient();
                 //Define the Required Variables
-                string key = "7vYa2efTp";
-                string user = "0533141893";
-                string pass = "62577475";
-                string sender = "Test";
+                string key = "QU1fOvjx0";
+                string user = "0533188452";
+                string pass = "22385404";
+                string sender = "Gan";
                 string recipient = phoneNum;
                 string msg = " הודעה דחופה מהגן של " + fName +" ,"+fName + " לא הופיע/ה בגן צרו קשר דחוף עם הגננת להפסקת ההודעה ";
                 var values = new Dictionary<string, string>

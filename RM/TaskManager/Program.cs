@@ -16,7 +16,7 @@ namespace TaskManager
         {
            
             Console.WriteLine("start task");
-            if (DateTime.Now.Hour >= 8 && DateTime.Now.Hour <= 23)
+            if (DateTime.Now.Hour >= 8 && DateTime.Now.Hour <= 13)
             {
                 Console.WriteLine("start scheduler, the time is currect");
                 List<CLiveData> listLiveData = new List<CLiveData>();
@@ -38,7 +38,7 @@ namespace TaskManager
 
             }
 
-          if (DateTime.Now.Hour == 22 && DateTime.Now.Minute<=15)
+          if (DateTime.Now.Hour == 00 && DateTime.Now.Minute<=15)
           {
               BLiveDataManager.removeAllLiveData();
               BLiveDataManager.copyChildrenToLiveData();
