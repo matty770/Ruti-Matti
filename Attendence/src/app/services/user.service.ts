@@ -69,8 +69,7 @@ GetAllUsers():Observable<User[]>
   {
     alert(" in service");
     teacher.KinderGardens = KGCodeList;
-   this.http.post('Teacher/addTeacher',teacher).subscribe
-    (res=>{alert("הגננת נכנסה למערכת בהצלחה")},error=>{alert("ארע תקלה בהכנסת הנתונים")});
+   return this.http.post('Teacher/addTeacher',teacher)
 
   }
 }

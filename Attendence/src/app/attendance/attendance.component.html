@@ -17,7 +17,7 @@
       <h6 style="text-align:center!important; color:azure" class="card-title m-0">{{c.Status}}</h6>
       <div class="row  justify-content-center row">
       <button class="btn btn-danger m-1 p-1" (click)="changeStatusToArrived(c.Id)" [ngClass]="{'disabled' : c.Status==3||c.Status==6}" >הגיע</button>
-      <button class="btn btn-danger m-1 p-1" (click)="changeStatusToCconfirm(c.Id)" [ngClass]="{'disabled' :c.Status==3||c.Status==6}" >חסר באישור </button>
+      <button class="btn btn-success m-1 p-1" (click)="changeStatusToCconfirm(c.Id)" [ngClass]="{'disabled' :c.Status==3||c.Status==6}" >מאושר</button>
     </div>
     </div>
 </div>

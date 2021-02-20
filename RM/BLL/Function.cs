@@ -23,8 +23,8 @@ namespace BLL
 
                 mail.From = new MailAddress("attendanceforstudent@gmail.com");
                 mail.To.Add(addressMail);
-                mail.Subject = " הודעה דחופה מהגן של"+nameChild;
-                mail.Body = nameChild +"לא הגיעה לגן בדקו את הענין וצרו קשר עם הגננת!!!!";
+                mail.Subject = " הודעה דחופה מהגן של "+nameChild;
+                mail.Body = nameChild +" לא הופיע/ה בגן צרו קשר דחוף עם הגננת להפסקת ההודעה ";
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("attendanceforstudent@gmail.com", "0533141893");
@@ -38,7 +38,6 @@ namespace BLL
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                throw ex;
                 // MessageBox.Show(ex.ToString());
                 /////////////
             }
@@ -54,7 +53,7 @@ namespace BLL
                 string pass = "62577475";
                 string sender = "Test";
                 string recipient = phoneNum;
-                string msg = "הודעת חרום מהגן של " + fName + "!" + " " + fName + " .לא הגיעה לגן. צרו קשר מיידי עם הגננת";
+                string msg = " הודעה דחופה מהגן של " + fName +" ,"+fName + " לא הופיע/ה בגן צרו קשר דחוף עם הגננת להפסקת ההודעה ";
                 var values = new Dictionary<string, string>
             {
                 { "key", key }, { "user", user },{ "pass", pass },
@@ -96,7 +95,7 @@ namespace BLL
         {
             string fname = DChildrenManager.selectchildrenById(liveData.IdChild).FirstName;
             sendmail(DUsersManager.selectUserByIdChild(liveData.IdChild).mailAddress,fname);
-            sendMessage(DUsersManager.selectUserByIdChild(liveData.IdChild).PhoneNum,fname);
+          //  sendMessage(DUsersManager.selectUserByIdChild(liveData.IdChild).PhoneNum,fname);
            // DLiveDataManager.ChangeStatus(liveData.IdChild, General.Statuses.Sent);
 
 

@@ -42,7 +42,7 @@
     <div class="d-flex row p-5">
       <div>
       <input class="form-control col border-danger border-5" #mailAddress="ngModel" name="MailAddress" type="email" [(ngModel)]="user.MailAddress"
-      required pattern="[^A-Za-z]+" >
+      required  >
           <div *ngIf="mailAddress.invalid && (mailAddress.dirty || mailAddress.touched)" class="alert alert-danger p-0">
               <div *ngIf="mailAddress.errors.required">
               שדה זה אינו יכול להיות ריק 

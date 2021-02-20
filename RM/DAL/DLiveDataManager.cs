@@ -100,7 +100,13 @@ namespace DAL
                 foreach (var item in listCChildren)
                 {
                     TimeSpan tt = (DKinderGardenManager.selectKinderByCode(item.KinderGardenCode).BeginingHour);
-                    CLiveData d = new CLiveData(item.Id, item.KinderGardenCode, DateTime.Now, General.Statuses.NonPresent, DateTime.Today, "fffff", tt, null);
+                    TimeSpan tt1;
+                    if (tt.Minutes < 30)
+                    {
+                        tt1 = new TimeSpan(tt.Hours, tt.Minutes + 30, tt.Seconds);
+                    }
+                    else { tt1 = new TimeSpan(tt.Hours + 1, tt.Minutes - 30, tt.Seconds); }
+                    CLiveData d = new CLiveData(item.Id, item.KinderGardenCode, DateTime.Now, General.Statuses.NonPresent, DateTime.Today, "fffff", tt1, null);
                     db.LiveData.Add(Mapper.convertToLiveData(d));
                     db.SaveChanges();
                 }
@@ -179,6 +185,20 @@ namespace DAL
                 //  l= db.LiveData.Find(idChild);
                 db.SaveChanges();
 
+            }
+        }
+        public static void removeAllLiveData()
+        {
+            List<LiveData> listLiveData = new List<LiveData>();
+            using (NDBEntities db = new NDBEntities())
+            {
+                listLiveData = (from x in db.LiveData
+                                select x).ToList();
+                foreach (var item in listLiveData)
+                {
+                    db.LiveData.Remove(item);
+                    db.SaveChanges();
+                }
             }
         }
     }

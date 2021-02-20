@@ -38,7 +38,8 @@ export class ChildReportComponent implements OnInit {
   }
   removeFutureData(futureData:FutureData)
   {
-    this.futureDataService.removeFutureData(futureData);
+    this.futureDataService.removeFutureData(futureData).toPromise().then((res)=>{
+      this.rout.navigate(['/ChildrenForParent'])},error =>{console.log(error)});
   }
   goToChildernOfParent()
     {

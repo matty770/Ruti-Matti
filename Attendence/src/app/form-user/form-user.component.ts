@@ -80,19 +80,12 @@ export class FormUserComponent implements OnInit {
         });
       return;
     }
-    alert(this.KinderGardenArray.length);
-    //alert(this.KinderGardenArray.length+"כמות הגנים");
     if (isIsraeliIdValid(this.user.Id) == true) {
       this.user.Active = 1;
       this.user.Permission = this.userService.user.Permission;
       if (this.user.Permission == 2) {
-        alert("גננת הוספת ");
-        //  this.KinderGardenArray.forEach(element => {
-        //  this.kinderGardenService.GetKinderGarden(element).subscribe(data=>{
-        //  this.kinderGardenListOfTeacher.push(data) });    
-
-        // });
-        this.userService.addTeacher(this.KinderGardenArray, this.user);
+        this.userService.addTeacher(this.KinderGardenArray, this.user).toPromise().then((res) =>{
+        this.router.navigate(['/ListOfTeachers'])},error =>{alert("ארע תקלה בהכנסת הנתונים")});
       }
       else {
         this.userService.addUser(this.user);

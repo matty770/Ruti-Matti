@@ -47,10 +47,8 @@ export class FormFutureDataComponent implements OnInit {
   //  do
   // {
     //this.futureData.Date.setDate(this.futureData.Date.getDate()-this.days-i);
-    this.futureDataService.addFutureData(this.futureData);
-  // } while( i<this.days );
-    FutureDataForm.reset();
-    this.GoBack();
+    this.futureDataService.addFutureData(this.futureData).toPromise().then((res) =>
+    {this.router.navigate(['/ChildReport'])},error=>{alert("ארע תקלה בהכנסת הנתונים")});
   }
   GoBack()
   {

@@ -27,7 +27,7 @@ namespace AttendenceAPI.Controllers
         }
         [HttpPost]
         [Route("api/FutureData/updateFutureData")]
-        public void updateFutureData(int x, [FromBody]CFutureData futureData)
+        public void updateFutureData([FromBody]CFutureData futureData)
         {
             BFutureDataManager.updateFutureData(futureData);
         }

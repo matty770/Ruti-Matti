@@ -24,9 +24,7 @@ selectKinderGardensByTeacherId(TeacherId:string): Observable <KinderGarden[]>
     
     addKinderGarden(kinderGarden:KinderGarden)
     {
-     this.http.post('KinderGarden/addKinderGarden',kinderGarden)
-      .subscribe(res=>{ alert(res) //console.log(res)//
-      });
+    return this.http.post('KinderGarden/addKinderGarden',kinderGarden)
       
     }
     GetAllKinderGarden(): Observable<KinderGarden[]>

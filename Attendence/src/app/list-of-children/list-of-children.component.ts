@@ -35,12 +35,15 @@ select:string;
   {
    if(confirm("הנך בטוח שאתה רוצה להפוך ילד זה ללא פעיל?")==true)
    {
-     this.childServive.changeToNotActive(childId).toPromise().then(data=>{this.bool=data});
-     if(this.bool==true)
-     {
-       alert("הפעולה בוצעה בהצלחה");
-     }
-     else alert(this.bool);
+     this.childServive.changeToNotActive(childId).toPromise().then(data=>{this.bool=data;
+      if(this.bool==true)
+      {
+        alert("הפעולה בוצעה בהצלחה");
+        this.GetAllChildrens();
+      }
+      else alert(this.bool); 
+    });
+
    } 
   }
   Exit()

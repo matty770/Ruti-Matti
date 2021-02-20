@@ -15,8 +15,7 @@ export class LiveDateService {
   }
   ChangeStatus(idChild:string,status:Statuses)
   {
-      this.http.post('LiveData/ChangeStatus?idChild='+idChild,status).subscribe(res=>{ 
-     });
+     return this.http.post('LiveData/ChangeStatus?idChild='+idChild,status)
   }
   copyToAttendance(idKinderGarden:number):Observable<Attendance[]>
   {

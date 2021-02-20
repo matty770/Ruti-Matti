@@ -67,10 +67,11 @@ export class AttendanceComponent implements OnInit {
   
   changeStatusToArrived(idChild:string)
   {
-    this.liveDataService.ChangeStatus(idChild,Statuses.Present);
-    alert("ffff");
-    this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
-    (data=>{this.listAttendances=data;});
+    this.liveDataService.ChangeStatus(idChild,Statuses.Present).toPromise().then((res) => {
+      this.liveDataService.copyToAttendance(this.kinderGarden.IdKinderGarden).toPromise().then
+      (data=>{this.listAttendances=data;});
+    });
+
   }
   changeStatusToCconfirm(idChild:string)
   {
@@ -81,6 +82,10 @@ export class AttendanceComponent implements OnInit {
  
   goToTeacherHomePage(){
     this.router.navigate(['/TeacherHomePage']);
+  }
+  Exit()
+  {
+    this.router.navigate(['/']);
   }
   
 }

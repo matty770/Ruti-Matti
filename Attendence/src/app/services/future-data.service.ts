@@ -19,9 +19,7 @@ export class FutureDataService {
 
   addFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData/addFutureData',futureData)
-    .subscribe(res=>{ //alert(res) //console.log(res)//
-    });
+    return this.http.post('FutureData/addFutureData',futureData);
   }
   updateFutureData(futureData:FutureData)
   {
@@ -29,6 +27,6 @@ export class FutureDataService {
   }
   removeFutureData(futureData:FutureData)
   {
-    this.http.post('FutureData/removeFutureData',futureData).subscribe(res=>{alert(res)});
+    return this.http.post('FutureData/removeFutureData',futureData);
   }
 }

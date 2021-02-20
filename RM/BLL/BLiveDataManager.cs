@@ -55,5 +55,9 @@ namespace BLL
         {
             return DLiveDataManager.copyToAttendace(idKinderGarden);
         }
+        public static void removeAllLiveData()
+        {
+            DLiveDataManager.removeAllLiveData();
+        }
     }
 }
