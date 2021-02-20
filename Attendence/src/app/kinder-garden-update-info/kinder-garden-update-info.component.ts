@@ -20,7 +20,7 @@ export class KinderGardenUpdateInfoComponent implements OnInit {
     
    this.kinderGardenService.updateKinderGarden(this.kinderGarden);
   // .subscribe(data=>{this.kinderGarden = data;})
-    alert(this.kinderGarden.Phone);
+   // alert(this.kinderGarden.Phone);
   }
 
   Exit()

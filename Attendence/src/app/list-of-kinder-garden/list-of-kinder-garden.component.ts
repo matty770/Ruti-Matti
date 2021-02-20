@@ -36,7 +36,7 @@ select:string="";
   goToDetails(kinderGarden:KinderGarden)
   {
     this.kinderGardenService.kinderGarden=kinderGarden;
-    this.router.navigate(['KinderGardenUpdateInfo',"ListOfKinderGarden"]);
+    this.router.navigate(['KinderGardenUpdateInfo']);
   }
   goToChildrenForKinderGarden(kinderGarden:KinderGarden)
   {

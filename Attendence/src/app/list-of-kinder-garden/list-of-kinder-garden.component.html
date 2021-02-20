@@ -20,7 +20,7 @@
   </thead>
   <tbody *ngFor="let kinderGarden of listKinderGarden">
     <tr>
-      <th><button class="btn btn-info" *ngIf="CUP=='2'" (click)="goToDetails(kinderGarden)">עדכון פרטי גן</button></th>
+      <th><button class="btn btn-info" *ngIf="CUP=='3'" (click)="goToDetails(kinderGarden)">עדכון פרטי גן</button></th>
       <th><button class="btn btn-info" (click)="goToChildrenForKinderGarden(kinderGarden)">לרשימת הילדים</button></th>
       <th>{{kinderGarden.Phone}}</th>&nbsp;
       <th>{{kinderGarden.Address}}</th>&nbsp;     

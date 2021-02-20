@@ -1,10 +1,19 @@
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <button class="btn btn-danger" (click)="Exit()">יציאה</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    <li class="nav-item">
+       <h3> עידכון פרטי גן</h3>
+    </li>   
+  </ul>
+</nav>
 <div>
-  <form #KinderGardenUpdateForm="ngForm" (ngSubmit)="UpdateKinderGarden(KinderGardenUpdateForm)">
-    <input name="Name" type="text"  value={{kinderGarden.Name}} disabled >name kinder garden  <br>
-    <input name="Address" type="text" value={{kinderGarden.Address}} [(ngModel)]="kinderGarden.Address">addres  <br>
-    <input name="Phone" type="text" value={{kinderGarden.Phone}} [(ngModel)]="kinderGarden.Phone">phone  <br>
-  <input name="BeginingHour" type="text" value={{kinderGarden.BeginingHour}} [(ngModel)]="kinderGarden.BeginingHour">Begining Hour  <br>
-    <button type="submit">עדכן</button>
+  <form class="form" #KinderGardenUpdateForm="ngForm" (ngSubmit)="UpdateKinderGarden(KinderGardenUpdateForm)"><br>
+   שם גן<input class="form-control" name="Name" type="text"  value={{kinderGarden.Name}} disabled>  <br>
+     כתובת<input class="form-control" name="Address" type="text" value={{kinderGarden.Address}} [(ngModel)]="kinderGarden.Address"><br>
+    פל/טלפון<input class="form-control" name="Phone" type="text" value={{kinderGarden.Phone}} [(ngModel)]="kinderGarden.Phone"><br>
+    שעת תחילת הגן<input class="form-control" name="BeginingHour" type="text" value={{kinderGarden.BeginingHour}} [(ngModel)]="kinderGarden.BeginingHour"><br>
+    <button class="btn btn-dark" type="submit">עדכן</button>
   </form>
-  <button class="btn btn-dark" (Click)="GoBack()" ></button>
 </div>

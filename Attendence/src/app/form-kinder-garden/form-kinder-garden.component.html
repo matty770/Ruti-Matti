@@ -12,7 +12,7 @@
 <form #kinderGardenForm="ngForm" (ngSubmit)="addKinderGarden(kinderGardenForm)" class="col-10 justify-content-center">
     <div class="row d-flex  p-5">
       <input class="form-control col border border-danger border-5 " name="phone" type="text"  [(ngModel)]="kinderGarden.phone">
-      <label class="col " for="Id" >טלפון</label> 
+      <label class="col " for="Id" appPhoneMask>טלפון</label> 
       <input class="form-control col border border-danger border-5 " name="Address" type="text"  [(ngModel)]="kinderGarden.Address">
       <label class="col " for="Id" >כתובת</label> 
       <input class="form-control col border border-danger border-5 " name="name" type="text"  [(ngModel)]="kinderGarden.Name">
@@ -21,7 +21,7 @@
     <div class="row d-flex  p-5 justify-content-center ">
       <input class="form-control col border border-danger border-5 " name="year" type="number"  [(ngModel)]="kinderGarden.year">
       <label class="col-2 " for="Id" >שנת הקמת הגן</label>
-      <input class="form-control col border border-danger border-5 " p name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">
+      <input class="form-control col border border-danger border-5 " name="beginigHour" type="text" [(ngModel)]="kinderGarden.beginingHour">
       <label class="col-2 " for="Id" >שעת תחילת הגן</label>
      
     </div>
