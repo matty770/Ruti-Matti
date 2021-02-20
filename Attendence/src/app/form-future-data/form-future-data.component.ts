@@ -30,8 +30,8 @@ export class FormFutureDataComponent implements OnInit {
     this.futureData.KinderGardenCode=this.futureDataService.futureData.KinderGardenCode;
     switch(this.ST)
     {
-    case "1": this.futureData.Status=Statuses.Late;
-    case "2": this.futureData.Status=Statuses.NonPresent;
+    case "1": this.futureData.Status=Statuses.Late; break;
+    case "2": this.futureData.Status=Statuses.Absent;
     };
  // var date1 = new Date(); 
    //var date2 = new Date("07/30/2019"); 
