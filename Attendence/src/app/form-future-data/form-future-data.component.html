@@ -7,25 +7,60 @@
   <form class="col-10 justify-content-center" #FutureDataForm="ngForm" (ngSubmit)="addFutureData(FutureDataForm)">
     <div class="row d-flex justify-content-center  p-4">
       <div class="row d-flex " *ngIf="ST==1"  >
-        <input class="form-control col border border-danger border-5 " name="Alarm" type="time"  [(ngModel)]="futureData.Alarm">
+        <div>
+        <input class="form-control col border border-danger border-5 " #alarm="ngModel" name="Alarm" type="time"  [(ngModel)]="futureData.Alarm" required>
+        <div *ngIf="alarm.invalid && (alarm.dirty || alarm.touched)" class="alert alert-danger p-0">
+            <div *ngIf="alarm.errors.required">
+            שדה זה אינו יכול להיות ריק 
+            </div>
+        </div>
+      </div>
         <label class="col " for="Id" >שעת הגעה</label> 
       </div>
-      <select class="form-control col border border-danger border-5 " name="Status" [(ngModel)]="ST">
+      <div>
+      <select class="form-control col border border-danger border-5 " #status="ngModel" name="Status" [(ngModel)]="ST" required>
         <option value="1">איחור</option>
         <option value="2">חיסור</option>
       </select>
+      <div *ngIf="status.invalid && (status.dirty || status.touched)" class="alert alert-danger p-0">
+          <div *ngIf="status.errors.required">
+          שדה זה אינו יכול להיות ריק 
+          </div>
+      </div>
+    </div>
       <label class="col " for="Id" >סטטוס</label>
-      <input class="form-control col border border-danger border-5 " name="idChild" [(ngModel)]="idChild" >
+      <div>
+      <input class="form-control col border border-danger border-5 " #idC="ngModel" name="idChild" [(ngModel)]="idChild" required >
+      <div *ngIf="idC.invalid && (idC.dirty || idC.touched)" class="alert alert-danger p-0">
+          <div *ngIf="idC.errors.required">
+          שדה זה אינו יכול להיות ריק 
+          </div>
+      </div>
+    </div>
       <label class="col " for="Id" >מ.ז ילד</label> 
     </div>
     <div class="row d-flex justify-content-center p-4">
-      <input class="form-control col border border-danger border-5 " name="Date" type="date" [(ngModel)]="futureData.Date" >
+      <div>
+      <input class="form-control col border border-danger border-5 " #date="ngModel" name="Date" type="date" [(ngModel)]="futureData.Date" required >
+      <div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger p-0">
+          <div *ngIf="date.errors.required">
+          שדה זה אינו יכול להיות ריק 
+          </div>
+      </div>
+    </div>
       <label class="col " for="Id" >תאריך העדרות</label> 
      <!-- <div class="row d-flex justify-content-center" *ngIf="ST==2" style="background-color:bisque" >
       <input class="form-control col border border-danger border-5 " name="Date" type="date" [(ngModel)]="date2" >
       <label class="col " for="Id" >עד לתאריך</label> 
       </div>-->
-      <input class="form-control col border border-danger border-5 " name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy">
+      <div>
+      <input class="form-control col border border-danger border-5 " #updateBy="ngModel" name="UpdateBy" type="text" [(ngModel)]="futureData.UpdateBy" required>
+      <div *ngIf="updateBy.invalid && (updateBy.dirty || updateBy.touched)" class="alert alert-danger p-0">
+          <div *ngIf="updateBy.errors.required">
+          שדה זה אינו יכול להיות ריק 
+          </div>
+      </div>
+    </div>
       <label class="col " for="Id" >עודכן ע"י</label>
       <input class="form-control col border border-danger border-5 " name="Comments" type="text" [(ngModel)]="futureData.Comments">
       <label class="col " for="Id" >הערות</label>

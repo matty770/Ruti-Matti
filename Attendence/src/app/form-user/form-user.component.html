@@ -34,9 +34,23 @@
       </div>
     </div>
       <label class="col" for="LastName"> שם משפחה</label>
-      <input class="form-control col border-danger border-5" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+      <div>
+      <input class="form-control col border-danger border-5" #firstName="ngModel" name="FirstName" type="text" [(ngModel)]="user.FirstName" required>
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger p-0">
+        <div *ngIf="firstName.errors.required">
+        שדה זה אינו יכול להיות ריק 
+        </div>
+    </div>
+  </div>
       <label class="col" for="FirstName"> שם פרטי</label>
-      <input class="form-control col border border-danger border-5 " Id="idU" name="Id" type="text" [(ngModel)]="user.Id" required>
+      <div>
+      <input class="form-control col border border-danger border-5 " #IdU="ngModel" Id="idU" name="Id" type="text" [(ngModel)]="user.Id" required>
+      <div *ngIf="IdU.invalid && (IdU.dirty || IdU.touched)" class="alert alert-danger p-0">
+        <div *ngIf="IdU.errors.required">
+        שדה זה אינו יכול להיות ריק 
+        </div>
+    </div>
+    </div>
       <label class="col " for="Id">מספר זהות</label>
     </div>
     <div class="d-flex row p-5">
@@ -47,23 +61,38 @@
               <div *ngIf="mailAddress.errors.required">
               שדה זה אינו יכול להיות ריק 
               </div>
-              <div *ngIf="mailAddress.errors.pattern">
-                שדה אינו חוקי
-              </div>
-            </div>
       </div>
+      </div>
+      <!-- <div *ngIf="mailAddress.errors.pattern">
+      שדה אינו חוקי
+       </div>
+      </div>-->
       <label for="MailAddress" class="col">כתובת דוא"ל</label>
-      <input class="form-control col border-danger border-5" name="Address" type="text" [(ngModel)]="user.Address" required>
+      <div>
+      <input class="form-control col border-danger border-5" #address="ngModel" name="Address" type="text" [(ngModel)]="user.Address" required>
+      <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger p-0">
+        <div *ngIf="address.errors.required">
+        שדה זה אינו יכול להיות ריק 
+        </div>
+    </div>
+  </div>
       <label class="col" for="Address">כתובת</label>
-      <input class="form-control col border-danger border-5 " name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask
+      <div>
+      <input class="form-control col border-danger border-5 " #phone="ngModel" name="PhoneNum" type="text" [(ngModel)]="user.PhoneNum" appPhoneMask
         required>
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger p-0">
+          <div *ngIf="phone.errors.required">
+          שדה זה אינו יכול להיות ריק 
+          </div>
+      </div>
+    </div>
       <label for="PhoneNum" class="col">פלאפון</label>
     </div>
     <div class="row d-flex justify-content-center">
       <select multiple class="form-control col border-danger border-5" style="height: 100px;" [(ngModel)]="kin" (ngModelChange)="selectedKinderGarden($event)"
         name="KinderGardenCode">
         <option id="d" *ngFor="let k of ListKinderGarden" [value]="k.IdKinderGarden" (mousedown)="changeStyle(k.IdKinderGarden)"
-          [ngStyle]="{'background-color':id==k.IdKinderGarden?'red':'green'}">{{k.Name}}</option>
+          >{{k.Name}}</option>
       </select>
       <br>
       <label class="col-1" for="KinderGardenCode">בחר גן</label>

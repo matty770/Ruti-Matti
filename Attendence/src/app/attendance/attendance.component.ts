@@ -25,6 +25,7 @@ export class AttendanceComponent implements OnInit {
   LastName:string;
   pictureBase64: string;
   arr=[];
+  sttusString:string[]=[];
   listAttendances:Attendance[];
   constructor(private childService:ChildService, private router:Router, private kinderGardenService:KinderGardensService, private liveDataService:LiveDateService) {
    
@@ -64,6 +65,15 @@ export class AttendanceComponent implements OnInit {
   // 'alarm':this.LiveDataList[index].alarm,'FirstName':this.FirstName,'LastName':this.LastName,'Picture':this.pictureBase64});
   //}
   }
+ //convertToString(listAttendances)
+ //{
+ //  this.listAttendances.forEach(element => {
+ //    switch(element){
+ //      case 1:this.sttusString.("מאחר");
+ //    }
+ //    this.sttusString
+ //  });
+ //}
   
   changeStatusToArrived(idChild:string)
   {

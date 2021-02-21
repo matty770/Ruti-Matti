@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FutureData, Statuses } from '../models/FutureData';
 import { FutureDataService } from '../services/future-data.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-future-data',
@@ -23,9 +24,14 @@ export class FormFutureDataComponent implements OnInit {
 
   ngOnInit() {
   }
-  addFutureData(FutureDataForm)
+  addFutureData(FutureDataForm:NgForm)
   {
-    //alert("ff");
+    if(!FutureDataForm.valid){
+      (<any>Object).keys( FutureDataForm.controls).forEach(key => {
+        FutureDataForm.controls[key].markAsDirty();
+      });
+    return;
+  }
     this.futureData.IdChild=this.idChild;
     this.futureData.KinderGardenCode=this.futureDataService.futureData.KinderGardenCode;
     switch(this.ST)
